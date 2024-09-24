@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: administer/reboot-take-over-give-back-nodes.html 
+keywords: reboot, take over, give back, nodes, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: 出于维护、故障排除、软件更新或其他管理原因、您可能需要重新启动节点。 
+---
+= 重新启动ASA R2存储系统上的节点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+出于维护、故障排除、软件更新或其他管理原因、您可能需要重新启动节点。重新启动节点后、其HA配对节点会自动执行接管。然后、配对节点会在重新启动的节点恢复联机后执行自动交还。
+
+.步骤
+. 在System Manager中、选择*集群>概述*。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]要重新启动的节点旁边的，然后选择*Reboot*。
+. 输入重新启动节点的原因；然后选择*Reboot*。
++
+输入的重新启动原因会记录在系统审核日志中。
+
+
+
+.下一步是什么？
+重新启动节点时、其HA配对节点将执行接管、以便数据服务不会中断。重新启动完成后、HA配对节点将执行交还。

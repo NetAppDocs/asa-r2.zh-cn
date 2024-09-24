@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: videos/videos-common-tasks.html 
+keywords: demo,asa r2, videos 
+summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。 
+---
+= ASA R2存储系统视频演示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。
+
+.在ASA R2系统上配置SAN协议
+video::96cf3b2d-1cbd-4fff-a6e7-b1f0014ef793[panopto]
+link:video_transcript_configure_san_protocols.html["视频文字记录"]
+
+[#video_transcript_return_configure_san_protocols]
+.在ASA R2系统上配置SAN存储
+video::1d3e1a18-7dbe-44e9-a53d-b1f0014ef7c5[panopto]
+link:video_transcript_provision_san_storage.html["视频文字记录"]
+
+[#video_transcript_return_provision_san_storage]
+.将数据从ASA R2系统复制到远程集群
+video::4b78312d-1bfa-4df5-afac-b1f0014ef80e[panopto]
+link:video_transcript_replicate_data.html["视频文字记录"]

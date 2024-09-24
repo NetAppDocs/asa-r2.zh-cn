@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: learn-more/hardware-comparison.html 
+keywords: compare asa r2, asa a1k, asa a70, asa a90 
+summary: ASA系统提供针对纯SAN解决方案优化的硬件支持。ASA R2系统可优化硬件和软件。 
+searchtitle: 将ASA R2系统与其他ONTAP系统进行比较 
+---
+= 将ASA R2系统与其他ONTAP系统进行比较
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2系统可为基于全闪存平台构建的纯SAN环境提供统一的硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。
+
+在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在所有其他ONTAP系统(ASA、AFF、FAS)上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。
+
+您可以从System Manager或ONTAP命令行界面验证ONTAP存储的特性。
+
+* 从System Manager菜单中，选择*Cluster > Overview*。
+* 在命令行界面中、输入： `san config show`
+
+
+ONTAP存储系统的特性无法更改。
+
+运行统一ONTAP特性的ONTAP系统的存储层使用聚合作为基本存储单元。聚合拥有存储系统中的一组特定可用磁盘。聚合会在其所拥有的磁盘上为LUN和名字空间的卷分配空间。统一ONTAP用户可以使用命令行界面(CLI)创建和修改聚合、卷、LUN和命名空间。
+
+ASA R2系统中的存储层使用存储可用性区域、而不是聚合。存储可用性区域是一个通用存储池、可访问存储系统中的所有可用磁盘。ASA R2 HA对中的两个节点均可看到存储可用性分区。创建存储单元(基于LUN或NVMe命名空间)后、ONTAP会自动在存储可用性区域中创建一个包含Storage Virtual Machine (VM)的卷来存放此存储单元。由于这种自动化的简化存储管理方法、某些System Manager选项、ONTAP命令和REST API端点在ASA R2系统上不可用或使用受限。例如，由于ASA R2系统的卷创建和管理是自动进行的，因此“*卷*”菜单不会显示在“系统管理器 `volume create`”中，并且不支持该命令。
+
+ASA R2存储通过以下方式与其他ONTAP存储系统进行比较：
+
+[cols="1h,2,2,2,2"]
+|===
+|  | ASA r2 | ASA | AFF | FAS 
+
+
+ a| 
+* ONTAP个性化*
+| ASA r2 | ASA | 统一 | 统一 
+
+
+ a| 
+*SAN协议支持*
+| 是 | 是 | 是 | 是 
+
+
+ a| 
+*NAS协议支持*
+| 否 | 否 | 是 | 是 
+
+
+ a| 
+*存储层支持*
+| 存储可用性区域 | 聚合 | 聚合 | 聚合 
+|===
+以下ASA平台归类为ASA R2系统：
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+
+.了解更多信息
+* 详细了解 link:https://docs.netapp.com/us-en/ontap-systems-family/intro-family.html["ONTAP硬件系统"^]。
+* 请参见中的ASA和ASA R2系统的完整配置支持和限制link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+* 了解有关的更多信息link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。
+
+
+
+
+== ASA R2系统差异摘要
+
+下面介绍了ASA R2系统与ONTAP、AFF和ASA系统之间与FAS命令行界面(CLI)和REST API相关的主要区别。
+
+.使用协议服务创建默认SVM
+新集群会自动包含启用了SAN协议的默认数据SVM。 `default-data-blocks`默认情况下、IP数据LUN支持iSCSI和NVMe/TCP协议并使用服务策略。
+
+.自动创建卷
+创建存储单元(LUN或命名空间)会自动从存储可用性区域创建卷。这样便可简化并使用通用命名空间。删除存储单元会自动删除关联的卷。
+
+.对精简配置和厚配置进行的更改
+的存储单元始终在ASA R2存储系统上进行精简配置。不支持厚配置。

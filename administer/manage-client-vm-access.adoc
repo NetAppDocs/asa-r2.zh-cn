@@ -1,0 +1,110 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-client-vm-access.html 
+keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface 
+summary: 创建LIF以访问ASA R2上存储单元中的数据。使用子网简化LIF创建、并使用IP空间提供安全管理和路由。 
+searchtitle: 使用ONTAP系统管理器| ASA R2管理客户端对存储的访问 
+---
+= 管理客户端对ASA R2存储系统上Storage VM的访问
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2系统上的存储单元包含在Storage Virtual Machine (VM)中。Storage VM用于为SAN客户端提供数据。使用ONTAP系统管理器为SAN客户端创建LIF (网络接口)、以便连接到Storage VM并访问存储单元中的数据。您可以选择使用子网简化LIF创建、并使用IP空间为Storage VM提供自己的安全存储、管理和路由。
+
+
+
+== 创建 IP 空间
+
+IP空间是Storage VM所在的一个独立IP地址空间。创建IP空间时、您可以使Storage VM拥有自己的安全存储、管理和路由。此外、还可以使管理上分开的网络域中的客户端使用同一IP地址子网范围内的重叠IP地址。
+
+您必须先创建IP空间、然后才能创建子网。
+
+.步骤
+. 选择*网络>概述*。
+. 在*IP空间*下，选择image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
+. 输入IP空间的名称或接受默认名称。
++
+IP空间名称不能为"all"、因为"all"是系统保留名称。
+
+. 选择 * 保存 * 。
+
+
+.下一步是什么？
+现在、您已创建IP空间、可以使用它来创建子网。
+
+
+
+== 创建子网
+
+通过子网，您可以在创建LIF (网络接口)时分配要使用的特定IPv4或IPv6地址块。子网允许您为每个LIF指定子网名称、而不是特定的IP地址和网络掩码、从而简化了LIF的创建。
+
+.开始之前
+* 您必须是集群管理员才能执行此任务。
+* link:../administer/manage-cluster-networking.html#add-a-broadcast-domain["广播域"]计划添加子网的和IP空间必须已存在。
+
+
+.步骤
+. 选择*网络>概述*。
+. 选择*子网*；然后选择image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
+. 输入子网名称。
++
+所有子网名称在 IP 空间中必须是唯一的。
+
+. 输入子网IP地址和子网掩码。
+. 指定子网的IP地址范围。
++
+指定子网的IP地址范围时、请勿将IP地址与其他子网重叠。如果子网IP地址重叠、而不同的子网或主机尝试使用相同的IP地址、则可能会出现网络问题。
+
+. 选择子网的广播域。
+. 选择 * 添加 * 。
+
+
+.下一步是什么？
+您已创建子网、现在可以使用该子网简化LIP的创建。
+
+
+
+== 创建LIF (网络接口)
+
+LIF (网络接口)是与物理或逻辑端口关联的IP地址。在要用于访问数据的端口上创建SIFs。Storage VM通过一个或多个生命周期管理器向客户端提供数据。如果组件发生故障、LIF可以进行故障转移或迁移到其他物理端口、从而不会中断网络通信。
+
+默认情况下、创建IP数据LIF时、它可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。
+
+.开始之前
+* 您必须是集群管理员才能执行此任务。
+* 底层物理或逻辑网络端口必须已配置为管理 `up`状态。
+* 如果您计划使用子网名称为 LIF 分配 IP 地址和网络掩码值，则此子网必须已存在。
+* 处理节点之间集群内流量的 LIF 不应与处理管理流量的 LIF 或处理数据流量的 LIF 位于同一子网上。
+
+
+.步骤
+. 选择*网络>概述*。
+. 选择*网络接口*；然后选择image:icon_add_blue_bg.png["蓝色矩形、加号后跟白色字母的单词add"]。
+. 选择接口类型和协议、然后选择Storage VM。
+. 输入LIF的名称或接受默认名称。
+. 选择网络接口的主节点、然后输入IP地址和子网掩码。
+. 选择 * 保存 * 。
+
+
+.结果
+您已创建用于数据访问的LIF。
+
+
+
+== 修改LIF (网络接口)
+
+可以根据需要禁用或重命名这些文件。您还可以更改LIF IP地址和子网掩码。
+
+.步骤
+. 选择*网络>概述*；然后选择*网络接口*。
+. 将鼠标悬停在要编辑的网络接口上，然后选择image:icon_kabob.gif["三个垂直蓝点"]。
+. 选择 * 编辑 * 。
+. 您可以禁用网络接口、重命名网络接口、更改IP地址或更改子网掩码。
+. 选择 * 保存 * 。
+
+
+.结果
+已修改您的LIF。

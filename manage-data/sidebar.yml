@@ -1,0 +1,40 @@
+---
+section: manage-data
+title: 使用ONTAP管理数据
+entries:
+- title: 常见任务视频
+  url: "/videos/videos-common-tasks.html"
+- title: 管理存储
+  entries:
+  - title: 配置存储
+    url: "/manage-data/provision-san-storage.html"
+  - title: 克隆数据
+    url: "/manage-data/data-cloning.html"
+  - title: 修改存储单元
+    url: "/manage-data/modify-storage-units.html"
+  - title: 删除存储单元
+    url: "/manage-data/delete-storage-units.html"
+  - title: 存储限制
+    url: "/manage-data/storage-limits.html"
+- title: 保护您的数据
+  entries:
+  - title: 创建快照
+    url: "/data-protection/create-snapshots.html"
+  - title: 设置快照复制
+    url: "/data-protection/snapshot-replication.html"
+  - title: 保护Kub联网
+    url: "/data-protection/protect-kubernetes.html"
+  - title: 还原数据
+    url: "/data-protection/restore-data.html"
+  - title: 管理一致性组
+    url: "/data-protection/manage-consistency-groups.html"
+  - title: 管理保护策略和计划
+    url: "/data-protection/policies-schedules.html"
+- title: 保护数据安全
+  entries:
+  - title: 对空闲数据进行加密
+    url: "/secure-data/encrypt-data-at-rest.html"
+  - title: 防范勒索软件攻击
+    url: "/secure-data/ransomware-protection.html"
+  - title: 安全NVMe连接
+    url: "/secure-data/nvme-tcp-connections.html"

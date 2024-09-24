@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: get-help/manage-autosupport.html 
+keywords:  
+summary:  
+---
+= 管理ASA R2存储系统上的AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支持，您的内部支持组织和支持合作伙伴发送消息的机制。
+
+默认情况下、在设置集群时、系统会启用发送给技术支持的AutoSupport消息。您必须设置正确的选项、并具有有效的邮件主机、才能将消息发送到您的内部支持组织。启用AutoSupport后24小时、ONTAP开始发送它。
+
+.开始之前
+您必须是集群管理员才能管理AutoSupport。
+
+
+
+== 测试AutoSupport连接
+
+设置集群后、您应测试AutoSupport连接、以验证技术支持是否会收到AutoSupport生成的消息。
+
+.步骤
+. 在System Manager中，选择*集群>设置*。
+. 在*Test AutoSupportimage:icon_kabob.gif["三个垂直蓝点"]连通性*旁边选择；然后选择*Test连通性*。
+. 输入AutoSupport消息的主题，然后选择*发送测试AutoSupport消息*。
+
+
+.下一步是什么？
+您已确认技术支持可以从ASA R2系统接收AutoSupport消息、并且您遇到问题时、您将获得所需的数据来提供帮助。
+
+
+
+== 添加AutoSupport收件人
+
+将内部支持组织的成员添加到接收AutoSupport消息的电子邮件地址列表中。
+
+.步骤
+. 在System Manager中，选择*集群>设置*。
+. 在* AutoSupport *旁边选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*更多选项*。
+. 在*电子邮件*旁边，选择image:icon_edit_pencil_blue_outline.png["铅笔图标"]；然后选择image:icon_add.gif["蓝色加号、后跟Add一词"]。
+. 输入收件人的电子邮件地址、然后输入收件人类别。
++
+对于合作伙伴，请为收件人类别选择*合作伙伴*。为内部支持组织的成员选择*常规*。
+
+. 选择保存。
+
+
+.下一步是什么？
+您添加的电子邮件地址将收到其特定收件人类别的新AutoSupport消息。
+
+
+
+== 发送AutoSupport数据
+
+如果ASA R2系统出现问题、AutoSupport数据可以显著缩短识别和解决问题所需的时间。
+
+.步骤
+. 在System Manager中，选择*集群>设置*。
+. 在*Generate AutoSupport image:icon_kabob.gif["三个垂直蓝点"]and send*(生成并发送)旁边选择；然后选择*Generate and send*(生成并发送)。
+. 输入AutoSupport消息的主题，然后选择*Send*。
+
+
+.下一步是什么？
+您的AutoSupport数据将发送给技术支持。
+
+
+
+== 禁止生成支持案例
+
+如果要在ASA R2系统上执行升级或维护、您可能需要禁止生成AutoSupport支持案例、直到升级或维护完成为止。
+
+.步骤
+. 在System Manager中，选择*集群>设置*。
+. 在*Suppress AutoSupportimage:icon_kabob.gif["三个垂直蓝点"]支持案例生成*旁边，选择；然后选择*Suppress support case generation*。
+. 指定禁止生成支持案例的小时数；然后选择不希望为其生成案例的节点。
+. 选择*发送*。
+
+
+.下一步是什么？
+在您指定的时间内、不会生成AutoSupport案例。如果您在指定时间到期之前完成升级或维护、则应立即恢复生成支持案例。
+
+
+
+== 恢复支持案例生成
+
+如果您在升级或维护窗口期间禁止生成支持案例、则应在升级或维护完成后立即恢复生成支持案例。
+
+.步骤
+. 在System Manager中，选择*集群>设置*。
+. 在*Resume*旁边AutoSupport选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*恢复支持案例生成*。
+. 选择要恢复生成的AutoSupport案例的节点。
+. 选择*发送*。
+
+
+.结果
+系统会根据需要为ASA R2系统自动生成AutoSupport案例。

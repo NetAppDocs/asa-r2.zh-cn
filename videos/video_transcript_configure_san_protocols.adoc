@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_configure_san_protocols.html 
+keywords: frontmatter, front matter 
+summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。 
+---
+= 在ASA R2系统上配置SAN协议
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是该视频的文字记录 `Configure SAN protocols on your ASA r2 storage system`。
+
+link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["返回页面"]
+
+您可以使用ONTAP系统管理器快速轻松地配置SAN协议。在此示例中、我们将为iSCSI网络接口配置IP地址。
+
+从System Manager信息板中，选择*配置协议*。
+
+在*IP*下，选择*Configure IP interfaces*，然后选择*Add a subnet*。
+
+输入子网的名称、然后输入子网IP地址。
+
+输入子网掩码，并可选择输入网关，然后选择*Add*。
+
+选择刚刚创建的子网，然后选择*Save*。
+
+您刚刚轻松快速地为iSCSI网络接口配置了IP地址。

@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: administer/increase-storage-capacity.html 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa r2, asa a1k, asa 70, asa 90 
+summary: 向节点或磁盘架添加驱动器以增加ASA R2存储单元的容量。 
+---
+= 增加ASA R2存储系统上的存储容量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+向节点或磁盘架添加驱动器以增加ASA R2系统的存储容量。
+
+
+
+== 使用NetApp Hardware Universe准备安装新驱动器
+
+在将新驱动器安装到节点或磁盘架之前、请使用NetApp Hardware Universe确认您要添加的驱动器受ASA R2平台支持、并确定新驱动器的正确插槽。用于添加驱动器的正确插槽因平台型号和 ONTAP 版本而异。在某些情况下、您需要按顺序将驱动器添加到特定插槽。
+
+.步骤
+. 转到link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+. 在*Products*下，选择您的硬件配置。
+. 选择您的ASA R2平台。
+. 选择您的ONTAP版本，然后选择*显示结果*。
+. 在图形下方，选择*单击此处查看备选视图*；然后选择与您的配置匹配的视图。
+. 使用您的配置视图确认您的新驱动器是否受支持以及安装的正确插槽。
+
+
+.结果
+您已确认新驱动器受支持、并且知道要安装的相应插槽。
+
+
+
+== 在ASA R2上安装新驱动器
+
+应在一个操作步骤中添加的最小驱动器数为 6 个。添加单个驱动器可能会降低性能。
+
+.关于此任务
+您应对每个驱动器重复此过程中的步骤。
+
+.步骤
+. 正确接地。
+. Gently remove the bezel from the front of the platform.
+. 将新驱动器插入正确的插槽。
++
+.. 在凸轮把手处于打开位置时，用双手插入新驱动器。
+.. Push until the drive stops.
+.. Close the cam handle so that the drive is fully seated into the mid plane and the handle clicks into place.
++
+Be sure to close the cam handle slowly so that it aligns correctly with the face of the drive.
+
+
+
+. 验证驱动器的活动 LED （绿色）是否亮起。
++
+** 如果指示灯稳定亮起、则表示驱动器已通电。
+** 如果LED闪烁、则表示驱动器已通电、并且正在执行I/O。如果正在更新驱动器固件、LED也会闪烁。
++
+在没有最新固件版本的新驱动器上，驱动器固件会自动更新（无中断）。
+
+
+
+. 如果您的节点配置了驱动器自动分配、您可以等待ONTAP自动将新驱动器分配给节点。如果您的节点未配置驱动器自动分配、或者如果愿意、您可以手动分配驱动器。
++
+只有在将新驱动器分配给节点后，才会识别这些驱动器。
+
+
+
+.下一步是什么？
+识别新驱动器后、验证是否已添加这些驱动器、以及是否已正确指定其所有权。

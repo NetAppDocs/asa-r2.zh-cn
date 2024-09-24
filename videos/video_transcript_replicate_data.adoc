@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_replicate_data.html 
+keywords: frontmatter, front matter 
+summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。 
+---
+= 将数据从ASA R2存储系统复制到远程集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是该视频的文字记录 `Replicate data to a remote cluster from an ASA r2 storage system`。
+
+link:videos-common-tasks.html#video_transcript_return_replicate_data["返回页面"]
+
+您可以使用ONTAP系统管理器计划存储单元或一致性组的快照并复制到远程位置、从而保护数据。
+
+在此示例中、我们将为现有存储单元计划快照。
+
+从System Manager菜单中，选择*Storage*。
+
+选择要保护的存储单元，然后选择*Protect*。
+
+您可以选择*立即添加快照*来创建按需快照。
+
+在*远程保护*下，选择*复制到远程群集*。
+
+选择要复制的Storage VM和复制策略。默认情况下、初始数据传输将立即开始。
+
+选择 * 保存 * 。
+
+如果存储单元不在一致性组中、则必须创建一个。输入新一致性组的名称，然后选择*Create*。
+
+您可以快速轻松地将一致性组复制到远程集群。

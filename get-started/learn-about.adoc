@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about.html 
+keywords: asa r2, asa a1k, asa 70, asa 90 
+summary: 'ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。' 
+searchtitle: 了解ASA A1K、ASA A70和ASA A90存储系统 
+---
+= 了解ASA R2存储系统
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+新的NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供了一个统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+
+ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。NVMe协议支持主机和存储之间的直接路径。
+
+在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。
+
+ASA R2系统介绍了如何使用具有一致性组的存储单元：
+
+* storage unit_可为SAN主机提供用于数据操作的存储空间。存储单元是指SCSI主机的LUN或NVMe主机的NVMe命名空间。
+* _A一致性组_是作为单个单元进行管理的一组存储单元。
+
+
+ASA R2系统使用存储单元和一致性组来简化存储管理和数据保护。例如、假设您有一个数据库、其中一个一致性组包含10个存储单元、您需要备份整个数据库。您可以通过备份一致性组来保护整个数据库、而不是单独备份每个存储单元。
+
+为了帮助保护您的数据免受盗窃或勒索软件等恶意攻击、ASA R2系统支持板载密钥管理器、双层加密、防篡改快照、多因素身份验证和多管理员验证。
+
+ASA R2系统不支持将集群与当前ASA、AFF或FAS系统混合使用。
+
+.了解更多信息
+* 有关ASA R2系统支持和限制的详细信息，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+* 详细了解 link:../learn-more/hardware-comparison.html["新的ASA R2系统与ASA系统的对比"]。
+* 了解有关的更多信息link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"]。
+

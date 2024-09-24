@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: videos/video_transcript_provision_san_storage.html 
+keywords: frontmatter, front matter 
+summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。 
+---
+= 在ASA R2系统上配置SAN存储
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+以下是该视频的文字记录 `Provision SAN storage on your ASA r2 storage system`。
+
+link:videos-common-tasks.html#video_transcript_return_provision_san_storage["返回页面"]
+
+您可以使用ONTAP系统管理器快速轻松地为ASA R2存储系统上的主机配置存储单元。
+
+在此示例中、我们将为一个VMware主机创建六个新存储单元。
+
+从System Manager菜单中，选择*Storage*，然后选择*Add*。
+
+输入存储单元的名称、单元数以及每个单元的容量；然后选择主机操作系统。
+
+如果创建多个单元、则默认情况下、每个单元都使用相同的容量创建。
+
+选择*更多选项*以输入主机信息。在此示例中、我们将选择SCSI协议并添加新的iSCSI主机。
+
+输入主机名、然后添加主机启动程序和说明。
+
+选择*计划快照*使用常规快照保护存储单元。
+
+选择远程保护以*将设备复制到远程位置*。
+
+选择Storage VM和复制策略；然后选择*添加*。
+
+要进行复制、存储单元必须位于一致性组中。输入一致性组名称并选择*创建*。
+
+您可以快速轻松地为VMware主机配置6个存储单元、并提供本地和远程数据保护。

@@ -1,0 +1,34 @@
+---
+section: administer
+title: 管理和监控
+entries:
+- title: 管理客户端对Storage VM的访问
+  url: "/administer/manage-client-vm-access.html"
+- title: 管理集群网络
+  url: "/administer/manage-cluster-networking.html"
+- title: 监控使用情况并增加容量
+  entries:
+  - title: 监控存储性能
+    url: "/monitor/monitor-performance.html"
+  - title: 监控存储利用率
+    url: "/monitor/monitor-storage.html"
+  - title: 增加存储容量
+    url: "/administer/increase-storage-capacity.html"
+- title: 更新固件
+  url: "/administer/update-firmware.html"
+- title: 查看洞察力
+  url: "/monitor/view-insights.html"
+- title: 查看集群事件和作业
+  url: "/monitor/view-events-jobs.html"
+- title: 管理节点
+  entries:
+  - title: 重新启动、接管和交还节点
+    url: "/administer/reboot-take-over-give-back-nodes.html"
+  - title: 重命名节点
+    url: "/administer/rename-nodes.html"
+- title: 管理用户帐户和角色
+  url: "/administer/user-accounts-roles.html"
+- title: 管理安全证书
+  url: "/administer/manage-certificates.html"
+- title: 验证主机连接
+  url: "/administer/verify-host-connectivity.html"

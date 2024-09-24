@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
+summary: '要开始使用ASA R2 (ASA A1K、ASA A70、ASA A90)系统、请安装硬件、设置集群、设置数据访问以及配置存储。' 
+searchtitle: 安装和设置ASA A1K、ASA A70和ASA A90存储系统 
+---
+= ASA R2存储系统快速入门
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要启动并运行ASA R2系统、需要安装硬件组件、设置集群、设置主机对存储系统的数据访问以及配置存储。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"]安装和设置硬件
+[role="quick-margin-para"]
+link:../install-setup/install-setup-workflow.html["安装和设置"]ASA R2系统、并将其作为HA对部署在ONTAP环境中。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]设置集群
+[role="quick-margin-para"]
+使用System Manager引导您快速轻松地完成link:../install-setup/initialize-ontap-cluster.html["设置ONTAP集群"]。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"]设置数据访问
+[role="quick-margin-para"]
+link:../install-setup/set-up-data-access.html["将ASA R2系统连接到SAN客户端"](英文)
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"]配置存储
+[role="quick-margin-para"]
+link:../manage-data/provision-san-storage.html["配置存储"]开始向SAN客户端提供数据。
+
+.下一步是什么？
+现在，您可以使用System Manager通过保护数据link:../data-protection/create-snapshots.html["创建快照"]。

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: manage-data/modify-storage-units.html 
+keywords: increase storage units, resize luns, resize namespaces, san, nvme,  increase lun size, increase namespace, increase, modify, edit, luns, namespaces, modify quality of service, qos, host mapping, mapping host 
+summary: '通过编辑存储单元以增加容量、更新服务质量(QoS)策略或更改主机映射来响应存储系统性能和数据的变化。' 
+---
+= 修改ASA R2存储系统上的存储单元
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要优化ASA R2系统的性能、您可能需要修改存储单元以增加其容量、更新QoS策略或更改映射到这些存储单元的主机。例如、如果向现有存储单元添加了新的关键应用程序工作负载、则可能需要更改应用于存储单元的服务质量(QoS)策略、以支持新应用程序所需的性能级别。
+
+.增加容量
+在存储单元容量达到全满之前增加其大小、以防止在存储单元用尽可写空间时丢失数据访问。存储单元的容量可以增加到128 TB、这是ONTAP允许的最大大小。
+
+.修改主机映射
+修改映射到存储单元的主机、以帮助平衡工作负载或重新配置系统资源。
+
+.修改 QoS 策略
+服务质量(QoS)策略可确保关键工作负载的性能不会因争用资源的工作负载而降级。您可以使用QoS策略设置QoS吞吐量_Limit _和QoS吞吐量_GuarANCE_。
+
+* QoS吞吐量限制
++
+QoS吞吐量_Limit _通过将工作负载的吞吐量限制为最大IOPS或MBps数或IOPS和MBps数来限制工作负载对系统资源的影响。
+
+* QoS吞吐量保证
++
+QoS吞吐量_Guarety_可以 保证关键工作负载的吞吐量不会低于最小IOPS或MBps数、或者IOPS和MBps、从而确保关键工作负载满足最低吞吐量目标、而不管争用工作负载的需求如何。
+
+
+
+.步骤
+. 在System Manager中，选择*Storage*。
+. 将鼠标悬停在要编辑的存储单元的名称上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Edit*。
+. 根据需要更新存储单元参数以增加容量、更改QoS策略以及更新主机映射。
+
+
+.下一步是什么？
+如果您增加了存储单元的大小、则必须重新扫描主机上的存储单元、使主机能够识别大小的变化。

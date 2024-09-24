@@ -1,0 +1,8 @@
+---
+section: get-help
+title: 获取帮助
+entries:
+- title: 管理 AutoSupport
+  url: "/get-help/manage-autosupport.html"
+- title: 提交并查看支持案例
+  url: "/get-help/view-submit-support-case.html"

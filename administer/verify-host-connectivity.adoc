@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: administer/verify-host-connectivity.html 
+keywords: host, connectivity, asa r2 
+summary: 如果主机数据操作出现问题、您可以使用ONTAP系统管理器验证从主机到ASA R2存储系统的连接是否处于活动状态。 
+---
+= 验证ASA R2存储系统上的主机连接
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果主机数据操作出现问题、您可以使用ONTAP系统管理器验证从主机到ASA R2存储系统的连接是否处于活动状态。
+
+.步骤
+. 在System Manager中，选择*Host*。
++
+主机连接状态显示在主机组名称旁边、如下所示：**确定*：表示所有启动程序均连接到两个节点。**已部分连接*：表示某些启动程序未同时连接两个节点。**未连接*：表示未连接任何启动程序。
+
+
+
+.下一步是什么？
+在主机上进行更新以更正连接问题。ONTAP将每十五分钟重新检查一次连接状态。

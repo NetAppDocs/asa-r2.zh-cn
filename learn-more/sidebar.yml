@@ -1,0 +1,14 @@
+---
+section: learn-more
+title: 了解更多信息。
+entries:
+- title: 适用于ONTAP高级用户的ASA R2
+  entries:
+  - title: 请比较硬件系统
+    url: "/learn-more/hardware-comparison.html"
+  - title: 软件支持和限制
+    url: "/learn-more/software-support-limitations.html"
+  - title: CLI支持
+    url: "/learn-more/cli-support.html"
+  - title: REST API 支持
+    url: "/learn-more/rest-api-support.html"

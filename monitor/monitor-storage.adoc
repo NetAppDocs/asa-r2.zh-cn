@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: monitor/monitor-storage.html 
+keywords: monitor, storage, cluster, utilization, usage 
+summary: 监控存储利用率、确保您拥有处理当前和未来工作负载所需的存储容量。 
+searchtitle: 使用ONTAP系统管理器| ASA R2监控空间利用率 
+---
+= 监控ASA R2存储系统上的集群和存储单元利用率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP系统管理器监控存储利用率、以确保您拥有处理当前和未来工作负载所需的存储容量。
+
+
+
+== 监控集群利用率
+
+定期监控集群占用的存储量、以确保根据需要在用尽空间之前准备好扩展集群容量。
+
+.步骤
+. 在 System Manager 中，选择 * 信息板 * 。
+. 在*容量*下、查看集群上的已用物理空间量和可用空间量。
++
+数据精简率表示通过存储效率节省的空间量。
+
+
+
+.下一步是什么？
+如果集群的空间不足或其容量不足以满足未来需求、则应计划link:../administer/increase-storage-capacity.html["添加新驱动器"]使用ASA R2系统来增加存储容量。
+
+
+
+== 监控存储单元利用率
+
+监控存储单元占用的存储量、以便根据业务需求主动增加存储单元的大小。
+
+.步骤
+. 在System Manager中，选择*Storage*。
+. 选择要监控的存储单元，然后选择*Overview*。
+. 在*Storage*下，查看以下内容：
++
+** 存储单元的大小
+** 已用空间量
+** 数据精简率
++
+数据精简率表示通过存储效率节省的空间量
+
+** 已用Snapshot
++
+已用Snapshot表示快照已使用的存储量。
+
+
+
+
+
+.下一步是什么？
+如果存储单元即将达到容量、则应link:../manage-data/modify-storage-units.html["修改存储单元"]增加其大小。

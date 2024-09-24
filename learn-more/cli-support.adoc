@@ -1,0 +1,237 @@
+---
+sidebar: sidebar 
+permalink: learn-more/cli-support.html 
+keywords: asa r2, cli, asa r2, asa a1k, asa 70, asa 90 
+summary: 'ASA R2系统(ASA A1K、ASA 70、ASA 90)不支持某些ONTAP命令。' 
+---
+= ONTAP命令行界面支持ASA R2存储系统
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2系统使用_storage availability zone_、而不是传统聚合(它们拥有存储系统中一组特定的可用磁盘)。存储可用性区域是一个通用存储池、可访问存储系统中的所有可用磁盘。ASA R2 HA对中的两个节点均可看到存储可用性分区。创建存储单元(LUN或NVMe命名空间)后、ONTAP会自动在存储可用性区域中创建一个包含Storage Virtual Machine (VM)的卷来存放此存储单元。
+
+由于这种简化的存储管理方法、 `storage aggregate`ASA R2系统不支持命令。对某些 `lun`和 `volume`命令及参数的支持也有限。
+
+R2上的ASA不支持以下命令和命令集：
+
+.不支持的</code><code>命令
+[%collapsible]
+====
+* `lun copy`
+* `lun geometry`
+* `lun import`
+* `lun mapping add-reportng-nodes`
+* `lun mapping-remove-reporting-nodes`
+* `lun maxsize`
+* `lun move`
+* `lun move-in-volume`
++
+此命令将替换为LUN重命名/Vserver NVMe命名空间重命名。
+
+* `lun transition`
+
+
+====
+.不支持的<code> um e </code>命令和参数
+[%collapsible]
+====
+* `volume autosize`
+* `volume create`
+* `volume delete`
+* `volume expand`
+* `volume modify`
++
+如果与以下参数结合使用、则此命令不可用：
+
++
+** `-anti-ransomware-state`
+** `-autosize`
+** `-autosize-mode`
+** `-autosize-shrik-threshold-percent`
+** `-autosize-reset`
+** `-group`
+** `-is-cloud-write-enabled`
+** `-is-space-enforcement-logical`
+** `-max-autosize`
+** `-min-autosize`
+** `-offline`
+** `-online`
+** `-percent-snapshot-space`
+** `-qos*`
+** `-size`
+** `-snapshot-policy`
+** `-space-guarantee`
+** `-space-mgmt-try-first`
+** `-state`
+** `-tiering-policy`
+** `-tiering-minimum-cooling-days`
+** `-user`
+** `-unix-permisions`
+** `-vserver-dr-protection`
+
+
+* `volume make-vsroot`
+* `volume mount`
+* `volume move`
+* `volume offline`
+* `volume rehost`
+* `volume rename`
+* `volume restrict`
+* `volume transition-prepare-to-downgrade`
+* `volume unmount`
+
+
+====
+.不支持的<code> cl </code>命令
+[%collapsible]
+====
+* `volume clone create`
+* `volume clone split`
+
+
+====
+.不支持的SnapLock </code><code>命令
+[%collapsible]
+====
+* `volume snaplock modify`
+
+
+====
+.不支持的<code></code>命令
+[%collapsible]
+====
+* `volume snapshot`
+* `volume snapshot autodelete modify`
+* `volume snapshot policy modify`
+
+
+====
+.不支持的<code> um e </code>命令集
+[%collapsible]
+====
+* `volume activity-tracking`
+* `volume analytics`
+* `volume conversion`
+* `volume file`
+* `volume flexcache`
+* `volume flexgroup`
+* `volume inode-upgrade`
+* `volume object-store`
+* `volume qtree`
+* `volume quota`
+* `volume reallocation`
+* `volume rebalance`
+* `volume recovery-queue`
+* `volume schedule-style`
+
+
+====
+.不支持的<code></code>
+[%collapsible]
+====
+* `storage failover show-takeover`
+* `storage failover show-giveback`
+* `storage aggregate relocation`
+* `storage disk assign`
+* `storage disk partition`
+* `storage disk reassign`
+
+
+====
+.了解更多信息
+link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP命令参考"]有关支持的命令的完整列表、请参见
+
+
+
+== 使用命令行界面设置ONTAP ASA R2集群
+
+建议您link:../install-setup/initialize-ontap-cluster.html["使用System Manager设置ONTAP ASA R2集群"]。System Manager提供了一个快速简单的引导式工作流、可帮助您启动和运行集群。但是、如果您习惯使用ONTAP命令、则可以选择使用ONTAP命令行界面(CLI)进行集群设置。与使用System Manager设置集群相比、使用命令行界面设置集群没有其他选项或优势。
+
+在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)、创建初始存储单元、并自动发现数据LUN。您也可以选择启用域名系统(DNS)来解析主机名、将集群设置为使用网络时间协议(NTS)进行时间同步、以及启用空闲数据加密。
+
+.开始之前
+收集以下信息：
+
+* 集群管理 IP 地址
++
+集群管理IP地址是集群管理接口的唯一IPv4地址、集群管理员可使用此地址访问管理Storage VM和管理集群。您可以从组织中负责分配 IP 地址的管理员处获取此 IP 地址。
+
+* 网络子网掩码
++
+在集群设置期间、ONTAP建议使用一组适合您的配置的网络接口。如有必要、您可以调整此建议。
+
+* 网络网关IP地址
+* 配对节点IP地址
+* DNS域名
+* DNS名称服务器IP地址
+* NTP服务器IP地址
+* 数据子网掩码
+
+
+.步骤
+. 启动HA对的两个节点。
+. 显示在本地网络上发现的节点：
++
+[source, cli]
+----
+system node show-discovered -is-in-cluster false
+----
+. 启动集群设置向导：
++
+[source, cli]
+----
+cluster setup
+----
+. 确认 AutoSupport 语句。
+. 为节点管理接口端口、IP地址、网络掩码和默认网关输入值。
+. 按*Enter*继续使用命令行界面进行设置；然后输入*cree*创建新集群。
+. 接受系统默认值或输入您自己的值。
+. 在第一个节点上完成设置后、登录到集群。
+. 验证集群是否处于活动状态、以及第一个节点是否运行正常：
++
+[source, cli]
+----
+system node show-discovered
+----
+. 将第二个节点添加到集群：
++
+[source, cli]
+----
+cluster add-node -cluster-ip <partner_node_ip_address>
+----
+. (可选)在集群中同步系统时间
++
+[cols="1h, 1"]
+|===
+
+
+| 同步时不使用对称身份验证  a| 
+[source, cli]
+----
+cluster time-service ntp server create -server <server_name>
+----
+
+
+| 与对称身份验证同步  a| 
+[source, cli]
+----
+cluster time-service ntp server create -server <server_ip_address> -key-id <key_id>
+----
+|===
++
+.. 验证集群是否已与NTP服务器关联：
++
+[source, cli]
+----
+Cluster time-service ntp show
+----
+
+
+. (可选)下载并运行link:https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["ActiveIQ Config Advisor"]以确认您的配置。
+
+
+.下一步是什么？
+您已准备好link:../install-setup/set-up-data-access.html["设置数据访问"]从SAN客户端到系统。

@@ -1,0 +1,43 @@
+---
+indexpage:
+  title: ASA R2文档
+  summary: NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+  keywords: asa r2, ontap, documentation, asa a1k, asa a70, asa a90
+  lead: 新的NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供了一个统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+  tiles:
+  - title: 开始使用
+    links:
+    - title: 了解更多信息。
+      url: "/get-started/learn-about.html"
+    - title: 快速入门
+      url: "/get-started/quick-start.html"
+  - title: 管理数据
+    links:
+    - title: 配置 SAN 存储
+      url: "/manage-data/provision-san-storage.html"
+    - title: 克隆数据
+      url: "/manage-data/data-cloning.html"
+    - title: 修改存储单元
+      url: "/manage-data/modify-storage-units.html"
+  - title: 保护和保护数据
+    links:
+    - title: 创建快照
+      url: "/data-protection/create-snapshots.html"
+    - title: 设置快照复制
+      url: "/data-protection/snapshot-replication.html"
+    - title: 对空闲数据进行加密
+      url: "/secure-data/encrypt-data-at-rest.html"
+  - title: 更多ASA R2资源
+    links:
+    - title: ASA产品规格
+      url: https://www.netapp.com/data-storage/all-flash-san-storage-array/
+    - title: ONTAP命令参考
+      url: https://docs.netapp.com/us-en/ontap-cli/
+    - title: ONTAP REST API参考
+      url: https://docs.netapp.com/us-en/ontap-restapi/index.html
+    - title: ONTAP EMS参考
+      url: https://docs.netapp.com/us-en/ontap-ems/index.html
+  - title: 其他ONTAP资源
+    links:
+    - title: 其他ONTAP系统的文档
+      url: https://docs.netapp.com/us-en/ontap-family/

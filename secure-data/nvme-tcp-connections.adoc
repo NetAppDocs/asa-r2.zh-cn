@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: secure-data/nvme-tcp-connections.html 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption 
+summary: 通过配置基于TLS的NVMe/TCP来对NVMe/TCP主机和ONTAP之间通过网络发送的所有数据进行加密、从而增强数据安全性。 
+---
+= ASA R2存储系统上的安全NVMe连接
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用的是NVMe协议、则可以配置带内身份验证以增强数据安全性。带内身份验证允许在NVMe主机和ASA R2系统之间进行安全的双向和单向身份验证。所有NVMe主机均可使用带内身份验证。如果您使用的是NVMe/TCP协议、则可以通过配置传输层安全性(Transport Layer Security、TLS)来对NVMe/TCP主机和ASA R2系统之间通过网络发送的所有数据进行加密、从而进一步增强数据安全性。
+
+.步骤
+. 选择*hosts*；然后选择*NVMe*。
+. 选择。image:icon_add_blue_bg.png["蓝色方形、加号后接以白色字母表示的\"添加\"字样"]
+. 输入主机名、然后选择主机操作系统。
+. 输入主机说明、然后选择要连接到主机的Storage VM。
+. 选择image:icon_dropdown_arrow.gif["蓝色向下箭头"]主机名旁边的。
+. 选择*带内身份验证*。
+. 如果使用的是NVMe/TCP协议，请选择*需要传输层安全(TL)*。
+. 选择 * 添加 * 。
+
+
+.结果
+通过带内身份验证和(或) TLS增强数据的安全性。

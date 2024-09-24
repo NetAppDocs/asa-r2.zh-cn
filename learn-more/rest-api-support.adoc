@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: learn-more/rest-api-support.html 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api 
+summary: ASA R2 REST API基于通过统一ONTAP特性提供的REST API、并根据ASA R2特性的独特特性和功能进行了许多更改。 
+---
+= ASA R2支持REST API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2 REST API基于通过统一ONTAP特性提供的REST API、并根据ASA R2特性的独特特性和功能进行了许多更改。
+
+
+
+== API更改类型
+
+ASA R2系统REST API与FAS、AFF和ASA系统提供的统一ONTAP REST API之间存在多种类型的差异。了解更改类型有助于更好地利用联机API参考文档。
+
+.统一ONTAP不支持新的ASA R2端点
+ASA R2 REST API中添加了多个端点、这些端点在统一ONTAP中不可用。
+
+例如、ASA R2系统的REST API中添加了一个新的块卷端点。通过块卷端点、您可以同时访问LUN和NVMe命名空间对象、从而获得资源的聚合视图。此功能仅可通过REST API使用。
+
+另一个示例是、*存储单元*端点提供了LUN和NVMe命名空间的汇总视图。有多个端点，它们都基于或派生自 `/api/storage/storage-units`。您还应查看 `/api/storage/luns`和 `/api/storage/namespaces`。
+
+.对某些端点使用的HTTP方法的限制
+与统一ONTAP相比、ASA R2提供的多个端点对可使用的HTTP方法有一些限制。例如、 `/api/protocols/nvme/services`在ASA R2系统中使用端点时、不允许POST和DELETE。
+
+.端点和HTTP方法的属性更改
+某些ASA R2系统端点和方法组合不支持统一ONTAP特性中可用的所有已定义属性。例如，当对端点使用修补程序时 `/api/storage/volumes/{uuid}`，ASA R2不支持以下几个属性：
+
+* `autosize.maximum`
+* `autosize.minimum`
+* `autosize.mode`
+
+
+.对内部处理的更改
+ASA R2处理某些REST API请求的方式有几处变更。例如、端点的删除请求 `/api/storage/luns/{uuid}`会异步处理。
+
+
+
+== 通过OAuth2.0增强安全性
+
+OAuth2.0是行业标准授权框架。它用于根据已签名的访问令牌限制和控制对受保护资源的访问。您可以使用System Manager配置OAuth2.0以保护ASA R2系统资源。
+
+使用System Manager设置OAuth2.0后、可以控制REST API客户端的访问。您需要先从授权服务器获取访问令牌。然后、REST客户端使用HTTP授权请求标头将令牌作为承载令牌传递到ASA R2集群。有关详细信息、请参见 https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["使用OAuth2.0进行身份验证和授权"^] 。
+
+
+
+== 通过Swagger UI访问ASA R2 API参考文档
+
+您可以在ASA R2系统上通过Swagger UI访问REST API参考文档。
+
+.关于此任务
+有关REST API的详细信息、您应访问ASA R2参考文档页面。在此过程中，您可以搜索字符串*Platform specifices*，以查找有关ASA R2系统对API调用和属性的支持的详细信息。
+
+.开始之前
+您必须具备以下条件：
+
+* ASA R2系统的集群管理LIF的IP地址或主机名
+* 有权访问REST API的帐户的用户名和密码
+
+
+.步骤
+. 在浏览器中键入URL，然后按*Enter*:+
+`https://<ip_address>/docs/api`
+. 使用管理员帐户登录。
++
+此时将显示ASA R2 API文档页面、其中API调用按主要资源类别进行组织。
+
+. 要查看仅适用于ASA R2系统的API调用示例，请向下滚动到*SAN*类别，然后单击*GET /storage/storage-units*。
+

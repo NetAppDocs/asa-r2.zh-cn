@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: install-setup/set-up-data-access.html 
+keywords:  
+summary:  
+---
+= 启用从SAN主机到ASA R2存储系统的数据访问
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要设置数据访问、应确保在SAN客户端上正确配置对ONTAP正常运行至关重要的特定参数和设置。如果您使用的是VMware、则应迁移虚拟机。
+
+
+
+== 设置从SAN主机的数据访问
+
+根据主机操作系统和协议的不同、设置SAN主机对ASA R2系统的数据访问所需的配置也会有所不同。正确的配置对于获得最佳性能和成功进行故障转移至关重要。
+
+link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphere SCSI客户端"^]link:https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["VMware vSphere NVMe客户端"^]link:https://docs.netapp.com/us-en/ontap-sanhost/overview.html["其他SAN客户端"^]要正确配置主机以连接到ASA R2系统，请参见和的ONTAP SAN主机文档。
+
+
+
+== 迁移VMware虚拟机
+
+如果您需要将VM工作负载从ASA存储系统迁移到ASA R2存储系统、NetApp建议您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere vMotion"^]对数据执行实时、无中断迁移。
+
+.下一步是什么？
+您已准备好link:../manage-data/provision-san-storage.html["配置存储"]使SAN主机能够向存储单元读写数据。

@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: administer/rename-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: 您可能需要重命名节点、以符合组织的命名约定或出于其他管理原因。 
+---
+= 重命名ASA R2存储系统上的节点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP系统管理器重命名ASA R2系统上的节点。您可能需要重命名节点、以符合组织的命名约定或出于其他管理原因。
+
+.步骤
+. 在System Manager中、选择*集群>概述*。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]要重命名的节点旁边的，然后选择*Rename*。
+. 输入节点的新名称，然后选择*重 命名*。
+
+
+.结果
+此时、此新名称将应用于此节点。

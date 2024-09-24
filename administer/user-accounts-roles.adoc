@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: administer/user-accounts-roles.html 
+keywords:  
+summary:  
+---
+= 管理ASA R2存储系统上的用户帐户和角色
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用System Manager为用户帐户配置Active Directory域控制器访问、LDAP和SAML身份验证。创建用户帐户角色以定义分配给这些角色的用户可以在集群上执行的特定功能。
+
+
+
+== 配置Active Directory域控制器访问
+
+配置对集群或Storage VM的Active Directory (AD)域控制器访问权限、以便启用AD帐户访问。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*部分的*Active Directory*下，选择*Config*。
+
+
+.下一步是什么？
+现在、您可以在ASA R2系统上启用AD帐户访问。
+
+
+
+== 配置LDAP
+
+配置轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)服务器、以便集中维护用于身份验证的用户信息。
+
+.开始之前
+您必须已生成证书签名请求并添加CA签名的服务器数字证书。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*部分的*LDAP*旁边，选择image:icon_gear_white_bg.png["蓝色机械齿轮的轮廓"]。
+. 输入所需的LDAP服务器和绑定信息；然后选择*保存*。
+
+
+.下一步是什么？
+现在、您可以使用LDAP获取用户信息和进行身份验证。
+
+
+
+== 配置 SAML 身份验证
+
+通过安全断言标记语言(SAML)身份验证、用户可以通过安全身份提供程序(Idp)进行身份验证、而不是直接服务提供程序(如Active Directory和LDAP)进行身份验证。
+
+.开始之前
+* 必须配置计划用于远程身份验证的 IdP 。
++
+有关配置、请参见Idp文档。
+
+* 您必须具有 IdP 的 URI 。
+
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*安全性*下的*SAML身份验证*旁边，选择image:icon_gear_white_bg.png["机械齿轮的蓝色轮廓"]。
+. 选择*启用SAML身份验证*。
+. 输入IdP URL和主机系统IP地址；然后选择*保存*。
++
+此时将显示一个确认窗口，其中包含已自动复制到剪贴板的元数据信息。
+
+. 转到指定的Idp系统、然后从剪贴板复制元数据以更新系统元数据。
+. 返回System Manager中的确认窗口；然后选择*我已使用主机URI或元数据配置IdP*。
+. 选择*Logout*以启用基于SAML的身份验证。
++
+IdP 系统将显示身份验证屏幕。
+
+
+
+.下一步是什么？
+现在、您可以对用户帐户使用SAML身份验证。
+
+
+
+== 创建用户帐户角色
+
+初始化集群时、系统会自动创建集群管理员和Storage VM管理员的角色。创建其他用户帐户角色、以定义分配给这些角色的用户可以在集群上执行的特定功能。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*部分的*Users and Roles*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]。
+. 在*roles*下，选择 image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
+. 选择角色属性。
++
+要增加多个属性，请选择image:icon_add.gif["加号、后跟蓝色字母的单词add"]。
+
+. 选择 * 保存 * 。
+
+
+.结果
+此时将创建一个新的用户帐户、并可在ASA R2系统上使用。
+
+
+
+== 创建管理员帐户
+
+创建管理员用户帐户、以使帐户用户能够根据分配给帐户的角色在集群上执行特定操作。要增强帐户安全性、请在创建帐户时设置多因素身份验证(MFA)。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*部分的*Users and Roles*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]。
+. 在*USERS*下，选择image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
+. 输入用户名；然后选择要分配给用户的角色。
+. 选择用户登录方法和身份验证方法。
+. 要启用MFA，请选择image:icon_add.gif["加号、后跟蓝色字母的单词add"]，然后选择二级登录方法和身份验证方法
+. 输入用户的密码。
+. 选择 * 保存 * 。
+
+
+.结果
+此时将创建一个新的管理员帐户、并可在ASA R2集群上使用。

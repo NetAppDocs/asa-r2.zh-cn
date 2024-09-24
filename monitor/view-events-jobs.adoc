@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: monitor/view-events-jobs.html 
+keywords: view cluster events, view cluster jobs, event log, system alerts, jobs, audit logs, asa r2, event notifications, email notifications 
+summary: 使用ONTAP系统管理器可查看系统中发生的错误或警报列表以及建议的更正操作。 
+---
+= 查看ASA R2存储系统上的集群事件和作业
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP系统管理器可查看系统中发生的错误或警报列表以及建议的更正操作。您还可以查看系统审核日志以及活动、已完成或失败的作业列表。
+
+.步骤
+. 在System Manager中，选择*事件和作业*。
+. 查看集群事件和作业。
++
+[cols="2,4a"]
+|===
+| 要查看的内容 | 操作 
+
+
+| 集群事件  a| 
+选择*事件*；然后选择*事件日志*。
+
+
+
+| Active IQ建议  a| 
+选择*事件*；然后选择* Active IQ建议*。
+
+
+
+| 系统警报  a| 
+.. 选择*系统警报*。
+.. 选择要采取措施的系统警报。
+.. 确认或禁止警报。
+
+
+
+
+| 集群作业  a| 
+选择*作业*。
+
+
+
+| 审核日志  a| 
+选择*审核日志*。
+
+|===
+
+
+
+
+== 发送集群事件和审核日志的电子邮件通知
+
+配置系统、以便在出现集群事件或审核日志条目时向特定电子邮件地址发送通知。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在“*通知管理*”旁边选择image:icon_kabob.gif["三个垂直蓝点"]。
+. 要配置事件目标，请选择*查看事件目标*；然后选择*事件目标*。要配置审核日志目标，请选择*查看审核目标*；然后选择*审核日志目标*。
+. 选择。 image:icon_add_blue_bg.png["带有加号的蓝色矩形、后跟白色字母的单词add"]
+. 输入目的地信息，然后选择*Add*。
+
+
+.结果
+现在、您添加的电子邮件地址将收到集群事件和审核日志的指定电子邮件通知。

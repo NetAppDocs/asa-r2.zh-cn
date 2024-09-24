@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-certificates.html 
+keywords: asa r2, security, certificates, digital, certificate signing request, signing, request, trusted, authority, trusted certificate authority, client, server, local certificate, authorities, add, renew, delete, generate 
+summary: 使用数字安全证书验证远程服务器的身份。 
+---
+= 管理ASA R2存储系统上的安全证书
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用数字安全证书验证远程服务器的身份。
+
+联机证书状态协议（ Online Certificate Status Protocol ， OCSP ）使用 SSL 和传输层安全（ Transport Layer Security ， TLS ）连接验证 ONTAP 服务发出的数字证书请求的状态。
+
+
+
+== 生成证书签名请求
+
+生成证书签名请求(CSR)以创建可用于生成公共证书的专用密钥。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*下，在*Certificates*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]；然后选择image:icon_generate_csr.png["蓝色矩形、包含一个加号、后跟词Generate CSR"]。
+. 输入使用者通用名称、然后选择国家/地区。
+. 如果要更改GSR默认值，请选择扩展密钥用法，或者添加使用者替代名称，请选择image:icon_more_options.png["两个箭头朝对角方向相反、后跟\"更多选项\"字样"]；然后进行所需的更新。
+. 选择 * 生成 * 。
+
+
+.结果
+您已生成可用于生成公共证书的CSR。
+
+
+
+== 添加可信证书颁发机构
+
+ONTAP为使用传输层安全(Transport Layer Security、TLS)的应用程序提供一组默认的可信根证书。您可以根据需要添加其他受信任的证书颁发机构。
+
+.步骤
+. 选择*集群>设置*。
+. 在*Security*下，在*Certificates*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]。
+. 选择*可信证书颁发机构*。
+. 输入或导入证书详细信息；然后选择image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
+
+
+.结果
+您已向ASA R2系统添加新的可信证书颁发机构。
+
+
+
+== 续订或删除受信任的证书颁发机构
+
+可信证书颁发机构必须每年续订一次。如果您不想续订已过期的证书、则应将其删除。
+
+.步骤
+. 选择*集群>设置*。
+. 在*Security*下，在*Certificates*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]。
+. 选择*可信证书颁发机构*。
+. 选择要续订或删除的信任证书颁发机构。
+. 续订或删除证书颁发机构。
++
+[cols="2"]
+|===
+| 要续订证书颁发机构、请执行以下操作... | 要删除证书颁发机构、请执行以下操作... 
+
+
+ a| 
+.. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Renew*。
+.. 输入或导入证书信息，然后选择*Renew*。
+
+ a| 
+.. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Delete*。
+.. 确认要删除，然后选择*Delete*。
+
+
+|===
+
+
+.结果
+您已续订或删除ASA R2系统上的现有可信证书颁发机构。
+
+
+
+== 添加客户端/服务器证书或本地证书颁发机构
+
+添加客户端/服务器证书或本地证书颁发机构以启用安全Web服务。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*Security*下，在*Certificates*旁边，选择image:icon_arrow.gif["指向右侧的蓝色箭头"]。
+. 选择*客户端/服务器证书*或*本地证书颁发机构*。
+. 添加证书信息；然后选择image:icon_add_blue_bg.png["蓝色矩形、包含蓝色加号、后跟单词add"]。
+
+
+.结果
+您已向ASA R2系统添加新的客户端/服务器证书或本地颁发机构。
+
+
+
+== 续订或删除客户端/服务器证书或本地证书颁发机构
+
+客户端/服务器证书和本地证书颁发机构必须每年续订一次。如果您不想续订已过期的证书或本地证书颁发机构、则应将其删除。
+
+.步骤
+. 选择*集群>设置*。
+. 在*安全性*下，选择证书旁边的。image:icon_arrow.gif["指向右侧的蓝色箭头"]
+. 选择*客户端/服务器证书*或*本地证书颁发机构*。
+. 选择要续订或删除的证书。
+. 续订或删除证书颁发机构。
++
+[cols="2"]
+|===
+| 要续订证书颁发机构、请执行以下操作... | 要删除证书颁发机构、请执行以下操作... 
+
+
+ a| 
+.. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Renew*。
+.. 输入或导入证书信息，然后选择*Renew*。
+
+ a| 
+选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Delete*。
+
+|===
+
+
+.结果
+您已续订或删除ASA R2系统上的现有客户端/服务器证书或本地证书颁发机构。

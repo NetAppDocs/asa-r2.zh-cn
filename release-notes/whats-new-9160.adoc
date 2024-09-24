@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9160.html 
+keywords:  
+summary:  
+---
+= ONTAP 9 R2.16.0中适用于ASA R2系统的新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解适用于ASA R2系统的ONTAP 9。16.10中提供的新功能。
+
+
+
+== 平台
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| 新平台  a| 
+现已推出以下新的NetApp ASA R2系统。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+
+* ASA A1K
+* ASA A70
+* ASA A90
+
+
+|===
+
+
+== System Manager
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../get-started/learn-about.html["简化了对仅SAN客户的支持"] | System Manager经过简化、可提供对基本SAN功能的支持、同时消除SAN环境中不支持的特性和功能的可见性。 
+|===
+
+
+== 存储管理
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../manage-data/provision-san-storage.html["简化的存储管理"]  a| 
+ASA R2系统引入了使用存储单元和一致性组来简化存储管理的方法。
+
+* storage unit_可为SAN主机提供用于数据操作的存储空间。存储单元是指SCSI主机的LUN或NVMe主机的NVMe命名空间。
+* _A一致性组_是作为单个单元进行管理的一组存储单元。
+
+
+|===
+
+
+== 数据安全性
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../secure-data/encrypt-data-at-rest.html["板载密钥管理器和双层加密"]  a| 
+ASA R2系统支持板载密钥管理器和双层(硬件和软件)加密。
+
+|===

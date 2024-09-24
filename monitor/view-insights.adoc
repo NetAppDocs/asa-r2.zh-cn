@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: monitor/view-insights.html 
+keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
+summary: 在ONTAP系统管理器中查看洞察、确定可在ASA R2系统上实施的最佳实践和配置修改、以优化集群安全性和性能。 
+---
+= 利用ASA R2存储系统洞察优化集群安全性和性能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+查看ONTAP系统管理器中的_洞察力_、确定可在ASA R2系统上实施的最佳实践和配置修改、以优化集群安全性和性能。
+
+例如、假设您为集群配置了网络时间协议(Network Time Protocol、NTP)服务器。但是、您并不知道要实现最佳集群时间管理、所需的NTP服务器数量少于建议的数量。为了帮助您防止在集群时间不准确时可能发生的问题、Insight将通知您配置的NTP服务器太少、并为您提供了解有关此问题的更多信息、修复或取消此问题的选项。
+
+image:insights.png["System Manager洞察页面的屏幕截图"]
+
+.步骤
+. 在System Manager中、选择*洞察力*。
+. 审查建议。
+
+
+.下一步行动
+执行任何必要的操作以实施最佳实践并优化集群安全性和性能。
