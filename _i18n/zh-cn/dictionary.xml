@@ -256,7 +256,6 @@
   <block id="cd5ce84f06573fa36efd7de37fc1e5ba" category="summary">如果主机数据操作出现问题、您可以使用ONTAP系统管理器验证从主机到ASA R2存储系统的连接是否处于活动状态。</block>
   <block id="29aef3c4098e0c02a759b7ceeffd7bf5" category="doc">验证ASA R2存储系统上的主机连接</block>
   <block id="2066e94a3e5e94a8e4ebdca7307614e8" category="list-text">在System Manager中，选择*Host*。</block>
-  <block id="d6a0ea19a115b4b6c1b0c1db29d0f8c8" category="paragraph">主机连接状态显示在主机组名称旁边、如下所示：**确定*：表示所有启动程序均连接到两个节点。**已部分连接*：表示某些启动程序未同时连接两个节点。**未连接*：表示未连接任何启动程序。</block>
   <block id="7d19a1e7e72002fdb422d749fd4507db" category="paragraph">在主机上进行更新以更正连接问题。ONTAP将每十五分钟重新检查一次连接状态。</block>
   <block id="69cb7ab40e4d5787db8003ef13bf1939" category="summary">创建快照以备份ASA R2系统上的数据。您可以手动创建快照、也可以使用一致性组计划自动快照。</block>
   <block id="a72d39c43f1da3c8e4c29dc1a6cf6185" category="searchtitle">使用ONTAP系统管理器| ASA R2创建快照以备份数据</block>
@@ -1586,4 +1585,8 @@
   <block id="580170da57ca90dca0f62ce9faf29c6e" category="sidebar">安全NVMe连接</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
   <block id="4eae1c6da6a9edad5e5228cf8cfe3cdb" category="sidebar">ONTAP 9.16.0.中的新增功能</block>
+  <block id="0a57cb4625de2148aa1f3fe6815e78eb" category="paragraph">主机连接状态显示在主机组名称旁边、如下所示：</block>
+  <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">*OK*：表示所有启动程序都连接到两个节点。</block>
+  <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*部分连接*：表示某些启动程序未同时连接两个节点。</block>
+  <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*未连接*：表示未连接任何启动程序。</block>
 </blocks>
