@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-了解适用于ASA R2系统的ONTAP 9。16.10中提供的新功能。
+了解适用于ASA R2系统的ONTAP 9。16.0中提供的新功能。
 
 
 

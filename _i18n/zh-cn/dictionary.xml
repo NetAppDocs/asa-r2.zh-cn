@@ -1406,7 +1406,6 @@
   <block id="1a09338f7e8c6093f1d857fedaa4f9ab" category="list-text">审查建议。</block>
   <block id="e175dd30709c0589a580475db0f0f8fb" category="paragraph">执行任何必要的操作以实施最佳实践并优化集群安全性和性能。</block>
   <block id="826af48aa0c4b34379a1a65ba5721ebe" category="doc">ONTAP 9 R2.16.0中适用于ASA R2系统的新增功能</block>
-  <block id="e887ad295f9758b43d9c2af5b2fbd1b9" category="paragraph">了解适用于ASA R2系统的ONTAP 9。16.10中提供的新功能。</block>
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">平台</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">说明</block>
@@ -1529,8 +1528,6 @@
   <block id="adfd33fbce17f21dd8572d1c07677009" category="sidebar">对空闲数据进行加密</block>
   <block id="d8f87ca27811771e6005ec1e8989bb8c" category="sidebar">更多ASA R2资源</block>
   <block id="ff529c4d04327f7d20ae4d7b457bcd18" category="sidebar">ASA产品规格</block>
-  <block id="8162203e3ec38c896e5f6d688115d731" category="sidebar">ONTAP REST API参考</block>
-  <block id="27c7ca02055622739ea07ba1243d7683" category="sidebar">ONTAP EMS参考</block>
   <block id="69913262552614dd6dfbb8b0ef47e2e7" category="sidebar">其他ONTAP资源</block>
   <block id="ed93db7141f383118e5c6b577cb5fb60" category="sidebar">其他ONTAP系统的文档</block>
   <block id="dee4aa6b5a1005459bfb48609b6d209e" category="sidebar">ASA R2文档</block>
@@ -1589,4 +1586,5 @@
   <block id="5b13dc2b1f3390e14daacb1f2f882717" category="list-text">*OK*：表示所有启动程序都连接到两个节点。</block>
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*部分连接*：表示某些启动程序未同时连接两个节点。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*未连接*：表示未连接任何启动程序。</block>
+  <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">了解适用于ASA R2系统的ONTAP 9。16.0中提供的新功能。</block>
 </blocks>
