@@ -31,12 +31,6 @@ indexpage:
     links:
     - title: ASA产品规格
       url: https://www.netapp.com/data-storage/all-flash-san-storage-array/
-    - title: ONTAP命令参考
-      url: https://docs.netapp.com/us-en/ontap-cli/
-    - title: ONTAP REST API参考
-      url: https://docs.netapp.com/us-en/ontap-restapi/index.html
-    - title: ONTAP EMS参考
-      url: https://docs.netapp.com/us-en/ontap-ems/index.html
   - title: 其他ONTAP资源
     links:
     - title: 其他ONTAP系统的文档
