@@ -1585,4 +1585,6 @@
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会发现每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
   <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">以下NetApp ASA R2系统可用。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
+  <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">对数据压缩进行的更改</block>
+  <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">ASA R2系统不会应用对温度敏感的存储效率。在ASA R2系统上、数据压缩不基于_hot_(经常访问)数据或_col_(不经常访问)数据。数据压缩开始时无需等待数据变冷。</block>
 </blocks>
