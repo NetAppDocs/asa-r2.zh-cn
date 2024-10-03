@@ -332,7 +332,6 @@
   <block id="a3d38335033dbc3e63c68f76b308e45c" category="list-text">在*最大快照数*下、输入要保留一致性组的最大快照数。</block>
   <block id="72c9cc57bd3acc347a45ea0b780c14ab" category="list-text">(可选)在* SnapMirror label*下输入SnapMirror标签。</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步行动</block>
-  <block id="6b14136e2b75ff639f5ca263a5dd2a6a" category="paragraph">现在、您的数据已通过快照进行保护、您应<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>将一致性组复制到地理位置较远的位置、以便进行备份和灾难恢复。</block>
   <block id="cf8693d6af83f33c68a196b12cffa29d" category="section-title">从一致性组中删除Snapshot数据保护</block>
   <block id="0e79d9ba3e974f486c0f5945f4e9673a" category="paragraph">从一致性组中删除快照数据保护后、此一致性组中的所有存储单元都会禁用快照。</block>
   <block id="ddc789e2715034046ecb8d1c8ec50205" category="list-text">将鼠标悬停在要停止保护的一致性组上。</block>
@@ -365,7 +364,6 @@
   <block id="9c09f709a9761f564907022b7331dbb1" category="paragraph">如果您需要继续保护存储单元的数据、请将该存储单元添加到另一个一致性组。</block>
   <block id="793fd1e28f15d34822702f9d70403404" category="section-title">删除一致性组</block>
   <block id="2cd894b6ee2553a527a03b1a9086238b" category="paragraph">如果您不再需要将一致性组的成员作为一个单元进行管理、则可以删除此一致性组。删除一致性组后、该组中先前的存储单元将在集群上保持活动状态。</block>
-  <block id="8ca9256ffdf569f8b36fe638e605aa91" category="paragraph">如果要删除的一致性组位于复制关系中、则必须先中断此关系、然后再删除此一致性组。删除先前复制的一致性组后、该一致性组中的存储单元在集群上保持活动状态、其复制的副本仍保留在远程集群上。</block>
   <block id="3e905f617938aef0b388912bce87f2e2" category="list-text">将鼠标悬停在要删除的一致性组上。</block>
   <block id="b32275e0392f5cbab8806c7ce85e42f5" category="list-text">接受警告，然后选择*Delete*。</block>
   <block id="dde86492e27a0d7b75963e7c4b928397" category="paragraph">删除一致性组后、一致性组中先前的存储单元不再受快照保护。请考虑将这些存储单元添加到另一个一致性组中、以防止数据丢失。</block>
@@ -523,7 +521,6 @@
   <block id="71ba518a68888a9623c97c1553396f78" category="list-text">在System Manager中，选择*集群&gt;设置*。</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">在*Test AutoSupport<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>连通性*旁边选择；然后选择*Test连通性*。</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">输入AutoSupport消息的主题，然后选择*发送测试AutoSupport消息*。</block>
-  <block id="fcb35f0da100ee7cfd8c2c2acdcbb8c0" category="paragraph">您已确认技术支持可以从ASA R2系统接收AutoSupport消息、并且您遇到问题时、您将获得所需的数据来提供帮助。</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">添加AutoSupport收件人</block>
   <block id="4ceed55a3a8a0b3cd4cf3b3ad2f6c061" category="paragraph">将内部支持组织的成员添加到接收AutoSupport消息的电子邮件地址列表中。</block>
   <block id="9b7d22da73a3e8a3cf955ff556c4bae7" category="list-text">在* AutoSupport *旁边选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*更多选项*。</block>
@@ -1070,7 +1067,6 @@
   <block id="363188350b1fe2b934c479c977a89ece" category="paragraph-title">自动创建卷</block>
   <block id="eee98269dcd20c90abcc0a7bfb22f37c" category="paragraph">创建存储单元(LUN或命名空间)会自动从存储可用性区域创建卷。这样便可简化并使用通用命名空间。删除存储单元会自动删除关联的卷。</block>
   <block id="deb157545e882ae10d45f43fcb06f0df" category="paragraph-title">对精简配置和厚配置进行的更改</block>
-  <block id="0cc302b38ca94109fc2cffd503adb3d4" category="paragraph">的存储单元始终在ASA R2存储系统上进行精简配置。不支持厚配置。</block>
   <block id="3abf1b035bc420caf188c022ea7d792d" category="summary">ASA R2 REST API基于通过统一ONTAP特性提供的REST API、并根据ASA R2特性的独特特性和功能进行了许多更改。</block>
   <block id="48c7d320d017a90d970e154c81d07dc1" category="doc">ASA R2支持REST API</block>
   <block id="83e5ee07fc92447fe7a6ceed082d0c01" category="section-title">API更改类型</block>
@@ -1142,8 +1138,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
   <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">了解如何在ASA R2系统上执行维护过程。</block>
   <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">维护ASA R2存储系统</block>
-  <block id="2cc42d8e162137e099ab248df06c4f19" category="inline-link">ASA R2维护文档</block>
-  <block id="a779dc7ba81016ed421e7c384c5d1e30" category="paragraph"><block ref="54785b1ca9681752f04c4a927f80eaa1" category="inline-link-rx"></block>请访问、了解如何对ASA R2系统组件执行维护过程。</block>
   <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">克隆ASA R2上的存储单元和一致性组以创建数据副本、以便在生产环境之外用于各种用途。</block>
   <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">使用ONTAP System Manager克隆数据| ASA R2</block>
   <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">克隆ASA R2存储系统上的数据</block>
@@ -1335,7 +1329,6 @@
   <block id="7210645d4515e7cb96d5b26a294a9f25" category="searchtitle">使用ONTAP System Manager监控集群性能| ASA R2</block>
   <block id="064023636601914c7dfacc81fa4e3b57" category="doc">监控ASA R2存储系统上的集群和存储单元性能</block>
   <block id="ac48862a6c885879fa8b73f630f8e98f" category="paragraph">使用ONTAP系统管理器监控集群的整体性能以及特定存储单元的性能、以确定延迟、IOPS和吞吐量对关键业务应用程序的影响。可以在从一小时到一年的不同时间范围内监控性能。</block>
-  <block id="d2fee2bd5b0bc27aba9325efd2cf7765" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会注意到每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
   <block id="9ed62a90862b2040ffb0a91ecf532fff" category="section-title">监控集群性能</block>
   <block id="4d46d963226f35fc56c0527f9740cc00" category="paragraph">使用集群性能指标确定是否需要转移工作负载、以便最大程度地减少延迟并最大程度地提高关键应用程序的IOPS和吞吐量。</block>
   <block id="1d1e5cd96b3e552f9fc410fb90447401" category="list-text">在 System Manager 中，选择 * 信息板 * 。</block>
@@ -1587,4 +1580,10 @@
   <block id="c2520bb5c23501e13bc7e06dde3ae9fd" category="list-text">*部分连接*：表示某些启动程序未同时连接两个节点。</block>
   <block id="031e3ca05bd720350a450cc6267211e2" category="list-text">*未连接*：表示未连接任何启动程序。</block>
   <block id="d28f4031342956661d79f1274d2a395c" category="paragraph">了解适用于ASA R2系统的ONTAP 9。16.0中提供的新功能。</block>
+  <block id="6913e721908f172fd672e46e9459c4ad" category="paragraph">如果要删除的一致性组位于复制关系中、则必须先中断此关系、然后再删除此一致性组。删除复制一致性组后、该一致性组中的存储单元在集群上保持活动状态、其复制的副本仍保留在远程集群上。</block>
+  <block id="22a4c2b7564a7f7d551ab23d23fbcac8" category="paragraph">您已确认技术支持可以从您的ASA R2系统接收AutoSupport消息、并确保他们拥有必要的数据、以便在出现任何问题时为您提供帮助。</block>
+  <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">存储单元始终在ASA R2存储系统上进行精简配置。不支持厚配置。</block>
+  <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2维护文档</block>
+  <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph"><block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>请访问、了解如何对ASA R2系统组件执行维护过程。</block>
+  <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会发现每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
 </blocks>
