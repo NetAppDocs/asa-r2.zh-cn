@@ -556,7 +556,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">了解ASA A1K、ASA A70和ASA A90存储系统</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">了解ASA R2存储系统</block>
-  <block id="0ab1a7883d0399cbaf77a2e38633a6ea" category="paragraph">新的NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供了一个统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。NVMe协议支持主机和存储之间的直接路径。</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2系统介绍了如何使用具有一致性组的存储单元：</block>
@@ -1402,8 +1401,6 @@
   <block id="ed49a36c4fd547e5e2ace11bef4f21cf" category="section-title">平台</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">更新</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">说明</block>
-  <block id="2c84ef2816336594d59d5962b19f3047" category="cell">新平台</block>
-  <block id="13d09074058b667f0fc1cfa7487fab45" category="paragraph">现已推出以下新的NetApp ASA R2系统。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="26ed02718973e705cd69ee6e109400e0" category="section-title">System Manager</block>
   <block id="43216e15c49bb3bc0da538a8d830f901" category="inline-link-macro">简化了对仅SAN客户的支持</block>
   <block id="60dc71f158c44e4e34a36dec8e3210a5" category="cell"><block ref="60dc71f158c44e4e34a36dec8e3210a5" category="inline-link-macro-rx"></block></block>
@@ -1586,4 +1583,6 @@
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2维护文档</block>
   <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph"><block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>请访问、了解如何对ASA R2系统组件执行维护过程。</block>
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会发现每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
+  <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
+  <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">以下NetApp ASA R2系统可用。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
 </blocks>

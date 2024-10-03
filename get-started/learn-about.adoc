@@ -12,7 +12,7 @@ searchtitle: 了解ASA A1K、ASA A70和ASA A90存储系统
 
 
 [role="lead"]
-新的NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供了一个统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
 
 ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。NVMe协议支持主机和存储之间的直接路径。
 
