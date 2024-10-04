@@ -518,7 +518,6 @@
   <block id="8e3b3443f7322d7c7fc2e9b691e9b154" category="paragraph">您必须是集群管理员才能管理AutoSupport。</block>
   <block id="a1a978a0ef405a79f3b2c5f89d50b536" category="section-title">测试AutoSupport连接</block>
   <block id="d62c03a6357eefd7638471c82a6859be" category="paragraph">设置集群后、您应测试AutoSupport连接、以验证技术支持是否会收到AutoSupport生成的消息。</block>
-  <block id="71ba518a68888a9623c97c1553396f78" category="list-text">在System Manager中，选择*集群&gt;设置*。</block>
   <block id="ab7f391aba14be442463b48ba048fc7d" category="list-text">在*Test AutoSupport<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>连通性*旁边选择；然后选择*Test连通性*。</block>
   <block id="02b1e4285506fc0cffd29844e8121e1a" category="list-text">输入AutoSupport消息的主题，然后选择*发送测试AutoSupport消息*。</block>
   <block id="825777dd1ed1433192f80c9ec3cc95ab" category="section-title">添加AutoSupport收件人</block>
@@ -1451,15 +1450,12 @@
   <block id="f82f9abf9d39b3ea7e9931fe0ec02989" category="summary">使用防篡改快照保护数据安全。防篡改快照无法删除、可用于恢复受勒索软件攻击影响的数据。</block>
   <block id="17d54966a51825ee64011655de8e99f5" category="doc">防范ASA R2存储系统上的勒索软件攻击</block>
   <block id="bb09a1295cce99402c216baed3c2b937" category="paragraph">为了增强对勒索软件攻击的防护、请将快照复制到远程集群、然后锁定目标快照以防止其篡改。锁定的快照不会被意外或恶意删除。如果某个存储单元受到勒索软件攻击的威胁、您可以使用锁定的快照来恢复数据。</block>
-  <block id="049905961ea2e1141d23d71eb662076b" category="section-title">初始化SnapLock Compliance时钟</block>
-  <block id="045a584abdee8ddf49e1db3987711d93" category="paragraph">在创建防篡改快照之前、您必须初始化本地和目标集群上的SnapLock Compliance时钟。</block>
   <block id="7e59070af3e4cd3a421461f7774f3c87" category="list-text">选择 * 集群 &gt; 概述 * 。</block>
   <block id="045e8ceb02be472a9bc3e54ba6f1d811" category="list-text">在*N节点*部分中，选择*初 始化SnapLock Compliance Clock*。</block>
   <block id="2012a4286c3a1864d4fa11ba1cb42b1c" category="list-text">验证Compliance时钟是否已初始化。</block>
   <block id="2bc6e7414d5cb75e3addfdeb234222a1" category="inline-image-macro">白色背景上的三个蓝色列</block>
   <block id="ff632b6925cddc0c770d38368ff3755e" category="list-text">在*节点*部分中，选择<block ref="db89dee19aae8a41518f426597d8cb6e" category="inline-image-macro-rx" type="image"></block>；然后选择* SnapLock Compliance Clock*。</block>
   <block id="c19a0c09a1a9acec430b36accfdb5ac8" category="inline-link-macro">使用锁定的快照创建复制关系</block>
-  <block id="791bf7d3faa5342db177ff00f2bcca3f" category="paragraph">在本地集群和目标集群上初始化SnapLock Compliance时钟后，即可开始<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>。</block>
   <block id="25abedf12d26e4bc8960557833ebe68d" category="summary">观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。</block>
   <block id="9e9e90703a7077203260b19a3af9704a" category="doc">在ASA R2系统上配置SAN协议</block>
   <block id="21d3b12a5a9f6ff0d25b8b5e5e00b7ff" category="paragraph">以下是该视频的文字记录<block ref="1ef61309a2d73f2fc4d83b527ce1790e" prefix=" " category="inline-code"></block>。</block>
@@ -1587,4 +1583,8 @@
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">以下NetApp ASA R2系统可用。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">对数据压缩进行的更改</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">ASA R2系统不会应用对温度敏感的存储效率。在ASA R2系统上、数据压缩不基于_hot_(经常访问)数据或_col_(不经常访问)数据。数据压缩开始时无需等待数据变冷。</block>
+  <block id="e9dac8f777563b18c14aec6d0406e876" category="list-text">在System Manager中，选择*集群&gt;设置*。</block>
+  <block id="b16351f807fbda6965666255eef268dd" category="section-title">初始化SnapLock Compliance时钟</block>
+  <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">在创建防篡改快照之前、您必须初始化本地和目标集群上的SnapLock Compliance时钟。</block>
+  <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">在本地集群和目标集群上初始化SnapLock Compliance时钟后，即可开始<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>。</block>
 </blocks>
