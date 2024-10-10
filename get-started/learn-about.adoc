@@ -32,6 +32,6 @@ ASA R2系统不支持将集群与当前ASA、AFF或FAS系统混合使用。
 
 .了解更多信息
 * 有关ASA R2系统支持和限制的详细信息，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
-* 详细了解 link:../learn-more/hardware-comparison.html["新的ASA R2系统与ASA系统的对比"]。
+* 详细了解 link:../learn-more/hardware-comparison.html["ASA R2系统与ASA系统的对比"]。
 * 了解有关的更多信息link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"]。
 
