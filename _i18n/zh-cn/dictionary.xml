@@ -444,7 +444,6 @@
   <block id="40bf81e755dc73fb04ab21c9f9f5756c" category="searchtitle">使用ONTAP System Manager| ASA R2将快照复制到远程集群</block>
   <block id="52e62ad767d46ccf1912124d9b984dd6" category="doc">将快照从ASA R2存储系统复制到远程集群</block>
   <block id="f2b39b01edbe286e89542affc03f6d4f" category="paragraph">快照复制是指将ASA R2系统上的一致性组复制到地理位置较远的位置的过程。初始复制完成后、对一致性组所做的更改会根据复制策略复制到远程位置。复制的一致性组可用于灾难恢复或数据迁移。</block>
-  <block id="69ed1baaf5609225833ab8e05dd02cda" category="admonition">仅支持从ASA R2存储系统向另一个ASA R2存储系统进行快照复制。您不能将快照从ASA R2系统复制到当前的ASA、AFF或FAS系统。</block>
   <block id="a11f569aa7659d38ad74c3348435869e" category="paragraph">要设置Snapshot复制、您需要在ASA R2系统和远程位置之间建立复制关系。复制关系由复制策略管理。在集群设置期间会创建一个用于复制所有快照的默认策略。您可以使用默认策略、也可以选择创建新策略。</block>
   <block id="bb35c8e1197f3cb1f834baa178f51fdd" category="section-title">第1步：创建集群对等关系</block>
   <block id="256483a2b5ed8710e7c8fdf9ce515426" category="paragraph">在通过将数据复制到远程集群来保护数据之前、您需要在本地集群和远程集群之间创建集群对等关系。</block>
@@ -1590,4 +1589,5 @@
   <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2系统与ASA系统的对比</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">详细了解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">仅支持将ASA R2存储系统的快照复制到另一个R2存储系统、以及从另一个ASA R2存储系统进行快照复制。您不能将快照从ASA R2系统复制到当前ASA、AFF或FAS系统、也不能将快照从当前ASA、AFF或FAS系统复制到ASA R2系统。</block>
 </blocks>
