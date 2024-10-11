@@ -1585,9 +1585,9 @@
   <block id="6f7e58f2fc20167d69dc971955e6bb11" category="paragraph">在创建防篡改快照之前、您必须初始化本地和目标集群上的SnapLock Compliance时钟。</block>
   <block id="71c1cda56d6fad5ca8b28cabd1f98042" category="paragraph">在本地集群和目标集群上初始化SnapLock Compliance时钟后，即可开始<block ref="9e34609081a00054138ac6c8cbbd66f1" category="inline-link-macro-rx"></block>。</block>
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
-  <block id="f20a7be09bb1e964599f6a093df3c792" category="inline-link-macro">ONTAP 9 16.01通知</block>
-  <block id="7f4ce7e91f585315eb8df215a736469e" category="paragraph"><block ref="7f4ce7e91f585315eb8df215a736469e" category="inline-link-macro-rx"></block></block>
   <block id="7634d59040fd3f0630abac42ed05842e" category="inline-link-macro">ASA R2系统与ASA系统的对比</block>
   <block id="0a1c5c73cbf93d4b2d88ff0be84d2900" category="list-text">详细了解 <block ref="c736257475481e43d317d6d66a81a5cb" category="inline-link-macro-rx"></block>。</block>
   <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">仅支持将ASA R2存储系统的快照复制到另一个R2存储系统、以及从另一个ASA R2存储系统进行快照复制。您不能将快照从ASA R2系统复制到当前ASA、AFF或FAS系统、也不能将快照从当前ASA、AFF或FAS系统复制到ASA R2系统。</block>
+  <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">ONTAP 9的通知。16.1.</block>
+  <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
 </blocks>
