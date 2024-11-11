@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9160.html 
-keywords:  
-summary:  
+keywords: 'what"s new, release notes, 9.16.0, asa r2, asa a1k, asa 70, asa 90' 
+summary: 了解适用于ASA R2系统的ONTAP 9。16.0中提供的新功能。 
 ---
 = ONTAP 9 R2.16.0中适用于ASA R2系统的新增功能
 :hardbreaks:

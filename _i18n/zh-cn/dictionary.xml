@@ -277,7 +277,6 @@
   <block id="e7c7a96626caf7f10a69abd91e0c9657" category="section-title">第2步：创建快照</block>
   <block id="5ad8d455ea57e1690a8dd08af1513587" category="paragraph">快照是数据的本地只读副本、可用于将存储单元还原到特定时间点。</block>
   <block id="a55eea56b3b5ac156631717b66974529" category="inline-link-macro">Snapshot策略和计划</block>
-  <block id="aa2f9feb235086807c06e316a374c42b" category="paragraph">快照可以按需创建，也可以根据定期自动创建<block ref="174ad3d131cf18990fcf462c1e80dea1" category="inline-link-macro-rx"></block>。快照策略和计划用于指定何时创建快照、要保留多少副本、如何为其命名以及如何为其添加复制标签。例如、系统可能会在每天中午12：10创建一个快照、保留两个最新副本、将其命名为"day"(附加时间戳)、并将其标记为"day"以进行复制。</block>
   <block id="778e49c36a4b37504a26fe297bcd89cd" category="paragraph-title">快照类型</block>
   <block id="d6acd69ed4935a0b24bcc6574f0a4d59" category="paragraph">您可以为单个存储单元或一致性组创建按需快照。您可以为包含多个存储单元的一致性组创建自动快照。您不能为单个存储单元创建自动快照。</block>
   <block id="92cd7e74f8f496ce11ec549a066c7294" category="list-text">按需快照</block>
@@ -1590,4 +1589,25 @@
   <block id="420a0f9e5b6b25901e8477f2031c4f09" category="admonition">仅支持将ASA R2存储系统的快照复制到另一个R2存储系统、以及从另一个ASA R2存储系统进行快照复制。您不能将快照从ASA R2系统复制到当前ASA、AFF或FAS系统、也不能将快照从当前ASA、AFF或FAS系统复制到ASA R2系统。</block>
   <block id="3f808654ebfed6aae875b71a402ac91b" category="inline-link-macro">ONTAP 9的通知。16.1.</block>
   <block id="ccde34ed9a96a11b25c1db2a8c9acb87" category="paragraph"><block ref="ccde34ed9a96a11b25c1db2a8c9acb87" category="inline-link-macro-rx"></block></block>
+  <block id="82f8a3cbf0a93791bbbfc70a1b650bcf" category="paragraph">快照可以按需创建，也可以根据定期自动创建<block ref="83bfa2dc5e6407223dca634141b43309" category="inline-link-macro-rx"></block>。快照策略和计划用于指定何时创建快照、要保留多少副本、如何为其命名以及如何为其添加复制标签。例如、系统可能会在每天中午12：10创建一个快照、保留两个最新副本、将其命名为"day"(附加时间戳)、并将其标记为"day"以进行复制。</block>
+  <block id="45572a9b40e369d2ef8629844808cced" category="summary">了解影响ASA R2系统的限制和默认值更改。</block>
+  <block id="1103c7c9b683247c76b5f25f9cd64b74" category="doc">对影响ASA R2系统的ONTAP限制和默认值进行的更改</block>
+  <block id="1daa1b3cc6e7b6b7a591ba10582085a8" category="paragraph">了解影响ASA R2系统的限制和默认值更改。NetApp致力于帮助客户了解每个ONTAP版本中最重要的默认和限制变更。</block>
+  <block id="d579ca395df40cbbb953cb531ce23a3d" category="section-title">对ONTAP限制进行的更改</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">功能</block>
+  <block id="4d209cddba5e4e3f517cda6d0180e867" category="cell">限制更改</block>
+  <block id="b0aeee779af528e83de1fcb141fbbca7" category="cell">版本中已更改...</block>
+  <block id="d705195acc2d17086d7e28da066d6c23" category="cell">存储单元</block>
+  <block id="6f758206269a4d26aaaac9a25afe7fe5" category="cell">每个HA对的最大存储单元数从2500增加到10000。</block>
+  <block id="31272abf1c9209ab4acd0bf10f129338" category="cell">ONTAP 9.16.1.</block>
+  <block id="456488f81b27ee2e1475e6d76ffad2ca" category="summary">了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。</block>
+  <block id="02b0c0371a6864d344959c06c5237165" category="doc">ONTAP 9 R2.161中针对ASA R2系统的新增功能</block>
+  <block id="fd18465573ec21a6218982055981f6b1" category="section-title">存储效率</block>
+  <block id="3a405933969f80a6182b8257c15c10ff" category="cell">默认情况下、NVMe空间取消分配处于启用状态</block>
+  <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">默认情况下、NVMe命名空间会启用空间取消分配(也称为"打孔"和"取消映射")。通过空间取消分配、主机可以取消分配未使用的块、以便回收空间。</block>
+  <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">这样可以显著提高整体存储效率、尤其是在数据周转量较高的文件系统中。</block>
+  <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">在密钥管理器之间迁移ONTAP数据加密密钥</block>
+  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1.中的新增功能</block>
+  <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">对ONTAP默认值和限制进行的更改</block>
 </blocks>

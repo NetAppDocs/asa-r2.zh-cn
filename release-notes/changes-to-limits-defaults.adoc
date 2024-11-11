@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: release-notes/changes-to-limits-defaults.html 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+summary: 了解影响ASA R2系统的限制和默认值更改。 
+---
+= 对影响ASA R2系统的ONTAP限制和默认值进行的更改
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解影响ASA R2系统的限制和默认值更改。NetApp致力于帮助客户了解每个ONTAP版本中最重要的默认和限制变更。
+
+
+
+== 对ONTAP限制进行的更改
+
+[cols="2,4,4"]
+|===
+| 功能 | 限制更改 | 版本中已更改... 
+
+
+| 存储单元 | 每个HA对的最大存储单元数从2500增加到10000。 | ONTAP 9.16.1. 
+|===

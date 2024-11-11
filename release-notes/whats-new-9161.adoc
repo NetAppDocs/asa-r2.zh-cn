@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9161.html 
+keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa 70, asa 90' 
+summary: 了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。 
+---
+= ONTAP 9 R2.161中针对ASA R2系统的新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。
+
+
+
+== 存储效率
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| 默认情况下、NVMe空间取消分配处于启用状态  a| 
+默认情况下、NVMe命名空间会启用空间取消分配(也称为"打孔"和"取消映射")。通过空间取消分配、主机可以取消分配未使用的块、以便回收空间。
+
+这样可以显著提高整体存储效率、尤其是在数据周转量较高的文件系统中。
+
+|===
