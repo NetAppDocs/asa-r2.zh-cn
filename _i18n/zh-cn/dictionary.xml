@@ -1607,7 +1607,7 @@
   <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">默认情况下、NVMe命名空间会启用空间取消分配(也称为"打孔"和"取消映射")。通过空间取消分配、主机可以取消分配未使用的块、以便回收空间。</block>
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">这样可以显著提高整体存储效率、尤其是在数据周转量较高的文件系统中。</block>
   <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">在密钥管理器之间迁移ONTAP数据加密密钥</block>
-  <block id="ba905aa152bc67dfe7369966e1f7b161" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="ddc33c992daebda8b45882e4c40e07d4" category="inline-link-macro-rx"></block>。</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1.中的新增功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">对ONTAP默认值和限制进行的更改</block>
+  <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>。</block>
 </blocks>

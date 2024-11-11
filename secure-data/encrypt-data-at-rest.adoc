@@ -52,4 +52,4 @@ NetApp存储加密(NSE)支持使用自加密驱动器(Self-Encryption Drive、SE
 .下一步是什么？
 现在、您已对空闲数据进行加密、如果您使用的是NVMe/TCP协议、则可以link:nvme-tcp-connections.html["对通过网络发送的所有数据进行加密"]在NVMe/TCP主机和ASA R2系统之间进行加密。
 
-如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers["在密钥管理器之间迁移ONTAP数据加密密钥"^]。
+如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/migrate-keys-between-key-managers.html["在密钥管理器之间迁移ONTAP数据加密密钥"^]。
