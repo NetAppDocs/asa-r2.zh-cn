@@ -553,7 +553,6 @@
   <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
   <block id="0ef2f5aecf77f5521c5e2b69fdb889af" category="searchtitle">了解ASA A1K、ASA A70和ASA A90存储系统</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">了解ASA R2存储系统</block>
-  <block id="4fdeef14779674f92738c7750c976920" category="paragraph">ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。NVMe协议支持主机和存储之间的直接路径。</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2系统介绍了如何使用具有一致性组的存储单元：</block>
   <block id="db202dbb9a4a22e347c683ae7290b969" category="list-text">storage unit_可为SAN主机提供用于数据操作的存储空间。存储单元是指SCSI主机的LUN或NVMe主机的NVMe命名空间。</block>
@@ -1101,8 +1100,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">对象协议</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror和S3 API</block>
-  <block id="f161dc3326510eaa0a4043b0403c9d6a" category="list-text">SnapMirror到云</block>
-  <block id="22d5ef0e46679353c835a058a6447e5d" category="list-text">SnapMirror到非ASA R2系统</block>
   <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">选择性 LUN 映射（ SLM ）</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2系统支持以下功能：</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">Snaplock</block>
@@ -1342,7 +1339,6 @@
   <block id="e41cfa628f1aae1b344d1fcccc79b676" category="section-title">监控集群利用率</block>
   <block id="60522db54655ef0faaafdeb6e1dd2f6c" category="paragraph">定期监控集群占用的存储量、以确保根据需要在用尽空间之前准备好扩展集群容量。</block>
   <block id="5ba997683bb88c0bd7da49e5420cd3b9" category="list-text">在*容量*下、查看集群上的已用物理空间量和可用空间量。</block>
-  <block id="3de31d3507312269ff6fd5ae8a31e0b7" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
   <block id="049df4c0a4a8d9829026cfcdd73b2fa6" category="inline-link-macro">添加新驱动器</block>
   <block id="70e4aa2a60c8c55fc487bdeaf9688dea" category="paragraph">如果集群的空间不足或其容量不足以满足未来需求、则应计划<block ref="652f39ff07f6641e851e14e8190a6b59" category="inline-link-macro-rx"></block>使用ASA R2系统来增加存储容量。</block>
   <block id="b9de8a926e3bbf2f3ddad971b60d4639" category="section-title">监控存储单元利用率</block>
@@ -1610,4 +1606,8 @@
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1.中的新增功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">对ONTAP默认值和限制进行的更改</block>
   <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>。</block>
+  <block id="741966f7a31d60fddc8857d2cb9fb674" category="paragraph">ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。</block>
+  <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror (异步和同步)到云</block>
+  <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (异步和同步)到非ASA R2系统</block>
+  <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
 </blocks>
