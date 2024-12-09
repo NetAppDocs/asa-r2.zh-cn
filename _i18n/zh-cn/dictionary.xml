@@ -565,7 +565,6 @@
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">了解有关的更多信息<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
   <block id="05b76f77eda2923699bcc5fed0226549" category="summary">要开始使用ASA R2 (ASA A1K、ASA A70、ASA A90)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
   <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">安装和设置ASA A1K、ASA A70和ASA A90存储系统</block>
-  <block id="ceb35ef309bc127d4f8d63986f004986" category="doc">ASA R2存储系统快速入门</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">要启动并运行ASA R2系统、需要安装硬件组件、设置集群、设置主机对存储系统的数据访问以及配置存储。</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一个</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>安装和设置硬件</block>
@@ -1611,4 +1610,5 @@
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (异步和同步)到非ASA R2系统</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。</block>
+  <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2存储系统快速入门</block>
 </blocks>
