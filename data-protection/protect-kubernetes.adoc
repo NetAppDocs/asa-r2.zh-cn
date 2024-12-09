@@ -13,5 +13,8 @@ summary: 使用Astra Control将应用程序和数据从一个Kubbernetes集群�
 [role="lead"]
 使用Astra Control Center保护Kubbernetes应用程序。Astra控制中心允许您将应用程序和数据从一个Kubnetes集群迁移到另一个集群、使用NetApp SnapMirror技术将应用程序复制到远程系统、以及将应用程序从暂存克隆到生产环境。
 
+
+NOTE: 仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。
+
 .了解更多信息
 link:https://docs.netapp.com/us-en/astra-control-service/use/protect-apps.html["详细了解如何使用Astra Control保护Kubbernetes应用程序"^](英文)

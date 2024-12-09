@@ -1610,4 +1610,5 @@
   <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror (异步和同步)到云</block>
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (异步和同步)到非ASA R2系统</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
+  <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。</block>
 </blocks>
