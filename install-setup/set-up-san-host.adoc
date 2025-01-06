@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: install-setup/set-up-san-host.html 
+keywords: san, host, configuration, fc, iscsi, nvme, zoning, fabric, network 
+summary: ASA R2系统在SAN主机配置方面遵循与所有其他ONTAP系统相同的建议和准则。 
+---
+= 使用ASA R2系统的SAN主机配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA R2系统在SAN主机配置方面遵循与所有其他ONTAP系统相同的建议和准则。
+
+建议使用两个或更多交换机将存储系统连接到一个或多个SAN主机。对于iSCSI配置、连接主机、交换机和存储系统的网络拓扑称为_network_。对于FC和FC-NVMe配置、这种相同的网络拓扑也称为_FC_。
+
+建议使用多网络或多网络结构配置(使用两个或更多交换机的配置)、因为它们可在交换机层和存储层提供冗余。这种冗余可提高存储系统的容错能力、并支持无中断运行。
+
+下图显示了一个FC配置示例、其中多个主机使用两个网络结构访问一个HA对。FC目标端口号(0c、0d、1a、1b)也是示例。实际端口号因平台型号以及是否使用扩展适配器而异。
+
+image::multi-fabric-san-configuration.png[两个FC网络结构、用于将多个主机连接到一个HA对]
+
+详细了解 link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI主机的SAN配置"^]。详细了解 link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC和FC/NVMe主机的SAN配置"^]。
+
+
+
+== FC主机的分区建议
+
+您应将FC主机配置为使用分区。ASA R2系统与所有其他ONTAP系统遵循相同的FC主机分区建议和准则。
+
+分区是指网络结构中一个或多个端口的逻辑分组。要使设备能够发现彼此、彼此建立会话并进行通信、两个端口都必须具有公共区域成员资格。
+
+详细了解 link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html["FC/FC-NVMe分区"^]。

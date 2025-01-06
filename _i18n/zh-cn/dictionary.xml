@@ -1611,4 +1611,19 @@
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2存储系统快速入门</block>
   <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">了解ASA R2存储系统：A1K、A90和A70</block>
+  <block id="465ce601131c87fafd3a4a3da5836246" category="summary">ASA R2系统在SAN主机配置方面遵循与所有其他ONTAP系统相同的建议和准则。</block>
+  <block id="9a364a877707d0b61983419895ba3632" category="doc">使用ASA R2系统的SAN主机配置</block>
+  <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">建议使用两个或更多交换机将存储系统连接到一个或多个SAN主机。对于iSCSI配置、连接主机、交换机和存储系统的网络拓扑称为_network_。对于FC和FC-NVMe配置、这种相同的网络拓扑也称为_FC_。</block>
+  <block id="1ea2e359c5275499813dff319ee20baa" category="paragraph">建议使用多网络或多网络结构配置(使用两个或更多交换机的配置)、因为它们可在交换机层和存储层提供冗余。这种冗余可提高存储系统的容错能力、并支持无中断运行。</block>
+  <block id="37fdee11e5eadf392d943f0a18609831" category="paragraph">下图显示了一个FC配置示例、其中多个主机使用两个网络结构访问一个HA对。FC目标端口号(0c、0d、1a、1b)也是示例。实际端口号因平台型号以及是否使用扩展适配器而异。</block>
+  <block id="cafd65a257cc24af0e84e8951ad9d9b5" category="image-alt">两个FC网络结构、用于将多个主机连接到一个HA对</block>
+  <block id="7934e04423cdef3122abed138d14e800" category="inline-link-macro">iSCSI主机的SAN配置</block>
+  <block id="1697498835ad65fe0eb56d5a08926207" category="inline-link-macro">FC和FC/NVMe主机的SAN配置</block>
+  <block id="ebd194f81358f792dec388e009d8bec3" category="paragraph">详细了解 <block ref="9880b1feac4156c93ea0abed0c0efc7f" category="inline-link-macro-rx"></block>。详细了解 <block ref="e620f7fdd29d4d62cc1639e7aa82a5ed" category="inline-link-macro-rx"></block>。</block>
+  <block id="f32de8a0d0833354764d0913e73367fa" category="section-title">FC主机的分区建议</block>
+  <block id="3efb87f7842540462326a834b157f4ab" category="paragraph">您应将FC主机配置为使用分区。ASA R2系统与所有其他ONTAP系统遵循相同的FC主机分区建议和准则。</block>
+  <block id="db6c51496ac3638e90475615dca619b4" category="paragraph">分区是指网络结构中一个或多个端口的逻辑分组。要使设备能够发现彼此、彼此建立会话并进行通信、两个端口都必须具有公共区域成员资格。</block>
+  <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">FC/FC-NVMe分区</block>
+  <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">详细了解 <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>。</block>
+  <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">设置SAN主机配置</block>
 </blocks>

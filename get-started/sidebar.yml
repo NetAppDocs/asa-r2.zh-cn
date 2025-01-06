@@ -24,5 +24,7 @@ entries:
   entries:
   - title: 设置集群
     url: "/install-setup/initialize-ontap-cluster.html"
+  - title: 设置SAN主机配置
+    url: "/install-setup/set-up-san-host.html"
   - title: 设置数据访问
     url: "/install-setup/set-up-data-access.html"
