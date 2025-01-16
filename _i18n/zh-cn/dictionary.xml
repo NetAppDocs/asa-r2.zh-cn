@@ -900,7 +900,6 @@
   <block id="b1d1ac1660761a14f96c8c2916c338ee" category="inline-link-macro">安装ASA R2存储系统的硬件</block>
   <block id="1657efe0ea96d15a299ea1851942c2a9" category="paragraph">准备好安装ASA R2硬件后，您可以<block ref="fb5e4a441151f85bf2036b60142e5f3c" category="inline-link-macro-rx"></block>。</block>
   <block id="7c67b8b9f7d3533c33fb6cecf037204c" category="doc">启用从SAN主机到ASA R2存储系统的数据访问</block>
-  <block id="2fa6f858dba87204a24e814faeae2b1a" category="paragraph">要设置数据访问、应确保在SAN客户端上正确配置对ONTAP正常运行至关重要的特定参数和设置。如果您使用的是VMware、则应迁移虚拟机。</block>
   <block id="4c686f129e697b3603247005c22c0238" category="section-title">设置从SAN主机的数据访问</block>
   <block id="f66720607a76ceed4cebe5d6d2110bf4" category="paragraph">根据主机操作系统和协议的不同、设置SAN主机对ASA R2系统的数据访问所需的配置也会有所不同。正确的配置对于获得最佳性能和成功进行故障转移至关重要。</block>
   <block id="e3e3a193f32926fa7dded05dbaba1a71" category="inline-link-macro">VMware vSphere SCSI客户端</block>
@@ -1626,4 +1625,18 @@
   <block id="61cf7293359faa875bba34aec2374d5e" category="inline-link-macro">FC/FC-NVMe分区</block>
   <block id="05c164818e6cf72673636c3f026f35fd" category="paragraph">详细了解 <block ref="04395b79c4c7664c0e1d06aced656acd" category="inline-link-macro-rx"></block>。</block>
   <block id="9567f97a2f92160f66cfc2ac7b1e9cc2" category="sidebar">设置SAN主机配置</block>
+  <block id="fbbf9bfec249398ad3da62c3698ce2ad" category="paragraph">要设置数据访问、您应确保已正确配置SAN客户端上的关键参数和设置、以便在ONTAP中正常运行。如果要为VMware环境提供存储、则应安装OTV 10.3、以便轻松管理ASA R2存储。</block>
+  <block id="1496c484b551cb8fd3b8676b0332a8a2" category="section-title">在VMware环境中将ASA R2系统配置为存储提供程序</block>
+  <block id="a9e0f432b63d28e01f9f96baf47e7876" category="paragraph">您可以使用适用于VMware的ONTAP工具在VMware环境中轻松启用ASA R2系统作为存储提供程序。</block>
+  <block id="5d5cb8b837d9b4bfd91c87d5d93d3eef" category="paragraph">适用于VMware vSphere的ONTAP工具是一组可与VMware vCenter Server虚拟设备(vCSA)结合使用的工具、用于轻松管理VMware ESXi主机上的虚拟机。</block>
+  <block id="2e0332b2709dcff7df5d28c654c54066" category="inline-link-macro">适用于 VMware vSphere 的 ONTAP 工具 10.3</block>
+  <block id="8e4d015f72125fee6a1076da698cfa9b" category="paragraph">及更高版本支持ASA R2系统<block ref="cf4d7ec541bcf67d4856d52c8275160d" category="inline-link-macro-rx"></block>。</block>
+  <block id="8b1987d01ceab7f9e7729fcf1f463c97" category="inline-link-macro">部署适用于VMware的ONTAP工具</block>
+  <block id="8a8beafe3fa2e4ea217e97bf12a3bb91" category="paragraph">了解如何操作<block ref="5a39da81f88e74c1cffe4258059e9f43" category="inline-link-macro-rx"></block>、然后使用它执行以下操作：</block>
+  <block id="6245e46af5a3bdaf57696763c4214c70" category="inline-link-macro">添加vCenter Server实例</block>
+  <block id="384abfcd711546895f3224c5e42e8128" category="list-text"><block ref="384abfcd711546895f3224c5e42e8128" category="inline-link-macro-rx"></block></block>
+  <block id="9a36f8e08fbdd31aefe88585b5de036e" category="inline-link-macro">配置ESXi主机设置</block>
+  <block id="28098493f634877a20d2a424bec3e673" category="list-text"><block ref="28098493f634877a20d2a424bec3e673" category="inline-link-macro-rx"></block></block>
+  <block id="0fc12de41b656aa3f728162d7984cb09" category="inline-link-macro">发现ASA R2存储系统和主机</block>
+  <block id="73a36b5cc4b414970076f394e3abf9e4" category="list-text"><block ref="73a36b5cc4b414970076f394e3abf9e4" category="inline-link-macro-rx"></block></block>
 </blocks>
