@@ -1632,11 +1632,11 @@
   <block id="2e0332b2709dcff7df5d28c654c54066" category="inline-link-macro">适用于 VMware vSphere 的 ONTAP 工具 10.3</block>
   <block id="8e4d015f72125fee6a1076da698cfa9b" category="paragraph">及更高版本支持ASA R2系统<block ref="cf4d7ec541bcf67d4856d52c8275160d" category="inline-link-macro-rx"></block>。</block>
   <block id="8b1987d01ceab7f9e7729fcf1f463c97" category="inline-link-macro">部署适用于VMware的ONTAP工具</block>
-  <block id="8a8beafe3fa2e4ea217e97bf12a3bb91" category="paragraph">了解如何操作<block ref="5a39da81f88e74c1cffe4258059e9f43" category="inline-link-macro-rx"></block>、然后使用它执行以下操作：</block>
   <block id="6245e46af5a3bdaf57696763c4214c70" category="inline-link-macro">添加vCenter Server实例</block>
-  <block id="384abfcd711546895f3224c5e42e8128" category="list-text"><block ref="384abfcd711546895f3224c5e42e8128" category="inline-link-macro-rx"></block></block>
   <block id="9a36f8e08fbdd31aefe88585b5de036e" category="inline-link-macro">配置ESXi主机设置</block>
-  <block id="28098493f634877a20d2a424bec3e673" category="list-text"><block ref="28098493f634877a20d2a424bec3e673" category="inline-link-macro-rx"></block></block>
   <block id="0fc12de41b656aa3f728162d7984cb09" category="inline-link-macro">发现ASA R2存储系统和主机</block>
-  <block id="73a36b5cc4b414970076f394e3abf9e4" category="list-text"><block ref="73a36b5cc4b414970076f394e3abf9e4" category="inline-link-macro-rx"></block></block>
+  <block id="9f667122d1f4a37eb82e0ca156981527" category="paragraph">了解如何操作<block ref="4b862221b46b83d157a388a88f64df61" category="inline-link-macro-rx"></block>、然后使用它执行以下操作：</block>
+  <block id="a40657a47b74f3006bcfdd2899235090" category="list-text"><block ref="a40657a47b74f3006bcfdd2899235090" category="inline-link-macro-rx"></block></block>
+  <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
+  <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
 </blocks>
