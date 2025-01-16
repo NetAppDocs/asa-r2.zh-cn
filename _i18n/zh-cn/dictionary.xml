@@ -1630,7 +1630,6 @@
   <block id="a9e0f432b63d28e01f9f96baf47e7876" category="paragraph">您可以使用适用于VMware的ONTAP工具在VMware环境中轻松启用ASA R2系统作为存储提供程序。</block>
   <block id="5d5cb8b837d9b4bfd91c87d5d93d3eef" category="paragraph">适用于VMware vSphere的ONTAP工具是一组可与VMware vCenter Server虚拟设备(vCSA)结合使用的工具、用于轻松管理VMware ESXi主机上的虚拟机。</block>
   <block id="2e0332b2709dcff7df5d28c654c54066" category="inline-link-macro">适用于 VMware vSphere 的 ONTAP 工具 10.3</block>
-  <block id="8e4d015f72125fee6a1076da698cfa9b" category="paragraph">及更高版本支持ASA R2系统<block ref="cf4d7ec541bcf67d4856d52c8275160d" category="inline-link-macro-rx"></block>。</block>
   <block id="8b1987d01ceab7f9e7729fcf1f463c97" category="inline-link-macro">部署适用于VMware的ONTAP工具</block>
   <block id="6245e46af5a3bdaf57696763c4214c70" category="inline-link-macro">添加vCenter Server实例</block>
   <block id="9a36f8e08fbdd31aefe88585b5de036e" category="inline-link-macro">配置ESXi主机设置</block>
@@ -1639,4 +1638,5 @@
   <block id="a40657a47b74f3006bcfdd2899235090" category="list-text"><block ref="a40657a47b74f3006bcfdd2899235090" category="inline-link-macro-rx"></block></block>
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
+  <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">及更高版本支持ASA R2系统<block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block>。</block>
 </blocks>
