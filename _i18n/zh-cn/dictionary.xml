@@ -1091,7 +1091,6 @@
   <block id="769cac8936a099436eaf35a70beb7039" category="summary">虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某些ONTAP软件功能不受支持。</block>
   <block id="c305c29e81953bb01b7c42d73fc8099c" category="doc">ASA R2存储系统的ONTAP软件支持和限制</block>
   <block id="2f7f66e818d17cdf226ec888e94e2751" category="list-title">ASA R2系统不支持以下功能：</block>
-  <block id="e2d11c222fd8d727dcdcff1a70a7c1c0" category="list-text">iSCSI LIF故障转移</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="list-text">FabricPool</block>
   <block id="e4bc96983300161ae3464466c0030db7" category="list-text">LUN厚配置</block>
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
@@ -1639,4 +1638,10 @@
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
   <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">及更高版本支持ASA R2系统<block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block>。</block>
+  <block id="ace9c44d680e3a8684441fd776f4db68" category="paragraph">如果要启用自动iSCSI LIF故障转移、则必须创建仅iSCSI LIF。启用自动iSCSI LIF故障转移后、如果发生存储故障转移、iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在该端口恢复运行状况良好后、再迁移回其原始端口。</block>
+  <block id="38db38181d3edceaf9353ed23bb6a1d6" category="paragraph">要创建单个协议LIF、请仅选择一个协议。例如，要创建仅iSCSI LIF，请选择*iSCSI*。</block>
+  <block id="f08b07b736a8c5201accc4549e8a0762" category="list-text">默认自动iSCSI LIF故障转移</block>
+  <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">创建仅iSCSI LIF</block>
+  <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在ASA R2系统中、默认网络LIF在NVMe和SCSI主机之间共享、因此不支持自动故障转移。要启用自动iSCSI LIF故障转移，您必须<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>。默认情况下、自动故障转移在仅限iSCSI的LUN上启用。</block>
+  <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">启用自动iSCSI LIF故障转移后、如果发生存储故障转移、iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在该端口恢复运行状况良好后、再迁移回其原始端口。</block>
 </blocks>

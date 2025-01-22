@@ -14,7 +14,13 @@ summary: 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某�
 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某些ONTAP软件功能不受支持。
 
 .ASA R2系统不支持以下功能：
-* iSCSI LIF故障转移
+* 默认自动iSCSI LIF故障转移
++
+在ASA R2系统中、默认网络LIF在NVMe和SCSI主机之间共享、因此不支持自动故障转移。要启用自动iSCSI LIF故障转移，您必须link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["创建仅iSCSI LIF"]。默认情况下、自动故障转移在仅限iSCSI的LUN上启用。
+
++
+启用自动iSCSI LIF故障转移后、如果发生存储故障转移、iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在该端口恢复运行状况良好后、再迁移回其原始端口。
+
 * FabricPool
 * LUN厚配置
 * MetroCluster
@@ -27,11 +33,15 @@ summary: 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某�
 
 .ASA R2系统支持以下功能：
 * Snaplock
++
+link:../secure-data/ransomware-protection.html["了解如何锁定快照"]在ASA R2系统上。
+
 * 双层加密
++
+link:../secure-data/encrypt-data-at-rest.html["了解如何应用双层加密"]ASA R2系统上的数据。
+
 
 
 .了解更多信息
 * link:https://hwu.netapp.com/["NetApp Hardware Universe"^]有关ASA R2硬件支持和限制的详细信息、请参见。
-* link:../secure-data/ransomware-protection.html["了解如何锁定快照"]在ASA R2系统上。
-* link:../secure-data/encrypt-data-at-rest.html["了解如何应用双层加密"]ASA R2系统上的数据。
 
