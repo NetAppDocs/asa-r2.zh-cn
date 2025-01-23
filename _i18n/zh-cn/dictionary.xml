@@ -1754,7 +1754,6 @@
   <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">如果您运行的是集群中包含2个以上节点的9.16.1 9.161、则无法还原到ONTAP 9.16.0。</block>
   <block id="7e7397a7b79323762c61941fc0e6b5f9" category="section-title">数据保护</block>
   <block id="52b359b5c00e0db3bdd91a9f5c05cf7a" category="inline-link-macro">支持分层一致性组</block>
-  <block id="410817362abc44b1b70bdc2f9f49fece" category="cell"><block ref="410817362abc44b1b70bdc2f9f49fece" category="inline-link-macro-rx"></block></block>
   <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">通过分层一致性组、您可以创建包含多个子一致性组的父一致性组。这样可以简化复杂数据结构的数据保护和管理。</block>
   <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">支持存储单元自动重新平衡</block>
   <block id="ec84fb814253e6779e1876e18f7db731" category="cell">ONTAP将自动在存储可用性区域之间重新平衡存储单元、以获得最佳性能和容量利用率。</block>
@@ -1763,4 +1762,5 @@
   <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">添加节点</block>
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理存储单元</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移动存储单元</block>
+  <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
 </blocks>

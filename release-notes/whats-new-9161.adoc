@@ -25,7 +25,7 @@ summary: 了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。
 | 更新 | 说明 
 
 
-| link:data-protection/manage-consistency-groups.html["支持分层一致性组"] | 通过分层一致性组、您可以创建包含多个子一致性组的父一致性组。这样可以简化复杂数据结构的数据保护和管理。 
+| link:../data-protection/manage-consistency-groups.html["支持分层一致性组"] | 通过分层一致性组、您可以创建包含多个子一致性组的父一致性组。这样可以简化复杂数据结构的数据保护和管理。 
 |===
 
 
