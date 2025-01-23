@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: administer/add-nodes.html 
+keywords: rename, node, renaming, asa r2 
+summary: 您可能需要重命名节点、以符合组织的命名约定或出于其他管理原因。 
+---
+= 将ASA R2节点添加到ONTAP集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从ONTAP 9.161开始、ASA R2存储系统支持每个集群最多12个节点。为HA对中的新节点布线并打开电源后、您需要将其加入集群。
+
+.开始之前
+收集以下信息：
+
+* 节点IP地址
+* 集群间网络接口IP地址
+* 集群间网络子网掩码
+* 集群间网络网关
+* 如果要配置板载密钥管理器(OKM)、则需要OKM密码短语。
+
+
+.步骤
+. 在System Manager中、选择*集群>概述*。
+. 选择要加入集群的节点旁边的；然后选择image:icon_kabob.gif["三个垂直蓝点"]*添加节点*
+. 输入每个节点的IP地址。
+. 输入集群间网络接口IP地址、子网掩码和网关。
+. 如果要配置板载密钥管理器(OKM)、请输入OKM密码短语。
++
+*默认情况下，已选择配置板载密钥管理器进行加密*。
+
+. 选择 * 添加 * 。
+
+
+.结果
+新的HA对将加入集群。
+
+.下一步是什么？
+将新的HA对添加到集群后、您可以link:../install-setup/set-up-data-access.html["启用从SAN主机进行数据访问"]添加到新节点。

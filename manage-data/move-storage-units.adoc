@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: manage-data/move-storage-units.html 
+keywords: move lun, lun move, move namespace, move storage unit, asa r2 
+summary: 删除存储单元以减少所需的物理存储量或释放其他主机应用程序所需的空间。 
+---
+= 移动ASA R2存储系统上的存储单元
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。
+
+您可以在存储单元联机并提供数据时移动此存储单元。移动操作不会造成系统中断。
+
+.开始之前
+* 必须运行9.16.1 9.161或更高版本。
+* 集群必须包含四个或更多节点。
+
+
+.步骤
+. 在System Manager中，选择*Storage*；然后选择要移动的存储单元。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*move*。
+. 选择要将存储单元移动到的存储可用性分区；然后选择*move*。
+

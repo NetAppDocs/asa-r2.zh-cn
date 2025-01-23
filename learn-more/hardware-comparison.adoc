@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/hardware-comparison.html 
-keywords: compare asa r2, asa a1k, asa a70, asa a90 
+keywords: compare asa r2, asa a1k, asa a90, asa a70 
 summary: ASA系统提供针对纯SAN解决方案优化的硬件支持。ASA R2系统可优化硬件和软件。 
 searchtitle: 将ASA R2系统与其他ONTAP系统进行比较 
 ---

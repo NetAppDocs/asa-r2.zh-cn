@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/changes-to-limits-defaults.html 
-keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa 70, asa 90 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa a90, asa a70 
 summary: 了解影响ASA R2系统的限制和默认值更改。 
 ---
 = 对影响ASA R2系统的ONTAP限制和默认值进行的更改
@@ -23,6 +23,14 @@ summary: 了解影响ASA R2系统的限制和默认值更改。
 [cols="2,4,4"]
 |===
 | 功能 | 限制更改 | 版本中已更改... 
+
+
+| 每个集群的节点数  a| 
+每个集群的最大节点数从2增加到12。
+
+
+NOTE: 如果您运行的是集群中包含2个以上节点的9.16.1 9.161、则无法还原到ONTAP 9.16.0。
+| ONTAP 9.16.1. 
 
 
 | 存储单元 | 每个HA对的最大存储单元数从2500增加到10000。 | ONTAP 9.16.1. 

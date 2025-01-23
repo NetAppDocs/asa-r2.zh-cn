@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/quick-start.html 
-keywords: asa r2, asa a1k, asa a70, asa a90, get started, getting started, quick start, install, set up 
-summary: '要开始使用ASA R2 (ASA A1K、ASA A70、ASA A90)系统、请安装硬件、设置集群、设置数据访问以及配置存储。' 
-searchtitle: 安装和设置ASA A1K、ASA A70和ASA A90存储系统 
+keywords: asa r2, asa a1k, asa a90, asa a70, get started, getting started, quick start, install, set up 
+summary: '要开始使用ASA R2 (ASA A1K、A90、A70)系统、请安装硬件、设置集群、设置数据访问以及配置存储。' 
+searchtitle: 安装和设置ASA A1K、A90和A70存储系统 
 ---
 = ASA R2存储系统快速入门
 :allow-uri-read: 
@@ -16,7 +16,7 @@ searchtitle: 安装和设置ASA A1K、ASA A70和ASA A90存储系统
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"]安装和设置硬件
 [role="quick-margin-para"]
-link:../install-setup/install-setup-workflow.html["安装和设置"]ASA R2系统、并将其作为HA对部署在ONTAP环境中。
+link:../install-setup/install-setup-workflow.html["安装和设置"]ASA R2系统、并将其部署在ONTAP环境中。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]设置集群
 [role="quick-margin-para"]

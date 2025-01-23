@@ -10,10 +10,14 @@ entries:
     url: "/manage-data/provision-san-storage.html"
   - title: 克隆数据
     url: "/manage-data/data-cloning.html"
-  - title: 修改存储单元
-    url: "/manage-data/modify-storage-units.html"
-  - title: 删除存储单元
-    url: "/manage-data/delete-storage-units.html"
+  - title: 管理存储单元
+    entries:
+    - title: 修改存储单元
+      url: "/manage-data/modify-storage-units.html"
+    - title: 移动存储单元
+      url: "/manage-data/move-storage-units.html"
+    - title: 删除存储单元
+      url: "/manage-data/delete-storage-units.html"
   - title: 存储限制
     url: "/manage-data/storage-limits.html"
 - title: 保护您的数据

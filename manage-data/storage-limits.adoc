@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
-keywords: storage limits, cluster limits, maximum lun size, supported protocols, asa r2, asa a1k, asa a70, asa a90 
+keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70 
 summary: ASA R2配置支持每个集群最多包含2个节点、这些节点运行FC、iSCSI、NVMe/FC或NVMe/TCP协议。 
 ---
 = ASA R2存储限制
@@ -19,7 +19,7 @@ ASA R2系统支持以下功能：
 |===
 
 
-| 每个集群的最大节点数 | 2 
+| 每个集群的最大节点数 | 12 
 
 
 | 最大存储单元大小 | 128 TB 

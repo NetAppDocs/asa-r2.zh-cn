@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: administer/upgrade-ontap.html 
+keywords: update, firmware, system files, automatic updates, automated updates, asa r2, disable, 
+summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Manager禁用自动更新、并在安装更新之前查看更新。 
+---
+= 升级ASA R2存储系统上的ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA R2系统上升级ONTAP软件时、您可以利用新增的和增强的ONTAP功能、帮助您降低成本、加快关键工作负载的处理速度、提高安全性、并扩大企业可用的数据保护范围。
+
+ASA R2系统的ONTAP软件升级过程与其他ONTAP系统的升级过程相同。如果您拥有Active IQ数字顾问(也称为数字顾问)的有效SupportEdge合同，则应link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["准备使用Upgrade Advisor进行升级"^]。Upgrade Advisor提供的智能信息可帮助您评估集群并创建特定于您的配置的升级计划、从而最大程度地降低不确定性和风险。如果您没有有效的Active IQ数字顾问SupportEdge合同，您应该link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["准备在不使用Upgrade Advisor的情况下升级"^]。
+
+准备升级后，建议您使用执行升级link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["从System Manager自动无中断升级(ANDU)"]。ANDU可利用ONTAP的高可用性(HA)故障转移技术确保集群在升级期间继续提供数据而不会中断。
+
+详细了解 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP软件升级"]。

@@ -14,6 +14,8 @@ entries:
     url: "/monitor/monitor-storage.html"
   - title: 增加存储容量
     url: "/administer/increase-storage-capacity.html"
+- title: 升级 ONTAP
+  url: "/administer/upgrade-ontap.html"
 - title: 更新固件
   url: "/administer/update-firmware.html"
 - title: 查看洞察力
@@ -22,6 +24,8 @@ entries:
   url: "/monitor/view-events-jobs.html"
 - title: 管理节点
   entries:
+  - title: 添加节点
+    url: "/administer/add-nodes.html"
   - title: 重新启动、接管和交还节点
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: 重命名节点

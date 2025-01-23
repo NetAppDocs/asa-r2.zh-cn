@@ -268,7 +268,6 @@
   <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">在System Manager中、选择*保护&gt;一致性组*。</block>
   <block id="edb9e8b079cc1bbba23675ed2fb9ee82" category="list-text">选择<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>；然后选择*使用新存储单元*。</block>
   <block id="52121a2aaeb6d47d15d81e8ee203b5f7" category="list-text">输入新存储单元的名称、单元数和每个单元的容量。</block>
-  <block id="b6a57406c839874cc450218c65042a9c" category="paragraph">如果创建多个单元、则每个单元的容量和主机操作系统都相同。要为每个装置分配不同的容量，请选择*更多选项*；然后选择*添加不同容量*。</block>
   <block id="7028b1e3a2021d39c73b8824b7bc9a9d" category="list-text">选择主机操作系统和主机映射。</block>
   <block id="97b6e4a76453272c0f1f20a9a7e57b6b" category="paragraph">您已创建一个一致性组、其中包含要保护的存储单元。现在、您可以创建快照了。</block>
   <block id="c8ea84d9e7c3634b93976499f8f58956" category="open-title">使用现有存储单元</block>
@@ -550,7 +549,6 @@
   <block id="871826e1588c93437ae23af0a8c5c29e" category="paragraph">您必须<block ref="2d57bedaf7449221ca7cf6e2da6e5236" category="inline-link-macro-rx"></block>查看ASA R2系统的支持案例。</block>
   <block id="18aec681e94562add9f015e57e17b8d0" category="list-text">要提交支持案例，请在System Manager中选择*Cluster &gt; Support*；然后选择*Go to NetApp Support*。</block>
   <block id="ce3bbf8e2056eaff8c2c9a52eb4ce4dc" category="list-text">要查看以前提交的案例，请在System Manager中选择*集群&gt;支持*；然后选择*查看我的案例*。</block>
-  <block id="c4bd20e96bacd4ca7f4f874cb8a77b00" category="summary">ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="doc">了解ASA R2存储系统</block>
   <block id="4c09e6dc15402ad1dfdd0de9dde9ced3" category="paragraph">在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。</block>
   <block id="8ba78ca0516a69b587aca58206efc01f" category="paragraph">ASA R2系统介绍了如何使用具有一致性组的存储单元：</block>
@@ -562,13 +560,10 @@
   <block id="989f2b4edace5981db8b18b1ad4a385f" category="list-text">有关ASA R2系统支持和限制的详细信息，请参见<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
   <block id="2b304856171196502641312a496c6d54" category="inline-link-macro">NetApp ASA</block>
   <block id="b4e5592d9ac502884e059b5eb31d6bf6" category="list-text">了解有关的更多信息<block ref="7ca9eeacedc91cf0cb26acef9d99ecbd" category="inline-link-macro-rx"></block>。</block>
-  <block id="05b76f77eda2923699bcc5fed0226549" category="summary">要开始使用ASA R2 (ASA A1K、ASA A70、ASA A90)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
-  <block id="726d7bea9295f2cedea11857011476c0" category="searchtitle">安装和设置ASA A1K、ASA A70和ASA A90存储系统</block>
   <block id="7277c9d417ac8a6d967bd0e7b323cd57" category="paragraph">要启动并运行ASA R2系统、需要安装硬件组件、设置集群、设置主机对存储系统的数据访问以及配置存储。</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一个</block>
   <block id="40a0d9b63d17cd9ee40121b195ad7812" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>安装和设置硬件</block>
   <block id="0838ba24ec50794012b940c57af5703f" category="inline-link-macro">安装和设置</block>
-  <block id="bd37b0d902cca84ba3edf7120a5ff8ea" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>ASA R2系统、并将其作为HA对部署在ONTAP环境中。</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">两个</block>
   <block id="d950f0cc340509cac6299d8daed8cf0a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>设置集群</block>
   <block id="358ff255f5304eea2541b8491eafcb09" category="inline-link-macro">设置ONTAP集群</block>
@@ -770,7 +765,6 @@
   <block id="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="list-text"><block ref="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="inline-link-rx"></block></block>
   <block id="bc49acf6a4bdda7bb7cff74873359411" category="inline-link-macro">准备安装ASA R2存储系统</block>
   <block id="9bc515044882c3ed46aa32f2e8aa575e" category="paragraph">查看硬件要求后，您可以<block ref="8054262d52a0c88e2eb96c4a29491e7c" category="inline-link-macro-rx"></block>：</block>
-  <block id="4e12da3ed45d8c0cbcaf56b1f9f08af6" category="summary">开始安装和设置ASA R2存储系统、并将其部署为ONTAP环境中的HA对。</block>
   <block id="bec12648a072f54e7209e45d72c0ba78" category="doc">ASA R2存储系统的安装和设置工作流</block>
   <block id="f08e3211126883342efb2c1028678668" category="paragraph">要安装和配置ASA R2系统、您需要查看硬件要求、准备站点、安装硬件组件并为其布线、打开系统电源以及设置ONTAP集群。</block>
   <block id="7ccd978bf0dbca0a0746f98d09b99f7f" category="inline-link-macro">查看硬件安装要求</block>
@@ -1213,7 +1207,6 @@
   <block id="4ce211e7f3238dc2a7e5fc38f7096d99" category="list-text">输入存储单元容量、然后选择主机操作系统。</block>
   <block id="4a12fcafc1a3c4f57a718c8ca92efc50" category="list-text">接受自动选择的*主机映射*或为要映射到的存储单元选择其他主机组。</block>
   <block id="3a880a9aa73ca2acefaaddbfcdb6e4e5" category="paragraph">*主机映射*是指新存储单元要映射到的主机组。如果您为新存储单元选择的主机类型已有主机组、则系统会自动为主机映射选择已有主机组。您可以接受为主机映射自动选择的主机组、也可以选择其他主机组。</block>
-  <block id="827c0951d229d00d677d2fcd8db9ed5e" category="paragraph">如果在您指定的操作系统上运行的主机没有已有的主机组、则ONTAP会自动创建一个新的主机组。</block>
   <block id="ec00cac618e2a8983fc71ca2a711519c" category="list-text">如果要执行以下任一操作，请选择*更多选项*并完成所需的步骤。</block>
   <block id="7e8304ed8a1d7b1d5ea3d023833084ac" category="paragraph">更改默认服务质量(QoS)策略</block>
   <block id="670420248bfae86c26e9659cd428df4a" category="paragraph">如果先前未在创建存储单元的Storage Virtual Machine (VM)上设置默认QoS策略、则此选项不可用。</block>
@@ -1308,7 +1301,6 @@
   <block id="b6e8a44e2a75e79622ab8bca1270a5ce" category="doc">ASA R2存储限制</block>
   <block id="abe1583ce937db07d8d0619331789f3c" category="paragraph">为了获得最佳性能、配置和支持、您应了解ASA R2存储限制。</block>
   <block id="96518fa8caa802b5be6e8e42fa8d0690" category="cell">每个集群的最大节点数</block>
-  <block id="c81e728d9d4c2f636f067f89cc14862c" category="cell">2</block>
   <block id="d8aa4c4ba6e098346f0524ef76464fe4" category="cell">最大存储单元大小</block>
   <block id="d0bb632fcdb31cf3c729c1c59f826d4f" category="cell">128 TB</block>
   <block id="bebabfeb2bb62750bf38ee33a0e54982" category="paragraph">有关最新ASA R2存储限制的完整列表，请参见<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
@@ -1602,13 +1594,11 @@
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1.中的新增功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">对ONTAP默认值和限制进行的更改</block>
   <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>。</block>
-  <block id="741966f7a31d60fddc8857d2cb9fb674" category="paragraph">ASA R2系统在一个HA对部署中支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。SCSI (iSCSI和FC)协议使用对称双主动架构实现多路径、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。</block>
   <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror (异步和同步)到云</block>
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (异步和同步)到非ASA R2系统</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
   <block id="f31e58176a4fc5fa75f3c5160b712278" category="admonition">仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。</block>
   <block id="a45025bc45c4e360bb41b761b432dd34" category="doc">ASA R2存储系统快速入门</block>
-  <block id="426ed8a052d2d7277d60ee8001b9d37e" category="searchtitle">了解ASA R2存储系统：A1K、A90和A70</block>
   <block id="465ce601131c87fafd3a4a3da5836246" category="summary">ASA R2系统在SAN主机配置方面遵循与所有其他ONTAP系统相同的建议和准则。</block>
   <block id="9a364a877707d0b61983419895ba3632" category="doc">使用ASA R2系统的SAN主机配置</block>
   <block id="31eb0490b298463d8797eab8041ed748" category="paragraph">建议使用两个或更多交换机将存储系统连接到一个或多个SAN主机。对于iSCSI配置、连接主机、交换机和存储系统的网络拓扑称为_network_。对于FC和FC-NVMe配置、这种相同的网络拓扑也称为_FC_。</block>
@@ -1644,4 +1634,133 @@
   <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">创建仅iSCSI LIF</block>
   <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在ASA R2系统中、默认网络LIF在NVMe和SCSI主机之间共享、因此不支持自动故障转移。要启用自动iSCSI LIF故障转移，您必须<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>。默认情况下、自动故障转移在仅限iSCSI的LUN上启用。</block>
   <block id="22f4d4e3ef9ad886ae95608e10f828cb" category="paragraph">启用自动iSCSI LIF故障转移后、如果发生存储故障转移、iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在该端口恢复运行状况良好后、再迁移回其原始端口。</block>
+  <block id="e51f73897cef482e683893c74ad0aebf" category="doc">将ASA R2节点添加到ONTAP集群</block>
+  <block id="be36547b484c259b8e39cb4b17bdac83" category="paragraph">从ONTAP 9.161开始、ASA R2存储系统支持每个集群最多12个节点。为HA对中的新节点布线并打开电源后、您需要将其加入集群。</block>
+  <block id="97a5a9f5366a279a2160c428ad458079" category="list-text">节点IP地址</block>
+  <block id="d08cd309dd95d7aa27f8f977cf1a060e" category="list-text">集群间网络接口IP地址</block>
+  <block id="20f5ca91f6dbeac15890f67c9a4cb751" category="list-text">集群间网络子网掩码</block>
+  <block id="62f6882cb404e558e070fbed9abb8408" category="list-text">集群间网络网关</block>
+  <block id="8d5bab260f1fd17a58eead81f9a933dc" category="list-text">如果要配置板载密钥管理器(OKM)、则需要OKM密码短语。</block>
+  <block id="01c399628d4ca140e3f9a9b4af069aaf" category="list-text">选择要加入集群的节点旁边的；然后选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>*添加节点*</block>
+  <block id="83574618638225092ab0e933a6da9812" category="list-text">输入每个节点的IP地址。</block>
+  <block id="e7b7c94e6d81ece348285ff2b7c586bc" category="list-text">输入集群间网络接口IP地址、子网掩码和网关。</block>
+  <block id="4cb7615df5933d98f247b46408545f05" category="list-text">如果要配置板载密钥管理器(OKM)、请输入OKM密码短语。</block>
+  <block id="e65c1f346347ea2c3f94d2f7b1f37252" category="paragraph">*默认情况下，已选择配置板载密钥管理器进行加密*。</block>
+  <block id="114bac06cb680744fb618e2d1de76644" category="paragraph">新的HA对将加入集群。</block>
+  <block id="d46a824e09e83ce9ce018295770894a6" category="inline-link-macro">启用从SAN主机进行数据访问</block>
+  <block id="a5f04ac5782b3b4db001475a2ce8f1f8" category="paragraph">将新的HA对添加到集群后、您可以<block ref="180fb7c364ff620a7da1de634e394af5" category="inline-link-macro-rx"></block>添加到新节点。</block>
+  <block id="f142a152601a952c440aa742ae54d56c" category="doc">升级ASA R2存储系统上的ONTAP</block>
+  <block id="f46c905b973360f57c509a5dac0d6aca" category="paragraph">在ASA R2系统上升级ONTAP软件时、您可以利用新增的和增强的ONTAP功能、帮助您降低成本、加快关键工作负载的处理速度、提高安全性、并扩大企业可用的数据保护范围。</block>
+  <block id="1609fb0c876b70bfae98d1cafa399784" category="inline-link-macro">准备使用Upgrade Advisor进行升级</block>
+  <block id="e4b24f4689bdc8358c4d409b6a9d4103" category="inline-link-macro">准备在不使用Upgrade Advisor的情况下升级</block>
+  <block id="715a6cc9b89f202d46f87d2b8ae93e8e" category="paragraph">ASA R2系统的ONTAP软件升级过程与其他ONTAP系统的升级过程相同。如果您拥有Active IQ数字顾问(也称为数字顾问)的有效SupportEdge合同，则应<block ref="1117d34674fd91a6ee3c7506ddc3a8f0" category="inline-link-macro-rx"></block>。Upgrade Advisor提供的智能信息可帮助您评估集群并创建特定于您的配置的升级计划、从而最大程度地降低不确定性和风险。如果您没有有效的Active IQ数字顾问SupportEdge合同，您应该<block ref="66ecb4b248d940ec34981282ad334ce1" category="inline-link-macro-rx"></block>。</block>
+  <block id="46629b819dff531a5a2a49fcda5443dd" category="inline-link-macro">从System Manager自动无中断升级(ANDU)</block>
+  <block id="d351531ad851e21d1ccbc812e54540ff" category="paragraph">准备升级后，建议您使用执行升级<block ref="a93595527d1144b0b27a701c939efa63" category="inline-link-macro-rx"></block>。ANDU可利用ONTAP的高可用性(HA)故障转移技术确保集群在升级期间继续提供数据而不会中断。</block>
+  <block id="8b7f4f92636306e034e67a0098393065" category="inline-link-macro">ONTAP软件升级</block>
+  <block id="db24448a282517925d7637e0ab57fb35" category="paragraph">详细了解 <block ref="ee50b0384392ffd34e721693cf1abb90" category="inline-link-macro-rx"></block>。</block>
+  <block id="fff17537d9a4bdde67e260b49d17c884" category="paragraph">在使用新存储单元创建一致性组时、您可以为每个存储单元分配不同的容量、更改默认性能服务级别以及最多创建五个子一致性组。在使用现有存储单元创建一致性组时、您可以添加已在使用的存储单元。</block>
+  <block id="06b783ccc728f89654eb406f121a920e" category="paragraph">如果创建多个单元、则默认情况下、每个单元都使用相同的容量和相同的主机操作系统创建。您可以选择为每个单元分配不同的容量。</block>
+  <block id="c714809f14fa9d9c65c38961426d89e3" category="paragraph">为每个存储单元分配不同的容量</block>
+  <block id="b079c5d39925229ba3c754aec7200bfe" category="paragraph">选择*添加其他容量*。</block>
+  <block id="31a76ac8189f6bc9ca7266bc2fa13c8d" category="paragraph">更改默认性能服务级别</block>
+  <block id="fe36b3d0747e41e736245b1f2f016f37" category="paragraph">在*性能服务级别*下，选择其他服务级别。</block>
+  <block id="e39fb54244b4e7e5902cf86f104eae5f" category="paragraph">创建子一致性组</block>
+  <block id="df30ab788ddab119f1a9a52f397c1578" category="paragraph">选择*添加子一致性组*。</block>
+  <block id="47f30cf1dbc386b695e587c89d934679" category="paragraph">从ONTAP 9.161开始、您可以使用System Manager在ASA R2系统上创建分层一致性组。在分层结构中、一个或多个一致性组会配置为父一致性组下的子组。</block>
+  <block id="accc48ba80dae134714334f9974f857c" category="paragraph">通过分层一致性组、您可以将单个快照策略应用于每个子一致性组、并通过复制父一致性组将所有子一致性组的快照作为一个单元复制到远程集群。这样可以简化复杂数据结构的数据保护和管理。例如、假设您创建了一个名为的父一致性组<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>、其中包含两个子一致性组：<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>用于应用程序数据和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>应用程序日志。的快照每15分钟创建一次、的<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>快照<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>每小时创建一次。父一致性组<block ref="d6faa7ca58e81c6f13095e4f9ff20e81" prefix=" " category="inline-code"></block>具有一个SnapMirror策略、该策略每24小时将和<block ref="0f23ff9c78f3eb5ab959d518e111d2f4" prefix=" " category="inline-code"></block>的快照复制<block ref="234223ee2714e5f18034660862262d11" prefix=" " category="inline-code"></block>到远程集群。父一致性组<block ref="f4834f6322c13f96b4d06d74fae1bbee" prefix=" " category="inline-code"></block>作为一个单元进行管理、子一致性组作为单独的单元进行管理。</block>
+  <block id="5c31d135ad789e411ad759e0c134e359" category="section-title">将现有一致性组转换为父一致性组</block>
+  <block id="ab5220486193aa4a04c53d18e19056fc" category="paragraph">存储单元不能直接与父一致性组关联。如果将现有一致性组转换为父一致性组、则会创建一个新的子一致性组、并且属于转换后的一致性组的存储单元会移动到新的子一致性组。</block>
+  <block id="9bb9a0458dabe990942bf493592cb497" category="list-text">将鼠标悬停在要转换为父一致性组的一致性组上。</block>
+  <block id="ec57f29bebbe66441595e764308d00a6" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*提升到父一致性组*。</block>
+  <block id="e0e1d719c3169a36adccf812d315cc3d" category="list-text">输入父一致性组的名称或接受默认名称；然后选择一致性组组件类型。</block>
+  <block id="3073e32eb6f2f0cb69e9248a5f0c848c" category="list-text">选择*提升*。</block>
+  <block id="f61d709beaccfca851c4fd737b049a61" category="paragraph">您可以在父一致性组下创建其他子一致性组。此外、您还可以<block ref="c9073dd826fc7721b98f9930c55d01b2" category="inline-link-macro-rx"></block>将父一致性组复制到地理位置较远的位置、以便进行备份和灾难恢复。</block>
+  <block id="f28898d3cd8988ff697e782c8449eb18" category="paragraph">通过创建子一致性组、您可以在父级将复制策略应用于所有子一致性组的同时、将单个快照策略应用于每个子一致性组。</block>
+  <block id="34dd18f2c196dd45fa9dfab7e7517350" category="paragraph">您可以从新一致性组或现有一致性组创建子一致性组。</block>
+  <block id="643328739ada7596678f9066cec81be9" category="open-title">从新一致性组</block>
+  <block id="d7c5fedb6bb1501de8279366644bdd86" category="list-text">将鼠标悬停在要添加子一致性组的父一致性组上。</block>
+  <block id="f51c3dd065cb4f7804909df96d48e637" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*添加新的子一致性组*。</block>
+  <block id="1e01b7d6c9d4045d5d60b1701e87a5f6" category="list-text">输入子一致性组的名称或接受默认名称；然后选择一致性组组件类型。</block>
+  <block id="fd11eccc6260851a0ec00ec6dfe7a17e" category="list-text">选择此选项可将现有存储单元添加到子一致性组或创建新存储单元。</block>
+  <block id="214e2148a848b4d516c6f14ed1efd50d" category="paragraph">如果要创建新存储单元、请输入要创建的单元数和每个单元的容量、然后输入主机信息。</block>
+  <block id="34277bacf7bd7771bbb4c1c64a00dedb" category="paragraph">如果您创建多个存储单元、则每个存储单元都将使用相同的容量和相同的主机操作系统来创建。要为每个装置分配不同的容量，请选择*添加不同的容量*。</block>
+  <block id="3fb56bc224d2a0ac3d902de4d323e71a" category="open-title">从现有一致性组</block>
+  <block id="9e532008425c88c7f9f600e01feb942c" category="list-text">选择要创建子一致性组的现有一致性组。</block>
+  <block id="7ab1a538b156a84c113e1b25aa016aef" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*移动到不同的一致性组*。</block>
+  <block id="f50d0d6201337aee6a17962f21e42153" category="paragraph">如果要用作其他一致性组的子级的一致性组、则必须先将其从现有父一致性组中断开、然后才能将其移动到新的父一致性组。</block>
+  <block id="b13aafb46acdbda66ede2f929c14fff7" category="list-text">为子一致性组输入新名称或接受默认名称；然后选择一致性组组件类型。</block>
+  <block id="767e4528802b2fbd53126bfeffbfbb47" category="list-text">选择要创建父一致性组的现有一致性组、或者选择创建新的父一致性组。</block>
+  <block id="36a7554cab29967611589d7eefa20c88" category="paragraph">如果选择创建新的父一致性组、请输入父一致性组的名称或接受默认名称；然后选择一致性应用程序组件类型。</block>
+  <block id="c3eb9435da3ee7c0ac02ef30983ba9d2" category="list-text">选择*移动*。</block>
+  <block id="1aebd2565785840796b5b11c1362918f" category="inline-link-macro">应用单个Snapshot保护策略</block>
+  <block id="27f6c159b783eaece3b27009d252861f" category="inline-link-macro">设置复制策略</block>
+  <block id="5584e5580824a6a612aaebc7cae0dc13" category="paragraph">创建子一致性组后、您可以<block ref="b20e7e9a535f6a3244da85f4587a0502" category="inline-link-macro-rx"></block>对每个子一致性组执行此操作。您也可以<block ref="cbc7b65bc979a0ca08aaa98e2dc63eda" category="inline-link-macro-rx"></block>在父一致性组上将所有子一致性组的快照作为一个单元复制到远程集群。</block>
+  <block id="4aafb19b9676db4e8aa85eb3131ac5f4" category="section-title">将父一致性组更改为单个一致性组</block>
+  <block id="5837ba118b622a1f9ee732410e451284" category="paragraph">当您将父一致性组_子级_更改为单个一致性组时、关联子一致性组的存储单元将添加到父一致性组中。此时将删除子一致性组、并将父一致性组作为一个一致性组进行管理。</block>
+  <block id="dd487eacf1aba6e2726ce73064acff7b" category="list-text">将鼠标悬停在要删除的父一致性组上。</block>
+  <block id="d26a37885a1db03d1d33fa1b32e74c25" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*降级到单个一致性组*。</block>
+  <block id="0b886822f169d28b04dc34a1cb55c402" category="list-text">选择*Demote*</block>
+  <block id="8eea35138709fe7cf5caaf5b5fb53a4d" category="inline-link-macro">添加Snapshot策略</block>
+  <block id="a4cc38b952e58f7fac916d3297d86f9f" category="paragraph"><block ref="9b6117933a7d1c9745a65ab485bb26f2" category="inline-link-macro-rx"></block>已将此一致性组进行了分级、以保护先前由子一致性组管理的存储单元。</block>
+  <block id="e8289e36e948e36d5aeb9297cf2c6712" category="section-title">将子一致性组与父一致性组分离</block>
+  <block id="a98e8367b6b0b1bc6b9fdb2658c07a83" category="paragraph">从父一致性组中断开子一致性组后、该子一致性组将从父一致性组中删除、并作为一个一致性组进行管理。应用于父级的复制策略将不再应用于已断开连接的子一致性组。</block>
+  <block id="94db0ec67f710fec5c7f775e299a2d6e" category="list-text">选择父一致性组。</block>
+  <block id="77b355d4c3903a5367febffb1d5fb080" category="list-text">选择要断开的子一致性组。</block>
+  <block id="baffc5619c6b92cfb8bd0f06efe69615" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*从父项断开*。</block>
+  <block id="43faed766403b7432cc59c42e8d49ebf" category="list-text">为要断开的一致性组输入新名称或接受默认名称；然后选择一致性组应用程序类型。</block>
+  <block id="f9e81700c82de44e7b8b9b6bfcfbba80" category="list-text">选择*Detach*。</block>
+  <block id="3fe9697b148df0f9994a0c38ed482555" category="inline-link-macro">设置复制策略</block>
+  <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>将已断开的子一致性组的快照作为一个一致性组复制到远程集群。</block>
+  <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">ASA R2系统(ASA A1K、A90、A70)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
+  <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">了解ASA A1K、A90和A70系统</block>
+  <block id="a2d4e1cad7dfa6160fb66fdbda1b87c5" category="paragraph">ASA R2系统支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。iSCSI、FC和NVMe/FC协议支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。</block>
+  <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">要开始使用ASA R2 (ASA A1K、A90、A70)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
+  <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">安装和设置ASA A1K、A90和A70存储系统</block>
+  <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>ASA R2系统、并将其部署在ONTAP环境中。</block>
+  <block id="9a5e67864d1a0cbd6f43034e561f51a2" category="summary">开始安装和设置ASA R2存储系统、并将其部署到您的ONTAP环境中。</block>
+  <block id="bf0f6aa21aec3e349179a68aa2cb89e0" category="section-title">拆分一致性组克隆</block>
+  <block id="6227fd79476a373a893c1d081a6db13e" category="paragraph">拆分一致性组克隆时、您会将此克隆与源一致性组解除关联、并为此克隆分配磁盘空间。此克隆将成为一个独立的一致性组、可独立于源一致性组使用。</block>
+  <block id="d76e4c0366befa279b219a5ee2ef2f9c" category="list-text">将鼠标悬停在要拆分的一致性组克隆上。</block>
+  <block id="c7146cc88efb9d4aa82ab0e52c436a48" category="list-text">选择*拆分克隆*。</block>
+  <block id="54e2c4dd2b9e992b761540f131754e81" category="list-text">选择*S之 分*。</block>
+  <block id="b75f8c35975d217c69d40f46c56bb8c5" category="paragraph">此时、克隆将与源一致性组解除关联、并为此克隆分配磁盘空间。</block>
+  <block id="9ebaaa53fbc9e58c2b9ee7ad84f3ada8" category="doc">移动ASA R2存储系统上的存储单元</block>
+  <block id="aa2588a0578a9bf3830dd720f8969abf" category="paragraph">如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。</block>
+  <block id="d4ec5e86ec36bfd751dc7ae22931f6a3" category="paragraph">您可以在存储单元联机并提供数据时移动此存储单元。移动操作不会造成系统中断。</block>
+  <block id="3df7f1089e4d9e422795c1f9b7ebd7cb" category="list-text">必须运行9.16.1 9.161或更高版本。</block>
+  <block id="89f5399d31e98d41d9ed3262351036ba" category="list-text">集群必须包含四个或更多节点。</block>
+  <block id="75c802412c81363d98f12df3afdd41ee" category="list-text">在System Manager中，选择*Storage*；然后选择要移动的存储单元。</block>
+  <block id="d5ea13be4cb9332cce8fc578618d94de" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*move*。</block>
+  <block id="fdc877319615730d39477cdaa8dc7207" category="list-text">选择要将存储单元移动到的存储可用性分区；然后选择*move*。</block>
+  <block id="a48688c54c854235d38fe4b42f162152" category="paragraph">如果在您指定的操作系统上运行的主机没有已有的主机组、则ONTAP会自动创建新主机组。</block>
+  <block id="12a1557d26fa34ac5e904bc3e60b0bf4" category="list-text">在*存储和优化*下的*服务质量(QoS)*旁边，选择<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="2cb253331363d78b30ad71dd5d7edd19" category="paragraph">更改默认性能服务级别。</block>
+  <block id="550794613b3e2574a3e7ea8c2b3d0529" category="paragraph">ASA R2系统提供两种性能级别。默认性能级别为*至尊*，这是最高可用级别。您可以将性能级别降低至*性能*。</block>
+  <block id="337c483d117ff7e78ed214b1799b666f" category="list-text">在*存储和优化*下的*性能服务级别*旁边，选择<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">选择*性能*。</block>
+  <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
+  <block id="455f024d5e786170a224f947b09bd74a" category="section-title">监控存储可用性分区利用率</block>
+  <block id="9cf3716a035447d7f3920daf3ae979bd" category="paragraph">ASA R2系统中的每个HA对都使用一个通用存储池、称为_storage availability zone_。存储可用性分区可以访问存储系统中的所有可用磁盘、并且对HA对中的两个节点都可见。</block>
+  <block id="c54830fa97aef91a8bc830d439dc004a" category="paragraph">如果集群中有4个或更多节点、则可以查看每个HA对的存储可用性分区所使用的空间量。此指标不适用于双节点集群。</block>
+  <block id="dd7cd8aba78024bcc6ec1c67f3987760" category="list-text">在System Manager中，选择*Cluster*；然后选择*Overview*。</block>
+  <block id="0ce03f9ea97502f3a10721575d8a9696" category="paragraph">此时将显示集群中每个HA对的存储可用性分区利用率摘要。</block>
+  <block id="3670021e257ef0702d763c08d8b9c8b3" category="list-text">如果需要更详细的指标、请选择特定的存储可用性。</block>
+  <block id="b8e5e4895e260a0a4eeab6a3c66ae9b3" category="paragraph">在*Overview*下，将显示存储可用性区域的容量、已用空间量和数据精简率。</block>
+  <block id="97803d08cef50f43e58f978c9b2e1f08" category="paragraph">在*Storage units*下，将显示存储可用性区域中所有存储单元的列表。</block>
+  <block id="c5b460be9264c217ff7aa949f8f26aab" category="inline-link-macro">移动存储单元</block>
+  <block id="7245821daa5af47d8243d8eee3f64b1e" category="paragraph">如果存储可用性分区的空间不足、则应计划到另一个存储可用性分区、以平衡集群中的<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>存储利用率。</block>
+  <block id="8010ab2f71c733c1a8013b31b901be79" category="cell">每个集群的节点数</block>
+  <block id="c7ae27ad054ff4d389e7c15cc82b0866" category="paragraph">每个集群的最大节点数从2增加到12。</block>
+  <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">如果您运行的是集群中包含2个以上节点的9.16.1 9.161、则无法还原到ONTAP 9.16.0。</block>
+  <block id="7e7397a7b79323762c61941fc0e6b5f9" category="section-title">数据保护</block>
+  <block id="52b359b5c00e0db3bdd91a9f5c05cf7a" category="inline-link-macro">支持分层一致性组</block>
+  <block id="410817362abc44b1b70bdc2f9f49fece" category="cell"><block ref="410817362abc44b1b70bdc2f9f49fece" category="inline-link-macro-rx"></block></block>
+  <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">通过分层一致性组、您可以创建包含多个子一致性组的父一致性组。这样可以简化复杂数据结构的数据保护和管理。</block>
+  <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">支持存储单元自动重新平衡</block>
+  <block id="ec84fb814253e6779e1876e18f7db731" category="cell">ONTAP将自动在存储可用性区域之间重新平衡存储单元、以获得最佳性能和容量利用率。</block>
+  <block id="abdffd3ebdd2031130d1592a9a139a92" category="sidebar">NetApp ASA R2系统(ASA A1K、A90、A70)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
+  <block id="d04e5f519989e5f2ca95f9541ffe17a0" category="sidebar">升级 ONTAP</block>
+  <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">添加节点</block>
+  <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理存储单元</block>
+  <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移动存储单元</block>
 </blocks>

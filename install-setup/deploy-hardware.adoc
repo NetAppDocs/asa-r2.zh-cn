@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/deploy-hardware.html 
-keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a70, asa a90, asa c80 
+keywords: asa r2, install hardware, deploy hardware, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70 
 summary: 了解如何安装ASA R2存储系统和存储架的导轨套件、以及如何将ASA R2硬件固定到机柜或电信机架中。 
 ---
 = 安装ASA R2存储系统
