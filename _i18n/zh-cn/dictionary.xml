@@ -1713,7 +1713,6 @@
   <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>将已断开的子一致性组的快照作为一个一致性组复制到远程集群。</block>
   <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">ASA R2系统(ASA A1K、A90、A70)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
   <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">了解ASA A1K、A90和A70系统</block>
-  <block id="a2d4e1cad7dfa6160fb66fdbda1b87c5" category="paragraph">ASA R2系统支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。iSCSI、FC和NVMe/FC协议支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。</block>
   <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">要开始使用ASA R2 (ASA A1K、A90、A70)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
   <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">安装和设置ASA A1K、A90和A70存储系统</block>
   <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>ASA R2系统、并将其部署在ONTAP环境中。</block>
@@ -1763,4 +1762,9 @@
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理存储单元</block>
   <block id="611bc8bee4d5b03a55be78ab0ca75f66" category="sidebar">移动存储单元</block>
   <block id="ffb5ca95f1d59040ebadb90640b1970b" category="cell"><block ref="ffb5ca95f1d59040ebadb90640b1970b" category="inline-link-macro-rx"></block></block>
+  <block id="07f2a299db43ab53ccb5d7b05918e3fc" category="paragraph">ASA R2系统支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。iSCSI、FC、NVMe/FC和NVMe/TCP协议支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。</block>
+  <block id="30388d1a3ab1a01f6930553a577eb80b" category="section-title">协议支持</block>
+  <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">NVMe支持对称主动/主动多路径</block>
+  <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
+  <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">NVMe/FC和NVMe/TCP现在支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。</block>
 </blocks>
