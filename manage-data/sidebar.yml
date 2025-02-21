@@ -38,6 +38,8 @@ entries:
   entries:
   - title: 对空闲数据进行加密
     url: "/secure-data/encrypt-data-at-rest.html"
+  - title: 在密钥管理器之间迁移数据加密密钥
+    url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: 防范勒索软件攻击
     url: "/secure-data/ransomware-protection.html"
   - title: 安全NVMe连接

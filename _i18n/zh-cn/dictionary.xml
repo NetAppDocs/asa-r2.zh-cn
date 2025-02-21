@@ -1767,4 +1767,36 @@
   <block id="de67fc8f6fb798124dcbf65615888af5" category="inline-link-macro">NVMe支持对称主动/主动多路径</block>
   <block id="ac187c37acbb455a3ec9ef006a79fdf8" category="cell"><block ref="ac187c37acbb455a3ec9ef006a79fdf8" category="inline-link-macro-rx"></block></block>
   <block id="ac12d691d1b6c417de929f3b833cef99" category="cell">NVMe/FC和NVMe/TCP现在支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。</block>
+  <block id="1b2a9f2a24a72c15335105126ba3c988" category="summary">您可以使用ASA R2系统上的ONTAP板载密钥管理器或外部密钥管理器(在一种情况下)来管理数据加密密钥。</block>
+  <block id="e99ed2862cc3fe1cd81a9f3a2dd33c56" category="doc">在ASA R2系统上的密钥管理器之间迁移ONTAP数据加密密钥</block>
+  <block id="b5badfcddc250ad4fcc8251908f87e29" category="paragraph">您可以使用ASA R2系统上的ONTAP板载密钥管理器或外部密钥管理器(或两者)来管理数据加密密钥。只能在Storage VM级别启用外部密钥管理器。在ONTAP集群级别、您可以启用板载密钥管理器或外部密钥管理器。</block>
+  <block id="afcb105c793faf5a2de8b7bec9a27701" category="cell">如果在以下位置启用密钥管理器...</block>
+  <block id="0fe3023d00cc7e6a03e47a3c68ab74c5" category="cell">您可以使用...</block>
+  <block id="5c5372da5c24091217c06cc0f6ec8d03" category="cell">仅限集群级别</block>
+  <block id="ac4595d6d7fb8008d832bded40c17ce1" category="paragraph">板载密钥管理器或外部密钥管理器</block>
+  <block id="ee660d5fa0fcf5d6a9acb167806fbf93" category="cell">仅限SVM级别</block>
+  <block id="0553120d27a584be88a1ae3bd8c69d64" category="cell">仅限外部密钥管理器</block>
+  <block id="81b9ace7cc0d5c4a18ed0debac590134" category="paragraph">集群级别和SVM级别</block>
+  <block id="a8baf82d452f3a828b4d58fae37b7d17" category="paragraph">以下密钥管理器组合之一：</block>
+  <block id="fd577a8bfd88959b13dfc6803c7ef6ce" category="list-text">备选案文1.</block>
+  <block id="08c0163f788e58353da3da5e9a5fa6c7" category="paragraph">集群级别：板载密钥管理器</block>
+  <block id="434835c03ec88a20257ade31cd0f6e40" category="paragraph">SVM级别：外部密钥管理器</block>
+  <block id="e24963e40778134b357f4a5eac58e1f5" category="list-text">备选案文2.</block>
+  <block id="3a8a9355eb7486336283b79738409c86" category="paragraph">集群级别：外部密钥管理器</block>
+  <block id="0210c164d56b9ee340b6de0f8bcc2d48" category="section-title">在ONTAP集群级别的密钥管理器之间迁移密钥</block>
+  <block id="fbcbd18b1b9340d453b1e6de03001b58" category="paragraph">从9.16.1 9.161开始、您可以使用ONTAP命令行界面(CLI)在集群级别的密钥管理器之间迁移密钥。</block>
+  <block id="ad149857660a2356599fe21affd4451d" category="open-title">从板载到外部</block>
+  <block id="b5c6fde8816eb583a49b6c0314b82928" category="list-text">将权限级别设置为高级：</block>
+  <block id="e1bb323a4b2b039ad5f3cab3ae012f34" category="list-text">创建非活动的外部密钥管理器配置：</block>
+  <block id="d3004c556729998245acc90f8fa80c9c" category="list-text">切换到外部密钥管理器：</block>
+  <block id="98e4d41b2a29ccd0b80651026a329d11" category="list-text">删除板载密钥管理器配置：</block>
+  <block id="fe07e34b9c4a621f8012d19499fb4ea5" category="list-text">将权限级别设置为 admin ：</block>
+  <block id="e23deb899dce1ad56b34b17413e1b7ec" category="open-title">从外部到板载</block>
+  <block id="8f2a471846efc7bf912e0fa539aa3330" category="list-text">创建非活动板载密钥管理器配置：</block>
+  <block id="b0b9d1953037e9596f7d9b5447aeafb2" category="list-text">启用板载密钥管理器配置：</block>
+  <block id="dfa14df9c3238dad5e97f0b19204f7d3" category="list-text">删除外部密钥管理器配置</block>
+  <block id="8168a513576ac2e105ea5be6de6b1d72" category="section-title">在ONTAP集群和Storage VM级别的密钥管理器之间迁移密钥</block>
+  <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">您可以使用ONTAP命令行界面(CLI)在集群级别的密钥管理器与Storage VM级别的密钥管理器之间迁移密钥。</block>
+  <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">迁移密钥：</block>
+  <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">在密钥管理器之间迁移数据加密密钥</block>
 </blocks>
