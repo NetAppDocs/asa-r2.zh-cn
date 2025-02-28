@@ -581,26 +581,14 @@
   <block id="4effe079c1a641bd05cf0513a1eaf8c6" category="summary">了解如何将ASA R2控制器缆线连接到网络以及如何使用缆线将控制器连接到磁盘架。</block>
   <block id="db8640dafbf216593610b43870a62e8d" category="doc">为ASA R2存储系统的硬件布线</block>
   <block id="08f29f426eac8bb0b1cef738430fac57" category="paragraph">安装ASA R2存储系统的机架硬件后、请安装控制器的网络缆线、并在控制器和存储架之间连接缆线。</block>
-  <block id="403075fa89afdf5689d3f155524d9e1b" category="paragraph">检查布线图中的图示箭头、了解电缆连接器推拉卡舌的正确方向。</block>
-  <block id="04c6391623d6bd5d0ac0d7df563f74dc" category="image-alt">电缆推拉卡舌方向示例</block>
-  <block id="724b63ff77d309630df65f6af09956a2" category="list-text">插入连接器时、您应感觉到它卡入到位；如果您没有感觉到它卡入到位、请将其卸下、将电缆头翻转并重试。</block>
-  <block id="c0b05ac617b77a5c10f26756e6ef04f2" category="list-text">如果要连接到光纤交换机、请先将小型可插拔(Small form-纤 巧型可插拔、SFP)收发器插入控制器端口、然后再使用缆线连接到该端口。</block>
-  <block id="417968dd9c410e2ebdf82236e2a6f1d8" category="section-title">第1步：将存储控制器连接到网络</block>
-  <block id="1463138ead0bd5def70e2d744eddfc0a" category="paragraph">将控制器直接相互连接并连接到主机网络。</block>
-  <block id="73672e433c39ed0cc0cdb0334e672525" category="paragraph">有关将存储系统连接到主机网络交换机的信息、请与网络管理员联系。</block>
-  <block id="a5e51e5f50ca83720f1d0d8b17c1e93b" category="paragraph">以下过程显示了常见配置。具体布线取决于为存储系统订购的组件。有关全面的配置和插槽优先级详细信息，请参见 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
   <block id="5d6a7459a3583d9e29f4b486d809b6a1" category="open-title">ASA A1K</block>
-  <block id="10ddcbe568df11daf470f9b11ab92b62" category="paragraph">将存储控制器相互连接以创建ONTAP集群连接、然后将每个控制器上的以太网端口连接到主机网络。</block>
   <block id="ee6c90ad735c4fc892e900202d6ff034" category="list-text">使用集群/HA互连缆线将端口e1a连接到e1a、并将端口e7a连接到e7a。</block>
   <block id="883f8ccaa3b7bb186f5d85df551292e7" category="admonition">集群互连流量和HA流量共享相同的物理端口。</block>
-  <block id="491359bee867965cfa22411b77d88b8d" category="list-text">将控制器A上的端口e1a连接到控制器B上的端口e1A</block>
-  <block id="1a33712b794a97041f7338604473e7a3" category="list-text">将控制器A上的端口e7a连接到控制器B上的端口e1A</block>
   <block id="8c1f3262727530ad8d4652a5b107e167" category="paragraph">*集群/HA互连缆线*</block>
   <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">集群HA缆线</block>
   <block id="3e86dd6511e223ecedd044d86cd934bf" category="image-alt">双节点无交换机集群布线图</block>
   <block id="8637ca13eb3c1a10bb4383130268c950" category="list-text">将以太网模块端口连接到主机网络。</block>
   <block id="e5878ec206640d3f0489cbe562e56856" category="paragraph">以下是一些典型的主机网络布线示例。有关您的特定系统配置、请参见 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 。</block>
-  <block id="a6992cc3b8eb7adfbce0724b4ed8e4a4" category="list-text">将端口e9a和e9b连接到以太网数据网络交换机、如图所示。</block>
   <block id="b1a78b15892ed366f203ff3009cb08d9" category="admonition">为了最大程度地提高集群和HA流量的系统性能、请勿将端口e1b和e7b端口用于主机网络连接。使用单独的主机卡以最大程度地提高性能。</block>
   <block id="d2163ed76fe91108f8a1e58f08924448" category="paragraph">*100 GbE电缆*</block>
   <block id="dca4917cf460ca0094ae46e8d7178c17" category="image-alt">100 Gb以太网电缆</block>
@@ -609,21 +597,15 @@
   <block id="fbb2ead6e1dba22c64b785b1864b9809" category="paragraph">*1025 GbE主机*</block>
   <block id="e6db43427a500d394f1d34dcfecf3b50" category="image-alt">1025Gb以太网电缆</block>
   <block id="204d53c0ad48ec9abe6f3cde34241579" category="image-alt">使用缆线连接到1025Gb以太网网络</block>
-  <block id="9d62d1718b5465944796c5fb854d0f5d" category="list-text">使用1000BASE-T RJ-45缆线将控制器管理(扳手)端口连接到管理网络交换机。</block>
   <block id="1107155d6b0c900a6485f06681854862" category="image-alt">RJ-45电缆</block>
   <block id="9c29eb35e98929529d99ca71cd855f4e" category="paragraph">*1000BASE-T RJ-45电缆*</block>
   <block id="a8536d671676b42d7c49328e04123a96" category="image-alt">连接到管理网络</block>
   <block id="38821947dff053760f4c97b648ca454a" category="admonition">请勿插入电源线。</block>
-  <block id="8cf7baf96983d1c70a286576ddcd0ca1" category="open-title">ASA A70和ASA A90</block>
-  <block id="bd078f69cc3533ea9bc3100deef482d0" category="list-text">使用集群/HA互连缆线将端口e1a连接到e1a、并将端口e7a连接到e7a。</block>
   <block id="d4f534f2d370cb0f29178f31331b3536" category="image-alt">使用缆线连接到100 Gb以太网网络</block>
   <block id="5a8b74659281e9e3495bfc29767b645c" category="paragraph">*4端口，1025 GbE主机*</block>
   <block id="06d20f31fccdd7b31221a7b1e1ed37d1" category="image-alt">1025 GB电缆</block>
   <block id="95b007a39e5ec5c4d9b8e17f2ec0424d" category="image-alt">RJ45电缆</block>
-  <block id="4bdc8275aa2933fa877bfc4f40f6c3a2" category="section-title">第2步：将存储控制器连接到存储架</block>
-  <block id="581d5dbeb2b657af56ca70f32099c9d4" category="paragraph">以下布线过程显示了如何将控制器连接到一个磁盘架和两个磁盘架。您最多可以将四个磁盘架直接连接到控制器。</block>
   <block id="b3623f40c8ee8913ca5a6a7756d97ce9" category="paragraph">选择以下与您的设置匹配的布线选项之一。</block>
-  <block id="45783cabcfb105d0da4815a8eccc2f24" category="example-title">选项1：将控制器连接到一个NS224存储架</block>
   <block id="46d73bd828c75397e5f3cca81c4236e1" category="paragraph">将每个控制器连接到NS224磁盘架上的NSM模块。图中显示了每个控制器的布线：控制器A的布线显示为蓝色、控制器B的布线显示为黄色。</block>
   <block id="cdc609c675d24b2fff8b5acc2e37e89e" category="list-text">在控制器A上、连接以下端口：</block>
   <block id="f316f1854f33785f42807636a3284714" category="list-text">将端口e11a连接到NSM A端口e0a。</block>
@@ -635,7 +617,6 @@
   <block id="3a95f3cf99705bbbd01d1dd74336e9fd" category="list-text">将端口e11b连接到NSM A端口e0b。</block>
   <block id="182824a7bd82a321df1a100637995a19" category="inline-image-macro">使用缆线将控制器B端口e11a和e11b连接到一个NS224磁盘架</block>
   <block id="86ab7b5fab8b30fc8e3619226fb66002" category="paragraph"><block ref="86ab7b5fab8b30fc8e3619226fb66002" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c5ac0907ecf688c8b8347e531e8a7106" category="example-title">方案2：将控制器连接到两个NS224存储架</block>
   <block id="348bd528033e13e79fcfb366a5cd5af4" category="paragraph">将每个控制器连接到两个NS224磁盘架上的NSM模块。图中显示了每个控制器的布线：控制器A的布线显示为蓝色、控制器B的布线显示为黄色。</block>
   <block id="4b079ba797f88f932136bdbd1aa314a0" category="list-text">将端口e11a连接到磁盘架1 NSM A端口e0a。</block>
   <block id="486d7e107c3f396974308ba4cc20a5f9" category="list-text">将端口e11b连接到磁盘架2 NSM B端口e0b。</block>
@@ -680,11 +661,9 @@
   <block id="1c8c6696ac03ef01690be450b3767032" category="list-text">在机柜或电信机架中安装并固定存储系统：</block>
   <block id="bdb39b5926a304a8f387b036b6fd9445" category="list-text">将存储系统置于机柜或电信机架中间的导轨上、然后从底部支撑存储系统并将其滑入到位。</block>
   <block id="0a508c750e66a219b3bc9449125a4672" category="list-text">使用随附的安装螺钉将存储系统固定到机柜或电信机架上。</block>
-  <block id="c91c25b22baf3cf726a3ecc4b7e7f23f" category="list-text">安装存储架：</block>
   <block id="76f6a6a53ead4da24271bca7a9b976e0" category="list-text">将存储架的背面置于导轨上、然后从底部支撑存储架、并将其滑入机柜或电信机架。</block>
   <block id="8ac98c640ab335c330eb3d45c03096ad" category="paragraph">如果要安装多个存储架、请将第一个存储架直接置于控制器上方。将第二个存储架直接置于控制器下方。对任何其他存储架重复此模式。</block>
   <block id="871681e86e80556b261166721e0bbe3b" category="list-text">使用随附的安装螺钉将存储架固定到机柜或电信机架上。</block>
-  <block id="c5eaaf4a6fa532356e5d0189384e0e34" category="list-text">将缆线管理设备连接到存储系统背面。</block>
   <block id="6b7aa880220c7f598440de8d8a0f944b" category="image-alt">安装缆线管理设备</block>
   <block id="36eaeecf3fe5d82e498290c50c773db1" category="list-text">将挡板连接到存储系统正面。</block>
   <block id="eb3b2ba356f7e0823316a945c2fa26ad" category="inline-link-macro">为ASA R2系统的控制器和存储架布线</block>
@@ -747,19 +726,10 @@
   <block id="8dd75d4e14815a2e3e3154ea67cd841e" category="list-text">静电放电(ESD)带</block>
   <block id="75b0ae11d26c806413ef6e8aed1ece4f" category="list-text">Flashlight</block>
   <block id="32271edc7814b81370e65a0b9ea22010" category="list-text">具有USB/串行连接的笔记本电脑或控制台</block>
-  <block id="2e9e7e3bf632d3a831fdcb0a200d53b7" category="list-text">回形针或窄尖头圆珠笔、用于设置NS224存储架ID</block>
   <block id="f0ae587f290f3d775f2ea5aa1a8a00ea" category="list-text">Phillips #2 screwdriver</block>
   <block id="8170c4932dac7ac5a018213e28744cab" category="section-title">提升注意事项</block>
-  <block id="f15e3b515c8037c307e56c131f269fc3" category="paragraph">ASA R2存储系统和NS224存储架很重。搬运这些物品时请务必小心。</block>
   <block id="522bd666055071c79860849502df1178" category="section-title">存储系统重量</block>
   <block id="03045764da1593b6b1f92a9fb7b61115" category="paragraph">移动或抬起ASA R2存储系统时、请采取必要的预防措施。</block>
-  <block id="338f0823becae44822b99305a020773b" category="paragraph">ASA A1K存储系统的重量可达22.83磅(28.5千克)。要抬起系统、请由两个人或一个液压提升装置来完成。</block>
-  <block id="00db13616a21c862d199d7fae938549d" category="image-alt">AFF A1K提升注意图标</block>
-  <block id="b6eb05c05f5875d94df5d8c0c9fb06d9" category="paragraph">ASA A70存储系统或ASA A90存储系统的最大重量为151.68磅(68.8千克)。要提升系统、请使用四人或液压提升装置。</block>
-  <block id="50c089c00eacadfe94238545067e1673" category="image-alt">AFF A90</block>
-  <block id="8cbb936501554e10d8ef238b0bed1516" category="section-title">存储架重量</block>
-  <block id="2426c13bd8c78d02a8ccbd2a43174936" category="paragraph">NS224存储架的重量不超过66.78磅(30.29千克)。要抬起存储架、请两个人或使用液压升降机。将所有组件(前部和后部)保留在存储架中、以防止存储架重量不平衡。</block>
-  <block id="c55a46464ae8350cc2bff0a097df93e1" category="image-alt">NS224举升注意事项</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相关信息</block>
   <block id="35c124f455f44a154eb3b514029ee58a" category="inline-link">安全信息和法规声明</block>
   <block id="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="list-text"><block ref="fa81f583d8b6c7dcaf8e26a5fcf5de52" category="inline-link-rx"></block></block>
@@ -782,17 +752,13 @@
   <block id="f0458cb9a2bfe68bf005af12c17ad1aa" category="inline-link-macro">启动ASA R2存储系统</block>
   <block id="22d9f0a1dd203d9cd6eba27e0a348588" category="paragraph-title"><block ref="91d7076df3f3bfcf6ace71bd0aa6cf68" category="inline-image-macro-rx" type="image"></block><block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
   <block id="9adaba33c41b009e4561e4c9bfed5074" category="paragraph">打开控制器电源之前、请打开每个NS224磁盘架的电源、并分配一个唯一的磁盘架ID、以确保每个磁盘架在设置中都是唯一标识的。</block>
-  <block id="8c81ca9e9e2ca6805e56478191f75c42" category="summary">打开每个NS224磁盘架的电源以分配唯一的磁盘架ID、打开ASA R2控制器的电源并固定电源线。</block>
   <block id="de4e7be8a936d1ed409fa1f461a34957" category="doc">启动ASA R2存储系统</block>
   <block id="2b814ecf2be8542bceb68933db5cbcfe" category="paragraph">在为ASA R2存储系统安装机架硬件并为控制器和存储架安装缆线后、您应打开存储架和控制器的电源。</block>
   <block id="0b5c1681fb8f009a141f0c7d0f2d8f64" category="section-title">第1步：打开磁盘架电源并分配磁盘架ID</block>
-  <block id="c239b345dc160b2bfc0fb8247acc17eb" category="paragraph">每个NS224磁盘架都有一个唯一的磁盘架ID来区分。此ID可确保存储架在存储系统设置中是不同的。默认情况下、磁盘架ID分配为‘00 '和‘01 '、但您可能需要调整这些ID、以便在存储系统中保持唯一性。</block>
-  <block id="ca6592648e24fc75321ba685ce760213" category="list-text">A valid shelf ID is 00 through 99.</block>
   <block id="4acf2e1827dc9d94e8643d89bb45be93" category="list-text">您必须重新启动磁盘架(拔下两根电源线、等待适当的时间、然后重新插入)、以使磁盘架ID生效。</block>
   <block id="90b5c3b3e8b76a473c431858d638eccb" category="list-text">首先将电源线连接到磁盘架、使用电源线固定器将其固定到位、然后将电源线连接到不同电路上的电源、以此为磁盘架通电。</block>
   <block id="aa4d119638bea60a8850d8c9e0b57b86" category="paragraph">插入电源后、磁盘架将自动启动。</block>
   <block id="67cfcbdbfb87a54aadf338e218c38216" category="list-text">卸下左端盖、以便接触面板后面的磁盘架ID按钮。</block>
-  <block id="f044e75ec5037aabefb204d1365ba96b" category="image-alt">更改NS224磁盘架ID</block>
   <block id="eff9a2b0e485ca3fb80f96fc9995fb62" category="image-alt">标注编号1</block>
   <block id="48fb10beb7e1cd15b9bdbab40aac9532" category="paragraph">磁盘架端盖</block>
   <block id="d8147b4a0f272144c59f006b412b8290" category="image-alt">[插图编号2</block>
@@ -825,7 +791,6 @@
   <block id="5a6ec3ac63a7fb05de2686f31f690298" category="list-text">Replace the left end cap.</block>
   <block id="b1ea51baf980ec6bb00ca1b7b419d506" category="section-title">第2步：打开控制器的电源</block>
   <block id="51ebfc33ce787da893819e3a68129a19" category="paragraph">打开存储架并为其分配唯一ID后、打开存储控制器的电源。</block>
-  <block id="9be560fd489238e97542aa683a683199" category="list-text">将笔记本电脑连接到串行控制台端口。这样、您就可以在控制器打开时监控启动顺序。</block>
   <block id="943e3a7c8a0476b63130b5a3dfab2ef1" category="list-text">使用N-8-1将笔记本电脑上的串行控制台端口设置为115、200波特。</block>
   <block id="04112f6af1c35028ff6da3640556c14c" category="admonition">有关如何配置串行控制台端口的说明，请参阅便携式计算机的联机帮助。</block>
   <block id="637d6f599c1184d1c5de273700d7924f" category="list-text">将控制台缆线连接到笔记本电脑、然后使用存储系统随附的控制台缆线连接控制器上的串行控制台端口。</block>
@@ -833,11 +798,8 @@
   <block id="5dc15886a7be0b02974c471249fd2702" category="image-alt">控制台连接</block>
   <block id="9e7e8b48adc159107d0baf9021253c61" category="list-text">使用管理子网上的TCP/IP地址为笔记本电脑分配TCP/IP地址。</block>
   <block id="a2e521b7ad497537c9e544a50086c51b" category="list-text">Plug the power cords into the controller power supplies, and then connect them to power sources on different circuits.</block>
-  <block id="d4b97f0234af8d33d5ad6190a7930ff4" category="image-alt">通用电源连接图</block>
-  <block id="6b66db132383abf32640c51ec249e853" category="list-text">存储系统开始启动。Initial booting may take up to eight minutes.</block>
   <block id="71abffb89587fc128eb09ec9ef2dd7e1" category="list-text">LED指示灯闪烁且风扇启动、这表示控制器正在通电。</block>
   <block id="cd76e142e3adabbfc33b1de3c074b2cb" category="list-text">首次启动风扇时、风扇可能会发出很大的噪音。启动期间风扇噪音正常。</block>
-  <block id="671754b07475807f952083aca6f98a97" category="list-text">使用每个电源设备上的固定设备固定电源线。</block>
   <block id="b01257e209b4db1591904675a969a888" category="inline-link-macro">设置ONTAP ASA R2集群</block>
   <block id="5375af62a757a5f1f0b518f2b55d638e" category="paragraph">打开ASA R2存储系统后，您将<block ref="ad00ee8fa1dc09eacef7d17804bf3a85" category="inline-link-macro-rx"></block>。</block>
   <block id="4795c2f303b604ed82cee521ffaeb4b7" category="summary">准备在ONTAP环境中安装ASA R2存储系统、并注册硬件以获得支持优势。</block>
@@ -845,9 +807,6 @@
   <block id="d947c4efa0662eb2ca7150b618c02730" category="paragraph">准备安装ASA R2存储系统：准备好场地、打开包装箱并将包装箱中的物品与装箱单进行比较、然后注册系统以获得支持权益。</block>
   <block id="92c8397408f55d9526d554c55cde3d22" category="section-title">第1步：准备站点</block>
   <block id="867f7657bd9567df4702cf9ddb87ae73" category="paragraph">要安装ASA R2存储系统、请确保计划使用的站点和机柜或机架符合您的配置规格。</block>
-  <block id="322c154066211ea062c12149146928fb" category="list-text">使用<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>确认您的站点满足ASA R2存储系统的环境和电气要求。</block>
-  <block id="0b75c01928f08a952353b4ed76796fb5" category="list-text">确保您有足够的机架空间：</block>
-  <block id="26e7314ba01a2bdc4fda67ee84154359" category="list-text">在存储系统的HA配置中为4U</block>
   <block id="6ac193907083dd66438c89227559f4dc" category="list-text">每个NS224存储架占用2U空间</block>
   <block id="2df7e61cfe4bf7857f54171cec3da494" category="list-text">安装所需的任何网络交换机。</block>
   <block id="11b5963f8c4ca653ab5f43bc4b9828df" category="inline-link">交换机文档</block>
@@ -855,17 +814,13 @@
   <block id="6630a85163683d2127a4b50c91d77093" category="section-title">第2步：打开包装箱</block>
   <block id="c7fa73c8f25d1dda70af465f1a37aa84" category="paragraph">确保ASA R2存储系统的站点和计划使用的机柜或机架符合要求的规格后、打开所有包装箱的包装并将其中的物品与装箱单上的物品进行比较。</block>
   <block id="82174a976e9a37564a41e6138a110eb6" category="list-text">小心地打开所有箱子、并有序地布置物品。</block>
-  <block id="d6aed2118da6ba77f55936d16677727f" category="list-text">将您已解包装的内容与装箱单上的列表进行比较。</block>
   <block id="6056345394434bf38ce0cd6fc7155a3e" category="admonition">您可以通过扫描装运箱侧面的QR码来获取装箱单。</block>
   <block id="1726196375cd4d9085528facd587a31e" category="paragraph">以下项目是您可能会在框中看到的一些内容。</block>
-  <block id="3a5ea134befe8869fed079290f956fd1" category="paragraph">确保包装箱中的所有物品均与装箱单上的列表匹配。如果存在任何差异、请记下这些差异以供进一步操作。</block>
   <block id="958c530ea1ae0e18b942f8784148734c" category="cell">* 硬件 *</block>
   <block id="09ff86ce1246a36d79f5d417bc9fb6be" category="cell">*电缆*</block>
   <block id="efb4c0c41cf8767bf0f9361a8c61a50a" category="list-text">挡板</block>
-  <block id="680d900a0d52fdf0778ee2a5588f6f69" category="list-text">缆线管理设备</block>
   <block id="f31303ddb8ada38aed08c2bb8f9d8e6c" category="list-text">存储系统</block>
   <block id="45e29b9394f4cac59a4b24854556dec2" category="list-text">带说明的导轨套件(可选)</block>
-  <block id="2a6f49472befe7fd3e056a4a6fedfe00" category="list-text">存储架</block>
   <block id="06d2646a8077631818b55a12dc3c58ac" category="list-text">管理以太网缆线(RJ-45缆线)</block>
   <block id="b2cdf9589096f203f816541f43a15f6c" category="list-text">网络缆线</block>
   <block id="7ceeb9e2de47574891152d45e033aea1" category="list-text">电源线</block>
@@ -873,9 +828,6 @@
   <block id="3ad4852daca6060d9a43783d0d67578c" category="list-text">USB－C串行端口电缆</block>
   <block id="9bea2d1b752b83d2f602c5b85b99a901" category="section-title">第3步：注册存储系统</block>
   <block id="a2be4a0a69af403c3bba37d2bf7044a4" category="paragraph">在确保您的站点满足ASA R2存储系统规格的要求并确认您已订购所有部件后、应注册您的系统。</block>
-  <block id="04a9069d60a270b8326c0bf8dece532c" category="list-text">找到存储系统的序列号。</block>
-  <block id="501009762675d8b94f6d05080102eaa1" category="paragraph">打开包装后、您可以在装箱单、确认电子邮件或控制器的系统管理模块上找到此编号。</block>
-  <block id="9a3ab30d090ff0aedb700d0ce5d6d031" category="image-alt">显示编号位置的系统序列号示例</block>
   <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp 支持站点</block>
   <block id="f5c45bcc73f02c7f2b1398ee78576a7a" category="list-text">转到。<block ref="1850de052c61829b534b07ba1a2ca402" category="inline-link-rx"></block></block>
   <block id="6918c0735e9cef59385e60d3f94d7115" category="list-text">确定是否需要注册存储系统：</block>
@@ -885,7 +837,6 @@
   <block id="8a55a5b89690f6046e6de8dd649ff837" category="list-text">使用您的用户名和密码登录。</block>
   <block id="5c83cedabfd78baf337988a092bcf317" category="list-text">选择*系统*&gt;*我的系统*。</block>
   <block id="8cc04c4151dd22af84b31cd55d6c5f57" category="list-text">确认新序列号已列出。</block>
-  <block id="d193a53b34315bee1bed499f665686ce" category="list-text">如果不是，请按照适用于新 NetApp 客户的说明进行操作。</block>
   <block id="daee797d0bf63a91fe069e1df88d7923" category="paragraph">NetApp 新客户</block>
   <block id="12dc2a66a130388ec482398caa6ce95b" category="list-text">单击 * 立即注册 * ，然后创建帐户。</block>
   <block id="89cc8de091278e0fb0686833ac6a7982" category="list-text">选择*系统*&gt;*注册系统*。</block>
@@ -905,7 +856,6 @@
   <block id="36b30e26ad350b193fa96577b859aa6b" category="paragraph">如果您需要将VM工作负载从ASA存储系统迁移到ASA R2存储系统、NetApp建议您使用<block ref="97ce748bde1d0df326ab308ffcedbe79" category="inline-link-macro-rx"></block>对数据执行实时、无中断迁移。</block>
   <block id="d76fc5ee6d641846e5835d32d7f85b4f" category="inline-link-macro">配置存储</block>
   <block id="e397caa258e5d83ec68542ada3868a88" category="paragraph">您已准备好<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>使SAN主机能够向存储单元读写数据。</block>
-  <block id="7ca4fe244381dbbbb75b019c3bc54c14" category="summary">ASA R2系统(ASA A1K、ASA 70、ASA 90)不支持某些ONTAP命令。</block>
   <block id="504d463c80199fc8015db827acb89c07" category="doc">ONTAP命令行界面支持ASA R2存储系统</block>
   <block id="981793b9517680b559e7e18c40ff7865" category="paragraph">ASA R2系统使用_storage availability zone_、而不是传统聚合(它们拥有存储系统中一组特定的可用磁盘)。存储可用性区域是一个通用存储池、可访问存储系统中的所有可用磁盘。ASA R2 HA对中的两个节点均可看到存储可用性分区。创建存储单元(LUN或NVMe命名空间)后、ONTAP会自动在存储可用性区域中创建一个包含Storage Virtual Machine (VM)的卷来存放此存储单元。</block>
   <block id="e46d2bbb0e6e44b354b5ca95c001185e" category="paragraph">由于这种简化的存储管理方法、<block ref="ba2a83cd4de4eb43c31f434bfb5213e0" prefix=" " category="inline-code"></block>ASA R2系统不支持命令。对某些<block ref="03628ea331120176369891df319619e8" prefix=" " category="inline-code"></block>和<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block>命令及参数的支持也有限。</block>
@@ -1559,7 +1509,6 @@
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2维护文档</block>
   <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph"><block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>请访问、了解如何对ASA R2系统组件执行维护过程。</block>
   <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会发现每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
-  <block id="9df0af6622b120b0338c4289d4d6b9e4" category="paragraph">NetApp ASA R2系统(ASA A1K、ASA A70和ASA A90)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="02a5548e7c0c7ed0e4a93d5e2d37ebc2" category="paragraph">以下NetApp ASA R2系统可用。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">对数据压缩进行的更改</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">ASA R2系统不会应用对温度敏感的存储效率。在ASA R2系统上、数据压缩不基于_hot_(经常访问)数据或_col_(不经常访问)数据。数据压缩开始时无需等待数据变冷。</block>
@@ -1590,10 +1539,8 @@
   <block id="3a405933969f80a6182b8257c15c10ff" category="cell">默认情况下、NVMe空间取消分配处于启用状态</block>
   <block id="7ec849e005dbd9c153a3b9fc38bf47df" category="paragraph">默认情况下、NVMe命名空间会启用空间取消分配(也称为"打孔"和"取消映射")。通过空间取消分配、主机可以取消分配未使用的块、以便回收空间。</block>
   <block id="9228b29536da5aa86ee6865642b7a754" category="paragraph">这样可以显著提高整体存储效率、尤其是在数据周转量较高的文件系统中。</block>
-  <block id="459e6c3f59570324cab3a799ce9f4d6f" category="inline-link-macro">在密钥管理器之间迁移ONTAP数据加密密钥</block>
   <block id="319ffa33cfb4e70c9e521494969d662a" category="sidebar">ONTAP 9.16.1.中的新增功能</block>
   <block id="0b6845dd2391304844b6f9578fd8c865" category="sidebar">对ONTAP默认值和限制进行的更改</block>
-  <block id="ec7ed1b959417fb145bcf5bc5351a4e1" category="paragraph">如果您需要从板载密钥管理器切换到外部密钥管理器，或者从外部密钥管理器切换到外部密钥管理器，请参见<block ref="6c5d784251393a5f6fda5c1a058497d1" category="inline-link-macro-rx"></block>。</block>
   <block id="d32b93d0cc0df3a57e074a2dd7f55bac" category="list-text">SnapMirror (异步和同步)到云</block>
   <block id="db501755a13db6bc1da40b7fa29e25f1" category="list-text">SnapMirror (异步和同步)到非ASA R2系统</block>
   <block id="b0af3c84875edd616110edf2dac64154" category="paragraph">数据精简率表示通过存储效率节省的空间量。</block>
@@ -1711,10 +1658,6 @@
   <block id="f9e81700c82de44e7b8b9b6bfcfbba80" category="list-text">选择*Detach*。</block>
   <block id="3fe9697b148df0f9994a0c38ed482555" category="inline-link-macro">设置复制策略</block>
   <block id="ee498a1797cb05156ed6a63b8ff17543" category="paragraph"><block ref="2e81c1e2e7e67baddc7dd1eab1535a95" category="inline-link-macro-rx"></block>将已断开的子一致性组的快照作为一个一致性组复制到远程集群。</block>
-  <block id="ab8f09c8990747589e661d2b7b0d3f20" category="summary">ASA R2系统(ASA A1K、A90、A70)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
-  <block id="2168b2f72c5b19d6c97100664276ea67" category="searchtitle">了解ASA A1K、A90和A70系统</block>
-  <block id="109a51a8a2c0a685a3c75a58d3c4230b" category="summary">要开始使用ASA R2 (ASA A1K、A90、A70)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
-  <block id="1e6107a968feb6567db48861306cc49f" category="searchtitle">安装和设置ASA A1K、A90和A70存储系统</block>
   <block id="e5c51f544e69319bec042113911e203e" category="paragraph"><block ref="1284f4e581f500fae0f4daa3e9543a0c" category="inline-link-macro-rx"></block>ASA R2系统、并将其部署在ONTAP环境中。</block>
   <block id="9a5e67864d1a0cbd6f43034e561f51a2" category="summary">开始安装和设置ASA R2存储系统、并将其部署到您的ONTAP环境中。</block>
   <block id="bf0f6aa21aec3e349179a68aa2cb89e0" category="section-title">拆分一致性组克隆</block>
@@ -1756,7 +1699,6 @@
   <block id="aada91e6d0de9250c4de431c33ad5116" category="cell">通过分层一致性组、您可以创建包含多个子一致性组的父一致性组。这样可以简化复杂数据结构的数据保护和管理。</block>
   <block id="6feaf968503604ce3e0d0b4eefca6c57" category="cell">支持存储单元自动重新平衡</block>
   <block id="ec84fb814253e6779e1876e18f7db731" category="cell">ONTAP将自动在存储可用性区域之间重新平衡存储单元、以获得最佳性能和容量利用率。</block>
-  <block id="abdffd3ebdd2031130d1592a9a139a92" category="sidebar">NetApp ASA R2系统(ASA A1K、A90、A70)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
   <block id="d04e5f519989e5f2ca95f9541ffe17a0" category="sidebar">升级 ONTAP</block>
   <block id="fb3dca1c5682d0eef255de24a00af0f3" category="sidebar">添加节点</block>
   <block id="3214e36fd00eb6d4da6f5d9b64f41cb1" category="sidebar">管理存储单元</block>
@@ -1799,4 +1741,164 @@
   <block id="cc1a9524f9ddd8574a5553ccd90ee9c3" category="paragraph">您可以使用ONTAP命令行界面(CLI)在集群级别的密钥管理器与Storage VM级别的密钥管理器之间迁移密钥。</block>
   <block id="5efbf2392161773688bf42568dd2c8c6" category="list-text">迁移密钥：</block>
   <block id="f7d82610ce1c76769575f4a95bb11e80" category="sidebar">在密钥管理器之间迁移数据加密密钥</block>
+  <block id="77a58a8f042eca52cbae63333451e567" category="summary">ASA R2系统(ASA A1K、A90、A70、A50、A30、A20)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。</block>
+  <block id="16b2362ce213edbe317b5df3169d035c" category="searchtitle">了解ASA A1K、A90、A70、A50、A30和A20系统</block>
+  <block id="feb8007866385642b73ef1e6524ba327" category="paragraph">NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
+  <block id="3ee9bc9a210bd85fa921ca63bdeef612" category="list-text">ASA A50</block>
+  <block id="e21bdbd552261278be0a5ad02fbc6fa7" category="list-text">ASA A30</block>
+  <block id="3c609b480f1311eaec9774146ac50e79" category="list-text">ASA A20</block>
+  <block id="eb020f30ead1b473ff4a75c9863c0d1a" category="summary">要开始使用ASA R2 (ASA A1K、A90、A70、A50、A30、A20)系统、请安装硬件、设置集群、设置数据访问以及配置存储。</block>
+  <block id="e25344cc16f12d622f2af42aea8ed7a8" category="searchtitle">安装和设置ASA A1K、A90、A70、A50、A30和A20存储系统</block>
+  <block id="b3a1e3cfc607694cb423d46b8b23fa54" category="paragraph">有关将存储系统连接到网络交换机的信息、请与网络管理员联系。</block>
+  <block id="cdd3776ed8f948030728899ab7f94b8e" category="list-text">以下过程显示了常见配置。具体布线取决于为存储系统订购的组件。有关全面的配置详细信息，请参见<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="28c4b42113d6ebd3c5e6ca40929d04a6" category="list-text">布线图中的箭头图标显示了将连接器插入端口时电缆连接器推拉卡舌的正确方向(向上或向下)。</block>
+  <block id="fd2cb99acafb4f0144bfb5e0e4c31373" category="paragraph">插入连接器时、您应感觉到连接器卡入到位；如果您不觉得连接器卡嗒声、请将其卸下、然后将其翻转并重试。</block>
+  <block id="416f5908ffc86e7abf276c4f75904ee7" category="inline-image-macro">电缆拉片方向</block>
+  <block id="c486d43df45ffe41cde84a1b0fa45aa0" category="paragraph"><block ref="c486d43df45ffe41cde84a1b0fa45aa0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e3eb777419d46f8ec20ca944795a4d26" category="list-text">如果使用缆线连接到光纤交换机、请先将光纤收发器插入控制器端口、然后再使用缆线连接到交换机端口。</block>
+  <block id="d16a227aab66041a81c6f88b290eb486" category="section-title">第1步：为集群/HA连接布线</block>
+  <block id="e5f780ef73bd41c1dd64af7a1a1a31ac" category="paragraph">使用缆线将控制器连接到ONTAP集群。此过程因存储系统型号和I/O模块配置而异。</block>
+  <block id="cc462bbdb3b8d9369a4c3f67dcc8095c" category="open-title">A1K</block>
+  <block id="fde22ae5f3a1cc39c61853ffe9a68675" category="paragraph">创建ONTAP集群连接。对于无交换机集群、请将控制器相互连接。对于有交换机集群、将控制器连接到集群网络交换机。</block>
+  <block id="134e0586a0879fa097abfb47d5e64dbe" category="example-title">无交换机集群布线</block>
+  <block id="c4cbbd77402de8c27a0e7a305bcd7a83" category="list-text">将控制器A上的端口e1a连接到控制器B上的端口e1a</block>
+  <block id="0990249c3bba6596b74be9af46837266" category="list-text">将控制器A上的端口e7a连接到控制器B上的端口e1a</block>
+  <block id="666ce5251c9c6f25db5da3d713f9b34a" category="example-title">Switched cluster cabling</block>
+  <block id="18695b824b22d82a916970e4903bf31d" category="paragraph">使用100 GbE缆线将端口e1a连接到e1a、并将端口e7a连接到e7a。</block>
+  <block id="698b27a4b40df61ad4e02a808f16defc" category="admonition">有交换机集群配置受支持的9.16.1及更高版本。</block>
+  <block id="bf419afe8104f0626b8c6f35d7546f54" category="list-text">将控制器A上的端口e1a和控制器B上的端口e1a连接到集群网络交换机A</block>
+  <block id="cf5e5d4912cff0cbaa590fc1ae9ce6d7" category="list-text">将控制器A上的端口e7a和控制器B上的端口e7a连接到集群网络交换机B</block>
+  <block id="b222cca23840b6a495e76b8c300b08f2" category="image-alt">100 Gb缆线</block>
+  <block id="f1d133e33e29362e931a34312a961d0b" category="image-alt">使用缆线将集群连接到集群网络</block>
+  <block id="b1f39e4d9956723a4e80ea4844651e57" category="open-title">A70和A90</block>
+  <block id="45078e841660b01dec689a55423c0ad7" category="paragraph">使用集群/HA互连缆线将端口e1a连接到e1a、并将端口e7a连接到e7a。</block>
+  <block id="4c4c88c42c8601a756bccea16c845e74" category="open-title">-20、A30和A50</block>
+  <block id="fd58de99944e8efb194dd7978a910460" category="paragraph">*无交换机集群布线*</block>
+  <block id="27414c133f108cf7a16f5284d6f30c1c" category="paragraph">将控制器相互连接以创建ONTAP集群连接。</block>
+  <block id="ae385fd98cef8d5576799c3e17b37de5" category="example-title">带有两个双端口40/100 GbE I/O模块的ASA A30和ASA A50</block>
+  <block id="3020ab19ecc6bea34da86a75211a1480" category="list-text">连接集群/HA互连连接：</block>
+  <block id="6780657f10ef4bbe5e784f3b1e7777e3" category="admonition">集群互连流量和HA流量共享相同的物理端口(位于插槽2和4的I/O模块上)。端口为40/100 GbE。</block>
+  <block id="81d3b176c84d195465a42037b378be34" category="list-text">将控制器A端口E2A连接到控制器B端口E2A。</block>
+  <block id="97986c7edeb8aa720651d6caecb2740e" category="list-text">将控制器A端口e4a连接到控制器B端口e4a。</block>
+  <block id="c2f3dca1342038cc2e96405818f97fc1" category="admonition">I/O模块端口e2b和e4b未使用、可用于主机网络连接。</block>
+  <block id="29225cb045b4ca6180b60163acf195c6" category="paragraph">*100 GbE集群/HA互连缆线*</block>
+  <block id="11156b406be2310dbc7ea0be9d4c50ed" category="image-alt">集群HA 100 GbE缆线</block>
+  <block id="9cfa3d116e4d078fb40d2bc893df02d3" category="image-alt">使用两个100GbE IO模块的A30和A50无交换机集群布线图</block>
+  <block id="a4f83d44ddc4f1d9024cb358c68b9839" category="example-title">带有一个双端口40/100 GbE I/O模块的ASA A30和ASA A50</block>
+  <block id="fe9b088094e89f3bfca3ca399c7b0db3" category="admonition">集群互连流量和HA流量共享相同的物理端口(位于插槽4中的I/O模块上)。端口为40/100 GbE。</block>
+  <block id="106e367c9573abf49a09d94f19c1bfc1" category="list-text">将控制器A端口e4b连接到控制器B端口e4b。</block>
+  <block id="8664dd7c786c742954653ce492e9658d" category="image-alt">使用一个100GbE IO模块的A30和A50无交换机集群布线图</block>
+  <block id="41e7c843565f888c45e00de3fb7efbb7" category="example-title">带有一个双端口1025 GbE I/O模块的ASA A20</block>
+  <block id="12c884ae6ab63449a58d2a6afa1e2e37" category="admonition">集群互连流量和HA流量共享相同的物理端口(位于插槽4中的I/O模块上)。端口为1025 GbE。</block>
+  <block id="1d26f858cfe843b7c2ef97cec62fa3e4" category="paragraph">*25 GbE集群/HA互连缆线*</block>
+  <block id="7068e62ae38501c78d2ab15da6f10b16" category="inline-image-macro">GbE SFP铜缆连接器、宽度=100pp</block>
+  <block id="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="paragraph"><block ref="6fb39f4b9d1de8f2f3a463d3f9eedd52" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e04550968face4eb31df851171941f8" category="image-alt">使用一个25 GbE IO模块的2020无交换机集群布线图</block>
+  <block id="151c289f37f59079c337dd0b4878c201" category="paragraph">*交换集群布线*</block>
+  <block id="fa02cdb8515e1cd51b4eadba9fd50080" category="paragraph">将控制器连接到集群网络交换机以创建ONTAP集群连接。</block>
+  <block id="ee68cf12a16ca46d58bedd8cf9051f32" category="example-title">具有两个双端口40/100 GbE I/O模块的AFF A30或AFF A50</block>
+  <block id="a8d16746fb80901317600cba36862a10" category="list-text">为集群/HA互连连接布线：</block>
+  <block id="3a343cf67a3c616a35a00f3a82358fe3" category="list-text">使用缆线将控制器A端口e4a连接到集群网络交换机A</block>
+  <block id="627172884756ce9f3fccfd51a4559c59" category="list-text">使用缆线将控制器A端口E2A连接到集群网络交换机B</block>
+  <block id="9c7f10ca7cef7791dc302ef4b9fc6cff" category="list-text">使用缆线将控制器B端口e4a连接到集群网络交换机A</block>
+  <block id="e7a7b98be669245e46e9b8f7bbe98b71" category="list-text">使用缆线将控制器B端口E2A连接到集群网络交换机B</block>
+  <block id="b53a4effb80334f95a8d3a106ebd8d78" category="paragraph">*40/100 GbE集群/HA互连缆线*</block>
+  <block id="b0f68808f5130fe93780d063d5a249ef" category="image-alt">集群HA 40/100 GbE缆线</block>
+  <block id="fdf9561d280feaca372af24a497c913c" category="image-alt">使用两个100GbE IO模块的A30和A50交换集群布线图</block>
+  <block id="0876d414989c1fb53595c5b00b028242" category="example-title">带有一个双端口40/100 GbE I/O模块的AFF A30或AFF A50</block>
+  <block id="03b14fd60bbaa553460ca8bf5858ac71" category="list-text">使用缆线将控制器连接到集群网络交换机：</block>
+  <block id="2cfaddf7a4d44f5351fdb0ee36c9c36b" category="list-text">使用缆线将控制器A端口e4b连接到集群网络交换机B</block>
+  <block id="04fca3f1f2d55aeb84370ab3e66d9214" category="list-text">使用缆线将控制器B端口e4b连接到集群网络交换机B</block>
+  <block id="b7b6d611e5d7c5c0d87c70245fb7d396" category="example-title">带有一个双端口1025 GbE I/O模块的AFF A20</block>
+  <block id="9d14c26ccbbb0d65a3b5d05e2013404b" category="paragraph">*1025 GbE集群/HA互连缆线*</block>
+  <block id="3488ff918c31f4a57e74bbab6ef9bcc9" category="inline-image-macro">使用一个25GbE IO模块的2020交换集群布线图</block>
+  <block id="ae3bd4fc66b4084d0dc856b5f0230d72" category="paragraph"><block ref="ae3bd4fc66b4084d0dc856b5f0230d72" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f99cbc2aa28ab9fed6e99fa94242b4a" category="section-title">第2步：为主机网络连接布线</block>
+  <block id="11b5e1f572906bdd8b96e6f22d885cd4" category="paragraph">将控制器连接到主机网络。</block>
+  <block id="40a36b0ffd7a648bae61167d750303ae" category="paragraph">此过程因存储系统型号和I/O模块配置而异。</block>
+  <block id="3b29102e499249644dff327644d96081" category="list-text">将端口e9a和e9b连接到以太网数据网络交换机。</block>
+  <block id="4f3114ccf1048d4ddc64a6a3b00212c0" category="paragraph">将以太网模块端口或光纤通道(FC)模块端口连接到主机网络。</block>
+  <block id="fa60bebf26c9f26f466d33f766281ef9" category="paragraph">*以太网主机布线*</block>
+  <block id="e754a652dbb952ac31751366c3c21c14" category="example-title">ASA A30和ASA A50：两个双端口40/100 GbE I/O模块</block>
+  <block id="3202c4ba4b5ac6113c606ef9bb3c50cf" category="paragraph">在每个控制器上、将端口e2b和e4b连接到以太网主机网络交换机。</block>
+  <block id="e827a0600a7ebd00f36ea855012f66a1" category="admonition">插槽2和4中I/O模块上的端口为40/100 GbE (主机连接为40/100 GbE)。</block>
+  <block id="7329bfa51dec924de206ced093bea600" category="paragraph">*40/100 GbE缆线*</block>
+  <block id="8f31147c7cfeb7520dc9739e31dedc90" category="image-alt">40/100 GB电缆</block>
+  <block id="ec83c89c1bfd1fa2fe72db4df75b0e43" category="image-alt">使用缆线连接到40/100GbE以太网主机网络交换机</block>
+  <block id="e542a7b563f91e8435b64ab751642f56" category="example-title">ASA A20、A30和A50：一个4端口1025 GbE I/O模块</block>
+  <block id="3e42ab3fbc066a1e09943ca314bf3205" category="paragraph">在每个控制器上、将端口e2a、e2b、e2c和e2d连接到以太网主机网络交换机。</block>
+  <block id="c053ea984f8ec26545ef5a0f8e3c516b" category="paragraph">*1025 GbE缆线*</block>
+  <block id="b8382f91ab365521fe8568f720b6ddd4" category="paragraph">*FC主机布线*</block>
+  <block id="54f820ebbd8d18dec75e23b076eb9340" category="example-title">ASA A20、A30和A50：一个4端口64 Gb/秒FC I/O模块</block>
+  <block id="945fde23e0c7ac9dc52f131c48ef5861" category="paragraph">在每个控制器上、将端口1a、1b、1c和1d连接到FC主机网络交换机。</block>
+  <block id="241c17a1be2cc4feae5c8c6007f8aed3" category="paragraph">*64 Gb/秒FC缆线*</block>
+  <block id="176084e0e3d1d8b98919ade28704bd7b" category="inline-image-macro">64 Gb FC电缆、宽度=100个点</block>
+  <block id="0174aef3c6edce25256f90638a06bdca" category="paragraph"><block ref="0174aef3c6edce25256f90638a06bdca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53b32e6926c94a5a2ab06b2fe3836135" category="image-alt">连接到64 GB FC主机网络交换机的缆线</block>
+  <block id="945babbf23a8741321d27a1c4a0c4200" category="section-title">第3步：为管理网络连接布线</block>
+  <block id="81c5a35ebe94a71ec0440d955458f3b2" category="paragraph">将控制器连接到管理网络。</block>
+  <block id="606df56893b9539a0efef8ec28ae5b04" category="paragraph">有关将存储系统连接到管理网络交换机的信息、请与网络管理员联系。</block>
+  <block id="c7900e3ee1f4eb935f449465b57ad5c1" category="paragraph">使用1000BASE-T RJ-45缆线将每个控制器上的管理(扳手)端口连接到管理网络交换机。</block>
+  <block id="827e1151fb167c880355e4177a701fcc" category="paragraph">将每个控制器上的管理(扳手)端口连接到管理网络交换机。</block>
+  <block id="cc9dc8ff5d926a2f202e16be7619d147" category="section-title">第4步：为磁盘架连接布线</block>
+  <block id="0d76e0793ffa0c020fcde5112f3ab0ac" category="paragraph">以下布线过程显示了如何将控制器连接到存储架。</block>
+  <block id="5a684badbec5242d1800f819ca49559e" category="paragraph">有关存储系统和所有布线选项支持的最大磁盘架数量，请参见<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="11f69ba457c92cc85e478b022d6fe27d" category="example-title">选项1：一个NS224存储架</block>
+  <block id="dbc80d316683c8c8fbd51c4f53c57169" category="example-title">方案2：两个NS224存储架</block>
+  <block id="d0102d843a83876d4bd560d55dc295dd" category="paragraph">使用随存储系统提供的存储缆线将每个控制器连接到NS224磁盘架上对应的NSM100B模块、其中可能包括以下缆线类型：</block>
+  <block id="302158186d4e933e7fd1df5cef7e5e27" category="paragraph">图中显示控制器A的布线为蓝色、控制器B的布线为黄色。</block>
+  <block id="43f628d39f94658277cbd1d5e2ec5913" category="list-text">将控制器A连接到磁盘架：</block>
+  <block id="6c7c671b8bb322ab01af1c161215e3d7" category="list-text">将控制器A端口e3a连接到NSM A端口e1a。</block>
+  <block id="bc5326a83ab89a40d5cfd25f6eb9899d" category="list-text">将控制器A端口e3b连接到NSM B端口e1b。</block>
+  <block id="c4026e3ae600ac06e1796e4025a51f22" category="inline-image-macro">控制器A端口e3a和e3b连接到一个NS224磁盘架</block>
+  <block id="5b9ac89947f29d7d4db86ad300db69d3" category="paragraph"><block ref="5b9ac89947f29d7d4db86ad300db69d3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="df9e27b7d1c106fffbc9dde2fe027000" category="list-text">将控制器B连接到磁盘架：</block>
+  <block id="3a54b891c1fe5c653ae2233e99b32ada" category="list-text">将控制器B端口e3a连接到NSM B端口e1a。</block>
+  <block id="ce3ea3eeee75c18d4f586150df3cf629" category="list-text">将控制器B端口e3b连接到NSM A端口e1b。</block>
+  <block id="a7232cb75808a8e7cf49cc148792b59d" category="inline-image-macro">控制器B端口e3a和e3b连接到一个NS224磁盘架</block>
+  <block id="4e7a391052a15e943c46f8d16f6bd53d" category="paragraph"><block ref="4e7a391052a15e943c46f8d16f6bd53d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7a0f0e325563120e62646d89ac8b197e" category="list-text">如果ASA R2系统附带了缆线管理设备、请将其连接到存储系统背面。</block>
+  <block id="952805fa15e6e1f3af7524361380c893" category="list-text">安装并固定存储架：</block>
+  <block id="9af939d89ff4b6cd47b1f72c57d76a06" category="list-text">回形针或窄尖头圆珠笔、用于设置存储架ID</block>
+  <block id="3ab6c785bbd775b63a4a25d8453fdddf" category="paragraph">ASA R2存储系统和存储架很重。搬运这些物品时请务必小心。</block>
+  <block id="0118ce23f0901978d22ba4cb610ecf9b" category="paragraph">ASA A1K存储系统的重量可达22.83磅(28.5千克)。要抬起存储系统、请两个人或使用液压升降机。</block>
+  <block id="ea2b428ae3132b5aa1f8abadc2dac0ec" category="image-alt">ASA A1K提升注意图标</block>
+  <block id="ade40ccac82599c531d24027ce58a74c" category="paragraph">ASA A70或ASA A90存储系统的最大重量为68.8千克(151.68磅)。要抬起存储系统、请使用四个人或一台液压升降机。</block>
+  <block id="ee73bc981e2e8029d6fae6ac2090bcba" category="paragraph">ASA A20、ASA A30或ASA A50存储系统的最大重量为27.9千克(61.5磅)。要抬起存储系统、请两个人或使用液压升降机。</block>
+  <block id="336e0262f6402efd45d8cf9d7ae13e8c" category="section-title">存储架重量</block>
+  <block id="fe464b77547b113c26b6c4a663f8d99c" category="paragraph">移动或抬起磁盘架时、请采取必要的预防措施。</block>
+  <block id="45e63469b991d33c068f31181b786804" category="open-title">NS224磁盘架</block>
+  <block id="6de84c72e7e126f172cbcc00c68cd297" category="paragraph">NS224磁盘架的重量不超过66.78磅(30.29千克)。要抬起磁盘架、请两个人或使用液压升降机。将所有组件(前部和后部)保留在磁盘架中、以防止磁盘架重量不平衡。</block>
+  <block id="f6212161be26bdf2d9804cc49d78a681" category="image-alt">NS224 NSM100提升注意事项</block>
+  <block id="645bbd951015c1adc70cec78178abf63" category="open-title">具有NSM100B模块的NS224磁盘架</block>
+  <block id="6eb0f75df27b0466f7984bf67accd904" category="paragraph">带有NSM100B模块的NS224磁盘架的重量可达56.8磅(25.8千克)。要抬起磁盘架、请两个人或使用液压升降机。将所有组件(前部和后部)保留在磁盘架中、以防止磁盘架重量不平衡。</block>
+  <block id="34ae4f1779c2db0223377cbefc6262df" category="image-alt">NS224和NSM100b提升注意事项</block>
+  <block id="16c114ca23e26a2dea111e805efdbc64" category="summary">打开每个磁盘架的电源以分配唯一的磁盘架ID、打开ASA R2控制器的电源并固定电源线。</block>
+  <block id="6379280c267113ec35e5881e1b0f65bb" category="paragraph">每个磁盘架都有一个唯一的磁盘架ID来区分。此ID可确保存储架在存储系统设置中是不同的。</block>
+  <block id="f4e530e07769045ad933874fca013307" category="list-text">A valid shelf ID is 01 through 99.</block>
+  <block id="ce4b2f7741d87ac6c37e8727ca9ad20a" category="paragraph">如果控制器中集成了内部磁盘架(存储)、则会为其分配一个固定磁盘架ID 00。</block>
+  <block id="cf999199f9d4c3e90d15399860476f13" category="image-alt">Change shelf ID</block>
+  <block id="891561cb838adbb7475943bc7ea20ead" category="list-text">将笔记本电脑连接到串行控制台端口。这样、您就可以在控制器通电时监控启动顺序。</block>
+  <block id="5d181ca91be1af691d1f01654691cc7b" category="image-alt">A1K存储系统和A70或A90电源连接图</block>
+  <block id="d2318e267239f37a3cc57e89925b9627" category="image-alt">-20、A30或A50存储系统电源连接图</block>
+  <block id="e477637685baafe9bbd353f71ef51283" category="list-text">允许系统启动。Initial booting may take up to eight minutes.</block>
+  <block id="d420064a5f4919f9be16d853c6d1997c" category="list-text">使用每个电源上的固定设备固定电源线。</block>
+  <block id="784289434de2772034240714a84f80a9" category="list-text">使用<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>确认您的站点满足存储系统的环境和电气要求。</block>
+  <block id="16b6ee929559cf4a616d08d372071c4d" category="list-text">确保为存储系统、磁盘架和任何交换机提供足够的机柜或机架空间：</block>
+  <block id="0bf1ff1f561d2a96752b8ee596c65068" category="list-text">HA配置中的4U</block>
+  <block id="d870295bbe120d15107d49597065fc2e" category="list-text">对于大多数交换机、为1U</block>
+  <block id="c076fae440b08efddde1c3350bc89b48" category="open-title">A70和A90</block>
+  <block id="586f9ad5db82f223a8b9cca9ed48f572" category="list-text">2U、用于存储系统</block>
+  <block id="f3bd097d24df1ac0353888e40c01c232" category="list-text">将您已解包装的内容与装箱单上的列表进行比较。如果存在任何差异、请记下这些差异以供进一步操作。</block>
+  <block id="7638bec0a959f7fd0b1433ed8d2deca8" category="list-text">存储架(如果您订购了额外的存储)</block>
+  <block id="06492da17f061f2a9e0458d0fb9a15f7" category="list-text">找到存储系统的序列号。</block>
+  <block id="3db53907b5ca9a298d8e8517cdd30a44" category="paragraph">您可以在以下位置找到序列号：</block>
+  <block id="3fc885acbf9f3f66cb5fefc99c0d76c6" category="list-text">在装箱单上</block>
+  <block id="cf163ceac39b37fd1108b3cf9ff2b719" category="list-text">在您的确认电子邮件中</block>
+  <block id="676b7066692787a119854c062d5f6c05" category="list-text">在每个控制器上、或者对于某些系统、在每个控制器的系统管理模块上</block>
+  <block id="3b2136486adac3ad66275a45c07c6ebf" category="image-alt">系统序列号示例</block>
+  <block id="6b127ae60215df1a5f77bc62deb0fa41" category="list-text">如果未列出序列号、请按照适用于新NetApp客户的说明进行操作。</block>
+  <block id="556e0ee8174fe1dd298dfe165915e58f" category="summary">ASA R2系统(ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20)不支持某些ONTAP命令。</block>
+  <block id="d4b904a6ceddca0805b85998f1946d36" category="paragraph">从ONTAP 9.161开始、支持以下NetApp ASA R2系统。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。</block>
+  <block id="1afab26d25573baff41c4a297e2b15fb" category="sidebar">NetApp ASA R2系统(ASA A1K、ASA A90、ASA A70、ASA A50、ASA A30、ASA A20)提供统一的硬件和软件解决方案、可根据仅SAN客户的需求打造简化的体验。</block>
 </blocks>

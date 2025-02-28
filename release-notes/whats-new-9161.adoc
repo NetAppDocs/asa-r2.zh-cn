@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/whats-new-9161.html 
-keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa a90, asa a70' 
+keywords: 'what"s new, release notes, 9.16.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
 summary: 了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。 
 ---
 = ONTAP 9 R2.161中针对ASA R2系统的新增功能
@@ -16,6 +16,24 @@ summary: 了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。
 [role="lead"]
 了解适用于ASA R2系统的ONTAP 9。16.1中提供的新功能。
 
+
+
+== 平台
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| 平台  a| 
+从ONTAP 9.161开始、支持以下NetApp ASA R2系统。这些平台提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
 
 
 == 数据保护

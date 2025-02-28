@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: release-notes/changes-to-limits-defaults.html 
-keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa a90, asa a70 
+keywords: release notes, changes, updates, defaults, limits, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
 summary: 了解影响ASA R2系统的限制和默认值更改。 
 ---
 = 对影响ASA R2系统的ONTAP限制和默认值进行的更改

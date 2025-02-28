@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/cli-support.html 
-keywords: asa r2, asa r2, asa a1k, asa a90, a70, cli 
-summary: 'ASA R2系统(ASA A1K、ASA 70、ASA 90)不支持某些ONTAP命令。' 
+keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20cli 
+summary: 'ASA R2系统(ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20)不支持某些ONTAP命令。' 
 ---
 = ONTAP命令行界面支持ASA R2存储系统
 :allow-uri-read: 

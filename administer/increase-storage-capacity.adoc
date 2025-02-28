@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: administer/increase-storage-capacity.html 
-keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa a1k, asa a90, asa a70 
+keywords: increase, capacity, node, shelf, drive, expand, storage, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
 summary: 向节点或磁盘架添加驱动器以增加ASA R2存储单元的容量。 
 ---
 = 增加ASA R2存储系统上的存储容量
