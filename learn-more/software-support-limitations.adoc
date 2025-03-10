@@ -28,7 +28,6 @@ summary: 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某�
 * ONTAP S3 SnapMirror和S3 API
 * SnapMirror (异步和同步)到云
 * SnapMirror (异步和同步)到非ASA R2系统
-* 选择性 LUN 映射（ SLM ）
 
 
 .ASA R2系统支持以下功能：
