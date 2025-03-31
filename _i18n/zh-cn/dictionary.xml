@@ -684,7 +684,6 @@
   <block id="e28af899651d52d4e958ed29e85f0c9c" category="list-text">DNS名称服务器IP地址</block>
   <block id="178e188a7017b433a79efd35d6037e4c" category="list-text">NTP服务器IP地址</block>
   <block id="2676562cc6b0cf6c0163b1086bb1c6c9" category="list-text">数据子网掩码</block>
-  <block id="60d902b0a36cd8bdaed2c0e3cade40ba" category="list-text">发现集群网络</block>
   <block id="13a5c797fb82f415ef3d13e5c012faf4" category="list-text">将笔记本电脑连接到管理交换机并访问网络计算机和设备。</block>
   <block id="098bbae74bb948e3ff3baff0a28b2546" category="list-text">Open File Explorer.</block>
   <block id="b43b6fc30d6fa5fad81a00f958b516dc" category="list-text">选择*网络*；然后右键单击并选择*刷新*。</block>
@@ -1040,7 +1039,6 @@
   <block id="1749d12df3df2319d3eee218a277ff83" category="list-text">MetroCluster</block>
   <block id="f1345c9c1d33e2624cdc41782fec6885" category="list-text">对象协议</block>
   <block id="372f3c3be292ea7811b9c24f14765c78" category="list-text">ONTAP S3 SnapMirror和S3 API</block>
-  <block id="cbb51e0b1487ab3d93d6d940a1533133" category="list-text">选择性 LUN 映射（ SLM ）</block>
   <block id="fa445878b9d320833cecf582e9e36c4b" category="list-title">ASA R2系统支持以下功能：</block>
   <block id="7c2e86b53f6831d08fa968613cefaa23" category="list-text">Snaplock</block>
   <block id="272175c607c14852d532cd2cf2304f90" category="list-text">双层加密</block>
@@ -1904,4 +1902,5 @@
   <block id="9e607734cbe02d05fcbdf2a8bd579b3a" category="inline-link-macro">支持密钥管理器之间的加密密钥迁移</block>
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">在集群级别从ONTAP板载密钥管理器切换到外部密钥管理器时、您可以使用ONTAP命令行界面(CLI)轻松地将加密密钥从一个密钥管理器迁移到另一个密钥管理器。</block>
+  <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">发现集群网络</block>
 </blocks>
