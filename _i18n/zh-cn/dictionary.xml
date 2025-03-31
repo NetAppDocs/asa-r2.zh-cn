@@ -1903,4 +1903,5 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">在集群级别从ONTAP板载密钥管理器切换到外部密钥管理器时、您可以使用ONTAP命令行界面(CLI)轻松地将加密密钥从一个密钥管理器迁移到另一个密钥管理器。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">发现集群网络</block>
+  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">对于ASAr2 A20、A30或A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。系统的内部磁盘架ID固定为00。</block>
 </blocks>
