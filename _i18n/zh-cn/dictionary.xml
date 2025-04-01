@@ -964,8 +964,6 @@
   <block id="7a15ceb09d1ef08df7b9021f7341e654" category="paragraph">您已准备好<block ref="0675c663575ea5d2004171fa7c4c09af" category="inline-link-macro-rx"></block>从SAN客户端到系统。</block>
   <block id="e42d5bab0edf2441b75829873e298e1b" category="summary">ASA系统提供针对纯SAN解决方案优化的硬件支持。ASA R2系统可优化硬件和软件。</block>
   <block id="b8d343a2d9dfd7386b6b373e6050b930" category="searchtitle">将ASA R2系统与其他ONTAP系统进行比较</block>
-  <block id="a96666c23540f7c6d0da8ca6ab7b57d5" category="paragraph">ASA R2系统可为基于全闪存平台构建的纯SAN环境提供统一的硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。</block>
-  <block id="9bbd2ec1679b3be9cb3ca46d69e0297c" category="paragraph">在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在所有其他ONTAP系统(ASA、AFF、FAS)上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。</block>
   <block id="cf4ae521a2a16cdd073860fee0fbab96" category="paragraph">您可以从System Manager或ONTAP命令行界面验证ONTAP存储的特性。</block>
   <block id="c3e4be39d2ab89664b205dd7d0bb6510" category="list-text">从System Manager菜单中，选择*Cluster &gt; Overview*。</block>
   <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在命令行界面中、输入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
@@ -1904,4 +1902,6 @@
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">在集群级别从ONTAP板载密钥管理器切换到外部密钥管理器时、您可以使用ONTAP命令行界面(CLI)轻松地将加密密钥从一个密钥管理器迁移到另一个密钥管理器。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">发现集群网络</block>
   <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">对于ASAr2 A20、A30或A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。系统的内部磁盘架ID固定为00。</block>
+  <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2系统可为基于全闪存平台构建的纯SAN环境提供硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。</block>
+  <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在ASA系统上运行的ONTAP标识为_ ASA ONTAP特性_。在AFF和FAS ONTAP系统上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。</block>
 </blocks>
