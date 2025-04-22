@@ -112,7 +112,6 @@
   <block id="ed7898c08720b7f938fd473f200d7f27" category="paragraph">您已创建子网、现在可以使用该子网简化LIP的创建。</block>
   <block id="753ad49162ca6621affe67bf28ce6a1e" category="section-title">创建LIF (网络接口)</block>
   <block id="be23cf7af156de0532411edfa91f3361" category="paragraph">LIF (网络接口)是与物理或逻辑端口关联的IP地址。在要用于访问数据的端口上创建SIFs。Storage VM通过一个或多个生命周期管理器向客户端提供数据。如果组件发生故障、LIF可以进行故障转移或迁移到其他物理端口、从而不会中断网络通信。</block>
-  <block id="ab643808e465ae91c1cb6822de36ce7f" category="paragraph">默认情况下、创建IP数据LIF时、它可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。</block>
   <block id="21f332db2a0aeb6d30c08d58804c1f1a" category="list-text">底层物理或逻辑网络端口必须已配置为管理<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>状态。</block>
   <block id="0b7a56152c376f386379636394d6eee1" category="list-text">如果您计划使用子网名称为 LIF 分配 IP 地址和网络掩码值，则此子网必须已存在。</block>
   <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">处理节点之间集群内流量的 LIF 不应与处理管理流量的 LIF 或处理数据流量的 LIF 位于同一子网上。</block>
@@ -1571,8 +1570,6 @@
   <block id="b57ea9712535452d1a9c410e0f1f4f93" category="list-text"><block ref="b57ea9712535452d1a9c410e0f1f4f93" category="inline-link-macro-rx"></block></block>
   <block id="8182eb8f155278176f93ebb4d84774dc" category="list-text"><block ref="8182eb8f155278176f93ebb4d84774dc" category="inline-link-macro-rx"></block></block>
   <block id="8027cf82d29e89bcd72c0f7ae984c222" category="paragraph">及更高版本支持ASA R2系统<block ref="6a0b5c767b375da41f0e7140f5d8129e" category="inline-link-macro-rx"></block>。</block>
-  <block id="ace9c44d680e3a8684441fd776f4db68" category="paragraph">如果要启用自动iSCSI LIF故障转移、则必须创建仅iSCSI LIF。启用自动iSCSI LIF故障转移后、如果发生存储故障转移、iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在该端口恢复运行状况良好后、再迁移回其原始端口。</block>
-  <block id="38db38181d3edceaf9353ed23bb6a1d6" category="paragraph">要创建单个协议LIF、请仅选择一个协议。例如，要创建仅iSCSI LIF，请选择*iSCSI*。</block>
   <block id="f08b07b736a8c5201accc4549e8a0762" category="list-text">默认自动iSCSI LIF故障转移</block>
   <block id="4b3d6eefe10e552e93669e44e3908ab2" category="inline-link-macro">创建仅iSCSI LIF</block>
   <block id="c32fddd27ad2252ef230f0871f34068f" category="paragraph">在ASA R2系统中、默认网络LIF在NVMe和SCSI主机之间共享、因此不支持自动故障转移。要启用自动iSCSI LIF故障转移，您必须<block ref="80674e801e3a84767641d7c52bb7dcab" category="inline-link-macro-rx"></block>。默认情况下、自动故障转移在仅限iSCSI的LUN上启用。</block>
@@ -1904,4 +1901,7 @@
   <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">对于ASAr2 A20、A30或A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。系统的内部磁盘架ID固定为00。</block>
   <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2系统可为基于全闪存平台构建的纯SAN环境提供硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在ASA系统上运行的ONTAP标识为_ ASA ONTAP特性_。在AFF和FAS ONTAP系统上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。</block>
+  <block id="7332b2297a735d659182d1392cf28129" category="paragraph">在ASA R2系统上、您可以创建IP、FC、NVMe/FC LUN。默认情况下、IP数据LIF可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。</block>
+  <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果要启用自动iSCSI LIF故障转移、则必须为仅iSCSI流量创建IP LIF。启用自动iSCSI LIF故障转移后、如果发生存储故障转移、则IP iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果IP iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在端口恢复运行状况良好后、再迁移回其原始端口。</block>
+  <block id="25ac2a61e9eb3eec03212d96ad6b965a" category="paragraph">要启用iSCSI LIF故障转移、请仅选择IP协议。</block>
 </blocks>
