@@ -796,8 +796,6 @@
   <block id="5dc15886a7be0b02974c471249fd2702" category="image-alt">控制台连接</block>
   <block id="9e7e8b48adc159107d0baf9021253c61" category="list-text">使用管理子网上的TCP/IP地址为笔记本电脑分配TCP/IP地址。</block>
   <block id="a2e521b7ad497537c9e544a50086c51b" category="list-text">Plug the power cords into the controller power supplies, and then connect them to power sources on different circuits.</block>
-  <block id="71abffb89587fc128eb09ec9ef2dd7e1" category="list-text">LED指示灯闪烁且风扇启动、这表示控制器正在通电。</block>
-  <block id="cd76e142e3adabbfc33b1de3c074b2cb" category="list-text">首次启动风扇时、风扇可能会发出很大的噪音。启动期间风扇噪音正常。</block>
   <block id="b01257e209b4db1591904675a969a888" category="inline-link-macro">设置ONTAP ASA R2集群</block>
   <block id="5375af62a757a5f1f0b518f2b55d638e" category="paragraph">打开ASA R2存储系统后，您将<block ref="ad00ee8fa1dc09eacef7d17804bf3a85" category="inline-link-macro-rx"></block>。</block>
   <block id="4795c2f303b604ed82cee521ffaeb4b7" category="summary">准备在ONTAP环境中安装ASA R2存储系统、并注册硬件以获得支持优势。</block>
@@ -1874,7 +1872,6 @@
   <block id="891561cb838adbb7475943bc7ea20ead" category="list-text">将笔记本电脑连接到串行控制台端口。这样、您就可以在控制器通电时监控启动顺序。</block>
   <block id="5d181ca91be1af691d1f01654691cc7b" category="image-alt">A1K存储系统和A70或A90电源连接图</block>
   <block id="d2318e267239f37a3cc57e89925b9627" category="image-alt">-20、A30或A50存储系统电源连接图</block>
-  <block id="e477637685baafe9bbd353f71ef51283" category="list-text">允许系统启动。Initial booting may take up to eight minutes.</block>
   <block id="d420064a5f4919f9be16d853c6d1997c" category="list-text">使用每个电源上的固定设备固定电源线。</block>
   <block id="784289434de2772034240714a84f80a9" category="list-text">使用<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>确认您的站点满足存储系统的环境和电气要求。</block>
   <block id="16b6ee929559cf4a616d08d372071c4d" category="list-text">确保为存储系统、磁盘架和任何交换机提供足够的机柜或机架空间：</block>
@@ -1898,10 +1895,13 @@
   <block id="c18d7ea3e180dd72f3fc8869a57e6376" category="cell"><block ref="c18d7ea3e180dd72f3fc8869a57e6376" category="inline-link-macro-rx"></block></block>
   <block id="86c79aae612f98a6019861f950eeb1a3" category="cell">在集群级别从ONTAP板载密钥管理器切换到外部密钥管理器时、您可以使用ONTAP命令行界面(CLI)轻松地将加密密钥从一个密钥管理器迁移到另一个密钥管理器。</block>
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">发现集群网络</block>
-  <block id="54ece869b1ae7921e7f18bd670ac879c" category="list-text">对于ASAr2 A20、A30或A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。系统的内部磁盘架ID固定为00。</block>
   <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2系统可为基于全闪存平台构建的纯SAN环境提供硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在ASA系统上运行的ONTAP标识为_ ASA ONTAP特性_。在AFF和FAS ONTAP系统上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。</block>
   <block id="7332b2297a735d659182d1392cf28129" category="paragraph">在ASA R2系统上、您可以创建IP、FC、NVMe/FC LUN。默认情况下、IP数据LIF可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。</block>
   <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果要启用自动iSCSI LIF故障转移、则必须为仅iSCSI流量创建IP LIF。启用自动iSCSI LIF故障转移后、如果发生存储故障转移、则IP iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果IP iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在端口恢复运行状况良好后、再迁移回其原始端口。</block>
   <block id="25ac2a61e9eb3eec03212d96ad6b965a" category="paragraph">要启用iSCSI LIF故障转移、请仅选择IP协议。</block>
+  <block id="bca36b0a086865a5988c326bd3a3c6ef" category="list-text">系统将启动启动过程。初始启动顺序可能需要长达八分钟的时间。</block>
+  <block id="f3e09817ba15a4f8685cb156fe2ade6f" category="list-text">在启动过程中、您将看到LED闪烁、风扇激活、并发出控制器正在启动的信号。</block>
+  <block id="86450f6a6524d00aefa9dda44e7aee80" category="list-text">请注意、风扇在首次启动时可能会发出较高的噪音。启动期间风扇噪音正常。</block>
+  <block id="43dd17b3ea5146830157251c7508ca20" category="list-text">对于ASA A20、ASA A30和ASA A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。</block>
 </blocks>
