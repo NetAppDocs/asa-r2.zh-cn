@@ -736,19 +736,14 @@
   <block id="bec12648a072f54e7209e45d72c0ba78" category="doc">ASA R2存储系统的安装和设置工作流</block>
   <block id="f08e3211126883342efb2c1028678668" category="paragraph">要安装和配置ASA R2系统、您需要查看硬件要求、准备站点、安装硬件组件并为其布线、打开系统电源以及设置ONTAP集群。</block>
   <block id="7ccd978bf0dbca0a0746f98d09b99f7f" category="inline-link-macro">查看硬件安装要求</block>
-  <block id="6889512d643df7fa8ccfb7e52dd1181c" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
   <block id="2093d28d6edc661be7e0c92b7f6452f7" category="paragraph">查看安装ASA R2存储系统的硬件要求。</block>
   <block id="654b7e4d986ad973f3c2838f5dac8c70" category="inline-link-macro">准备安装ASA R2存储系统</block>
-  <block id="00c1207f2baf7dc28041d8ac249f22f9" category="paragraph-title"><block ref="444c1bf2e877f5617e8ce0a2ded57f4f" category="inline-image-macro-rx" type="image"></block><block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
   <block id="50b9fda3a60203dfb56138338390ca5f" category="paragraph">要准备安装ASA R2系统、您需要准备好站点、检查环境和电气要求、并确保有足够的机架空间。然后、打开设备包装、将其内容与装箱单进行比较、并注册硬件以获得支持优势。</block>
   <block id="04e16e17799ca1597df8b649304b6740" category="inline-link-macro">安装ASA R2存储系统的硬件</block>
-  <block id="1478911ba4fc781e8de9b3aa7b4f6979" category="paragraph-title"><block ref="4f954e3aac01b1dc982b61d245b37a02" category="inline-image-macro-rx" type="image"></block><block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
   <block id="2d797c4cbf8f7f6c9e87e405560d40d4" category="paragraph">要安装硬件、请为存储系统和磁盘架安装导轨套件、然后在机柜或电信机架中安装并固定存储系统。接下来、将磁盘架滑入导轨上。最后、将缆线管理设备连接到存储系统背面、以便有条理地进行缆线布线。</block>
   <block id="b5990faed003b2a8d77aecd063000d1a" category="inline-link-macro">为ASA R2存储系统的控制器和存储架布线</block>
-  <block id="a797a5c1bc5da9127e370ca2436a30a7" category="paragraph-title"><block ref="d5b760e3b486da6aca46a9bd83d66c13" category="inline-image-macro-rx" type="image"></block><block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
   <block id="5ff2c2e371b329794d430555ced9e3f7" category="paragraph">要为硬件布线、请先将存储控制器连接到网络、然后再将控制器连接到存储架。</block>
   <block id="f0458cb9a2bfe68bf005af12c17ad1aa" category="inline-link-macro">启动ASA R2存储系统</block>
-  <block id="22d9f0a1dd203d9cd6eba27e0a348588" category="paragraph-title"><block ref="91d7076df3f3bfcf6ace71bd0aa6cf68" category="inline-image-macro-rx" type="image"></block><block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
   <block id="9adaba33c41b009e4561e4c9bfed5074" category="paragraph">打开控制器电源之前、请打开每个NS224磁盘架的电源、并分配一个唯一的磁盘架ID、以确保每个磁盘架在设置中都是唯一标识的。</block>
   <block id="de4e7be8a936d1ed409fa1f461a34957" category="doc">启动ASA R2存储系统</block>
   <block id="2b814ecf2be8542bceb68933db5cbcfe" category="paragraph">在为ASA R2存储系统安装机架硬件并为控制器和存储架安装缆线后、您应打开存储架和控制器的电源。</block>
@@ -1897,11 +1892,17 @@
   <block id="f06feed69dbf0f5f7721d9ea53af616f" category="list-text">发现集群网络</block>
   <block id="792fd8488bba0c03a6a9c46a34c7db99" category="paragraph">ASA R2系统可为基于全闪存平台构建的纯SAN环境提供硬件和软件解决方案。ASA R2系统在实施其存储层、支持的协议和ONTAP特性方面与其他ONTAP系统(ASA、AFF和FAS)有所不同。</block>
   <block id="6875b01c5e1cd1eaa394cb250554d067" category="paragraph">在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在ASA系统上运行的ONTAP标识为_ ASA ONTAP特性_。在AFF和FAS ONTAP系统上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。</block>
-  <block id="7332b2297a735d659182d1392cf28129" category="paragraph">在ASA R2系统上、您可以创建IP、FC、NVMe/FC LUN。默认情况下、IP数据LIF可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。</block>
   <block id="fda16306cdb213cc2a2b4bf98efbf826" category="paragraph">如果要启用自动iSCSI LIF故障转移、则必须为仅iSCSI流量创建IP LIF。启用自动iSCSI LIF故障转移后、如果发生存储故障转移、则IP iSCSI LIF会自动从其主节点或端口迁移到其HA配对节点或端口、然后在故障转移完成后再迁移回。或者、如果IP iSCSI LIF的端口运行状况不正常、则LIF会自动迁移到其当前主节点上运行状况良好的端口、然后在端口恢复运行状况良好后、再迁移回其原始端口。</block>
   <block id="25ac2a61e9eb3eec03212d96ad6b965a" category="paragraph">要启用iSCSI LIF故障转移、请仅选择IP协议。</block>
   <block id="bca36b0a086865a5988c326bd3a3c6ef" category="list-text">系统将启动启动过程。初始启动顺序可能需要长达八分钟的时间。</block>
   <block id="f3e09817ba15a4f8685cb156fe2ade6f" category="list-text">在启动过程中、您将看到LED闪烁、风扇激活、并发出控制器正在启动的信号。</block>
   <block id="86450f6a6524d00aefa9dda44e7aee80" category="list-text">请注意、风扇在首次启动时可能会发出较高的噪音。启动期间风扇噪音正常。</block>
   <block id="43dd17b3ea5146830157251c7508ca20" category="list-text">对于ASA A20、ASA A30和ASA A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。</block>
+  <block id="c8aaa99aa53241360c3c889fc0ceba93" category="paragraph">在ASA R2系统上、您可以创建IP、FC和NVMe/FC LUN。默认情况下、IP数据LIF可以同时处理iSCSI和NVMe/TCP流量。必须为FC和NVMe/FC流量创建单独的数据生命周期。</block>
+  <block id="f137f93169cc0e3caf4322bfd35b3f03" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> <block ref="90572de4b12061d10d3adbe91dd02ace" category="inline-link-macro-rx"></block></block>
+  <block id="9938ec4aaa5e9affe1e87bdd3406a54f" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> <block ref="364d625567d09103e7911f1934bc8d24" category="inline-link-macro-rx"></block></block>
+  <block id="0b226b2a00795026190da142779bab13" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> <block ref="65a058a30efdac510219d9d7c74f3657" category="inline-link-macro-rx"></block></block>
+  <block id="b78c98e70e341751d6f58db28ecec461" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> <block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五个</block>
+  <block id="77aa123fc5c68731cdf628d8e9c75afc" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
 </blocks>
