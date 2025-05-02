@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: secure-data/nvme-tcp-connections.html 
-keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption 
+keywords: asa r2, secure data, data security, encrypt, data at rest, data-at-rest, encryption, in-band authentication, in band, nvme, nvme/tcp, tls, transport layer security, secure connections, secure data connections 
 summary: 通过配置基于TLS的NVMe/TCP来对NVMe/TCP主机和ONTAP之间通过网络发送的所有数据进行加密、从而增强数据安全性。 
 ---
 = ASA R2存储系统上的安全NVMe连接
