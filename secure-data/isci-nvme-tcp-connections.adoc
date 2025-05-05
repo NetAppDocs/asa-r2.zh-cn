@@ -43,6 +43,5 @@ X60132A -(4p、10G/C5G以太网控制器)
 
 
 |===
-相关信息
-
+.下一步是什么？
 link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["配置ONTAP网络的IP安全性"]
