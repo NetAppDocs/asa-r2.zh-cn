@@ -961,7 +961,6 @@
   <block id="8fb6b6206aca4aa491419e270ea3424d" category="list-text">在命令行界面中、输入：<block ref="9228fcbc2cb846682f56e98989045eaa" prefix=" " category="inline-code"></block></block>
   <block id="8369fc694deadf80f5d106ef41b6e7b2" category="paragraph">ONTAP存储系统的特性无法更改。</block>
   <block id="df5591b00e0f940a96e7ea141a5a8f82" category="paragraph">运行统一ONTAP特性的ONTAP系统的存储层使用聚合作为基本存储单元。聚合拥有存储系统中的一组特定可用磁盘。聚合会在其所拥有的磁盘上为LUN和名字空间的卷分配空间。统一ONTAP用户可以使用命令行界面(CLI)创建和修改聚合、卷、LUN和命名空间。</block>
-  <block id="61fd53d6a04a3c721dc360956e9ca445" category="paragraph">ASA R2系统中的存储层使用存储可用性区域、而不是聚合。存储可用性区域是一个通用存储池、可访问存储系统中的所有可用磁盘。ASA R2 HA对中的两个节点均可看到存储可用性分区。创建存储单元(基于LUN或NVMe命名空间)后、ONTAP会自动在存储可用性区域中创建一个包含Storage Virtual Machine (VM)的卷来存放此存储单元。由于这种自动化的简化存储管理方法、某些System Manager选项、ONTAP命令和REST API端点在ASA R2系统上不可用或使用受限。例如，由于ASA R2系统的卷创建和管理是自动进行的，因此“*卷*”菜单不会显示在“系统管理器<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>”中，并且不支持该命令。</block>
   <block id="32b01bd4b9f59e30b1c7471c280b0045" category="paragraph">ASA R2存储通过以下方式与其他ONTAP存储系统进行比较：</block>
   <block id="df5b8332c344a8d1a2ca6124ea06defe" category="cell">ASA r2</block>
   <block id="b7b46ce5d1a547db89c0bc615ff272a5" category="cell">ASA</block>
@@ -1918,4 +1917,20 @@
   <block id="68852b93a73d565bf943b2e28d4c653b" category="inline-link-macro">配置ONTAP网络的IP安全性</block>
   <block id="22935e4bd8297da6bdfa32067fc7243c" category="paragraph"><block ref="22935e4bd8297da6bdfa32067fc7243c" category="inline-link-macro-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">安全IP连接</block>
+  <block id="8272f5b23e79d0ee33bd5151dcddc454" category="section-title">创建Storage VM</block>
+  <block id="628df41697616cee6d5c865542d342ad" category="paragraph">在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)。除非您创建并选择其他Storage VM、否则所有新存储单元都会在默认数据Storage VM中创建。您可能希望创建一个额外的Storage VM、以便为不同的应用程序、部门或客户端隔离存储单元。例如、您可能希望为开发环境创建一个Storage VM、为生产环境创建另一个Storage VM、或者为财务部门创建一个Storage VM、为营销部门创建另一个Storage VM。</block>
+  <block id="9d51c1df5884ca3290827847b5ca369e" category="list-text">选择*集群&gt; Storage VM*。</block>
+  <block id="a2606f19bd0ddba50071c32e6f0d3941" category="list-text">输入Storage VM的名称或接受默认名称。</block>
+  <block id="47e869b5fd15e0e1eb4d7ed47d7db38e" category="list-text">在*配置协议*下、为Storage VM选择协议。</block>
+  <block id="e5f4e279e78936e76a497e9a15004b2e" category="paragraph">为iSCSI和NVMe/TCP选择*IP*。为光纤通道或NVMe/FC选择*FC*。</block>
+  <block id="7829236e8ef56480b7f29df2b14afa3a" category="list-text">在* Storage VM administration*下、选择*管理管理员帐户*；然后输入管理员帐户的用户名和密码。</block>
+  <block id="ff5f233f84c798fec376d29c4c3db0a9" category="list-text">为Storage VM添加网络接口。</block>
+  <block id="b1481e6f17d8c80e8f17d881ac08a5a1" category="paragraph">您已创建Storage VM。现在，您可以将Storage VM用于<block ref="16349da302f4151e8c9d8212eacbac27" category="inline-link-macro-rx"></block>。</block>
+  <block id="2a001457153311540278338d0772fe89" category="paragraph">如果已为iSCSI创建IP LIF、则可以使用ONTAP命令行界面(CLI)启用自动iSCSI LIF故障转移。</block>
+  <block id="4d1481a2752fdec4530d68b1f27aff2e" category="section-title">启用自动iSCSI LIF故障转移</block>
+  <block id="7dca75f4415194c135e180d8fe8fa1a8" category="paragraph">如果SVM上的iSCSI LIF未启用自动LIF故障转移、则新创建的LIF也不会启用自动LIF故障转移。如果未启用自动LIF故障转移、并且发生了故障转移事件、则iSCSI LIF将不会迁移。</block>
+  <block id="c6ed1523d61eecc1cc0a6a7b92992e00" category="paragraph">您必须使用ONTAP命令行界面(CLI)启用自动iSCSI LIF故障转移。</block>
+  <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">步骤</block>
+  <block id="e44a90b30c1dfbb968cf631463193afc" category="list-text">启用自动iSCSI LIF故障转移：</block>
+  <block id="0ce336b8cb4b71d1f6d61b47075052a1" category="paragraph">ASA R2系统中的存储层使用存储可用性区域、而不是聚合。存储可用性区域是一个通用存储池、可访问存储系统中的所有可用磁盘。ASA R2 HA对中的两个节点均可看到存储可用性分区。创建存储单元(基于LUN或NVMe命名空间)后、ONTAP会自动在存储可用性区域中的选定Storage Virtual Machine (VM)内创建一个卷来存放此存储单元。由于这种自动化的简化存储管理方法、某些System Manager选项、ONTAP命令和REST API端点在ASA R2系统上不可用或使用受限。例如，由于ASA R2系统的卷创建和管理是自动进行的，因此“*卷*”菜单不会显示在“系统管理器<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>”中，并且不支持该命令。</block>
 </blocks>

@@ -16,6 +16,28 @@ ASA R2系统上的存储单元包含在Storage Virtual Machine (VM)中。Storage
 
 
 
+== 创建Storage VM
+
+在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)。除非您创建并选择其他Storage VM、否则所有新存储单元都会在默认数据Storage VM中创建。您可能希望创建一个额外的Storage VM、以便为不同的应用程序、部门或客户端隔离存储单元。例如、您可能希望为开发环境创建一个Storage VM、为生产环境创建另一个Storage VM、或者为财务部门创建一个Storage VM、为营销部门创建另一个Storage VM。
+
+.步骤
+. 选择*集群> Storage VM*。
+. 选择。 image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]
+. 输入Storage VM的名称或接受默认名称。
+. 在*配置协议*下、为Storage VM选择协议。
++
+为iSCSI和NVMe/TCP选择*IP*。为光纤通道或NVMe/FC选择*FC*。
+
+. 在* Storage VM administration*下、选择*管理管理员帐户*；然后输入管理员帐户的用户名和密码。
+. 为Storage VM添加网络接口。
+. 选择 * 保存 * 。
+
+
+.下一步是什么？
+您已创建Storage VM。现在，您可以将Storage VM用于link:../manage-data/provision-san-storage.html["配置存储"]。
+
+
+
 == 创建 IP 空间
 
 IP空间是Storage VM所在的一个独立IP地址空间。创建IP空间时、您可以使Storage VM拥有自己的安全存储、管理和路由。此外、还可以使管理上分开的网络域中的客户端使用同一IP地址子网范围内的重叠IP地址。
@@ -96,6 +118,26 @@ LIF (网络接口)是与物理或逻辑端口关联的IP地址。在要用于访
 
 .结果
 您已创建用于数据访问的LIF。
+
+.下一步是什么？
+如果已为iSCSI创建IP LIF、则可以使用ONTAP命令行界面(CLI)启用自动iSCSI LIF故障转移。
+
+
+
+=== 启用自动iSCSI LIF故障转移
+
+如果SVM上的iSCSI LIF未启用自动LIF故障转移、则新创建的LIF也不会启用自动LIF故障转移。如果未启用自动LIF故障转移、并且发生了故障转移事件、则iSCSI LIF将不会迁移。
+
+您必须使用ONTAP命令行界面(CLI)启用自动iSCSI LIF故障转移。
+
+.步骤
+. 启用自动iSCSI LIF故障转移：
++
+[source, cli]
+----
+network interface modify -vserver <SVM_name> -lif <iscsi_lif> -failover-policy sfo-partner-only -auto-revert true
+----
+
 
 
 
