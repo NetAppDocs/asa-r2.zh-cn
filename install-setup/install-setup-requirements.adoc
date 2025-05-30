@@ -52,14 +52,21 @@ image::../media/drw_a1k_weight_caution_ieops-1698.svg[ASA A1K提升注意图标]
 --
 ASA A70或ASA A90存储系统的最大重量为68.8千克(151.68磅)。要抬起存储系统、请使用四个人或一台液压升降机。
 
-image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90]
+image::../media/drw_a70-90_weight_icon_ieops-1730.svg[ASA A90 ASA A70重量小心图标]
 
 --
 .-20、A30和A50
 --
 ASA A20、ASA A30或ASA A50存储系统的最大重量为27.9千克(61.5磅)。要抬起存储系统、请两个人或使用液压升降机。
 
-image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20,A30,or an A50 weight caution icon]
+image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20 A30 A50 重量注意图标]
+
+--
+.C30
+--
+ASA C30 存储系统重量最多可达 61.5 磅（27.9 千克）。要抬起存储系统、请两个人或使用液压升降机。
+
+image::../media/drw_g_lifting_weight_ieops-1831.svg[ASA A20 A30 或 A50 重量警告图标]
 
 --
 ====

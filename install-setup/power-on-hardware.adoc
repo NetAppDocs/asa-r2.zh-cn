@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: install-setup/power-on-hardware.html 
-keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, power on 
+keywords: asa r2, aff a1k, aff a70, aff a90, aff c80, asa a1k, asa a90, asa a70, asa a30, asa a20, asa a50, asa c30, power on 
 summary: 打开每个磁盘架的电源以分配唯一的磁盘架ID、打开ASA R2控制器的电源并固定电源线。 
 ---
 = 启动ASA R2存储系统
@@ -156,6 +156,11 @@ image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[控制台连接]
 image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[控制台连接]
 
 --
+.C30
+--
+image::../media/drw_g_isi_console_serial_port_cabling_ieops-1882.svg[控制台连接]
+
+--
 ====
 
 
@@ -181,12 +186,17 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[A1K存储系统和A7
 image::../media/drw_psu_layout_1_ieops-1886.svg[-20、A30或A50存储系统电源连接图]
 
 --
+.C30
+--
+image::../media/drw_psu_layout_1_ieops-1886.svg[-20、A30或A50存储系统电源连接图]
+
+--
 ====
 +
 ** 系统将启动启动过程。初始启动顺序可能需要长达八分钟的时间。
 ** 在启动过程中、您将看到LED闪烁、风扇激活、并发出控制器正在启动的信号。
 ** 请注意、风扇在首次启动时可能会发出较高的噪音。启动期间风扇噪音正常。
-** 对于ASA A20、ASA A30和ASA A50存储系统、系统机箱正面的磁盘架ID显示屏不会亮起。
+** 对于 ASA A20、A30、A50 和 ASA C30 存储系统，系统机箱正面的搁架 ID 显示屏不亮。
 
 
 
