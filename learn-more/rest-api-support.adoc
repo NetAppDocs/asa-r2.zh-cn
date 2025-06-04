@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/rest-api-support.html 
-keywords: asa, asa r2, rest, rest api, asa r2 rest api, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20 
+keywords: asa, asa r2, rest, rest api, asa r2 rest api, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
 summary: ASA R2 REST API基于通过统一ONTAP特性提供的REST API、并根据ASA R2特性的独特特性和功能进行了许多更改。 
 ---
 = ASA R2支持REST API

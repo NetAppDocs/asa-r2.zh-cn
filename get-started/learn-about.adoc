@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/learn-about.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, learn more, learn about, get started 
-summary: 'ASA R2系统(ASA A1K、A90、A70、A50、A30、A20)提供统一的硬件和软件解决方案、为仅SAN的客户提供简化的体验。' 
-searchtitle: 了解ASA A1K、A90、A70、A50、A30和A20系统 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, learn more, learn about, get started 
+summary: ASA r2 系统（ASA A1K、A90、A70、A50、A30、A20、C30）提供统一的硬件和软件解决方案，为仅限 SAN 的客户提供简化的体验。 
+searchtitle: 了解 ASA A1K、A90、A70、A50、A30 A20 和 C30 系统 
 ---
 = 了解ASA R2存储系统
 :allow-uri-read: 
@@ -22,6 +22,7 @@ NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN�
 * ASA A50
 * ASA A30
 * ASA A20
+* ASA C30
 
 
 ASA R2系统支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。iSCSI、FC、NVMe/FC和NVMe/TCP协议支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。

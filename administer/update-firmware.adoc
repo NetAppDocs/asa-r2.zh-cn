@@ -21,9 +21,9 @@ summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Ma
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
-. 在*Automatic updat*旁边选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择*Enable*。
-. 阅读并接受EULA。
-. 接受默认设置以自动更新固件和系统文件。(可选)选择显示通知或自动取消建议的更新。
+. 在“*软件更新*”下，选择“*启用*”。
+. 阅读 EULA。
+. 接受默认设置，即“显示推荐更新通知”。您也可以选择“自动更新”或“自动忽略”推荐更新。
 . 选择以确认您的更新修改将应用于所有当前和未来的更新。
 . 选择 * 保存 * 。
 
@@ -39,7 +39,7 @@ summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Ma
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
-. 在*Automatic updat*旁边选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择*Disable"。
+. 在“*软件更新*”下，选择“*禁用*”。
 
 
 .结果
@@ -53,7 +53,7 @@ summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Ma
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
-. 在*自动更新*旁边选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择*查看所有自动更新*。
+. 在“软件更新”旁边选择image:icon_arrow.gif["指向右侧的蓝色箭头"] ，然后选择*查看所有自动更新*。
 
 
 
@@ -64,7 +64,7 @@ summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Ma
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
-. 在*自动更新*旁边选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择*编辑自动更新*。
+. 在“软件更新”旁边选择image:icon_arrow.gif["指向右侧的蓝色箭头"] ，然后选择*所有其他更新*。
 . 更新选择以自动更新。
 . 选择 * 保存 * 。
 
@@ -80,8 +80,9 @@ summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Ma
 
 .步骤
 . 将固件更新文件下载到服务器或本地客户端。
-. 在System Manager中，选择*Cluster > Overview*，然后选择*Update*。
-. 选择*固件更新*；然后选择image:icon_update_firmware.png["蓝色矩形、包含一个加号、后跟白色字母\"update Firmware\"(更新固件)字样"]。
+. 在系统管理器中，选择*集群 > 概览*，然后选择*所有其他更新*。
+. 在*手动更新*下，选择*添加固件文件*；然后选择*从服务器下载*或*从本地客户端上传*。
+. 安装固件更新文件。
 
 
 .结果

@@ -1,9 +1,9 @@
 ---
 sidebar: sidebar 
 permalink: get-started/quick-start.html 
-keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, get started, getting started, quick start, install, set up 
-summary: '要开始使用ASA R2 (ASA A1K、A90、A70、A50、A30、A20)系统、请安装硬件、设置集群、设置数据访问以及配置存储。' 
-searchtitle: 安装和设置ASA A1K、A90、A70、A50、A30和A20存储系统 
+keywords: asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, get started, getting started, quick start, install, set up 
+summary: 要开始使用 ASA r2（ASA A1K、A90、A70、A50、A30、A20、C30）系统，请安装硬件、设置集群、设置数据访问并配置存储。 
+searchtitle: 安装和设置 ASA A1K、A90、A70、A50、A30、A20 和 C30 存储系统 
 ---
 = ASA R2存储系统快速入门
 :allow-uri-read: 
