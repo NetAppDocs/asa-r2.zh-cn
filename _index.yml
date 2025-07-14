@@ -32,7 +32,7 @@ indexpage:
   - title: 更多ASA R2资源
     links:
     - title: ASA产品规格
-      url: https://www.netapp.com/data-storage/all-flash-san-storage-array/
+      url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
   - title: 其他ONTAP资源
     links:
     - title: 其他ONTAP系统的文档
