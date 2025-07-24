@@ -26,7 +26,7 @@ NOTE: 仅支持将ASA R2存储系统的快照复制到另一个R2存储系统、
 在通过将数据复制到远程集群来保护数据之前、您需要在本地集群和远程集群之间创建集群对等关系。
 
 .开始之前
-ASA r2 系统与其他ONTAP系统的集群对等先决条件相同。link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["查看集群对等连接的先决条件"] 。
+ASA r2 系统与其他ONTAP系统的集群对等先决条件相同。link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["查看集群对等连接的先决条件"^] 。
 
 .步骤
 . 在本地集群上、在System Manager中选择*集群>设置*。

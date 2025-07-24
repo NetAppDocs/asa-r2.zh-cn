@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync.html 
-keywords: asa r2, data protection, business continuity, snapmirror active sync, zero rpo, zero rto, disaster recovery, symmetric active/active, workflow 
+keywords: asa r2, data protection, business continuity, setup, set up, snapmirror active sync, disaster recovery, workflow 
 summary: '使用SnapMirror主动同步，保护需要零恢复点目标 (RPO) 和零恢复时间目标 (RTO) 的主机应用程序免受意外中断或站点灾难造成的中断。' 
 ---
 = SnapMirror主动同步设置工作流程

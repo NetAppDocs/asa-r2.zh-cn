@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
 keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
-summary: 查看潜在勒索软件攻击的警告并在系统管理器中采取行动。 
+summary: 在配置SnapMirror主动同步之前，您应该确认您的ASA r2 集群处于受支持的对等关系，并且满足其他配置要求。 
 ---
 = 在配置SnapMirror主动同步之前确认您的ASA r2 集群配置
 :allow-uri-read: 
@@ -24,7 +24,7 @@ link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["创建
 
 . 确认每个集群上的存储虚拟机 (VM) 之间存在对等关系。
 +
-link:create-svm-peer-relationship.html["创建集群间存储虚拟机对等关系"^] 。
+link:create-svm-peer-relationship.html["创建集群间存储虚拟机对等关系"] 。
 
 . 确认集群中的每个节点上至少创建了一个 LIF。
 +

@@ -16,7 +16,7 @@ summary: 要准备在ASA r2 系统上配置SnapMirror主动同步，您应该检
 .步骤
 . 查看SnapMirror活动同步link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/prerequisites-reference.html["前提条件"^] 。
 . link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["确认您的主机操作系统受支持"^]用于SnapMirror主动同步。
-. 回顾link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["对象限制"]这可能会影响您的配置。
+. 回顾link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["对象限制"^]这可能会影响您的配置。
 . 验证ASA r2 系统上主机协议是否支持SnapMirror主动同步。
 +
 ASA r2 系统上对SnapMirror主动同步的支持因ONTAP版本和主机协议而异。

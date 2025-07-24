@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/configure-ontap-mediator.html 
-keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
-summary: 了解如何使用自签名证书为ASA r2 系统配置ONTAP调解器。 
+keywords: asa r2, data protection, protect data, configure mediator, ontap mediator, cloud mediator, self-signed, ca, certificates 
+summary: 了解如何使用自签名证书为ASA r2 系统配置ONTAP Mediator 或ONTAP Cloud Mediator。 
 ---
-= 在ASA r2 系统上使用自签名证书配置中介器
+= 在ASA r2 系统上使用自签名证书配置ONTAP Mediator 或ONTAP Cloud Mediatior
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

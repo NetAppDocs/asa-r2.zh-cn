@@ -27,6 +27,8 @@ indexpage:
       url: "/data-protection/create-snapshots.html"
     - title: 设置快照复制
       url: "/data-protection/snapshot-replication.html"
+    - title: 设置SnapMirror主动同步
+      url: "/data-protection/snapmirror-active-sync.html"
     - title: 对空闲数据进行加密
       url: "/secure-data/encrypt-data-at-rest.html"
   - title: 更多ASA R2资源
