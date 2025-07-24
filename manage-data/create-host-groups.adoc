@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: manage-data/create-host-groups.html 
+keywords: create host group, map storage units, host access, asa r2 
+summary: 创建主机组以提供主机对存储单元的访问并有效地管理存储映射。 
+---
+= 在ASA r2 系统上创建主机组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA R2系统上、_host group_是用于为主机授予对存储单元访问权限的机制。主机组是指SCSI主机的igrop或NVMe主机的NVMe子系统。主机只能看到映射到其所属主机组的存储单元。将主机组映射到存储单元后、该组中的成员主机便可挂载(在上创建目录和文件结构)该存储单元。
+
+创建存储单元时、系统会自动或手动创建主机组。您可以选择在创建存储单元之前或之后使用以下步骤创建主机组。
+
+.步骤
+. 在System Manager中，选择*Host*。
+. 选择要添加到主机组的主机。
++
+选择第一个主机后、用于添加到主机组的选项将显示在主机列表上方。
+
+. 选择*添加到主机组*。
+. 搜索并选择要添加主机的主机组。
+
+
+.下一步是什么？
+您已创建主机组，现在可以link:provision-san-storage.html#map-the-storage-unit-to-a-host["将其映射到存储单元"] 。

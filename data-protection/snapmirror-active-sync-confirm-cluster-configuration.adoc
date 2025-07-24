@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
+summary: 查看潜在勒索软件攻击的警告并在系统管理器中采取行动。 
+---
+= 在配置SnapMirror主动同步之前确认您的ASA r2 集群配置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror主动同步依赖于对等集群，以便在发生故障转移时保护您的数据。在配置SnapMirror主动同步之前，您应该确认您的ASA r2 集群处于受支持的对等关系，并且满足其他配置要求。
+
+.步骤
+. 确认集群之间存在集群对等关系。
++
+
+NOTE: SnapMirror主动同步需要使用默认 IP 空间来建立集群对等关系。不支持自定义 IP 空间。
+
++
+link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["创建集群对等关系"] 。
+
+. 确认每个集群上的存储虚拟机 (VM) 之间存在对等关系。
++
+link:create-svm-peer-relationship.html["创建集群间存储虚拟机对等关系"^] 。
+
+. 确认集群中的每个节点上至少创建了一个 LIF。
++
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["创建 LIF"]
+
+. 确认必要的存储单元已创建并映射到主机组。
++
+link:../manage-data/provision-san-storage.html#create-storage-units["创建存储单元"]和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["将存储单元映射到主机组"] 。
+
+. 重新扫描应用程序主机以发现任何新的存储单元。
+
+
+.下一步是什么？
+确认集群配置后，即可link:install-ontap-mediator.html["安装ONTAP调解器"] 。

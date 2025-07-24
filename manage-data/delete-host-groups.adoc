@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: manage-data/delete-host-groups.html 
+keywords: delete host groups, remove host groups, igroup, nvme subsystem, asa r2 
+summary: 删除主机组以删除主机对ASA r2 系统上存储单元的访问权限。 
+---
+= 删除ASA r2 系统上的主机组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA r2 系统上，主机组是用于授予主机访问存储单元的机制。主机组是指 SCSI 主机的 igroup 或 NVMe 主机的 NVMe 子系统。主机只能看到映射到其所属主机组的存储单元。如果您不再希望组中的主机访问映射到该组的存储单元，则可能需要删除主机组。
+
+.步骤
+. 在System Manager中，选择*Storage*。
+. 在“*主机映射*”下选择要删除的主机组。
+. 选择*映射存储*。
+. 选择*更多*；然后选择*删除*。
+. 选择确认您是否要继续；然后选择*删除*。
+
+
+.下一步是什么？
+主机组已删除。该组中的主机不再具有对映射到该主机组的存储单元的访问权限。

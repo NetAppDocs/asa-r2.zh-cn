@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: data-protection/configure-snapmirror-active-sync.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: 了解如何配置SnapMirror主动同步，通过创建辅助数据副本并在发生灾难时启用自动故障转移来确保业务连续性。 
+---
+= 在ASA r2 系统上配置SnapMirror主动同步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+配置SnapMirror主动同步以在辅助站点创建数据副本，并使主机应用程序能够在发生灾难时自动、透明地进行故障转移。
+
+在ASA r2 系统上， SnapMirror主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点均可访问本地存储进行主动 I/O。
+
+
+NOTE: 如果您使用 iSCSI 或 FC 协议并使用适用于 VMware Sphere 的ONTAP工具，则可以选择link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["使用ONTAP Tools for VM ware 配置SnapMirror主动同步"^] 。
+
+.开始之前
+link:create-snapshots.html#step-1-optionally-create-a-consistency-group["创建一致性组"]在主站点上使用新的存储单元创建一致性组。如果要创建非统一对称主动/主动配置，也请在辅助站点上使用新的存储单元创建一致性组。
+
+详细了解 https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/#key-concepts["非均匀"]对称主动/主动配置。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要使用SnapMirror活动同步保护的一致性组的名称上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]然后选择*保护*。
+. 在*远程保护*下，选择*将数据添加到远程集群*。
+. 选择现有的集群对等体或选择*添加新的集群对等体*。
+. 选择存储虚拟机。
+. 对于复制策略，选择*AutomatedFailOverDuplex*。
+. 如果您正在创建非统一对称主动/主动配置，请选择*目标设置*；然后在开始此过程之前输入您创建的新目标一致性组的名称。
+. 选择 * 保存 * 。
+
+
+.结果
+SnapMirror主动同步配置为保护您的数据，以便您在发生灾难时能够以零恢复点目标 (RPO) 和零恢复时间目标 (RTO) 继续操作。

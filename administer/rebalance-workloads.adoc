@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: administer/rebalance-workloads.html 
+keywords: rename, node, renaming, asa r2 
+summary: 从ONTAP 9.17.1 开始， ONTAP会自动重新平衡ASA r2 系统 HA 对中节点之间的工作负载，以实现最佳性能。 
+---
+= 重新平衡ASA r2 存储系统上的节点之间的工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从ONTAP 9.17.1 开始， ONTAP会自动在ASA r2 系统 HA 对中的节点之间重新平衡工作负载，以实现最佳性能。例如，如果一个节点的利用率增加到 70%，而其 HA 配对节点的利用率仅为 30%，ONTAP会自动转移工作负载，以使每个节点的利用率更加接近。由于 HA 对中的节点共享相同的存储可用区，因此工作负载重新平衡是一项无副本操作，不会影响性能。
+
+
+
+== 修改自动工作负载重新平衡的默认评估期
+
+升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群后 14 天，自动工作负载重新平衡功能默认启用。您可以使用ONTAP命令行界面 (CLI) 延长或缩短默认评估期，以满足您的运营需求。
+
+.步骤
+. 验证评估期剩余天数：
++
+[source, cli]
+----
+placement rebalance config show -fields evaluation-window
+----
+. 更改重新平衡评估期：
++
+[source, cli]
+----
+placement rebalance config modify -evaluation-window <number_of_evaluation_days>
+----
++
+以下示例将剩余评估期设置为 10 天。
+
++
+[listing]
+----
+placement rebalance config modify -evaluation-window 10
+----
+
+
+
+
+== 修改自动工作负载重新平衡设置
+
+升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群 14 天后，自动工作负载重新平衡功能默认启用。您可以更改默认设置以禁用自动工作负载重新平衡功能，或将其设置为建议状态，以标记不平衡的工作负载但不自动移动它们。
+
+.步骤
+. 验证节点上当前设置的重新平衡模式：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. 修改自动工作负载重新平衡设置：
++
+[source, cli]
+----
+placement rebalance config modify -mode <disabled|advisory|automated>
+----
+. 验证重新平衡模式是否已修改：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+
+
+
+
+== 手动触发工作负载重新平衡
+
+如果您已禁用自动工作负载重新平衡，仍然可以手动触发工作负载重新平衡。如果您希望在一段时间的手动调整后重新平衡工作负载，或者已将重新平衡模式设置为“建议”并希望根据工作负载标志采取行动，则此功能非常有用。
+
+.步骤
+. 验证节点上当前设置的重新平衡模式：
++
+[source, cli]
+----
+placement rebalance config show -fields mode
+----
+. 如果重新平衡模式未设置为*advisory*，则将其设置为*advisory*：
++
+[source, cli]
+----
+placement rebalance config modify -mode advisory
+----
+. 手动触发工作负载重新平衡：
++
+[source, cli]
+----
+balanced-placement rebalance execute
+----
+. 查看重新平衡操作的状态：
++
+[source, cli]
+----
+placement rebalance config show-evaluation
+----
+
+
+.下一步是什么？
+如果您想要将重新平衡模式设置为“自动”或“禁用”，则可以使用 `placement rebalance config modify`命令。

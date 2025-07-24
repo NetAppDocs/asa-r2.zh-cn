@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: secure-data/modify-arp-snapshot-retention-period.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: 了解如何修改 ARP 快照保留期以满足您的存储和业务需求。 
+---
+= 修改ASA r2 存储系统上的 ARP/AI 快照保留期
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果人工智能自主勒索软件防护 (ARP/AI) 检测到您的一个或多个ASA r2 系统存储单元出现异常活动，它会自动创建 ARP 快照来保护存储单元的数据。根据您的存储容量和数据的业务需求，您可能需要增加或减少默认 ARP 快照保留期。例如，您可能希望增加业务关键型应用程序的保留期，以便在需要时获得更长的数据恢复保留期；或者，您可能希望减少非关键型应用程序的保留期以节省存储空间。
+
+ARP 快照的默认保留期取决于您针对异常活动采取的措施。
+
+[cols="2,2"]
+|===
+| 如果您采取此行动... | ARP 快照默认保留... 
+
+
+| 标记为误报 | 12 小时 
+
+
+| 标记为潜在勒索软件攻击 | 7天 
+
+
+| 不立即采取行动 | 10天 
+|===
+您可以使用ONTAP命令行界面 (CLI) 修改默认保留期。请参阅 https://docs.netapp.com/us-en/ontap/anti-ransomware/modify-automatic-snapshot-options-task.html["修改ONTAP自动快照的选项"]了解更改默认保留期的步骤。

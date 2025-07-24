@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: secure-data/enable-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, enable 
+summary: 启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动保护您的数据，并在系统管理器中显示警告消息以提醒您可疑活动。 
+---
+= 在ASA r2 存储系统上利用 AI 实现自主勒索软件防护
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。
+
+从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型无法通过 CLI 或 API 访问或修改。因此，ARP/AI 在启用后立即生效；无需link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["学习期"^] 。
+
+
+NOTE: 没有任何勒索软件检测或预防系统能够完全保证免受勒索软件攻击。虽然攻击可能未被发现，但如果杀毒软件未能检测到入侵，ARP/AI 可以充当重要的额外防御层。
+
+.关于此任务
+ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 许可证"] 。
+
+启用 ARP/AI 后，您应该link:../administer/update-firmware.html#enable-automatic-updates["为您的安全文件启用自动更新"]自动接收新的安全更新。
+
+
+
+== 在 SVM 中的所有存储单元上启用 ARP/AI
+
+您可以在 Storage Virtual Machine (SVM) 中创建的所有存储单元上默认启用 ARP/AI。这意味着在 SVM 中创建的任何新存储单元都将自动启用 ARP/AI。您也可以将 ARP/AI 应用于 SVM 中的现有存储单元。
+
+.步骤
+. 在系统管理器中，选择“集群”>“存储虚拟机”。
+. 选择要启用 ARP/AI 的存储虚拟机。
+. 在“安全”部分的“反勒索软件”旁边，选择image:icon_kabob.gif["三个垂直蓝点"] ；然后选择*编辑反勒索软件设置*。
+. 选择*启用反勒索软件*。
++
+这将默认在所选存储虚拟机上创建的所有未来存储单元上启用 ARP/AI。
+
+. 要将 ARP 应用于所选存储虚拟机上的现有存储单元，请选择*将此更改应用于此存储虚拟机上所有适用的现有存储单元*。
+. 选择 * 保存 * 。
+
+
+.结果
+默认情况下，您在 SVM 上创建的所有新存储单元都受到保护，以防勒索软件攻击，并且可疑活动会在系统管理器中向您报告。
+
+
+
+== 在 SVM 中的特定存储单元上启用 ARP/AI
+
+如果您不想在 SVM 中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。
+
+.步骤
+. 在System Manager中，选择*Storage*。
+. 选择要启用 ARP/AI 的存储单元。
+. 选择image:icon_kabob.gif["三个垂直蓝点"] ；然后选择*启用反勒索软件*。
+. 选择*启用*。
+
+
+.结果
+您选择的存储单元受到保护，免受勒索软件攻击，并且可疑活动会在系统管理器中向您报告。

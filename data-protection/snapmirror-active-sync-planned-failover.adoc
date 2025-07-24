@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-planned-failover.html 
+keywords: snapmirror active sync, planned failover, disaster recovery, business continuity, data replication, ONTAP, secondary site, continuous availability 
+summary: 了解如何执行SnapMirror主动同步关系的计划故障转移，以确保业务连续性和灾难恢复。 
+---
+= 在SnapMirror主动同步关系中执行ASA r2 集群的计划故障转移
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+SnapMirror主动同步功能通过在辅助站点创建数据副本，并支持主机应用程序在发生灾难时自动透明地进行故障转移，为关键业务应用程序提供持续可用性。您可能需要对SnapMirror主动同步关系执行计划内故障转移，以测试故障转移过程或在主站点执行维护。
+
+.开始之前
+* SnapMirror活动同步关系必须同步。
+* 当正在进行非中断操作（例如存储单元移动）时，您无法启动计划内故障转移。
+* ONTAP Mediator 或ONTAP Cloud Mediator 必须已配置、已连接且处于法定人数。
+
+
+.步骤
+. 选择“保护”>“复制”。
+. 选择要进行故障转移的SnapMirror活动同步关系。
+. 选择image:icon_kabob.gif["三个垂直蓝点"] ；然后选择*故障转移*。
+
+
+.下一步行动
+使用 `snapmirror failover show` ONTAP命令行界面 (CLI) 中的命令来监控故障转移的状态。

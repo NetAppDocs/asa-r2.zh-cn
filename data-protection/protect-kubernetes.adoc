@@ -11,10 +11,10 @@ summary: 使用Astra Control将应用程序和数据从一个Kubbernetes集群�
 
 
 [role="lead"]
-使用Astra Control Center保护Kubbernetes应用程序。Astra控制中心允许您将应用程序和数据从一个Kubnetes集群迁移到另一个集群、使用NetApp SnapMirror技术将应用程序复制到远程系统、以及将应用程序从暂存克隆到生产环境。
+使用Trident Protect 保护您的 Kubernetes 应用程序。TridentTrident允许您将应用程序和数据从一个 Kubernetes 集群迁移到另一个 Kubernetes 集群，使用NetApp SnapMirror技术将应用程序复制到远程系统，以及将应用程序从暂存环境克隆到生产环境。
 
 
-NOTE: 仅支持从ASA R2系统到ASA R2系统的SnapMirror (异步和同步)。从ASA R2系统到AFF或FAS系统不支持SnapMirror。
+NOTE: SnapMirror （异步和同步）仅支持从ASA r2 系统到ASA r2 系统。不支持从ASA r2 系统到AFF或FAS系统的SnapMirror 。
 
 .了解更多信息
-link:https://docs.netapp.com/us-en/astra-control-service/use/protect-apps.html["详细了解如何使用Astra Control保护Kubbernetes应用程序"^](英文)
+link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["了解有关使用Trident Protect 保护 Kubernetes 应用程序的更多信息"^] 。

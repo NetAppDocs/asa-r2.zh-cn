@@ -10,6 +10,12 @@ entries:
     url: "/manage-data/provision-san-storage.html"
   - title: 克隆数据
     url: "/manage-data/data-cloning.html"
+  - title: 管理主机组
+    entries:
+    - title: 创建主机组
+      url: "/manage-data/create-host-groups.html"
+    - title: 删除主机组
+      url: "/manage-data/delete-host-groups.html"
   - title: 管理存储单元
     entries:
     - title: 修改存储单元
@@ -24,8 +30,30 @@ entries:
   entries:
   - title: 创建快照
     url: "/data-protection/create-snapshots.html"
+  - title: 创建 SVM 对等关系
+    url: "/data-protection/create-svm-peer-relationship.html"
   - title: 设置快照复制
     url: "/data-protection/snapshot-replication.html"
+  - title: 设置SnapMirror主动同步
+    entries:
+    - title: 工作流
+      url: "/data-protection/snapmirror-active-sync.html"
+    - title: 准备配置SnapMirror主动同步
+      url: "/data-protection/snapmirror-active-sync-prepare.html"
+    - title: 确认集群配置
+      url: "/data-protection/snapmirror-active-sync-confirm-cluster-configuration.html"
+    - title: 安装ONTAP调解器
+      url: "/data-protection/install-ontap-mediator.html"
+    - title: 配置ONTAP调解器
+      url: "/data-protection/configure-ontap-mediator.html"
+    - title: 配置SnapMirror主动同步
+      url: "/data-protection/configure-snapmirror-active-sync.html"
+  - title: 管理SnapMirror主动同步
+    entries:
+    - title: 使用SnapMirror主动同步执行计划内故障转移
+      url: "/data-protection/snapmirror-active-sync-planned-failover.html"
+    - title: 在计划外故障转移后重新建立SnapMirror活动同步
+      url: "/data-protection/snapmirror-active-sync-unplanned-failover.html"
   - title: 保护Kub联网
     url: "/data-protection/protect-kubernetes.html"
   - title: 还原数据
@@ -41,7 +69,17 @@ entries:
   - title: 在密钥管理器之间迁移数据加密密钥
     url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: 防范勒索软件攻击
-    url: "/secure-data/ransomware-protection.html"
+    entries:
+    - title: 创建防篡改快照
+      url: "/secure-data/ransomware-protection.html"
+    - title: 启用 ARP/AI
+      url: "/secure-data/enable-anti-ransomware-protection.html"
+    - title: 修改 ARP/AI 快照保留期
+      url: "/secure-data/modify-arp-snapshot-retention-period.html"
+    - title: 响应 ARP/AI 警报
+      url: "/secure-data/respond-anti-ransomware-protection-alerts.html"
+    - title: 暂停或恢复 ARP/AI
+      url: "/secure-data/pause-resume-anti-ransomware-protection.html"
   - title: 安全NVMe连接
     url: "/secure-data/nvme-tcp-connections.html"
   - title: 安全IP连接

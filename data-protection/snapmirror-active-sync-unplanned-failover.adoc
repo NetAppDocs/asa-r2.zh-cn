@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, alerts, respond, warnings, security 
+summary: 了解如何在ASA r2 集群发生计划外故障转移后重新建立SnapMirror主动同步关系。 
+---
+= 在ASA r2 集群发生计划外故障转移后重新建立SnapMirror主动同步关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当主集群宕机或隔离时，会触发自动非计划故障转移 (AUFO) 操作。中介会检测故障转移的发生时间，并执行自动非计划故障转移，转移到辅助集群。辅助集群将转换为主集群并开始为客户端提供服务。
+
+.开始之前
+* SnapMirror活动同步关系必须同步。
+* 当正在进行非中断操作（例如存储单元移动）时，您无法启动计划内故障转移。
+* ONTAP调解器必须已配置、已连接且处于法定人数。
+
+
+.步骤
+. 选择“保护”>“复制”。
+. 选择您需要重新建立的SnapMirror活动同步关系。
+. 等待关系状态显示*InSync*。
+. 选择image:icon_kabob.gif["三个垂直蓝点"] ；然后选择*故障转移*以在原始主群集上恢复操作。
+
+
+.下一步行动
+为了防止丢失主机的 I/O 路径，您需要在主集群上恢复操作后重新扫描主机路径。

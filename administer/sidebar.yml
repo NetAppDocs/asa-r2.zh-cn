@@ -2,6 +2,14 @@
 section: administer
 title: 管理和监控
 entries:
+- title: 升级和恢复ONTAP
+  entries:
+  - title: 升级 ONTAP
+    url: "/administer/upgrade-ontap.html"
+  - title: 恢复ONTAP
+    url: "/administer/revert-ontap.html"
+  - title: 更新固件
+    url: "/administer/update-firmware.html"
 - title: 管理客户端对Storage VM的访问
   url: "/administer/manage-client-vm-access.html"
 - title: 管理集群网络
@@ -14,10 +22,6 @@ entries:
     url: "/monitor/monitor-storage.html"
   - title: 增加存储容量
     url: "/administer/increase-storage-capacity.html"
-- title: 升级 ONTAP
-  url: "/administer/upgrade-ontap.html"
-- title: 更新固件
-  url: "/administer/update-firmware.html"
 - title: 查看洞察力
   url: "/monitor/view-insights.html"
 - title: 查看集群事件和作业
@@ -30,6 +34,8 @@ entries:
     url: "/administer/reboot-take-over-give-back-nodes.html"
   - title: 重命名节点
     url: "/administer/rename-nodes.html"
+  - title: 重新平衡节点之间的工作负载
+    url: "/administer/rebalance-workloads.html"
 - title: 管理用户帐户和角色
   url: "/administer/user-accounts-roles.html"
 - title: 管理安全证书

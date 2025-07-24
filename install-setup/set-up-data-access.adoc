@@ -29,6 +29,18 @@ link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphe
 
 
 
+== 从第三方存储系统迁移数据
+
+从ONTAP 9.17.1 开始，您可以使用外部 LUN 导入 (FLI) 将数据从第三方存储系统上的 LUN 迁移到ASA r2 系统。使用 FLI 进行数据迁移可以帮助您降低迁移过程中数据丢失和停机的风险。
+
+FLI 支持在线和离线迁移。在在线迁移中，客户端系统保持在线，同时将数据从第三方存储系统复制到ONTAP存储系统。Windows、Linux 和 ESXi 主机操作系统支持在线迁移。在离线迁移中，客户端系统处于离线状态，LUN 数据从第三方存储系统复制到ONTAP存储系统，然后客户端系统重新处于在线状态。
+
+* 学习如何执行link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_offline_workflow.html["FLI 离线迁移"^] 。
+* 学习如何执行link:https://docs.netapp.com/us-en/ontap-fli/san-migration//concept_fli_online_workflow.html["FLI 在线迁移"^] 。
+
+
+
+
 == 在VMware环境中将ASA R2系统配置为存储提供程序
 
 您可以使用适用于VMware的ONTAP工具在VMware环境中轻松启用ASA R2系统作为存储提供程序。

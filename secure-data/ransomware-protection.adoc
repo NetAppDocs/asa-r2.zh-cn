@@ -4,7 +4,7 @@ permalink: secure-data/ransomware-protection.html
 keywords: asa r2, secure data, data security, ransomware, ransomware attacks, protection 
 summary: 使用防篡改快照保护数据安全。防篡改快照无法删除、可用于恢复受勒索软件攻击影响的数据。 
 ---
-= 防范ASA R2存储系统上的勒索软件攻击
+= 创建防篡改快照，以防止对ASA r2 存储系统的勒索软件攻击
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

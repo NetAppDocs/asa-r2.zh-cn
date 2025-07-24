@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: administer/revert-ontap.html 
+keywords: update, revert, ontap, asa r2 
+summary: ONTAP会自动更新ASA R2系统上的固件。您可以使用System Manager禁用自动更新、并在安装更新之前查看更新。 
+---
+= 在ASA r2 存储系统上恢复ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相同的过程。
+
+还原ONTAP集群会造成中断。还原期间，您必须将集群处于脱机状态。您不应在没有技术支持协助的情况下还原生产集群。您可以自行还原新的或测试的集群。如果新系统或测试系统的还原失败，或者还原成功完成，但您对生产环境中的集群性能不满意，请联系技术支持寻求帮助。
+
+link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["还原ONTAP集群"] 。
+
+
+
+== ASA r2 系统的恢复要求
+
+某些ASA r2 集群配置要求您在开始ONTAP软件恢复之前采取特定操作。
+
+
+
+=== 从ONTAP 9.17.1 还原
+
+如果要在ASA r2 系统上从ONTAP 9.17.1 恢复，则应在开始恢复之前执行以下操作：
+
+[cols="2"]
+|===
+| 如果您有... | 在恢复之前您应该... 
+
+
+| SnapMirror主动同步关系中的分层一致性组 | 删除SnapMirror主动同步关系 
+
+
+| 积极的进口关系 | 删除活动的导入关系 
+
+
+| 已启用反勒索软件保护 | 禁用反勒索软件保护 
+|===

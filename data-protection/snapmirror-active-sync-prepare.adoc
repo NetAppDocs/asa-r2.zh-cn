@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-prepare.html 
+keywords: asa r2, data protection, business continuity, snapmirror active sync, protocol support, object limits, NVMe protocol limitations, prerequisites, interoperability, limits 
+summary: 要准备在ASA r2 系统上配置SnapMirror主动同步，您应该检查配置前提条件、确认是否支持您的主机操作系统，并注意可能影响特定配置的对象限制。 
+---
+= 准备在ASA r2 系统上配置SnapMirror主动同步
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+要准备在ASA r2 系统上配置SnapMirror主动同步，您应该检查配置前提条件、确认是否支持您的主机操作系统，并注意可能影响特定配置的对象限制。
+
+.步骤
+. 查看SnapMirror活动同步link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/prerequisites-reference.html["前提条件"^] 。
+. link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["确认您的主机操作系统受支持"^]用于SnapMirror主动同步。
+. 回顾link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/limits-reference.html["对象限制"]这可能会影响您的配置。
+. 验证ASA r2 系统上主机协议是否支持SnapMirror主动同步。
++
+ASA r2 系统上对SnapMirror主动同步的支持因ONTAP版本和主机协议而异。
+
++
+[cols="2,2"]
+|===
+| 从ONTAP开始... | SnapMirror主动同步支持... 
+
+
+| 9.17.1  a| 
+** iSCSI
+** FC
+** NVMe/FC
+** NVMe/TCP
+
+
+
+
+| 9.16.0  a| 
+** iSCSI
+** FC
+
+
+|===
+
+
+
+
+== ASA r2 系统上SnapMirror主动同步的 NVMe 协议限制
+
+在具有 NVMe 主机的ASA r2 系统上配置SnapMirror主动同步之前，您应该了解某些 NVMe 协议限制。
+
+NVMe 子系统中的所有 NVMe 存储单元都必须是同一一致性组的成员，并且都必须属于同一SnapMirror活动同步关系。
+
+SnapMirror主动同步支持 NVMe/FC 和 NVMe/TCP 协议，如下所示：
+
+* 仅限双节点集群
+* 仅在 ESXi 主机上
+* 仅适用于对称主动/主动配置
++
+NVMe 主机不支持非对称主动/主动配置。
+
+
+
+SnapMirror与 NVMe 主动同步不支持以下内容：
+
+* 映射到多个一致性组的子系统
++
+一个一致性组可以映射多个子系统，但每个子系统只能映射到一个一致性组。
+
+* SnapMirror主动同步关系中一致性组的扩展
+* 将不属于SnapMirror主动同步关系的 NVMe 存储单元映射到复制的子系统
+* 从一致性组中删除存储单元
+* 一致性组几何变化
+* link:https://docs.netapp.com/us-en/ontap/san-admin/microsoft-offloaded-data-transfer-odx-concept.html["Microsoft 卸载数据传输 (Offloaded Data Transfer, ODX)"]
+
+
+.下一步是什么？
+完成启用SnapMirror主动同步所需的准备工作后，您应该link:snapmirror-active-sync-confirm-cluster-configuration.html["确认集群配置"] 。
