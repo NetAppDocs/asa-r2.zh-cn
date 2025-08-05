@@ -27,6 +27,12 @@ link:https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html["VMware vSphe
 
 如果您需要将VM工作负载从ASA存储系统迁移到ASA R2存储系统、NetApp建议您使用link:https://www.vmware.com/products/cloud-infrastructure/vsphere/vmotion["VMware vSphere vMotion"^]对数据执行实时、无中断迁移。
 
+.相关信息
+* 详细了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-why.html["使用ONTAP for vSphere 的优势"^] 。
+* 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["使用ONTAP 的VMware Live Site Recovery"^]。
+* 了解link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html#continuous-availability-solutions-for-vsphere-environments["适用于 vSphere 环境的持续可用性解决方案"^]。
+
+
 
 
 == 从第三方存储系统迁移数据
