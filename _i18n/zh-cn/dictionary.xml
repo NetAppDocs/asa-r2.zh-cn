@@ -393,7 +393,6 @@
   <block id="2aa13c213ee88c84d981559bd42eafe9" category="list-text">将鼠标悬停在要编辑的复制策略上，然后选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="a5e06406af0ed5340393cd73877c6372" category="list-text">更新策略；然后选择*保存*。</block>
   <block id="c3fcac5f888af495cdddd6f927ac06f4" category="paragraph">您已修改复制策略。</block>
-  <block id="d24d04b05bbac5cac892cbefd2a83130" category="doc">保护ASA R2存储系统上的Kubnetes应用程序</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="paragraph-title">了解更多信息</block>
   <block id="8833f2f06409ffe6dc4a7935b76b0754" category="summary">如果一致性组中的数据损坏或丢失、您可以从远程快照还原整个一致性组。</block>
   <block id="042d689a0af446510e1c4b24dd9c2fb3" category="doc">还原ASA R2存储系统上的数据</block>
@@ -1447,7 +1446,6 @@
   <block id="7ade4491330b8b909764f7743d2141bc" category="sidebar">删除存储单元</block>
   <block id="150a34e7bbdf7765066eae5fadb9f919" category="sidebar">存储限制</block>
   <block id="222e11fb018a824c05f5fc6a922f5240" category="sidebar">保护您的数据</block>
-  <block id="a674730095a9b5140cc595ad52f943c7" category="sidebar">保护Kub联网</block>
   <block id="f4b3d5acc9c8ae0d4f905c0fb1312ab2" category="sidebar">还原数据</block>
   <block id="9712f400eacfd75178398ff6c28bb880" category="sidebar">管理一致性组</block>
   <block id="75a949e17bd9625c11dfe6d712fe4599" category="sidebar">管理保护策略和计划</block>
@@ -2032,10 +2030,6 @@
   <block id="62c0f4c22bba3059d9f25e8564fbcaf6" category="paragraph">要安装ONTAP调解器，请按照<block ref="282bbe8a51966ce59628339a2fff99b4" category="inline-link-macro-rx"></block></block>
   <block id="6fb5023500d2f772bfda250aee9189e3" category="inline-link-macro">使用自签名证书配置ONTAP调解器</block>
   <block id="61ad23b638716bf0a345ab306b490801" category="paragraph">安装ONTAP Mediator 后，您应该<block ref="32ce91cb98769079c3f189462b53f48e" category="inline-link-macro-rx"></block> 。</block>
-  <block id="ddf49c4cfb922a55d5ae77024dc951e6" category="paragraph">使用Trident Protect 保护您的 Kubernetes 应用程序。TridentTrident允许您将应用程序和数据从一个 Kubernetes 集群迁移到另一个 Kubernetes 集群，使用NetApp SnapMirror技术将应用程序复制到远程系统，以及将应用程序从暂存环境克隆到生产环境。</block>
-  <block id="2d98ac6197ce7235679e7e90cddb1dda" category="admonition">SnapMirror （异步和同步）仅支持从ASA r2 系统到ASA r2 系统。不支持从ASA r2 系统到AFF或FAS系统的SnapMirror 。</block>
-  <block id="56f4b0ee2b0cd78ca1156e4943ab47ed" category="inline-link-macro">了解有关使用Trident Protect 保护 Kubernetes 应用程序的更多信息</block>
-  <block id="9328f9c985b501db4be547926c0b985e" category="paragraph"><block ref="bd9cba975d45b938e743d6863731f0ab" category="inline-link-macro-rx"></block> 。</block>
   <block id="1d4e19ef25fe54c490c90b84de5b941b" category="summary">查看潜在勒索软件攻击的警告并在系统管理器中采取行动。</block>
   <block id="ffebabaf8051c5f32f02bdc0ef022af1" category="doc">在配置SnapMirror主动同步之前确认您的ASA r2 集群配置</block>
   <block id="317b640808ec09a0efa427a71506d876" category="paragraph">SnapMirror主动同步依赖于对等集群，以便在发生故障转移时保护您的数据。在配置SnapMirror主动同步之前，您应该确认您的ASA r2 集群处于受支持的对等关系，并且满足其他配置要求。</block>
@@ -2310,7 +2304,6 @@
   <block id="851790a9f21b5ff71a9331c624658b8f" category="doc">在ASA r2 系统上使用自签名证书配置ONTAP Mediator 或ONTAP Cloud Mediatior</block>
   <block id="3d1a9a8962bb1e463a972fd3eef1a2d7" category="paragraph">SnapMirror主动同步配置为保护您的数据，以便您在发生灾难时能够以接近零的恢复点目标 (RPO) 和接近零的恢复时间目标 (RTO) 继续操作。</block>
   <block id="19e274092e78148b7f8f40a16e4e4b47" category="summary">在不同集群上的存储虚拟机之间创建对等关系，以便使用SnapMirror实现数据保护和灾难恢复。</block>
-  <block id="ce17aceb2c7b8c41256df32bd57c85e3" category="summary">使用Trident Protect 将应用程序和数据从一个 Kubernetes 集群迁移到另一个 Kubernetes 集群，将应用程序复制到远程系统，以及克隆应用程序。</block>
   <block id="e7a712b62a3b9917efcf632c95771bf8" category="summary">在配置SnapMirror主动同步之前，您应该确认您的ASA r2 集群处于受支持的对等关系，并且满足其他配置要求。</block>
   <block id="df990990a5ec1d2de43a7f0d3883ace1" category="paragraph"><block ref="518fe62c2bcad9680c7b9bc17854f068" category="inline-link-macro-rx"></block> 。</block>
   <block id="fd2001c44ae139d4e281a0cdd502224a" category="list-text">回顾<block ref="6fb29c3af745e27506f2b8729349d0f4" category="inline-link-macro-rx"></block>这可能会影响您的配置。</block>
@@ -2318,9 +2311,7 @@
   <block id="521fe9d2abe779913bdc56fbd86e8714" category="inline-link-macro">SnapMirror Active Sync 对 NVMe 协议的支持</block>
   <block id="e06d24391fbc504b412b98e695d20dac" category="cell"><block ref="e06d24391fbc504b412b98e695d20dac" category="inline-link-macro-rx"></block></block>
   <block id="dea3a75107d7790747be36ffd87dfafd" category="sidebar">配置ONTAP调解器或ONTAP Cloud 调解器</block>
-  <block id="ff84680c6870c10f3e11228ef86a9955" category="sidebar">NetApp ASA的最佳实践</block>
   <block id="0a297cc4d1df6ddee9072cd47dca7791" category="sidebar">NetApp ASA上的FlexPod</block>
-  <block id="03e4aa0349d001bf969e3c9a3664119c" category="sidebar">RestfulAPI 从ASA/ AFF到ASA r2 的过渡指南</block>
   <block id="4ff3b8b9056fdd67969fe5f7de99f262" category="inline-link-macro">了解有关在ASA r2 系统上使用SnapMirror主动同步进行灾难恢复的更多信息</block>
   <block id="a4d3fa0a90b98ed30452a119486e6ae3" category="paragraph"><block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
   <block id="1e96162d7ffea43bde6c07852ffff8cb" category="inline-link-macro">使用ONTAP for vSphere 的优势</block>
@@ -2334,4 +2325,6 @@
   <block id="bf50aa40e09203b6bd2725746556edee" category="sidebar">带有 FCP 的NetApp ASA系统上的 SAP HANA</block>
   <block id="d7542c1281d95fd9eabd52424689de9a" category="sidebar">了解使用ONTAP for vSphere 的优势</block>
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 环境的持续可用性解决方案</block>
+  <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系统的最佳实践</block>
+  <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 转换指南</block>
 </blocks>
