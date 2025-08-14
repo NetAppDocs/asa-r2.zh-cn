@@ -29,6 +29,9 @@ link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.
 
 如果要在ASA r2 系统上从ONTAP 9.17.1 恢复，则应在开始恢复之前执行以下操作：
 
+
+NOTE: link:administer/rebalance-workloads.html["自动工作负载重新平衡"]升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群后 14 天默认启用。启用自动工作负载重新平衡后，您无法在ASA r2 系统上从ONTAP 9.17.1 恢复。
+
 [cols="2"]
 |===
 | 如果您有... | 在恢复之前您应该... 
