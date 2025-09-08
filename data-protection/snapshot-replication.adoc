@@ -15,9 +15,13 @@ searchtitle: 使用ONTAP System Manager| ASA R2将快照复制到远程集群
 快照复制是指将ASA R2系统上的一致性组复制到地理位置较远的位置的过程。初始复制完成后、对一致性组所做的更改会根据复制策略复制到远程位置。复制的一致性组可用于灾难恢复或数据迁移。
 
 
-NOTE: 仅支持将ASA R2存储系统的快照复制到另一个R2存储系统、以及从另一个ASA R2存储系统进行快照复制。您不能将快照从ASA R2系统复制到当前ASA、AFF或FAS系统、也不能将快照从当前ASA、AFF或FAS系统复制到ASA R2系统。
+NOTE: 仅支持与ASA r2 存储系统进行快照复制。您不能将快照从ASA r2 系统复制到ASA、 AFF或FAS系统，也不能从ASA、 AFF或FAS系统复制到ASA r2 系统。
 
 要设置Snapshot复制、您需要在ASA R2系统和远程位置之间建立复制关系。复制关系由复制策略管理。在集群设置期间会创建一个用于复制所有快照的默认策略。您可以使用默认策略、也可以选择创建新策略。
+
+从ONTAP 9.17.1 开始，您可以将异步复制策略应用于具有层次结构关系的一致性组。  ONTAP 9.16.1 中的层次结构关系中的一致性组不支持异步复制。
+
+link:manage-hierarchical-consistency-groups.html["了解有关分层（父/子）一致性组的更多信息"] 。
 
 
 
@@ -42,9 +46,11 @@ ASA r2 系统与其他ONTAP系统的集群对等先决条件相同。link:https:
 
 
 
-== 第2步：(可选)创建复制策略
+== 步骤 2：（可选）创建自定义复制策略
 
-快照复制策略用于定义何时将对ASA R2集群执行的更新复制到远程站点。
+复制策略定义何时将在ASA r2 集群上执行的更新复制到远程站点。 ONTAP包含各种预定义的数据保护策略，您可以将其用于复制关系。如果预定义策略不能满足您的需求，您可以创建自定义复制策略。
+
+了解link:pre-defined-protection-policies.html["预定义的ONTAP数据保护策略"]。
 
 .步骤
 . 在System Manager中、选择*保护>策略*；然后选择*复制策略*。
@@ -93,7 +99,12 @@ ASA r2 系统与其他ONTAP系统的集群对等先决条件相同。link:https:
 为了防止勒索软件攻击、在设置复制关系时、您可以选择锁定目标快照。锁定的快照不会被意外或恶意删除。如果存储单元受到勒索软件攻击的影响、您可以使用锁定的快照来恢复数据。
 
 .开始之前
-如果要锁定目标快照、必须link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化Snapshot Compliance时钟"]在创建复制关系之前先锁定。
+* link:pre-defined-protection-policies.html["了解复制策略"] 。
++
+创建复制关系时，必须为复制关系选择适当的复制策略。您可以使用预定义策略或创建自定义策略。
+
+* 如果要锁定目标快照、必须link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化Snapshot Compliance时钟"]在创建复制关系之前先锁定。
+
 
 创建具有或不具有锁定目标快照的复制关系。
 
@@ -149,9 +160,6 @@ source_一致 性组是指本地集群上要复制的一致性组。
 | 本地来源  a| 
 .. 选择*local sources *，然后选择image:icon_replicate_blue_bg.png["蓝色背景的矩形和字复制为白色字母"]。
 .. 搜索并选择源一致性组。
-+
-source_一致 性组是指本地集群上要复制的一致性组。
-
 .. 在*复制目标*下、选择要复制到的集群、然后选择Storage VM。
 
 

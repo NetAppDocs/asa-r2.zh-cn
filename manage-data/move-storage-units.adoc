@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: 删除存储单元以减少所需的物理存储量或释放其他主机应用程序所需的空间。 
+summary: 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。 
 ---
 = 移动ASA R2存储系统上的存储单元
 :allow-uri-read: 

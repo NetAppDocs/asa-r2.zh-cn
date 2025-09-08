@@ -14,7 +14,7 @@ summary: 删除存储单元以减少所需的物理存储量或释放其他主�
 如果您不再需要维护存储单元中的数据、请删除该存储单元。删除不再需要的存储单元有助于释放其他主机应用程序所需的空间。
 
 .开始之前
-如果要删除的存储单元位于复制关系中的一致性组中、则必须link:../data-protection/manage-consistency-groups.html#remove-a-storage-unit-from-a-consistency-group["从一致性组中删除存储单元"]先删除该存储单元。
+如果要删除的存储单元位于具有复制关系的一致性组中，则必须link:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["从一致性组中删除存储单元"]删除之前。
 
 .步骤
 . 在System Manager中，选择*Storage*。

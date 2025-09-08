@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/user-accounts-roles.html 
-keywords:  
-summary:  
+keywords: manage, user accounts, admin account, roles, active directory, ad, saml, authentication 
+summary: 使用System Manager为用户帐户配置Active Directory域控制器访问、LDAP和SAML身份验证。创建用户帐户角色以定义分配给这些角色的用户可以在集群上执行的特定功能。 
 ---
 = 管理ASA R2存储系统上的用户帐户和角色
 :allow-uri-read: 

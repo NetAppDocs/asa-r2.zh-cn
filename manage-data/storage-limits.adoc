@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
-summary: ASA R2配置支持每个集群最多包含2个节点、这些节点运行FC、iSCSI、NVMe/FC或NVMe/TCP协议。 
+summary: 为了获得最佳性能、配置和支持、您应了解ASA R2存储限制。 
 ---
 = ASA R2存储限制
 :allow-uri-read: 
@@ -13,22 +13,67 @@ summary: ASA R2配置支持每个集群最多包含2个节点、这些节点运�
 [role="lead"]
 为了获得最佳性能、配置和支持、您应了解ASA R2存储限制。
 
-ASA R2系统支持以下功能：
+ASA r2 系统支持以下存储限制：
 
-[cols="1h, 1"]
+[cols="3"]
+|===
+| 限制最大值 | 每个 HA 对 | 每个集群 
+
+
+| 一致性组 | 256 | 256 
+
+
+| 企业应用程序 | 100 | 350 
+
+
+| 节点 | 2 | 12 
+
+
+| 复制组 | 50 | 50 
+
+
+| 存储可用区域大小 | 2PB | 2 PB 
+
+
+| 存储单元 | 10,000 | 30,000 
+
+
+| 存储单元大小 | 128 TB | 128 TB 
+
+
+| 每个一致性组的存储单元 | 80 | 80 
+
+
+| 虚拟机 | 800 | 1200 
 |===
 
 
-| 每个集群的最大节点数 | 12 
+== SnapMirror异步关系的限制
+
+以下限制适用于SnapMirror异步复制关系中的存储单元和一致性组。
+
+[cols="3"]
+|===
+| 限制最大值 | 每个 HA 对 | 每个集群 
 
 
-| 每个集群的最大存储单元数 | 30,000 
+| 一致性组 | 250 | 750 
 
 
-| 最大存储单元大小 | 128 TB 
+| 存储单元 | 4,000 | 6,000 
+|===
 
 
-| 最大存储可用区域大小 | 2 PB 
+== SnapMirror主动同步关系的限制
+
+以下限制适用于SnapMirror主动同步复制关系中的存储单元和一致性组。从ONTAP 9.17.1 开始，仅在双节点集群上支持SnapMirror主动同步。
+
+[cols="3"]
+|===
+| 限制最大值 | 每个 HA 对 | 一致性组 
+
+
+| 50 | 存储单元 | 400 
 |===
 .了解更多信息
 有关最新ASA R2存储限制的完整列表，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。

@@ -34,8 +34,10 @@ ASA r2 系统为基于全闪存平台构建的纯 SAN 环境提供硬件和软�
 您可以从System Manager或ONTAP命令行界面验证ONTAP存储的特性。
 
 * 从System Manager菜单中，选择*Cluster > Overview*。
-* 在命令行界面中、输入： `san config show`
+* 从 CLI 输入： `system node show -personality -is-disaggregated`
 
+
+对于ASA r2 系统，_personality_ 为 _ASA r2_，且 _is-disaggregated_ 的状态为 _true_。
 
 ONTAP存储系统的特性无法更改。
 

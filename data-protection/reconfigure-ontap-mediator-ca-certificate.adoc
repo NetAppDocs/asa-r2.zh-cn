@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: data-protection/reconfigure-ontap-mediator-ca-certificate.html 
+keywords: asa r2, data protection, protect data, configure mediator, reconfigure, reinitialize, ontap mediator, cloud mediator, self-signed, ca, certificates 
+summary: 如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解器，则可以将调解器重新配置为使用第三方证书。出于安全原因，您的组织可能优先考虑或要求使用第三方证书。 
+---
+= 重新配置ONTAP Mediator 或ONTAP Cloud Mediator 以在ASA r2 系统上使用第三方证书
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解器，则可以将调解器重新配置为使用第三方证书。出于安全原因，您的组织可能优先考虑或要求使用第三方证书。
+
+
+
+== 步骤 1：删除中介配置
+
+要重新配置调解器，您必须首先从集群中删除其当前配置。
+
+.步骤
+. 在系统管理器中，选择*保护>概览*。
+. 在右侧窗格中的“*Mediators*”下，选择image:icon_kabob.gif["三个垂直蓝点"]在具有要删除的中介配置的集群对等体旁边；然后选择*删除*。
++
+如果您安装了多个中介器，并且想要删除所有配置，请选择image:icon_kabob.gif["三个垂直蓝点"]在*Mediators*旁边；然后选择*Remove*。
+
+. 选择“*删除*”以确认您要删除中介配置。
+
+
+
+
+== 步骤 2：删除自签名证书
+
+移除中介配置后，您应该从集群中删除相关的自签名证书。
+
+.步骤
+. 选择*集群>设置*。
+. 在“*安全*”下，选择“*证书*”。
+. 选择要删除的证书。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Delete*。
+
+
+
+
+== 步骤 3：使用第三方证书重新安装中介
+
+删除关联的自签名证书后，您可以使用第三方证书重新配置中介。
+
+.步骤
+. 选择*保护>概览*。
+. 在右侧窗格中的“*调解员*”下，选择“*添加调解员*”。
+. 选择*调解员类型*。
+. 对于“云”中介，请输入组织 ID、客户端 ID 和客户端密钥。对于*本地*中介，请输入 IP 地址、端口、中介用户名和中介密码。
+. 从符合条件的集群对等体列表中选择一个集群对等体，或者选择“添加集群对等体”来添加一个新的集群对等体。
+. 在*证书*下，输入第三方证书信息。
+. 选择 * 添加 * 。
+
+
+.结果
+ONTAP调解器或ONTAP Cloud 调解器已重新配置为使用第三方证书。您现在可以使用中介器来管理SnapMirror主动同步关系。

@@ -39,7 +39,7 @@ ASA r2 系统使用具有一致性组的存储单元来简化存储管理和数�
 
 为了保护您的数据免受盗窃或勒索软件等恶意攻击，ASA r2 系统支持板载密钥管理器、双层加密、多因素身份验证和多管理员验证。辅助 ASA r2 系统还支持防篡改快照。
 
-ASA R2系统不支持将集群与当前ASA、AFF或FAS系统混合使用。
+ASA r2 系统不支持与ASA、 AFF或FAS系统混合集群。
 
 .了解更多信息
 * 有关ASA R2系统支持和限制的详细信息，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。

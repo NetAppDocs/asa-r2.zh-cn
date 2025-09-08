@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-break-relationship.html 
+keywords: asa r2, data protection, business continuity, remove, delete, break, relationship, snapmirror active sync, disaster recovery 
+summary: 在某些情况下，您可能需要中断异步复制关系。 
+---
+= 中断ASA r2 系统上的异步复制关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在某些情况下，您可能需要中断异步复制关系。例如，如果您正在运行ONTAP 9.16.1，并且想要增加处于异步复制关系的一致性组的大小，则必须先中断该关系，然后才能修改一致性组的大小。
+
+.步骤
+. 在System Manager中，选择*保护>复制*。
+. 选择*本地目的地*或*本地来源*。
+. 在您想要中断的关系旁边，选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*中断*。
+. 选择“*中断*”。
+
+
+.结果
+主、辅一致性组之间的异步关系被破坏。

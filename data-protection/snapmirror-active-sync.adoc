@@ -15,6 +15,11 @@ ONTAP SnapMirror主动同步数据保护功能即使在整个站点发生故障�
 
 虽然在ASA r2 系统上配置SnapMirror主动同步的系统管理器程序与运行统一ONTAP个性的NetApp FAS、 AFF和ASA系统不同，但SnapMirror主动同步的要求、架构和操作是相同的。
 
+link:../learn-more/hardware-comparison.html#personality-differences["详细了解ONTAP人物"] 。
+
+
+NOTE: 对于ASA r2 系统， SnapMirror主动同步仅在双节点集群配置上受支持。
+
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["了解有关SnapMirror主动同步的更多信息"^] 。
 
 link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["了解有关在ASA r2 系统上使用SnapMirror主动同步进行灾难恢复的更多信息"^]

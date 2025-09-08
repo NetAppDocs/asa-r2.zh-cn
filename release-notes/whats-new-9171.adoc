@@ -40,6 +40,12 @@ summary: 了解ONTAP 9.17.1 中适用于ASA r2 系统的新功能。
 
 
 | link:../data-protection/snapmirror-active-sync.html["SnapMirror Active Sync 对 NVMe 协议的支持"] | SnapMirror Active Sync 新增了对 VMware 工作负载的支持，支持 NVMe/TCP 和 NVMe/FC 主机访问，适用于双节点ONTAP集群。VMware工作负载对 NVMe/TCP 的支持取决于 VMware 错误 ID：TR1049746 的解决。 
+
+
+| link:../data-protection/manage-consistency-groups.html["支持复制关系中一致性组的几何变化"] | ASA r2 系统支持对SnapMirror活动同步或异步复制关系中的一致性组进行几何更改，而无需删除SnapMirror活动同步关系或破坏异步关系。当主一致性组上的几何形状发生变化时，该变化将被复制到辅助一致性组。 
+
+
+| link:../data-protection/snapshot-replication.html["支持子一致性组的异步复制"] | 异步复制策略可以应用于层级关系中的一致性组。 
 |===
 
 

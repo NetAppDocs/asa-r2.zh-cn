@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: 创建一致性组的快照以保护一致性组一部分的存储单元中的数据。如果不再需要保护一致性组中的任何存储单元中的数据，则可以删除快照保护。 
+---
+= 使用快照保护ASA r2 系统上的一致性组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在ASA r2 存储系统中创建一致性组的快照，以保护一致性组一部分的存储单元中的数据。如果不再需要保护一致性组中的任何存储单元中的数据，则可以从一致性组中删除快照保护。
+
+如果不再需要保护一致性组中特定存储单元的数据，则可以从一致性组中删除这些存储单元。
+
+
+
+== 向一致性组添加Snapshot数据保护
+
+向一致性组添加快照数据保护时、系统会根据预定义的计划定期创建一致性组的本地快照。
+
+您可以对link:restore-data.html["还原数据"]丢失或损坏的使用快照。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要保护的一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Edit*。
+. 在*本地保护*下，选择*计划快照*。
+. 选择快照策略。
++
+接受默认快照策略、选择现有策略或创建新策略。
+
++
+[cols="2,6a"]
+|===
+| 选项 | 步骤 
+
+
+| 选择现有快照策略  a| 
+选择image:icon_dropdown_arrow.gif["向下指向蓝色箭头"]默认策略旁边的、然后选择要使用的现有策略。
+
+
+
+| 创建新的快照策略  a| 
+.. 选择image:icon_add.gif["蓝色加号后跟单词add"]；然后输入新策略名称。
+.. 选择策略范围。
+.. 在*日程 安排*下，选择image:icon_add.gif["蓝色加号后跟单词add"]。
+.. 选择出现在*计划名称*下的名称；
++
+然后选择。image:icon_dropdown_arrow.gif["蓝色箭头指向向下方向"]
+
+.. 选择策略计划。
+.. 在*最大快照数*下、输入要保留一致性组的最大快照数。
+.. (可选)在* SnapMirror label*下输入SnapMirror标签。
+.. 选择 * 保存 * 。
+
+
+|===
+. 选择 * 保存 * 。
+
+
+.下一步行动
+现在、您的数据已通过快照进行保护、您应link:../secure-data/encrypt-data-at-rest.html["设置快照复制"]将一致性组复制到地理位置较远的位置、以便进行备份和灾难恢复。
+
+
+
+== 从一致性组中删除Snapshot数据保护
+
+从一致性组中删除快照数据保护后、此一致性组中的所有存储单元都会禁用快照。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要停止保护的一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Edit*。
+. 在*本地保护*下、取消选择计划快照。
+. 选择 * 编辑 * 。
+
+
+.结果
+不会为一致性组中的任何存储单元创建快照。

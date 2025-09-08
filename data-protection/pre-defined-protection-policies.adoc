@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: data-protection/pre-defined-protection-policies.html 
+keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
+summary: 复制策略定义何时将在ASA r2 集群上执行的更新复制到远程站点。  ONTAP包含各种预定义的数据保护策略，您可以将其用于复制关系。 
+---
+= 了解预定义的ONTAP数据保护策略
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+复制策略定义何时将在ASA r2 集群上执行的更新复制到远程站点。  ONTAP包含各种预定义的数据保护策略，您可以将其用于复制关系。
+
+如果预定义的策略不能满足您的需求，您可以link:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["创建自定义复制策略"]。
+
+ASA r2 系统支持以下预定义的保护策略。
+
+[cols="3,4,1"]
+|===
+| 策略 | 说明 | 策略类型 
+
+
+| 异步 | 统一的SnapMirror异步和保险库策略，用于镜像最新的活动文件系统以及按每小时传输计划的每日和每周快照。 | 异步 
+
+
+| 自动故障转移双工 | 具有零 RTO 保证和双向同步复制的SnapMirror同步策略。 | SnapMirror主动同步 
+
+
+| 云备份默认 | 保险库政策有每日规则。 | 异步 
+
+
+| 每日备份 | 保险库政策包含每日规则和每日转移计划。 | 异步 
+
+
+| DPDefault | SnapMirror异步策略用于镜像所有快照和最新的活动文件系统。 | 异步 
+
+
+| MirrorAllSnapshots | SnapMirror异步策略用于镜像所有快照和最新的活动文件系统。 | 异步 
+
+
+| 镜像所有快照丢弃网络 | SnapMirror异步策略，用于镜像所有快照和最新的活动文件系统（不包括网络配置）。 | 异步 
+
+
+| MirrorAndVault | 统一的SnapMirror异步和保险库策略，用于镜像最新的活动文件系统以及每日和每周快照。 | 异步 
+
+
+| MirrorAndVaultDiscard网络 | 统一的SnapMirror异步和保险库策略，用于镜像最新的活动文件系统以及不包括网络配置的每日和每周快照。 | 异步 
+
+
+| Mirror最新 | SnapMirror异步策略用于镜像最新的活动文件系统。 | 异步 
+
+
+| Unified7year | 统一的SnapMirror策略，保留期为 7 年。 | 异步 
+
+
+| XDPDefault | 保险库政策包含每日和每周规则。 | 异步 
+|===

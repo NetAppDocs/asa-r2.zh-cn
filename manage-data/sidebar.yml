@@ -33,7 +33,13 @@ entries:
   - title: 创建 SVM 对等关系
     url: "/data-protection/create-svm-peer-relationship.html"
   - title: 设置快照复制
-    url: "/data-protection/snapshot-replication.html"
+    entries:
+    - title: 将快照复制到远程集群
+      url: "/data-protection/snapshot-replication.html"
+    - title: 了解预定义的保护策略
+      url: "/data-protection/pre-defined-protection-policies.html"
+    - title: 中断复制关系
+      url: "/data-protection/snapmirror-active-sync-break-relationship.html"
   - title: 设置SnapMirror主动同步
     entries:
     - title: 工作流
@@ -50,14 +56,30 @@ entries:
       url: "/data-protection/configure-snapmirror-active-sync.html"
   - title: 管理SnapMirror主动同步
     entries:
+    - title: 重新配置ONTAP Mediator 或ONTAP Cloud Mediator 以使用第三方证书
+      url: "/data-protection/reconfigure-ontap-mediator-ca-certificate.html"
     - title: 使用SnapMirror主动同步执行计划内故障转移
       url: "/data-protection/snapmirror-active-sync-planned-failover.html"
     - title: 在计划外故障转移后重新建立SnapMirror活动同步
       url: "/data-protection/snapmirror-active-sync-unplanned-failover.html"
+    - title: 删除SnapMirror主动同步关系
+      url: "/data-protection/snapmirror-active-sync-delete-relationship.html"
+    - title: 删除ONTAP调解器或ONTAP Cloud 调解器
+      url: "/data-protection/snapmirror-active-sync-remove-mediator.html"
   - title: 还原数据
     url: "/data-protection/restore-data.html"
   - title: 管理一致性组
-    url: "/data-protection/manage-consistency-groups.html"
+    entries:
+    - title: 了解一致性组
+      url: "/data-protection/manage-consistency-groups.html"
+    - title: 使用快照保护一致性组
+      url: "/data-protection/manage-consistency-groups-add-remove-snapshots.html"
+    - title: 向一致性组中添加或删除存储单元
+      url: "/data-protection/manage-consistency-groups-add-remove-storage-units.html"
+    - title: 删除一致性组
+      url: "/data-protection/manage-consistency-groups-delete.html"
+    - title: 管理分层一致性组
+      url: "/data-protection/manage-hierarchical-consistency-groups.html"
   - title: 管理保护策略和计划
     url: "/data-protection/policies-schedules.html"
 - title: 保护数据安全

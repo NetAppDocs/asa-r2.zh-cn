@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-consistency-groups-delete.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace 
+summary: 如果您不再需要将一致性组的成员作为单个单元进行管理，则可以删除该一致性组。 
+---
+= 删除ASA r2 系统上的一致性组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再需要将一致性组的成员作为单个单元进行管理，则可以删除该一致性组。删除一致性组后，组中先前的存储单元在集群上仍保持活动状态。如果一致性组处于复制关系，则复制的副本将保留在远程集群上。
+
+.开始之前
+如果您正在运行ONTAP 9.16.1，并且要删除的一致性组处于SnapMirror活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]在删除一致性组之前。在ONTAP 9.17.1 及更高版本中，不需要在修改一致性组之前删除此关系。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要删除的一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Delete*。
+. 接受警告，然后选择*Delete*。
+
+
+.下一步是什么？
+删除一致性组后、一致性组中先前的存储单元不再受快照保护。请考虑将这些存储单元添加到另一个一致性组中、以防止数据丢失。

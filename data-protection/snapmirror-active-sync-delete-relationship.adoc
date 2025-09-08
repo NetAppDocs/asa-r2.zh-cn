@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: data-protection/snapmirror-active-sync-delete-relationship.html 
+keywords: asa r2, data protection, business continuity, delete, snapmirror active sync, disaster recovery 
+summary: 如果您不再需要业务应用程序接近零的 RPO 和 RTO，则可以通过删除关联的SnapMirror活动同步关系来删除SnapMirror活动同步保护。 
+---
+= 删除ASA r2 系统上的SnapMirror活动同步关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不再需要业务应用程序接近零的 RPO 和 RTO，则应通过删除关联的SnapMirror活动同步关系来删除SnapMirror活动同步保护。如果您在ASA r2 系统上运行ONTAP 9.16.1，则可能还需要先删除SnapMirror活动同步关系，然后才能对SnapMirror同步关系中的一致性组进行某些几何更改。
+
+
+
+== 步骤 1：终止主机复制
+
+如果将源集群中的主机组复制到目标集群，并将目标一致性组映射到复制的主机组，则必须先终止源集群上的主机复制，然后才能删除SnapMirror主动同步关系。
+
+.步骤
+. 在System Manager中，选择*Host*。
+. 在包含要停止复制的主机组的主机旁边，选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择“*编辑*”。
+. 取消选择*复制主机配置*，然后选择*更新*。
+
+
+
+
+== 步骤 2：删除SnapMirror主动同步关系
+
+要从一致性组中删除SnapMirror活动同步保护，必须删除SnapMirror同步关系。
+
+.步骤
+. 在System Manager中，选择*保护>复制*。
+. 选择*本地目的地*或*本地来源*。
+. 在要删除的SnapMirror活动同步关系旁边，选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*删除*。
+. 选择*发布源一致性组基础快照*。
+. 选择 * 删除 * 。
+
+
+.结果
+SnapMirror活动同步关系被删除，并且源一致性组基础快照被发布。一致性组中的存储单元不再受SnapMirror活动同步的保护。
+
+.下一步是什么？
+link:snapshot-replication.html["设置快照复制"]将一致性组复制到地理位置较远的位置以进行备份和灾难恢复。

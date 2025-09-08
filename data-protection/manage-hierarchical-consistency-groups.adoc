@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: data-protection/manage-hierarchical-consistency-groups.html 
+keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
+summary: 使用一致性组同时对多个存储单元执行各种操作，而不是对每个单元单独执行操作。在层次结构中，一个或多个一致性组被配置为父一致性组下的子组。 
+---
+= 管理ASA r2 系统上的分层一致性组
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从ONTAP 9.16.1 开始，您可以使用系统管理器在ASA r2 系统上创建分层一致性组。在层次结构中，一个或多个一致性组被配置为父一致性组下的子组。您可以将单独的快照策略应用于每个子一致性组，并通过复制父组将所有子一致性组的快照作为单个单元复制到远程集群。这简化了复杂数据结构的数据保护和管理。
+
+
+
+== 将现有一致性组提升为父一致性组
+
+如果将现有一致性组提升为父级，则会创建一个新的子一致性组，并且属于提升的一致性组的存储单元将移动到新的子一致性组。存储单元不能直接与父一致性组关联。
+
+.开始之前
+如果您正在运行ONTAP 9.16.1，并且要提升的一致性组处于SnapMirror主动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]一致性组才能得到提升。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以提升一致性组。在ONTAP 9.17.1 及更高版本中，不需要在提升一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要转换为父一致性组的一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*提升到父一致性组*。
+. 输入新的子一致性组的名称或接受默认名称；然后选择一致性组组件类型。
+. 选择*提升*。
+
+
+.下一步是什么？
+您可以在父一致性组下创建其他子一致性组。您还可以link:../secure-data/encrypt-data-at-rest.html["设置快照复制"]将父一致性组和子一致性组复制到地理位置较远的位置，以进行备份和灾难恢复。
+
+
+
+== 将父一致性组更改为单个一致性组
+
+将父一致性组降级为单个一致性组时，关联子一致性组的存储单元将添加到父一致性组。子一致性组被删除，父一致性组则作为单个一致性组进行管理。
+
+.开始之前
+如果您正在运行ONTAP 9.16.1，并且要降级的一致性组处于SnapMirror主动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]一致性组才可以被降级。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以降级一致性组。在ONTAP 9.17.1 及更高版本中，不需要在扩展一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要删除的父一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*降级到单个一致性组*。
+. 选择*Demote*
+
+
+.下一步是什么？
+link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["添加Snapshot策略"]已将此一致性组进行了分级、以保护先前由子一致性组管理的存储单元。
+
+
+
+== 创建子一致性组
+
+创建子一致性组允许您将单独的快照策略应用于每个子组。从ONTAP 9.17.1 开始，您还可以将单独的复制策略直接应用于每个子项。在ONTAP 9.16.1 中，复制策略只能应用于父级别。
+
+您可以从新一致性组或现有一致性组创建子一致性组。
+
+[role="tabbed-block"]
+====
+.从新一致性组
+--
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 将鼠标悬停在要添加子一致性组的父一致性组上。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*添加新的子一致性组*。
+. 输入子一致性组的名称或接受默认名称；然后选择一致性组组件类型。
+. 选择此选项可将现有存储单元添加到子一致性组或创建新存储单元。
++
+如果要创建新存储单元、请输入要创建的单元数和每个单元的容量、然后输入主机信息。
+
++
+如果您创建多个存储单元、则每个存储单元都将使用相同的容量和相同的主机操作系统来创建。要为每个装置分配不同的容量，请选择*添加不同的容量*。
+
+. 选择 * 添加 * 。
+
+
+--
+.从现有一致性组
+--
+.开始之前
+如果您要使用的一致性组已经是另一个一致性组的子组，则必须link:manage-hierarchical-consistency-groups.html#detach-a-child-consistency-group-from-a-parent-consistency-group["将其从现有的父一致性组中分离出来"]然后才可以将其移动到新的父一致性组。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 选择要创建子一致性组的现有一致性组。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*移动到不同的一致性组*。
+. 为子一致性组输入新名称或接受默认名称；然后选择一致性组组件类型。
+. 选择要创建父一致性组的现有一致性组、或者选择创建新的父一致性组。
++
+如果选择创建新的父一致性组、请输入父一致性组的名称或接受默认名称；然后选择一致性应用程序组件类型。
+
+. 选择*移动*。
+
+
+--
+====
+.下一步行动
+创建子一致性组后，您可以link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["应用单个Snapshot保护策略"]到每个子一致性组。您还可以link:snapshot-replication.html["设置复制策略"]在父一致性组和子一致性组上将一致性组复制到远程位置。
+
+
+
+== 将子一致性组与父一致性组分离
+
+当您将子一致性组从父一致性组分离时，子一致性组将从父一致性组中删除，并作为单个一致性组进行管理。应用于父级的复制策略不再应用于分离的子一致性组。
+
+.开始之前
+如果您正在运行ONTAP 9.16.1，并且要分离的一致性组处于SnapMirror活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]才能分离一致性组。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以分离一致性组。在ONTAP 9.17.1 及更高版本中，不需要在扩展一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+
+.步骤
+. 在System Manager中、选择*保护>一致性组*。
+. 选择父一致性组。
+. 选择要断开的子一致性组。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*从父项断开*。
+. 为要断开的一致性组输入新名称或接受默认名称；然后选择一致性组应用程序类型。
+. 选择*Detach*。
+
+
+.下一步是什么？
+link:snapshot-replication.html["设置复制策略"]将分离的子一致性组的快照复制到远程集群。
