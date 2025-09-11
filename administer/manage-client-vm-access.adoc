@@ -201,6 +201,9 @@ network interface show -lif iscsi*
 
 可以根据需要禁用或重命名这些文件。您还可以更改LIF IP地址和子网掩码。
 
+.关于此任务
+ONTAP利用网络时间协议 (NTP) 来同步整个集群的时间。更改 LIF IP 地址后，您可能需要更新 NTP 配置以防止同步失败。欲了解更多信息，请参阅知识库文章link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["LIF IP 更改后 NTP 同步失败"]。
+
 .步骤
 . 选择*网络>概述*；然后选择*网络接口*。
 . 将鼠标悬停在要编辑的网络接口上，然后选择image:icon_kabob.gif["三个垂直蓝点"]。

@@ -2506,4 +2506,6 @@
   <block id="f9e11d9c895b9f2de1a25a03e810d34d" category="sidebar">向一致性组中添加或删除存储单元</block>
   <block id="5a0dfc6f986e17a79c038bc9a2aeec2d" category="sidebar">删除一致性组</block>
   <block id="36bed646725e085252916c3131fbf1b2" category="sidebar">管理分层一致性组</block>
+  <block id="e130096a0ace158c7893eedbd19e7115" category="inline-link-macro">LIF IP 更改后 NTP 同步失败</block>
+  <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用网络时间协议 (NTP) 来同步整个集群的时间。更改 LIF IP 地址后，您可能需要更新 NTP 配置以防止同步失败。欲了解更多信息，请参阅知识库文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
 </blocks>
