@@ -25,7 +25,7 @@ NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN�
 * ASA C30
 
 
-ASA R2系统支持所有SAN协议(iSCSI、FC、NVMe/FC、NVMe/TCP)。iSCSI、FC、NVMe/FC和NVMe/TCP协议支持对称双主动多路径架构、以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI和NVMe/TCP协议支持主机和存储之间的直接路径。
+ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 协议支持多路径对称主动-主动架构，以便主机和存储之间的所有路径都处于活动/优化状态。 iSCSI 和 NVMe/TCP 协议支持主机和存储之间的直接连接。对于光纤通道和 NVMe/FC 协议，不支持直接连接。
 
 在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。
 
