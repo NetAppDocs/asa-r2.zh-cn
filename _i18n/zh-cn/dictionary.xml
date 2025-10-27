@@ -2470,7 +2470,6 @@
   <block id="04207e7bb62b9b5d14bdb603f74e683c" category="cell">10,000</block>
   <block id="40b9cfa6016513b4c254ea34fe34198c" category="cell">存储单元大小</block>
   <block id="9afb5dac442eac92e8a891cc81c846f3" category="cell">每个一致性组的存储单元</block>
-  <block id="f033ab37c30201f73f142449d037028d" category="cell">80</block>
   <block id="137f19e6e2dc1219f33553b812627bc2" category="cell">虚拟机</block>
   <block id="7a53928fa4dd31e82c6ef826f341daec" category="cell">800</block>
   <block id="fe2d010308a6b3799a3d9c728ee74244" category="cell">1200</block>
@@ -2508,4 +2507,7 @@
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主机映射*是指新存储单元将映射到的主机组。如果您为新存储单元选择的主机类型已存在一个主机组，则会自动选择该主机组进行主机映射。您可以接受自动选择的主机组，也可以选择其他主机组。</block>
   <block id="abeb4ea342287af6fb99335900add67e" category="paragraph">如果您指定的操作系统上运行的主机没有预先存在的主机组，ONTAP会自动创建一个新的主机组。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系统提供两种性能级别。默认性能级别为*极限*，这是可用的最高级别。您可以将级别降低至*性能*。</block>
+  <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">集群/HA 布线示例展示了常见的配置。</block>
+  <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此处没有看到您的配置，请转至 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 获得有关存储系统布线的全面配置和插槽优先级信息。</block>
+  <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主机网络布线示例展示了常见的配置。</block>
 </blocks>

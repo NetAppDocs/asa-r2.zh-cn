@@ -147,6 +147,13 @@ image::../media/drw_70-90_switched_cluster_cabling_ieops-1657.svg[使用缆线�
 --
 创建ONTAP集群连接。对于无交换机集群、请将控制器相互连接。对于有交换机集群、将控制器连接到集群网络交换机。
 
+[NOTE]
+====
+集群/HA 布线示例展示了常见的配置。
+
+如果您在此处没有看到您的配置，请转至 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 获得有关存储系统布线的全面配置和插槽优先级信息。
+
+====
 *无交换机集群布线*
 
 将控制器相互连接以创建ONTAP集群连接。
@@ -329,6 +336,13 @@ image::../media/drw_isi_a20_switched_2p_25gbe_cabling_ieops-2019.svg[使用一�
 --
 创建ONTAP集群连接。对于无交换机集群、请将控制器相互连接。对于有交换机集群、将控制器连接到集群网络交换机。
 
+[NOTE]
+====
+集群/HA 布线示例展示了常见的配置。
+
+如果您在此处没有看到您的配置，请转至 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 获得有关存储系统布线的全面配置和插槽优先级信息。
+
+====
 *无交换机集群布线*
 
 将控制器相互连接以创建ONTAP集群连接。
@@ -537,6 +551,13 @@ image::../media/drw_70-90_network_cabling2_ieops-1655.svg[使用缆线连接到1
 --
 将以太网模块端口或光纤通道(FC)模块端口连接到主机网络。
 
+[NOTE]
+====
+主机网络布线示例展示了常见的配置。
+
+如果您在此处没有看到您的配置，请转至 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 获得有关存储系统布线的全面配置和插槽优先级信息。
+
+====
 *以太网主机布线*
 
 .带有两个双端口40/100 GbE I/O模块的ASA A30和ASA A50
@@ -585,6 +606,13 @@ image::../media/drw_isi_a30-50_4p_64gb_fc_1card_cabling_ieops-1924.svg[连接到
 --
 将以太网模块端口或光纤通道(FC)模块端口连接到主机网络。
 
+[NOTE]
+====
+主机网络布线示例展示了常见的配置。
+
+如果您在此处没有看到您的配置，请转至 link:https://hwu.netapp.com["NetApp Hardware Universe"^] 获得有关存储系统布线的全面配置和插槽优先级信息。
+
+====
 *以太网主机布线*
 
 .配备两个 2 端口 40/100 GbE I/O 模块的 ASA C30
