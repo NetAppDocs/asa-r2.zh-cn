@@ -1920,7 +1920,6 @@
   <block id="35e215d46dc9e9777b80a47726a059fc" category="list-text">验证 iSCSI LIF 是否已创建：</block>
   <block id="504efdae1b6cba4150ef59f621aedab1" category="summary">从ONTAP 9.17.1 开始， ONTAP会自动重新平衡ASA r2 系统 HA 对中节点之间的工作负载，以实现最佳性能。</block>
   <block id="83d0ebaee455b02e3b225c751a3ddb60" category="doc">重新平衡ASA r2 存储系统上的节点之间的工作负载</block>
-  <block id="de83a5264e365a5d427ba141c2e6fece" category="paragraph">从ONTAP 9.17.1 开始， ONTAP会自动在ASA r2 系统 HA 对中的节点之间重新平衡工作负载，以实现最佳性能。例如，如果一个节点的利用率增加到 70%，而其 HA 配对节点的利用率仅为 30%，ONTAP会自动转移工作负载，以使每个节点的利用率更加接近。由于 HA 对中的节点共享相同的存储可用区，因此工作负载重新平衡是一项无副本操作，不会影响性能。</block>
   <block id="705b08e838354472c2696f058ccf7e63" category="section-title">修改自动工作负载重新平衡的默认评估期</block>
   <block id="e5c17665820b0729109c666d990f8a03" category="paragraph">升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群后 14 天，自动工作负载重新平衡功能默认启用。您可以使用ONTAP命令行界面 (CLI) 延长或缩短默认评估期，以满足您的运营需求。</block>
   <block id="bdba97a2c63e362302c1c6b384c83f50" category="list-text">验证评估期剩余天数：</block>
@@ -2510,4 +2509,5 @@
   <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">集群/HA 布线示例展示了常见的配置。</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此处没有看到您的配置，请转至 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 获得有关存储系统布线的全面配置和插槽优先级信息。</block>
   <block id="8c3a29fca49d6a772e0a2f8ab6ab7280" category="paragraph">主机网络布线示例展示了常见的配置。</block>
+  <block id="47209a3f622b3d093f126e58491097c5" category="paragraph">从ONTAP 9.17.1 开始， ONTAP会自动在ASA r2 系统 HA 对中的节点之间重新平衡工作负载，以实现最佳性能。例如，如果一个节点上的空间利用率增加到 70%，而其 HA 伙伴节点上的利用率仅为 30%，则ONTAP会自动转移工作负载，以便每个节点的空间利用率更加匹配。由于 HA 对中的节点共享相同的存储可用区，因此工作负载重新平衡是一种无副本操作，不会对性能产生任何影响。</block>
 </blocks>
