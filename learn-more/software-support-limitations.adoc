@@ -26,8 +26,6 @@ summary: 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某�
 * MetroCluster
 * 对象协议
 * ONTAP S3 SnapMirror和S3 API
-* SnapMirror (异步和同步)到云
-* SnapMirror (异步和同步)到非ASA R2系统
 
 
 .ASA R2系统支持以下功能：
@@ -38,6 +36,20 @@ link:../secure-data/ransomware-protection.html["了解如何锁定快照"]在ASA
 * 双层加密
 +
 link:../secure-data/encrypt-data-at-rest.html["了解如何应用双层加密"]ASA R2系统上的数据。
+
+
+
+
+
+== 支持SnapMirror复制
+
+SnapMirror复制在ASA r2 系统上受支持，但存在以下限制：
+
+* 不支持SnapMirror同步复制。
+* SnapMirror主动同步仅支持在两个ASA r2 系统之间进行。
+* SnapMirror异步复制仅支持在两个ASA r2系统之间进行。SnapMirror异步复制不支持在ASA r2 系统与ASA、 AFF或FAS系统或云之间进行。
++
+详细了解link:data-protection/pre-defined-protection-policies.html["ASA r2 系统支持SnapMirror复制策略"]。
 
 
 
