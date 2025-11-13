@@ -17,11 +17,37 @@ summary: '如果在ASA R2系统上使用IP协议、则可以配置IP安全性(IP
 
 在某些ASA R2系统上、加密和完整性检查等多项加密操作可以卸载到受支持的网络接口控制器(Network Interface Controller、NIC)卡上。卸载到NIC卡的操作吞吐量约为5%或更少。这可以显著提高受IPsec保护的网络流量的性能和吞吐量。
 
-以下ASA R2系统支持使用以下NIC卡进行硬件卸载：
+从ONTAP 9.18.1 开始，IPsec 硬件卸载支持扩展到 IPv6 流量。
 
-[cols="2"]
+以下网卡支持在以下ASA r2 系统和ONTAP版本上进行硬件卸载：
+
+[cols="3"]
 |===
-| 支持的NIC卡 | ASA r2系统 
+| 支持的NIC卡 | ASA r2系统 | ONTAP 版本 
+
+
+ a| 
+X50135A（2p，40G/100G以太网控制器）
+ a| 
+* ASA A1K
+* ASA A90
+* ASA A70
+
+ a| 
+ONTAP 9.17.1 及更高版本
+
+
+
+ a| 
+X60135A（2p，40G/100G以太网控制器）
+ a| 
+* ASA A50
+* ASA A30
+* ASA A20
+
+ a| 
+ONTAP 9.17.1 及更高版本
+
 
 
  a| 
@@ -31,6 +57,8 @@ X50131A -(2p、40G/100G/200g/400G以太网控制器)
 * ASA A90
 * ASA A70
 
+ a| 
+ONTAP 9.16.1 及更高版本
 
 
 
@@ -41,7 +69,11 @@ X60132A -(4p、10G/C5G以太网控制器)
 * ASA A30
 * ASA A20
 
+ a| 
+ONTAP 9.16.1 及更高版本
 
 |===
+参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]有关支持的系统和卡的更多信息。
+
 .下一步是什么？
-link:https://docs.netapp.com/us-en/ontap/networking/ipsec-configure.html["配置ONTAP网络的IP安全性"]
+您的ASA r2 系统上的 IPsec 配置方式与其他ONTAP系统上的配置方式相同。有关详细信息，请参阅 link:https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["准备配置ONTAP网络的 IP 安全"^]。

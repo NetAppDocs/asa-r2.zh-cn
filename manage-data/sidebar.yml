@@ -24,13 +24,25 @@ entries:
       url: "/manage-data/move-storage-units.html"
     - title: 删除存储单元
       url: "/manage-data/delete-storage-units.html"
+  - title: 迁移存储虚拟机
+    entries:
+    - title: 将存储虚拟机从ASA集群迁移
+      url: "/manage-data/migrate-svm.html"
+    - title: 切换客户端并清理源存储虚拟机
+      url: "/manage-data/svm-post-migrate-cutover-cleanup.html"
   - title: 存储限制
     url: "/manage-data/storage-limits.html"
 - title: 保护您的数据
   entries:
   - title: 创建快照
     url: "/data-protection/create-snapshots.html"
-  - title: 创建 SVM 对等关系
+  - title: 管理快照储备
+    entries:
+    - title: 了解快照储备
+      url: "/data-protection/snapshot-reserve.html"
+    - title: 修改快照储备
+      url: "/data-protection/snapshot-reserve-modify.html"
+  - title: 创建存储虚拟机对等关系
     url: "/data-protection/create-svm-peer-relationship.html"
   - title: 设置快照复制
     entries:

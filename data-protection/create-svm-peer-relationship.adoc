@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: data-protection/create-svm-peer-relationship.html 
-keywords: create, svm peer relationship, asa r2, data protection 
+keywords: create, svm peer relationship, storage vm, asa r2, data protection 
 summary: 在不同集群上的存储虚拟机之间创建对等关系，以便使用SnapMirror实现数据保护和灾难恢复。 
 ---
 = 在ASA r2 存储系统上创建集群间存储虚拟机对等关系

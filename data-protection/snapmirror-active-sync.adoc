@@ -18,7 +18,7 @@ ONTAP SnapMirror主动同步数据保护功能即使在整个站点发生故障�
 link:../learn-more/hardware-comparison.html#personality-differences["详细了解ONTAP人物"] 。
 
 
-NOTE: 对于ASA r2 系统， SnapMirror主动同步仅在双节点集群配置上受支持。
+NOTE: 从ONTAP 9.18.1 开始， SnapMirror主动同步在四节点配置中得到支持。在ONTAP 9.17.1 中， SnapMirror主动同步仅在双节点配置上受支持。
 
 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["了解有关SnapMirror主动同步的更多信息"^] 。
 

@@ -18,11 +18,15 @@ searchtitle: 使用ONTAP系统管理器| ASA R2配置SAN存储
 
 == 创建存储单元
 
-在ASA R2系统上、存储单元会为SAN主机提供存储空间以执行数据操作。存储单元是指SCSI主机的LUN或NVMe主机的NVMe命名空间。如果您的集群配置为支持SCSI主机、则系统会提示您创建LUN。如果您的集群配置为支持NVMe主机、则系统会提示您创建NVMe命名空间。ASA R2存储单元的最大容量为128 TB。
+在ASA r2 系统中，存储单元为 SAN 主机提供存储空间，用于数据操作。存储单元指的是 SCSI 主机的 LUN 或 NVMe 主机的 NVMe 命名空间。如果您的集群配置为支持 SCSI 主机，系统会提示您创建 LUN。如果您的集群配置为支持 NVMe 主机，系统会提示您创建 NVMe 命名空间。  ASA r2 存储单元的最大容量为 128 TB。
 
 link:https://hwu.netapp.com/["NetApp Hardware Universe"^]有关ASA R2系统的最新存储限制、请参见。
 
 主机启动程序会在存储单元创建过程中添加并映射到存储单元。您也可以link:provision-san-storage.html#add-host-initiators["添加主机启动程序"]link:provision-san-storage.html#map-the-storage-unit-to-a-host["映射"]在创建存储单元后将其分配给存储单元。
+
+从ONTAP 9.18.1 开始，您可以修改快照保留，并在创建存储单元时启用自动快照删除。快照预留空间是指存储单元中专门为快照保留的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。
+
+link:../data-protection/snapshot-reserve.html["了解更多关于ASA r2 系统快照保留的信息"]。
 
 .步骤
 . 在System Manager中，选择*Storage*；然后选择image:icon_add_blue_bg.png["蓝色背景的矩形图标、单词add以白色字母居中"]。
@@ -63,7 +67,7 @@ link:https://hwu.netapp.com/["NetApp Hardware Universe"^]有关ASA R2系统的�
 .. 在*存储和优化*下的*服务质量(QoS)*旁边，选择image:icon_dropdown_arrow.gif["向下箭头的蓝色图标"]。
 .. 选择*Define new policy*。
 .. 输入新QoS策略的名称。
-.. 设置QoS限制和/或QoS保证。
+.. 设置服务质量限制、服务质量保证或两者都设置。
 +
 ... (可选)在"*Limit*(限制*)"下、输入最大吞吐量限制和/或最大IOPS限制。
 +
@@ -88,6 +92,15 @@ link:https://hwu.netapp.com/["NetApp Hardware Universe"^]有关ASA R2系统的�
 +
 ASA r2 系统提供两种性能级别。默认性能级别为*极限*，这是可用的最高级别。您可以将级别降低至*性能*。
 
+
+
+
+
+ a| 
+修改默认快照保留设置并启用自动快照删除功能。
+ a| 
+.. 在“快照预留 %”下，输入要分配给快照的存储单元空间百分比的数值。
+.. 选择“自动删除较旧的快照”。
 
 
 

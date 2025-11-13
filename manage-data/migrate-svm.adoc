@@ -1,0 +1,239 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。 
+---
+= 将存储虚拟机从ASA集群迁移到ASA r2 集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从ONTAP 9.18.1 开始，您可以将存储虚拟机 (VM) 从任何ASA集群无中断地迁移到任何ASA r2 集群。从ASA集群迁移到ASA r2 集群，您可以为仅限 SAN 的环境采用ASA r2 系统的简化和精简架构。
+
+ASA和ASA r2 存储系统之间支持存储虚拟机迁移，具体方式如下：
+
+[cols="2"]
+|===
+| 从以下任何ASA系统： | 适用于以下任何ASA r2 系统： 
+
+
+ a| 
+* ASA C800
+* ASA C400
+* ASA C250
+* ASA A900
+* ASA A800
+* ASA A400
+* ASA A250
+* ASA A150
+* ASA AFF A800
+* ASA AFF A700
+* ASA AFF A400
+* ASA AFF A250
+* ASA AFF A220
+
+ a| 
+* ASA A1K
+* ASA C30
+* ASA A90
+* ASA A70
+* ASA A50
+* ASA A30
+* ASA A20
+
+
+|===
+
+NOTE: 有关ASA和ASA r2 系统的最新列表，请参阅link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。  ASA r2 系统在NetAppHardware Universe中被列为“ASA A 系列/C 系列（新）”。
+
+您只能将存储虚拟机从ASA集群迁移到ASA r2 集群。不支持从任何其他类型的ONTAP系统迁移。
+
+.开始之前
+ASA r2 集群和ASA集群中的所有节点必须运行ONTAP 9.18.1 或更高版本。集群节点上的ONTAP 9.18.1 补丁版本可能有所不同。
+
+
+
+== 步骤 1：验证ASA存储虚拟机的状态
+
+在将存储 VM 从ASA系统迁移之前，不应存在 NVMe 命名空间或vVols ，并且存储 VM 中的每个卷应仅包含一个 LUN。不支持迁移 NVMe 命名空间和vVols。  ASA r2 系统的架构要求卷包含单个 LUN。
+
+.步骤
+. 确认存储虚拟机中不存在 NVMe 命名空间：
++
+[source, cli]
+----
+vserver nvme namespace show -vserver <storage_VM>
+----
++
+如果显示条目，则 NVMe 对象必须是link:https://docs.netapp.com/us-en/ontap/nvme/convert-namespace-to-lun-task.html["转换"^]添加到 LUN 或移除。参见 `vserver nvme namespace delete`以及 `vserver nvme subsystem delete`命令link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP命令参考"^]了解更多信息。
+
+. 确认存储虚拟机中不存在vVols：
++
+[source, cli]
+----
+lun show -verser <storage_VM> -class protocol-endpoint,vvol
+----
++
+如果存在任何vVols ，则应将其复制到另一个存储 VM，然后从要迁移的存储 VM 中删除。参见 `lun copy`和 `lun delete`命令link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP命令参考"^]了解更多信息。
+
+. 确认存储虚拟机中的每个卷都包含一个 LUN：
++
+[source, cli]
+----
+lun show -verser <storage_VM>
+----
++
+如果一个卷包含多个 LUN，请使用 `volume create`和 `lun move`创建 1:1 卷与 LUN 比例的命令。查看link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP命令参考"^]了解更多信息。
+
+
+
+.下一步是什么？
+您已准备好在ASA和ASA r2 集群之间创建集群对等关系。
+
+
+
+== 步骤 2：在您的ASA和ASA r2 集群之间创建集群对等关系
+
+在将存储虚拟机从ASA集群迁移到ASA r2 集群之前，需要创建对等关系。对等关系定义了网络连接，使ONTAP集群和存储虚拟机能够安全地交换数据。
+
+.开始之前
+您必须使用以下方法之一在被对等连接的集群中的每个节点上创建集群间 LIF。
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["在共享数据端口上配置集群间 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["在专用数据端口上配置集群间 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["在自定义 IP 空间中配置集群间 LIF"^]
+
+
+.步骤
+. 在ASA r2 集群上，与ASA集群建立对等关系并生成密码短语：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_cluster_LIF_IPs> -generate-passphrase
+----
++
+以下示例在集群 1 和集群 2 之间创建集群对等关系，并创建系统生成的密码短语：
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. 复制生成的密码短语。
+. 在ASA集群上，与ASA r2 集群建立对等关系：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <ASA_r2_LIF_IPs>
+----
+. 输入在ASA r2 集群上生成的密码短语。
+. 验证集群对等关系是否已创建：
++
+[source, cli]
+----
+cluster peer show
+----
++
+以下示例显示了成功建立对等连接集群的预期输出。
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.结果
+ASA和ASA r2 集群已建立对等连接，存储 VM 数据可以安全传输。
+
+.下一步是什么？
+您已准备好为ASA存储虚拟机进行迁移。
+
+
+
+== 步骤 3：准备将存储虚拟机从ASA迁移到ASA r2 集群
+
+在将存储虚拟机 (VM) 从ASA集群迁移到ASA r2 集群之前，必须运行迁移预检查并修复任何必要的问题。预检查必须成功通过才能执行迁移。
+
+.步骤
+. 从您的ASA r2 集群执行迁移预检查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
+----
++
+如果您需要修复任何问题以准备ASA集群进行迁移，则会显示该问题和纠正措施。修复问题后，重复预检查直至成功完成。
+
+
+
+.下一步是什么？
+您已准备好将存储虚拟机从ASA集群迁移到ASA r2 集群。
+
+
+
+== 步骤 4：将ASA存储虚拟机迁移到ASA R2 集群
+
+在您准备好ASA集群并与ASA r2 集群建立必要的集群对等关系后，即可开始存储 VM 迁移。
+
+执行存储 VM 迁移时，最佳实践是在ASA集群和ASA r2 集群上都留出 30% 的 CPU 余量，以便 CPU 工作负载能够执行。
+
+.关于此任务
+存储虚拟机迁移后，客户端将自动切换到ASA r2 集群， ASA集群上的存储虚拟机将自动删除。默认情况下启用自动切换和自动存储虚拟机移除功能。您也可以选择禁用它们，然后手动执行切换和存储虚拟机删除操作。
+
+.开始之前
+* ASA r2 集群必须有足够的可用空间来容纳迁移的存储虚拟机。
+* 如果ASA存储 VM 包含加密卷，则必须在集群级别配置ASA r2 系统上的板载密钥管理器或外部密钥管理器。
+* 以下操作不能在源ASA集群上运行：
++
+** 故障转移操作
+** 华夫饼
+** 指纹
+** 卷迁移、重新托管、克隆、创建、转换或分析
+
+
+
+
+.步骤
+. 从ASA r2 集群启动存储虚拟机迁移：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <ASA_cluster>
+----
++
+要禁用自动切换，请使用 `-auto-cutover false`范围。要禁用ASA存储 VM 的自动删除，请使用以下方法： `-auto-source-cleanup false`范围。
+
+. 监控迁移状态
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+迁移完成后，*状态*将显示为*迁移完成*。
+
+
+
+
+NOTE: 如果在自动切换开始前需要暂停或取消迁移，请使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必须先暂停迁移，然后才能取消迁移。切换开始后，您将无法取消迁移。
+
+.结果
+存储虚拟机从ASA集群迁移到ASA r2 集群。存储虚拟机的名称和 UUID、数据 LIF 名称、IP 地址以及对象名称（例如卷名称）保持不变。存储虚拟机中已迁移对象的 UUID 已更新。
+
+.下一步是什么？
+如果您禁用了自动切换和自动存储虚拟机移除功能，link:svm-post-migrate-cutover-cleanup.html["手动将ASA客户端切换到ASA R2 集群，并从ASA集群中移除存储虚拟机。"] 。

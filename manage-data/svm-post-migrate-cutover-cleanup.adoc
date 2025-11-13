@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: manage-data/svm-post-migrate-cutover-cleanup.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine, manual cutover, manual cleanup, remove source svm 
+summary: 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。 
+---
+= 迁移到ASA r2 系统后，切换客户端并清理源存储虚拟机。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+将存储虚拟机 (VM) 从ASA集群迁移到ASA r2 集群后，默认情况下，客户端会自动切换到ASA r2 集群，并且ASA集群上的存储 VM 会自动删除。如果您选择在迁移期间禁用ASA存储 VM 的自动切换和移除，则需要在迁移完成后手动执行这些步骤。
+
+
+
+== 存储虚拟机迁移后，手动将客户端切换到ASA r2 系统。
+
+如果在将存储虚拟机从ASA集群迁移到ASA r2 集群期间禁用自动客户端切换，则在迁移成功完成后，请手动执行切换，以便ASA r2 存储虚拟机可以为客户端提供数据。
+
+.步骤
+. 在ASA r2 集群上，手动执行客户端切换：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 确认切换操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.结果
+数据正从ASA r2 集群上的存储虚拟机提供给您的客户端。
+
+.下一步是什么？
+现在您可以从源ASA集群中删除存储虚拟机。
+
+
+
+== 迁移到ASA r2 集群后，手动删除ASA存储虚拟机
+
+如果在将存储虚拟机从ASA集群迁移到ASA r2 集群期间禁用自动源清理，则在迁移完成后，请从ASA集群中删除存储虚拟机以释放存储空间。
+
+.开始之前
+您的客户端应该从ASA r2 集群提供数据。
+
+.步骤
+. 从ASA集群中，验证ASA存储 VM 的状态是否为“*准备进行源清理*”：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 移除ASA存储虚拟机：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.结果
+您的ASA集群上的存储虚拟机已被移除。

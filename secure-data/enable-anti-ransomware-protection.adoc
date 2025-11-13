@@ -25,9 +25,9 @@ ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_an
 
 
 
-== 在 SVM 中的所有存储单元上启用 ARP/AI
+== 在存储虚拟机中的所有存储单元上启用 ARP/AI
 
-您可以在 Storage Virtual Machine (SVM) 中创建的所有存储单元上默认启用 ARP/AI。这意味着在 SVM 中创建的任何新存储单元都将自动启用 ARP/AI。您也可以将 ARP/AI 应用于 SVM 中的现有存储单元。
+您可以在 Storage Virtual Machine (VM) 中创建的所有存储单元上默认启用 ARP/AI。这意味着在存储虚拟机中创建的任何新存储单元都将自动启用 ARP/AI。您还可以将 ARP/AI 应用于存储 VM 中的现有存储单元。
 
 .步骤
 . 在系统管理器中，选择“集群”>“存储虚拟机”。
@@ -42,13 +42,13 @@ ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_an
 
 
 .结果
-默认情况下，您在 SVM 上创建的所有新存储单元都受到保护，以防勒索软件攻击，并且可疑活动会在系统管理器中向您报告。
+默认情况下，您在存储 VM 上创建的所有新存储单元都受到保护，免受勒索软件攻击，可疑活动会在系统管理器中报告给您。
 
 
 
-== 在 SVM 中的特定存储单元上启用 ARP/AI
+== 在存储虚拟机中的特定存储单元上启用 ARP/AI
 
-如果您不想在 SVM 中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。
+如果您不想在存储虚拟机中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。
 
 .步骤
 . 在System Manager中，选择*Storage*。

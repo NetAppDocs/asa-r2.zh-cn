@@ -12,9 +12,9 @@ searchtitle: 将ASA R2系统与其他ONTAP系统进行比较
 
 
 [role="lead"]
-ASA r2 系统为基于全闪存平台构建的纯 SAN 环境提供硬件和软件解决方案。ASAr2 系统与其他ONTAP系统（ ASA 、 AFF和FAS）在ONTAP特性、存储层和支持协议的实现方面有所不同。
+ASA r2 系统为基于全闪存解决方案的纯 SAN 环境提供硬件和软件解决方案。r2 系统与其他ONTAP系统（ ASA 、 AFF和FAS）在ONTAP特性、存储层和支持协议的实现方面有所不同。
 
-以下ASA平台归类为ASA R2系统：
+以下系统被归类为ASA r2 系统：
 
 * ASA A1K
 * ASA A90
@@ -99,8 +99,8 @@ ASA r2 系统与FAS、 AFF和ASA系统有以下不同之处：
 
 下面介绍了ASA R2系统与ONTAP、AFF和ASA系统之间与FAS命令行界面(CLI)和REST API相关的主要区别。
 
-.使用协议服务创建默认SVM
-新集群会自动包含启用了SAN协议的默认数据SVM。 `default-data-blocks`默认情况下、IP数据LUN支持iSCSI和NVMe/TCP协议并使用服务策略。
+.使用协议服务创建默认存储虚拟机
+新集群会自动包含一个默认数据存储虚拟机 (VM)，并启用 SAN 协议。  IP 数据 LIF 支持 iSCSI 和 NVMe/TCP 协议，并使用 `default-data-blocks`默认服务策略。
 
 .自动创建卷
 创建存储单元(LUN或命名空间)会自动从存储可用性区域创建卷。这样便可简化并使用通用命名空间。删除存储单元会自动删除关联的卷。

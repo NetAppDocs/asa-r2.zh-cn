@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: learn-more/additional-supported-ontap-features.html 
-keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
+keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, command line interface, clustered external key servers, external key management, encryption at rest, administrator access management, client authentication, oauth 2.0, saml authentication, fips compliance, link aggregation groups, iscsi, fibre channel, fc, nvme, nvme unmap, hole punch, deallocation, system manager 
 summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常见的ONTAP任务和系统管理器功能在ASA r2 系统上的执行方式与在其他ONTAP系统上的执行方式相同。 
 ---
 = ASA r2 系统支持的常见ONTAP功能
@@ -17,28 +17,118 @@ summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常�
 
 
 
-== ONTAP管理
+== 数据保护
 
-* link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["学习在ONTAP系统管理器中搜索、过滤和排序信息"^] 。
-* link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["组合物理端口以创建接口组"^] 。
-* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["了解 NVMe over Fabrics (NVMe-oF) 配置"^] 。
+了解更多关于ASA r2 系统支持的常见数据保护功能。
+
+
+
+=== 集群外部密钥服务器
+
+您可以配置存储虚拟机上与集群外部密钥管理服务器的连接。使用集群密钥服务器，您可以在存储虚拟机上指定主密钥服务器和辅助密钥服务器。注册密钥时， ONTAP将首先尝试访问主密钥服务器，然后再依次尝试访问辅助服务器，直到操作成功完成，从而防止密钥重复。
+
+link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["学习如何配置集群式外部密钥服务器"^]。
+
+
+
+=== 静态加密的外部密钥管理
+
+您可以使用一个或多个 KMIP 服务器来保护集群用于访问加密数据的密钥。
+
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["启用外部密钥管理"^]。
+* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["启用外部密钥管理 (NVE)"^] 。
 
 
 
 
 == 数据安全性
 
-* link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["了解 OAuth 2.0 身份验证"^] 。
-* link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["了解客户端身份验证和授权"^] 。
-* link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["学习配置 SAML 身份验证"^] 。
-* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["管理ONTAP管理员访问权限"^] 。
+了解更多关于ASA r2 系统支持的常见数据安全功能。
+
+
+
+=== 管理员访问管理
+
+分配给管理员的角色决定了管理员可以执行哪些功能。系统管理器为集群管理员和存储虚拟机管理员提供了预定义角色。您可以在创建管理员帐户时分配角色，也可以稍后分配其他角色。
+
+* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["学习如何使用系统管理器管理管理员访问权限"^]。
 
 
 
 
-== 数据保护
+=== 客户端身份验证和授权
 
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["在ONTAP中配置集群外部密钥服务器"^] 。
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["启用外部密钥管理（基于硬件）"^] 。
-* link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["启用外部密钥管理 (NVE)"^] 。
+ONTAP使用标准方法来保护客户端和管理员对存储的访问，并防止病毒感染。先进技术可用于静态数据加密和 WORM 存储。  ONTAP通过与可信来源验证客户端计算机和用户的身份来验证其身份。  ONTAP通过将用户的凭据与文件或目录上配置的权限进行比较，来授权用户访问文件或目录。
 
+link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["了解客户端身份验证和授权"^] 。
+
+
+
+=== OAuth 2.0 身份验证
+
+您可以使用开放授权（OAuth 2.0）框架来控制对ONTAP集群的访问。  OAuth 2.0 使用签名访问令牌来限制和控制对受保护资源的访问。
+
+link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["了解 OAuth 2.0 身份验证"^] 。
+
+
+
+=== SAML身份验证和管理员访问
+
+您可以为 Web 服务配置和启用安全断言标记语言 (SAML) 身份验证。  SAML 通过外部身份提供商 (IdP) 而不是目录服务提供商（例如 Active Directory 和 LDAP）来验证用户身份。
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["学习配置 SAML 身份验证"^] 。
+
+
+
+== 网络连接
+
+了解更多关于ASA r2 系统支持的常见网络功能。
+
+
+
+=== FIPS 合规性
+
+ONTAP符合联邦信息处理标准 (FIPS) 140-2 的所有 SSL 连接要求。您可以打开和关闭 SSL FIPS 模式，全局设置 SSL 协议，并关闭ONTAP中的任何弱密码，例如 RC4。
+
+从ONTAP 9.18.1 开始，SSL 支持后量子计算加密算法。这些算法可针对未来潜在的量子计算攻击提供额外保护，并且在 SSL FIPS 模式禁用时可用。
+
+* link:https://docs.netapp.com/us-en/ontap/networking/configure_network_security_using_federal_information_processing_standards_fips.html["学习如何为所有 SSL 连接配置 FIPS"^]。
+
+
+
+
+=== 链接聚合组（LAG）
+
+接口组，也称为链路聚合组 (LAG)，是将同一节点上的两个或多个物理端口合并为一个逻辑端口而创建的。逻辑端口可提高弹性、可用性和负载分担能力。
+
+link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["了解链接聚合组"^]。
+
+
+
+== SAN协议
+
+ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。
+
+* link:https://docs.netapp.com/us-en/ontap/san-admin/san-host-provisioning-concept.html["了解更多关于 iSCSI 协议的信息"^]。
+* link:https://docs.netapp.com/us-en/ontap/san-admin/san-provisioning-fc-concept.html["了解更多关于光纤通道 (FC) 协议的信息"^]。
+* link:https://docs.netapp.com/us-en/ontap/concept_nvme_provision_overview.html["了解 NVMe 协议"^]。
++
+** link:https://docs.netapp.com/us-en/ontap/san-admin/nvme-copy-offload.html["学习如何配置 NVMe 复制卸载"^]。
++
+从ONTAP 9.18.1 开始，支持 NVMe 复制卸载。 NVMe 复制卸载功能使 NVMe 主机能够将复制操作从其 CPU 卸载到ONTAP存储控制器的 CPU。主机可以将数据从一个 NVMe 命名空间复制到另一个 NVMe 命名空间，同时将其 CPU 资源保留给应用程序工作负载。
+
+** link:https://docs.netapp.com/us-en/ontap/san-admin/enable-space-allocation.html["了解更多关于 NVMe 空间分配（取消映射）的信息"^]。
++
+从ONTAP 9.16.1 开始，默认情况下为 NVMe 命名空间启用空间释放（也称为“打孔”和“取消映射”）。空间释放允许主机从命名空间中释放未使用的块以回收空间。
+
+
+
+
+
+
+
+== System Manager
+
+您可以在系统管理器中搜索各种操作、对象和信息主题。您还可以搜索表格数据中的特定条目。
+
+link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["学习如何在系统管理器中搜索、筛选和排序信息"^]。

@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9181.html 
+keywords: 'what"s new, release notes, 9.18.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。 
+---
+= 适用于ASA r2 系统的ONTAP 9.18.1 的新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
+
+
+
+== 数据保护
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../data-protection/snapmirror-active-sync.html["增强对SnapMirror主动同步配置的支持"] | SnapMirror主动同步的支持从双节点集群增加到四节点集群。 
+|===
+
+
+== 网络连接
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../secure-data/iscsi-nvme-tcp-connections.html["IPsec 硬件卸载 IPv6 支持"] | IPsec硬件卸载支持已扩展到IPv6。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#fips-compliance["OpenSSL PQC 算法"] | ONTAP支持用于 SSL 的后量子计算加密算法。这些算法可针对未来潜在的量子计算攻击提供额外保护，并且在 SSL FIPS 模式禁用时可用。 
+|===
+
+
+== SAN数据迁移
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../manage-data/migrate-svm.html["支持存储虚拟机迁移"] | 您可以将存储虚拟机 (VM) 从ASA集群无中断地迁移到ASA r2 集群。这使得块级工作负载能够迁移到ASA r2 系统，同时保持数据完整性并确保不会对应用程序造成影响。迁移过程旨在维护现有的主机映射和 LUN 配置，从而减少迁移过程中的操作工作量和风险。 
+|===
+
+
+== 存储效率
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-protocols["支持 NVMe 复制卸载"] | NVMe 复制卸载功能使 NVMe 主机能够将复制操作从其 CPU 卸载到ONTAP存储控制器的 CPU。主机可以将数据从一个 NVMe 命名空间复制到另一个 NVMe 命名空间，同时将其 CPU 资源保留给应用程序工作负载。 
+
+
+| link:../data-protection/snapshot-reserve-modify.html["支持修改快照保留和自动删除快照"] | 您可以修改快照预留空间并启用自动快照删除功能，以限制ASA r2 存储单元中快照所占用的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。这样可以防止快照占用存储用户数据所需的存储单元空间，从而避免应用程序中断。 
+|===
