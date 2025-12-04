@@ -1076,9 +1076,7 @@
   <block id="21ba50dbf4007619e7e1e3d1d4890d04" category="doc">在ASA R2系统上配置ONTAP SAN存储</block>
   <block id="5130efcbab54e3de0826ab521946e46d" category="paragraph">配置存储时、您可以使SAN主机能够对ASA R2存储系统执行数据读写操作。要配置存储、请使用ONTAP系统管理器创建存储单元、添加主机启动程序以及将主机映射到存储单元。您还需要在主机上执行相应步骤、以启用读/写操作。</block>
   <block id="765e871d79c6c686febb0d212efcee42" category="section-title">创建存储单元</block>
-  <block id="2c9e1fb1b8b3b0713d51e8ae575f96cf" category="paragraph"><block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>有关ASA R2系统的最新存储限制、请参见。</block>
   <block id="1d78dc8ed51214e518b5114fe24490ae" category="inline-link-macro">映射</block>
-  <block id="07de3115f268ee32f824fa17392a0fcc" category="paragraph">主机启动程序会在存储单元创建过程中添加并映射到存储单元。您也可以<block ref="8a23e2c4e7cc30673e8b314a4ba4f4ed" category="inline-link-macro-rx"></block><block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>在创建存储单元后将其分配给存储单元。</block>
   <block id="b6ef92a5067caea07262eb16524826b6" category="inline-image-macro">蓝色背景的矩形图标、单词add以白色字母居中</block>
   <block id="b5f594084b71d3aa55abadbedf670f86" category="list-text">在System Manager中，选择*Storage*；然后选择<block ref="da7582bfb005458d3066421df78a060d" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="51a192101931ecb5b57cbe0c93814a0f" category="list-text">输入新存储单元的名称。</block>
@@ -1117,7 +1115,6 @@
   <block id="86d44c7101e25ca99d38670a1efa356e" category="paragraph">带内身份验证允许在NVMe主机和ASA R2系统之间进行安全的双向和单向身份验证。</block>
   <block id="a56968accba6c23d9088678742dc323d" category="paragraph">TLS会对NVMe/TCP主机与ASA R2系统之间通过网络发送的所有数据进行加密。</block>
   <block id="b2006a7dcb49ba27d412bf7c975d494e" category="list-text">选择*添加启动程序*以添加更多启动程序。</block>
-  <block id="5d009b24bd2dd29f315f5549d323dd20" category="paragraph">主机NQN的格式应为&lt;nqn.yyyy-mm&gt;、后跟一个完全限定域名。该年应等于或晚于1970年。最大总长度应为223。例如、nqn.2014-08.com.example:string就是一个有效的NVMe启动程序</block>
   <block id="22d9ca4f3f9229c260ae1d1236d3d11c" category="paragraph">此时将创建存储单元并将其映射到主机。现在、您可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保护ASA R2系统上的数据。</block>
   <block id="87c964622ab29664363b4b2888f1b356" category="inline-link-macro">ASA R2系统如何使用Storage Virtual Machine</block>
   <block id="6afbcb648aad0c257ca7905b9d403b79" category="paragraph">详细了解 <block ref="f6474162100d04c74dacf0c12cf75d7f" category="inline-link-macro-rx"></block>。</block>
@@ -1158,7 +1155,6 @@
   <block id="b7a9ab8dab2826ab36bbf1a3559850cc" category="list-text">选择*添加到主机组*。</block>
   <block id="0f53db9803696214ded0a88c8b0f7339" category="list-text">搜索并选择要添加主机的主机组。</block>
   <block id="e4588db94d1d12fcf26071d43abfb9c8" category="section-title">将存储单元映射到主机</block>
-  <block id="62ce85edaaef586187e6e1454db66f3c" category="paragraph">创建ASA R2存储单元并添加主机启动程序后、您需要将主机映射到存储单元以开始提供数据。在创建存储单元的过程中、存储单元会映射到主机。您还可以随时将现有存储单元映射到新的或现有的主机。</block>
   <block id="8de000c670cb75a778efcd7807338e06" category="list-text">选择*存储*。</block>
   <block id="1b9ba9248585970cf009d0cea53f480c" category="list-text">将鼠标悬停在要映射的存储单元的名称上。</block>
   <block id="d966085aed4aa82e0f344d0a574996c4" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>；然后选择*映射到主机*。</block>
@@ -2440,7 +2436,6 @@
   <block id="31fea35e33141cfa7edd94a1254d7007" category="paragraph">ONTAP利用网络时间协议 (NTP) 来同步整个集群的时间。更改 LIF IP 地址后，您可能需要更新 NTP 配置以防止同步失败。欲了解更多信息，请参阅知识库文章<block ref="eb416b4e77f6226862164baac134c11c" category="inline-link-macro-rx"></block>。</block>
   <block id="5971035c0734629ac0d154a4b60ca9e9" category="paragraph">ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 协议支持多路径对称主动-主动架构，以便主机和存储之间的所有路径都处于活动/优化状态。 iSCSI 和 NVMe/TCP 协议支持主机和存储之间的直接连接。对于光纤通道和 NVMe/FC 协议，不支持直接连接。</block>
   <block id="d55bb9dedbbb937989198b01ce6688da" category="paragraph">*主机映射*是指新存储单元将映射到的主机组。如果您为新存储单元选择的主机类型已存在一个主机组，则会自动选择该主机组进行主机映射。您可以接受自动选择的主机组，也可以选择其他主机组。</block>
-  <block id="abeb4ea342287af6fb99335900add67e" category="paragraph">如果您指定的操作系统上运行的主机没有预先存在的主机组，ONTAP会自动创建一个新的主机组。</block>
   <block id="83e804a6917baea37d43dfd34c66ac73" category="paragraph">ASA r2 系统提供两种性能级别。默认性能级别为*极限*，这是可用的最高级别。您可以将级别降低至*性能*。</block>
   <block id="4a1975a1a386f2f3f28c4859f5ea4976" category="paragraph">集群/HA 布线示例展示了常见的配置。</block>
   <block id="11695514a878032b3fb5ecdf5e659b5b" category="paragraph">如果您在此处没有看到您的配置，请转至 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> 获得有关存储系统布线的全面配置和插槽优先级信息。</block>
@@ -2641,8 +2636,6 @@
   <block id="903547f07fd29a1a471a450bf6698e9a" category="paragraph">存储虚拟机从ASA集群迁移到ASA r2 集群。存储虚拟机的名称和 UUID、数据 LIF 名称、IP 地址以及对象名称（例如卷名称）保持不变。存储虚拟机中已迁移对象的 UUID 已更新。</block>
   <block id="8dc31ca5dc4646efeb787bf14002d2d0" category="inline-link-macro">手动将ASA客户端切换到ASA R2 集群，并从ASA集群中移除存储虚拟机。</block>
   <block id="9577daaa5fbfbab99b56d58ee2c172df" category="paragraph">如果您禁用了自动切换和自动存储虚拟机移除功能，<block ref="76ae15ac4a72520ba2cd15274463fca3" category="inline-link-macro-rx"></block> 。</block>
-  <block id="9582e4c48479798f4f4f9ce46d09c93b" category="paragraph">在ASA r2 系统中，存储单元为 SAN 主机提供存储空间，用于数据操作。存储单元指的是 SCSI 主机的 LUN 或 NVMe 主机的 NVMe 命名空间。如果您的集群配置为支持 SCSI 主机，系统会提示您创建 LUN。如果您的集群配置为支持 NVMe 主机，系统会提示您创建 NVMe 命名空间。  ASA r2 存储单元的最大容量为 128 TB。</block>
-  <block id="c9c3efe2f110833ad53d587066554d58" category="paragraph">从ONTAP 9.18.1 开始，您可以修改快照保留，并在创建存储单元时启用自动快照删除。快照预留空间是指存储单元中专门为快照保留的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。</block>
   <block id="7501352b37c8930919c10e645c388272" category="inline-link-macro">了解更多关于ASA r2 系统快照保留的信息</block>
   <block id="7fdd4a506c158d387464fd16f4e65f8e" category="paragraph"><block ref="614a34b4f7a807cea02dd4507adb351a" category="inline-link-macro-rx"></block>。</block>
   <block id="819b58028cbb8d32e35c5a6d2a9ed247" category="list-text">设置服务质量限制、服务质量保证或两者都设置。</block>
@@ -2726,4 +2719,19 @@
   <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">修改快照储备</block>
   <block id="d36af7beb354a2c45f47821d695da277" category="sidebar">创建存储虚拟机对等关系</block>
   <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">ONTAP 9.18.1 的新增功能</block>
+  <block id="5aa793bbbd0a039a24351b96f67f0529" category="paragraph">ASA r2 存储单元默认采用精简配置。迁移虚拟机工作负载时，虚拟磁盘（VMDK）也应该进行精简配置。</block>
+  <block id="7b848eb8039379df12baae059a9ee8ea" category="inline-link-macro">如何将 Broadcom VMware ESXi iSCSI MPIO 与ONTAP SAN ASA存储系统集成</block>
+  <block id="b91b0ae22fa5ae9c0dedfb1c2ea0123d" category="list-text">详细了解<block ref="a32ebc6e0510ec3f73b137570cd9df09" category="inline-link-macro-rx"></block>。</block>
+  <block id="f1391ddb40293878f5f1aec84cd95a9d" category="paragraph">在ASA r2 系统中，存储单元为 SAN 主机提供存储空间，用于数据操作。存储单元指的是 SCSI 主机的 LUN 或 NVMe 主机的 NVMe 命名空间。如果您的集群配置为支持 SCSI 主机，系统会提示您创建 LUN。如果您的集群配置为支持 NVMe 主机，系统会提示您创建 NVMe 命名空间。</block>
+  <block id="4314cb010b84f564860a7b2fee2cb4ab" category="paragraph">ASA r2 存储单元的最大容量为 128 TB。参见<block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>针对ASA r2 系统的最新存储限制。</block>
+  <block id="34ec78fcc91ffb1e54cd85e4a0924332" category="inline-link-macro">添加</block>
+  <block id="48e33f950546e0f98a6cda6ec059d508" category="paragraph">在创建存储单元的过程中，您需要将主机启动器添加到存储单元并将其映射到存储单元。你也可以<block ref="7d43bd55c0467bfd35b09864ee6c0663" category="inline-link-macro-rx"></block>和<block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>创建存储单元后，主机启动器。</block>
+  <block id="daacdfe6a9c965f99bb919daaf922d41" category="paragraph">从ONTAP 9.18.1 开始，您可以修改快照保留，并在创建存储单元时启用自动快照删除。快照预留空间是指存储单元中专门为快照保留的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。</block>
+  <block id="cd70e38e090afe4dfe68269857720d8c" category="inline-link-macro">精简配置</block>
+  <block id="6afea9ca1f178aea254d3f9ac79d8dbc" category="paragraph">存储单元默认采用精简配置。精简配置允许存储单元扩展到分配的大小，但不会预先预留空间。空间会根据需要从可用空间中动态分配。这样，您可以通过超额配置可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您可以创建存储单元，监控空间利用率，并随着存储单元实际占用空间而增加存储容量，而不是立即向系统中添加 3 TB 的额外存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
+  <block id="235edd79b1fce1af069d9278c91366b9" category="paragraph">为了优化存储可用区内的工作负载均衡，请创建偶数个存储单元。</block>
+  <block id="c82bffc1986369b2cd4e0c02a3eb4336" category="admonition">如果创建多个存储单元，则每个单元的容量都相同。将你要创建的存储单元数量乘以所需的容量，以确保你有足够的可用空间。如果可用空间不足，而你又选择了过度配置，请密切监控使用情况，以避免空间不足和数据丢失。</block>
+  <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在运行您指定的操作系统的主机的预先存在的主机组， ONTAP将自动创建一个新的主机组。</block>
+  <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">将主机 NQN 格式化为 &lt;nqn.yyyy-mm&gt;，后跟完全限定域名。年份应等于或晚于 1970 年。总最大长度应为 223。一个有效的 NVMe 发起程序示例是 nqn.2014-08.com.example:string</block>
+  <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">创建ASA r2 存储单元并添加主机启动器后，将主机映射到存储单元以开始提供数据服务。存储单元在创建存储单元的过程中会被映射到主机。您还可以随时将现有存储单元映射到新的或现有的主机。</block>
 </blocks>
