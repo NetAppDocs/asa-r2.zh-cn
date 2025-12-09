@@ -2225,7 +2225,6 @@
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系统的最佳实践</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 转换指南</block>
   <block id="a7063f74bf99069f53792368bf5ddbe3" category="admonition">启用自动工作负载重新平衡后，您无法在ASA r2 系统上从ONTAP 9.17.1 恢复。</block>
-  <block id="bbf7c82f4e9f186f627b8c659682a8e1" category="admonition">在ASA r2 系统中，SED 仅支持 NVMe 协议。</block>
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系统使用具有一致性组的存储单元来简化存储管理和数据保护。例如，假设您有一个由一致性组中的 10 个存储单元组成的数据库，并且您需要备份整个数据库。您无需单独备份每个存储单元，而是可以通过备份一致性组来保护整个数据库。</block>
   <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">从ONTAP 9.16.1 开始， ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点布线并打开电源后，您需要将它们加入到集群中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相同的过程。还原ONTAP集群会造成中断。</block>
@@ -2734,4 +2733,5 @@
   <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在运行您指定的操作系统的主机的预先存在的主机组， ONTAP将自动创建一个新的主机组。</block>
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">将主机 NQN 格式化为 &lt;nqn.yyyy-mm&gt;，后跟完全限定域名。年份应等于或晚于 1970 年。总最大长度应为 223。一个有效的 NVMe 发起程序示例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">创建ASA r2 存储单元并添加主机启动器后，将主机映射到存储单元以开始提供数据服务。存储单元在创建存储单元的过程中会被映射到主机。您还可以随时将现有存储单元映射到新的或现有的主机。</block>
+  <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系统中，SED 仅支持基于 NVMe 的 SSD。</block>
 </blocks>
