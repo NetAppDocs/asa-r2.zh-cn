@@ -13,7 +13,7 @@ summary: 启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动
 [role="lead"]
 从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。
 
-从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型无法通过 CLI 或 API 访问或修改。因此，ARP/AI 在启用后立即生效；无需link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["学习期"^] 。
+从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型不可访问或修改。  ARP/AI 在启用后立即生效；没有link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["学习期"^]。
 
 
 NOTE: 没有任何勒索软件检测或预防系统能够完全保证免受勒索软件攻击。虽然攻击可能未被发现，但如果杀毒软件未能检测到入侵，ARP/AI 可以充当重要的额外防御层。

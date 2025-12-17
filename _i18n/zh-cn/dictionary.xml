@@ -2056,7 +2056,6 @@
   <block id="ed71343ae4e4dcf121be11ff1628e50c" category="paragraph-title">FAS、 AFF和ASA系统</block>
   <block id="825933c4d860e3660e8c98f0e7eab2b8" category="paragraph">FAS、 AFF和ASA系统的存储层使用聚合作为基本存储单元。聚合拥有存储系统中可用的一组特定磁盘。聚合将其拥有的磁盘上的空间分配给 LUN 和命名空间的卷。使用这些系统， ONTAP用户可以创建和修改聚合、卷、LUN 和命名空间。</block>
   <block id="d0ee8f6d42e445ccb3b6cf2ca2eda848" category="paragraph">ASA r2 系统中的存储层使用存储可用区，而非聚合。存储可用区是单个 HA 对的两个节点均可访问的公共存储池。HA对中的两个节点均可访问其共享存储可用区中的所有可用磁盘。例如，在双节点ASA r2 系统ONTAP集群中，有一个存储可用区，集群中的两个节点均可访问。在四节点ASA r2 系统ONTAP集群中，有两个存储可用区。集群中的每个 HA 对都可以访问其中一个存储可用区。</block>
-  <block id="21d7850248698429a3bafb9997a15a87" category="list-text">自动工作负载重新平衡</block>
   <block id="25afba57f81c57e27978071d59c7fb4c" category="paragraph">ASA r2 系统与FAS、 AFF和ASA系统有以下不同之处：</block>
   <block id="fc647b716005682fb47d07737c88ef5f" category="inline-link-macro">了解有关不受支持的ASA r2 命令的更多信息</block>
   <block id="a9bf379b64b6d61f1e4ce19d0d6e0c25" category="paragraph">由于这种自动化且简化的存储管理方法，某些 System Manager 选项、 ONTAP命令和 REST API 端点在ASA r2 系统上不可用或使用受限。例如，由于ASA r2 系统的卷创建和管理是自动化的，因此“卷”菜单不会显示在 System Manager 中，并且<block ref="4784dd0ffa42c3d1b43b0afd079dfc17" prefix=" " category="inline-code"></block>命令不受支持。<block ref="876b47d727ef9cdbe213f90a9ae9f200" category="inline-link-macro-rx"></block> 。</block>
@@ -2092,7 +2091,6 @@
   <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">在ASA r2 存储系统上利用 AI 实现自主勒索软件防护</block>
   <block id="e8b71c667f5920e249288a672ea7f999" category="paragraph">从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。</block>
   <block id="7331e9472b69421ea7995df5df0b5754" category="inline-link-macro">学习期</block>
-  <block id="36d9aa26c54df45c1444d8d8c87f223b" category="paragraph">从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型无法通过 CLI 或 API 访问或修改。因此，ARP/AI 在启用后立即生效；无需<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block> 。</block>
   <block id="c23c5941acca34f7955743c2115ef87e" category="admonition">没有任何勒索软件检测或预防系统能够完全保证免受勒索软件攻击。虽然攻击可能未被发现，但如果杀毒软件未能检测到入侵，ARP/AI 可以充当重要的额外防御层。</block>
   <block id="ad09d4f074e5e7f7524d8960ed675311" category="inline-link-macro">ONTAP One 许可证</block>
   <block id="4098ab2b124dfc2ac9a7199398f039bf" category="paragraph">ARP/AI 支持包含在<block ref="eac36fc822e433078e178d83ea6ed140" category="inline-link-macro-rx"></block> 。</block>
@@ -2202,7 +2200,6 @@
   <block id="f0929283036207a854392f9eaeb45be4" category="paragraph">ASA r2 系统使用具有一致性组的存储单元来简化存储管理和数据保护。例如，假设您有一个由一致性组中的 10 个存储单元组成的数据库，并且您需要备份整个数据库。您无需单独备份每个存储单元，而是可以通过备份一致性组来保护整个数据库。</block>
   <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">从ONTAP 9.16.1 开始， ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点布线并打开电源后，您需要将它们加入到集群中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相同的过程。还原ONTAP集群会造成中断。</block>
-  <block id="4145a02c95a799fdae111c620990d210" category="admonition"><block ref="78cd7e79034e394d9b3e1aacaa777a70" category="inline-link-macro-rx"></block>升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群后 14 天默认启用。启用自动工作负载重新平衡后，您无法在ASA r2 系统上从ONTAP 9.17.1 恢复。</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">删除SnapMirror主动同步关系</block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">ASA r2 系统的ONTAP软件升级遵循与其他ONTAP系统升级相同的流程。当您在ASA r2 系统上升级ONTAP软件时，您可以利用新的和增强的ONTAP功能。</block>
   <block id="676b55575e438300a6a0242a0e2d75e1" category="summary">了解如何使用自签名或第三方证书为ASA r2 系统配置ONTAP Mediator 或ONTAP Cloud Mediator。</block>
@@ -2486,7 +2483,6 @@
   <block id="43b8a9db5392b7dee9842cb0e7e1155d" category="paragraph">下面图示是一个 FC 配置示例，其中多个主机使用两个光纤通道来访问单个 HA 对。 FC 目标端口号（0c、0d、1a、1b）也是示例。实际端口号会因系统型号以及是否使用扩展适配器而有所不同。</block>
   <block id="7ae21cadd263178648c997416019850c" category="paragraph">了解更多关于ASA r2 系统支持的常见数据保护功能。</block>
   <block id="ce42c71243f06fc614542e0e55a275e8" category="section-title">集群外部密钥服务器</block>
-  <block id="5f7c44cb2c8485bb82150a336201223d" category="paragraph">您可以配置存储虚拟机上与集群外部密钥管理服务器的连接。使用集群密钥服务器，您可以在存储虚拟机上指定主密钥服务器和辅助密钥服务器。注册密钥时， ONTAP将首先尝试访问主密钥服务器，然后再依次尝试访问辅助服务器，直到操作成功完成，从而防止密钥重复。</block>
   <block id="d45192a9dbc8a2cb6e487c863af22bbb" category="inline-link-macro">学习如何配置集群式外部密钥服务器</block>
   <block id="b5fde6611f98dcb7f68f83b340b778b9" category="paragraph"><block ref="774d74de870375f3b6eceda1ffb399f2" category="inline-link-macro-rx"></block>。</block>
   <block id="398ff0a12bc1e99d6ac1e3b9a33d9ed1" category="section-title">静态加密的外部密钥管理</block>
@@ -2665,11 +2661,8 @@
   <block id="c65375b9e9461021110e7878164c1353" category="inline-link-macro">支持修改快照保留和自动删除快照</block>
   <block id="74bb636063257a476aa70d6beb1b78a0" category="cell"><block ref="74bb636063257a476aa70d6beb1b78a0" category="inline-link-macro-rx"></block></block>
   <block id="bb6f2042d7b561ef22513dcacc071c68" category="cell">您可以修改快照预留空间并启用自动快照删除功能，以限制ASA r2 存储单元中快照所占用的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。这样可以防止快照占用存储用户数据所需的存储单元空间，从而避免应用程序中断。</block>
-  <block id="d5dbf89be96c1d99854bd0585a1c44fb" category="section-title">在存储虚拟机中的所有存储单元上启用 ARP/AI</block>
   <block id="05e7e1680bf144077a0c95dc04ecfe70" category="paragraph">您可以在 Storage Virtual Machine (VM) 中创建的所有存储单元上默认启用 ARP/AI。这意味着在存储虚拟机中创建的任何新存储单元都将自动启用 ARP/AI。您还可以将 ARP/AI 应用于存储 VM 中的现有存储单元。</block>
   <block id="afc9ff5f825988208f6c59ba04c2c2d2" category="paragraph">默认情况下，您在存储 VM 上创建的所有新存储单元都受到保护，免受勒索软件攻击，可疑活动会在系统管理器中报告给您。</block>
-  <block id="239fd0403ac267048794a15cbef5b1dc" category="section-title">在存储虚拟机中的特定存储单元上启用 ARP/AI</block>
-  <block id="62700fbbbfe12bea2a0aa0890f568f6d" category="paragraph">如果您不想在存储虚拟机中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。</block>
   <block id="8ae754caf3a2f6cacd2c696b8292a020" category="paragraph">从ONTAP 9.18.1 开始，IPsec 硬件卸载支持扩展到 IPv6 流量。</block>
   <block id="39fa9e9872335fa886f58deacacdaf75" category="paragraph">以下网卡支持在以下ASA r2 系统和ONTAP版本上进行硬件卸载：</block>
   <block id="e8467e9b509c4924668c01eb7ab2adde" category="cell">ONTAP 版本</block>
@@ -2689,7 +2682,6 @@
   <block id="17dd0aa64fbdd042489b5c0fffcd25bb" category="sidebar">管理快照储备</block>
   <block id="3c0f4fa7666b61f86ab42a6f65750f20" category="sidebar">了解快照储备</block>
   <block id="343eac7cd99cc683c46468c5b11af7ac" category="sidebar">修改快照储备</block>
-  <block id="d36af7beb354a2c45f47821d695da277" category="sidebar">创建存储虚拟机对等关系</block>
   <block id="d529398546b94e10169c1e6f6f8aed12" category="sidebar">ONTAP 9.18.1 的新增功能</block>
   <block id="5aa793bbbd0a039a24351b96f67f0529" category="paragraph">ASA r2 存储单元默认采用精简配置。迁移虚拟机工作负载时，虚拟磁盘（VMDK）也应该进行精简配置。</block>
   <block id="7b848eb8039379df12baae059a9ee8ea" category="inline-link-macro">如何将 Broadcom VMware ESXi iSCSI MPIO 与ONTAP SAN ASA存储系统集成</block>
@@ -2707,5 +2699,40 @@
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">将主机 NQN 格式化为 &lt;nqn.yyyy-mm&gt;，后跟完全限定域名。年份应等于或晚于 1970 年。总最大长度应为 223。一个有效的 NVMe 发起程序示例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">创建ASA r2 存储单元并添加主机启动器后，将主机映射到存储单元以开始提供数据服务。存储单元在创建存储单元的过程中会被映射到主机。您还可以随时将现有存储单元映射到新的或现有的主机。</block>
   <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系统中，SED 仅支持基于 NVMe 的 SSD。</block>
-  <block id="0195aa02a40fea888f627303a4327d5b" category="paragraph">创建存储单元（基于 LUN 或 NVMe 命名空间）时， ONTAP会自动在相应的存储可用区中创建一个卷来容纳该存储单元。新创建的卷将自动放置在该存储可用区内，以实现最佳性能和均衡的容量利用率。== ASA r2 系统差异概述</block>
+  <block id="e6129943cc99a13d8c697c60264ba016" category="inline-link-macro">动态空间平衡</block>
+  <block id="8c43a655da0b70a36ef0f72c6b39d432" category="admonition"><block ref="f3838dd89a924b4e0ebc50e64aa2b719" category="inline-link-macro-rx"></block>默认情况下，升级到ONTAP 9.17.1 或初始化新的ONTAP 9.17.1 ASA r2 集群 14 天后启用。在ASA r2 系统上启用动态空间均衡后，您无法从ONTAP 9.17.1 版本回滚。</block>
+  <block id="166a84d4b4570b597bcb3a30d4252d65" category="doc">了解ASA r2 集群中的ONTAP容量均衡</block>
+  <block id="0eabbb2a15c52c4ca21e3d1a32f8a437" category="paragraph">对于ASA r2 系统， ONTAP使用 _均衡放置_ 将新创建的存储单元自动放置在最佳存储可用区，以实现最佳性能和均衡的存储利用率。如果您运行的是ONTAP 9.17.1 或更高版本，则现有存储单元占用的空间将使用_动态空间平衡_进行平衡。如果您正在运行ONTAP 9.16.1，则现有存储单元占用的空间将使用基于副本的工作负载重新平衡进行平衡。</block>
+  <block id="0378d558dcd0562ad67f6e96ad981dde" category="cell">得到支持……</block>
+  <block id="037e39315c9955da8fb128aa756cd46e" category="cell">均衡布局</block>
+  <block id="3b5c971fe265309c78554a126187a02b" category="cell">动态空间平衡</block>
+  <block id="b357fa1cac46cc202ec05fcda6bb8345" category="cell">基于副本的工作负载重新平衡</block>
+  <block id="ca5e84f0aed2658b5025cc94ecf226e3" category="cell">仅限ONTAP 9.16.1</block>
+  <block id="cdf4362de9950bde8f5ebc0f7e20c7e0" category="paragraph">通过_均衡放置_，新创建的存储单元会自动放置在最佳存储可用区内，以实现最佳性能和均衡的存储利用率。  ONTAP 9.16.1 及更高版本默认启用均衡放置。</block>
+  <block id="558429cf36a4f5c8c0960e6bd8efd1df" category="paragraph">通过动态空间平衡， ONTAP会主动监控集群中的可用空间，并自动在存储可用区内移动存储单元，以保持空间利用率的平衡。如果集群范围内的容量利用率达到 80%，则会自动发出 EMS 警告；如果达到 90%，则会自动发出 EMS 警报。</block>
+  <block id="c6a005b97c2f2846aa679b95c6025d92" category="paragraph">升级到ONTAP 9.17.1 或更高版本后 14 天，动态空间平衡功能将默认启用。如果您需要修改默认的 14 天启用期，请联系NetApp支持。启用动态空间平衡后，无法从ONTAP 9.17.1 回滚。</block>
+  <block id="46a255963b960d8b5876c25f4de05d2a" category="paragraph">动态空间平衡根据集群中所有节点可用空间的总体平均值（全局平均值）以_正常模式_或_低空间模式_运行。</block>
+  <block id="025d18661b268d39b7e3eaaddcbc28d7" category="list-text">*普通模式*</block>
+  <block id="1e2b165e104c3720ed3eae401de85f1d" category="paragraph">在正常模式下， ONTAP每三分钟检查一次，以确定是否需要动态空间平衡。当满足以下条件时，动态空间平衡功能以正常模式运行：</block>
+  <block id="21785288675631645ce1e84d8015b73c" category="list-text">全球平均空隙率为 10% 或更高。</block>
+  <block id="08b87c5a5faec00b9261df150c92a32b" category="list-text">集群中至少有一个节点的可用空间比全局平均水平要多。</block>
+  <block id="1452275c17d530e5bf7907bf8036547a" category="list-text">集群中至少有一个节点的可用空间比全局平均水平少 20%。</block>
+  <block id="8a46d383f6569301a603e54b4418ce55" category="list-text">*低空间模式*</block>
+  <block id="7f6dc71b0f98b16a0db647450cc99a3e" category="paragraph">在低空间模式下， ONTAP每分钟检查一次，以确定是否需要动态空间平衡。当满足以下条件时，动态空间均衡以低空间模式运行：</block>
+  <block id="3277f61f156841253c20ed4c96e6c0a2" category="list-text">全球平均自由空间不足10%。</block>
+  <block id="87e3450ba7653f98d10dc2803138c7bf" category="list-text">集群中至少有一个节点的可用空间少于全局平均水平。</block>
+  <block id="6dfd63ffb4710564042f8d26eb17a0af" category="paragraph">通过基于复制的工作负载重新平衡，如果存储可用区内出现存储利用率不平衡的情况， ONTAP会自动将造成不平衡的存储单元复制到具有更大可用空间的存储可用区。如果目标存储可用区没有足够的可用空间， ONTAP将不会执行任何平衡操作。基于副本的工作负载重新平衡仅适用于运行ONTAP 9.16.1 的ASA r2 系统，并且默认情况下在这些系统上启用。在ONTAP 9.17.1 及更高版本中，它被动态空间平衡所取代。</block>
+  <block id="625927359c6ff98754dcdfda6d0f8d77" category="paragraph">如果您需要修改基于副本的工作负载重新平衡的默认设置，请联系NetApp支持。</block>
+  <block id="299c5db3cbde057ebd5a919711b1d2e1" category="paragraph">您可以配置与存储虚拟机上的集群外部密钥管理服务器的连接。使用集群密钥服务器，您可以在存储虚拟机上指定主密钥服务器和辅助密钥服务器。注册密钥时， ONTAP将首先尝试访问主密钥服务器，然后再依次尝试访问辅助服务器，直到操作成功完成，从而防止密钥重复。</block>
+  <block id="9f71ddf310db058a3a89122693392a68" category="inline-link-macro">了解ASA r2 集群中的容量均衡</block>
+  <block id="be2bfcecf308b1d3a417456024096c75" category="paragraph">创建存储单元（基于 LUN 或 NVMe 命名空间）时， ONTAP会自动在相应的存储可用区中创建一个卷来容纳该存储单元。新创建的卷将自动放置在该存储可用区内，以实现最佳性能和均衡的容量利用率。存储可用区内的容量利用率会根据您的ONTAP版本进行平衡。<block ref="9689a3d9a5cc82eb930985adacfe9343" category="inline-link-macro-rx"></block>。</block>
+  <block id="d480af7e6686a5e56e9006fab126c8e7" category="section-title">ASA r2 系统差异概述</block>
+  <block id="2be27a1e2f13957646665cd7fef8000d" category="cell">每个父母一致性组下的子一致性组</block>
+  <block id="ea5d2f1c4608232e07d3aa3d998e5135" category="cell">64</block>
+  <block id="d24ed4821c2e547301d0c31d918da4ea" category="paragraph">从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型不可访问或修改。  ARP/AI 在启用后立即生效；没有<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
+  <block id="542b4f4e36f442f64960052e5e90dc97" category="section-title">在存储虚拟机中的所有存储单元上启用 ARP/AI</block>
+  <block id="4a8ba6399b21b6bd034b8e0eaf51d276" category="section-title">在存储虚拟机中的特定存储单元上启用 ARP/AI</block>
+  <block id="354d3bc6178c825e83ed9c7eb99644cb" category="paragraph">如果您不想在存储虚拟机中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。</block>
+  <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空间平衡</block>
+  <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">创建存储虚拟机对等关系</block>
 </blocks>
