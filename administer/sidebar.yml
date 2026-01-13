@@ -17,7 +17,7 @@ entries:
 - title: 监控使用情况并增加容量
   entries:
   - title: 了解空间平衡
-    url: administer/space-balancing.html
+    url: "/administer/space-balancing.html"
   - title: 监控存储性能
     url: "/monitor/monitor-performance.html"
   - title: 监控存储利用率
