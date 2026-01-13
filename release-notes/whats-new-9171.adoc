@@ -56,5 +56,5 @@ summary: 了解ONTAP 9.17.1 中适用于ASA r2 系统的新功能。
 | 更新 | 说明 
 
 
-| link:../learn-more/hardware-comparison.html["支持自动工作负载平衡"] | 工作负载在 HA 对的节点之间自动平衡，以优化性能和资源利用率。 
+| link:../administer/space-balancing.html["支持自动工作负载平衡"] | 工作负载在 HA 对的节点之间自动平衡，以优化性能和资源利用率。 
 |===
