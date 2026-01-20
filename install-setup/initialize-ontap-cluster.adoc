@@ -16,6 +16,8 @@ ONTAP系统管理器可指导您快速轻松地完成ONTAP ASA R2集群设置工
 
 在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)。您也可以选择启用域名系统(DNS)来解析主机名、将集群设置为使用网络时间协议(NTP)进行时间同步、以及启用空闲数据加密。
 
+在某些情况下，你可能需要 link:../learn-more/cli-support.html#set-up-an-ontap-asa-r2-cluster-using-the-cli["使用ONTAP命令行界面 (CLI) 设置集群"]。例如，如果您的安全协议不允许您将笔记本电脑连接到管理交换机，或者如果您使用的是非 Windows 操作系统，则应使用 CLI。
+
 .开始之前
 收集以下信息：
 

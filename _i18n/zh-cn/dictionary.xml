@@ -2004,7 +2004,6 @@
   <block id="5d356c397f5a143daadc1597a8fd7a34" category="list-text">选择您需要重新建立的SnapMirror活动同步关系。</block>
   <block id="9f4215830573390fcfe4dab1715a643e" category="list-text">等待关系状态显示*InSync*。</block>
   <block id="a1f13cb349233b9c7d0b9e95fdff569e" category="list-text">选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block> ；然后选择*故障转移*以在原始主群集上恢复操作。</block>
-  <block id="b69b57f7782b4b37cff72f353a59ac84" category="paragraph">为了防止丢失主机的 I/O 路径，您需要在主集群上恢复操作后重新扫描主机路径。</block>
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">使用SnapMirror主动同步，保护需要零恢复点目标 (RPO) 和零恢复时间目标 (RTO) 的主机应用程序免受意外中断或站点灾难造成的中断。</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">SnapMirror主动同步设置工作流程</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">ONTAP SnapMirror主动同步数据保护功能即使在整个站点发生故障的情况下也能使业务服务继续运行，并支持应用程序使用辅助副本透明地进行故障转移。使用SnapMirror主动同步功能触发故障转移无需任何手动干预或自定义脚本。</block>
@@ -2735,4 +2734,7 @@
   <block id="6938dcbd34a520f0105bf12cf29cbdce" category="sidebar">了解空间平衡</block>
   <block id="72f3763acb9cf34e72f0598e6d1bebf8" category="sidebar">创建存储虚拟机对等关系</block>
   <block id="bbaf1d1dee5098cd15496cd4ba1a66da" category="cell"><block ref="bbaf1d1dee5098cd15496cd4ba1a66da" category="inline-link-macro-rx"></block></block>
+  <block id="91d54d0d46ef33d2bbd727e59b537fee" category="list-text">要恢复丢失的 I/O 路径或更新主机上的 I/O 路径状态，需要在主存储集群恢复运行后对主机执行存储/适配器重新扫描。</block>
+  <block id="682aa2cee69ce16837ee717d9beba117" category="inline-link-macro">使用ONTAP命令行界面 (CLI) 设置集群</block>
+  <block id="ac1a39b823c12e10449f448872a387b1" category="paragraph">在某些情况下，你可能需要 <block ref="b88ab746f7be66e2ab53ecac4b9fd72e" category="inline-link-macro-rx"></block>。例如，如果您的安全协议不允许您将笔记本电脑连接到管理交换机，或者如果您使用的是非 Windows 操作系统，则应使用 CLI。</block>
 </blocks>
