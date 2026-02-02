@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: secure-data/disable-default-anti-ransomware-protection.html 
+keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
+summary: '如果您的 ASA r2 群集上安装了 Autonomous Ransomware Protection (ARP) 许可证，则默认情况下，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 群集 12 小时后，所有现有和新创建的存储单元都会启用 ARP。' 
+---
+= 在您的 ASA r2 存储系统上禁用默认自主勒索软件保护
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+当您初始化新的 ONTAP 9.18.1 ASA r2 群集或将您的群集升级到 ONTAP 9.18.1 时，ARP/AI 在 12 小时宽限期后默认在所有新存储单元上自动启用。如果您在宽限期内未禁用 ARP/AI，则在宽限期结束时将为新存储单元启用群集范围的 ARP/AI。
+
+在 ONTAP 9.17.1 中创建的存储单元必须link:enable-anti-ransomware-protection.html["手动启用"]用于 ARP/AI。
+
+.步骤
+您可以在最初的 12 小时宽限期内或之后禁用默认启用。
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. 选择*集群>设置*。
+. 禁用 ARP：
++
+** 要在 12 小时宽限期内禁用：
++
+... 在*反勒索软件*下，选择*不启用*，然后选择*禁用*。
+
+
+** 若要在 12 小时宽限期后禁用：
++
+... 在*反勒索软件*下，选择image:icon_pencil.gif["编辑"]并取消选择*为新存储单元启用*。
+... 选择 *Save*
+
+
+
+
+
+
+--
+.命令行界面
+--
+. 检查默认启用状态：
++
+[source, cli]
+----
+security anti-ransomware auto-enable show
+----
+. 禁用现有卷和新卷的默认启用：
++
+[source, cli]
+----
+security anti-ransomware auto-enable modify -default-existing-volume-state false -default-new-volume-state false
+----
+
+
+--
+====

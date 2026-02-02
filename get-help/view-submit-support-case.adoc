@@ -13,7 +13,7 @@ summary:
 [role="lead"]
 如果您遇到需要帮助的问题、可以使用ONTAP系统管理器将案例提交给技术支持。您还可以使用ONTAP系统管理器查看已关闭或正在处理的案例。
 
-您必须link:https://activeiq-link.netapp.com/["已向Active IQ注册"]查看ASA R2系统的支持案例。
+您必须link:https://docs.netapp.com/us-en/active-iq/task_login_activeiq.html["已向Active IQ注册"^]才能查看 ASA r2 系统的支持案例。
 
 .步骤
 . 要提交支持案例，请在System Manager中选择*Cluster > Support*；然后选择*Go to NetApp Support*。

@@ -13,21 +13,39 @@ summary: 启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动
 [role="lead"]
 从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。
 
-从ONTAP 9.17.1 开始，ARP 采用机器学习模型进行反勒索软件分析，从而提高了网络弹性，该模型能够以 98% 的准确率检测 SAN 环境中不断演变的勒索软件形式。ARP的机器学习模型在模拟勒索软件攻击前后都基于大量文件数据集进行了预训练。这种资源密集型训练在ONTAP之外进行，并且由此训练生成的预训练模型包含在ONTAP中。此模型不可访问或修改。  ARP/AI 在启用后立即生效；没有link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["学习期"^]。
+ARP 通过采用反勒索软件分析的机器学习模型来提高网络弹性，该模型可检测 SAN 环境下不断变化的勒索软件形式，准确率高达 98%。ARP 的机器学习模型在模拟勒索软件攻击之前和之后都在大型文件数据集上进行了预训练。这种资源密集型训练是在 ONTAP 外部完成的，由此训练产生的预训练模型包含在 ONTAP 的盒内。此模型不可访问或修改。ARP/AI 在启用后立即激活；没有link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html#learning-and-active-modes["学习期"^]。
 
 
-NOTE: 没有任何勒索软件检测或预防系统能够完全保证免受勒索软件攻击。虽然攻击可能未被发现，但如果杀毒软件未能检测到入侵，ARP/AI 可以充当重要的额外防御层。
+NOTE: 没有勒索软件检测或防御系统可以完全保证免受勒索软件攻击的安全。虽然攻击可能未被检测到，但如果防病毒软件未能检测到入侵，ARP/AI 将充当重要的额外防御层。
 
 .关于此任务
-ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 许可证"] 。
+* ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_and_later_licensing_overview["ONTAP One 许可证"] 。
+* 受 SnapMirror 活动同步、SnapMirror 同步或 SnapLock 保护的存储单元不支持 ARP/AI。
+* 从 ONTAP 9.18.1 开始，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 集群 12 小时后，默认在所有新创建的存储单元上启用 ARP/AI。
+* 启用 ARP/AI 后，您应该link:../administer/update-firmware.html#enable-automatic-updates["为您的安全文件启用自动更新"]自动接收新的安全更新。
 
-启用 ARP/AI 后，您应该link:../administer/update-firmware.html#enable-automatic-updates["为您的安全文件启用自动更新"]自动接收新的安全更新。
+
+
+
+== 在集群中的所有存储单元上启用 ARP/AI
+
+如果您正在运行 ONTAP 9.17.1，则可以默认在集群中创建的所有存储单元上启用 ARP/AI。
+
+在 ONTAP 9.18.1 及更高版本中，默认情况下在所有新存储单元上启用 ARP/AI。如果您在 ONTAP 9.17.1 中创建的存储单元未启用 ARP/AI，则可以手动启用它。
+
+.步骤
+. 在System Manager中、选择*集群>设置*。
+. 在*反勒索软件*旁边，选择 image:icon_kabob.gif["编辑反勒索软件设置"]，然后选择*在所有现有存储单元上启用*。
+. 选择*启用*。
+
 
 
 
 == 在存储虚拟机中的所有存储单元上启用 ARP/AI
 
-您可以在 Storage Virtual Machine (VM) 中创建的所有存储单元上默认启用 ARP/AI。这意味着在存储虚拟机中创建的任何新存储单元都将自动启用 ARP/AI。您还可以将 ARP/AI 应用于存储 VM 中的现有存储单元。
+如果您正在运行 ONTAP 9.17.1，则可以在默认情况下在存储虚拟机 (VM) 中创建的所有存储单元上启用 ARP/AI。这意味着在存储虚拟机中创建的任何新存储单元都将自动启用 ARP/AI。您还可以将 ARP/AI 应用于存储虚拟机中的现有存储单元。
+
+在 ONTAP 9.18.1 及更高版本中，默认情况下在所有新存储单元上启用 ARP/AI。如果您在 ONTAP 9.17.1 中创建的存储单元未启用 ARP/AI，则可以手动启用它。
 
 .步骤
 . 在系统管理器中，选择“集群”>“存储虚拟机”。
@@ -48,7 +66,9 @@ ARP/AI 支持包含在link:https://kb.netapp.com/onprem/ontap/os/ONTAP_9.10.1_an
 
 == 在存储虚拟机中的特定存储单元上启用 ARP/AI
 
-如果您不想在存储虚拟机中的所有存储单元上启用 ARP/AI，您可以选择要启用的特定单元。
+如果正在运行 ONTAP 9.17.1，并且不希望在存储虚拟机中的所有存储单元上启用 ARP/AI，则可以选择要启用的特定单元。
+
+在 ONTAP 9.18.1 及更高版本中，默认情况下在所有新存储单元上启用 ARP/AI。如果您在 ONTAP 9.17.1 中创建的存储单元未启用 ARP/AI，则可以手动启用它。
 
 .步骤
 . 在System Manager中，选择*Storage*。
