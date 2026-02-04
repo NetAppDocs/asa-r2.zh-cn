@@ -2768,4 +2768,5 @@
   <block id="b86583f9a9fc89f434a369308432e10e" category="inline-link-macro">报告已知的 ARP/AI 浪涌</block>
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">如果您知道存储单元活动出现浪涌，无论是一次性浪涌还是具有新常态特征的浪涌，您都应将其报告为安全。手动将这些浪涌报告为安全有助于提高 ARP 威胁评估的准确性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">禁用默认 ARP/AI 启用</block>
+  <block id="74c34cd79314b0b0543df58dce891912" category="cell">对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。</block>
 </blocks>
