@@ -184,7 +184,6 @@
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">选择以确认您的更新修改将应用于所有当前和未来的更新。</block>
   <block id="7ae6e72fcf95f7e0b8f4dbe1153d8398" category="paragraph">系统会根据您选择的更新自动下载建议的更新并将其安装在ASA R2系统上。</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">禁用自动更新</block>
-  <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">如果您希望在安装之前灵活地查看建议的更新、请禁用自动更新。如果禁用自动更新、则需要手动执行固件和系统文件更新。</block>
   <block id="3a73131e5e1a3a498c8e055e84a30f60" category="paragraph">已禁用自动更新。您应定期检查建议的更新、并确定是否要执行手动安装。</block>
   <block id="e8b8aa5f70e0a4459ca2284f8da3b813" category="section-title">查看自动更新</block>
   <block id="6edf33a55c81d08e5aac13aae918832c" category="paragraph">查看已下载到集群并计划自动安装的固件和系统文件更新的列表。此外、还可以查看以前自动安装的更新。</block>
@@ -1943,7 +1942,6 @@
   <block id="63f65589705e420ce3e3c84f5a73edea" category="inline-link-macro">创建集群间存储虚拟机对等关系</block>
   <block id="0a1048623dcc4bf6a07e4f070c75b99a" category="list-text">确认集群中的每个节点上至少创建了一个 LIF。</block>
   <block id="f0a8f8a4710c7aff45926e4c429a8cc0" category="inline-link-macro">创建 LIF</block>
-  <block id="d57b4f0ac425b878d2f45da8c8c89d8d" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block></block>
   <block id="b04d1fe353930783cf68fb978624b212" category="list-text">确认必要的存储单元已创建并映射到主机组。</block>
   <block id="12aa04a968692be25285a9fc7234d0d5" category="inline-link-macro">创建存储单元</block>
   <block id="0dcd2c45a0db6a5c91ed22efb559bd29" category="inline-link-macro">将存储单元映射到主机组</block>
@@ -2769,4 +2767,6 @@
   <block id="114bbec71af5be00be6f74b75bcf02d1" category="paragraph">如果您知道存储单元活动出现浪涌，无论是一次性浪涌还是具有新常态特征的浪涌，您都应将其报告为安全。手动将这些浪涌报告为安全有助于提高 ARP 威胁评估的准确性。了解如何<block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="b27281dcf866cc70bd075c0d39310671" category="sidebar">禁用默认 ARP/AI 启用</block>
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。</block>
+  <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">仅当您希望完全自行管理更新时，才禁用自动更新。关闭自动更新后，系统将不会通知、下载或安装更新。您负责手动监控、下载、安排和安装所有更新。</block>
+  <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
 </blocks>

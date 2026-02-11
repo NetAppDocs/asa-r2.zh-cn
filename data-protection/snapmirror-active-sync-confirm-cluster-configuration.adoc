@@ -28,7 +28,7 @@ link:create-svm-peer-relationship.html["创建集群间存储虚拟机对等关�
 
 . 确认集群中的每个节点上至少创建了一个 LIF。
 +
-link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["创建 LIF"]
+link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["创建 LIF"]。
 
 . 确认必要的存储单元已创建并映射到主机组。
 +
