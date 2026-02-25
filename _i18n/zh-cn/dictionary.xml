@@ -1054,7 +1054,6 @@
   <block id="4af5b851dfcd374944ce285278985595" category="paragraph">您可以将从已删除的存储单元释放的空间用于<block ref="f623a169728c03b0e232ffad71f851b4" category="inline-link-macro-rx"></block>需要额外容量的存储单元。</block>
   <block id="d144ceb11715b5ffc74a8293d3aa8303" category="summary">通过编辑存储单元以增加容量、更新服务质量(QoS)策略或更改主机映射来响应存储系统性能和数据的变化。</block>
   <block id="ceff03bfa1a8dafc5e617407d14564d3" category="doc">修改ASA R2存储系统上的存储单元</block>
-  <block id="e6f1f5b43dd2b3e740c42c5f1623750d" category="paragraph">要优化ASA R2系统的性能、您可能需要修改存储单元以增加其容量、更新QoS策略或更改映射到这些存储单元的主机。例如、如果向现有存储单元添加了新的关键应用程序工作负载、则可能需要更改应用于存储单元的服务质量(QoS)策略、以支持新应用程序所需的性能级别。</block>
   <block id="261c95ed5d454ef55df25657c605d472" category="paragraph-title">增加容量</block>
   <block id="9c4dfedb8190eb2128e8185aff1c8e51" category="paragraph">在存储单元容量达到全满之前增加其大小、以防止在存储单元用尽可写空间时丢失数据访问。存储单元的容量可以增加到128 TB、这是ONTAP允许的最大大小。</block>
   <block id="e2bcdafb5edd46c07debdaff4977f47e" category="paragraph-title">修改主机映射</block>
@@ -2334,7 +2333,6 @@
   <block id="913e3fb6005d79d1e7e5eb2046a6fa4c" category="inline-link-macro">SnapMirror 中介器删除</block>
   <block id="55394a49231c00367e205c42b064e980" category="list-text"><block ref="55394a49231c00367e205c42b064e980" category="inline-link-macro-rx"></block></block>
   <block id="7827b7923d6e45ba19022ef0a9878628" category="inline-link-macro">详细了解ONTAP人物</block>
-  <block id="67cc47e8f050e98e23b1a714f17238ec" category="paragraph"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block> 。</block>
   <block id="2e50e3f8a8554bd854e544e6dc52462d" category="admonition">仅支持与ASA r2 存储系统进行快照复制。您不能将快照从ASA r2 系统复制到ASA、 AFF或FAS系统，也不能从ASA、 AFF或FAS系统复制到ASA r2 系统。</block>
   <block id="8e0a212a3ccb8f506b309ea2b6cbd1f7" category="paragraph">从ONTAP 9.17.1 开始，您可以将异步复制策略应用于具有层次结构关系的一致性组。  ONTAP 9.16.1 中的层次结构关系中的一致性组不支持异步复制。</block>
   <block id="de095ac7880431e9449dcced8cecbd9a" category="inline-link-macro">了解有关分层（父/子）一致性组的更多信息</block>
@@ -2684,10 +2682,7 @@
   <block id="48e33f950546e0f98a6cda6ec059d508" category="paragraph">在创建存储单元的过程中，您需要将主机启动器添加到存储单元并将其映射到存储单元。你也可以<block ref="7d43bd55c0467bfd35b09864ee6c0663" category="inline-link-macro-rx"></block>和<block ref="261a27e7b6f81c3f2b0eb2a43b4fcddb" category="inline-link-macro-rx"></block>创建存储单元后，主机启动器。</block>
   <block id="daacdfe6a9c965f99bb919daaf922d41" category="paragraph">从ONTAP 9.18.1 开始，您可以修改快照保留，并在创建存储单元时启用自动快照删除。快照预留空间是指存储单元中专门为快照保留的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。</block>
   <block id="cd70e38e090afe4dfe68269857720d8c" category="inline-link-macro">精简配置</block>
-  <block id="6afea9ca1f178aea254d3f9ac79d8dbc" category="paragraph">存储单元默认采用精简配置。精简配置允许存储单元扩展到分配的大小，但不会预先预留空间。空间会根据需要从可用空间中动态分配。这样，您可以通过超额配置可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您可以创建存储单元，监控空间利用率，并随着存储单元实际占用空间而增加存储容量，而不是立即向系统中添加 3 TB 的额外存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
   <block id="235edd79b1fce1af069d9278c91366b9" category="paragraph">为了优化存储可用区内的工作负载均衡，请创建偶数个存储单元。</block>
-  <block id="c82bffc1986369b2cd4e0c02a3eb4336" category="admonition">如果创建多个存储单元，则每个单元的容量都相同。将你要创建的存储单元数量乘以所需的容量，以确保你有足够的可用空间。如果可用空间不足，而你又选择了过度配置，请密切监控使用情况，以避免空间不足和数据丢失。</block>
-  <block id="574d314c515cf3a8473a1e97b72f3409" category="paragraph">如果不存在运行您指定的操作系统的主机的预先存在的主机组， ONTAP将自动创建一个新的主机组。</block>
   <block id="bcba813b1b55d0253fcd84e63b13b621" category="paragraph">将主机 NQN 格式化为 &lt;nqn.yyyy-mm&gt;，后跟完全限定域名。年份应等于或晚于 1970 年。总最大长度应为 223。一个有效的 NVMe 发起程序示例是 nqn.2014-08.com.example:string</block>
   <block id="34870fc34c4d7d31040582c184ed973a" category="paragraph">创建ASA r2 存储单元并添加主机启动器后，将主机映射到存储单元以开始提供数据服务。存储单元在创建存储单元的过程中会被映射到主机。您还可以随时将现有存储单元映射到新的或现有的主机。</block>
   <block id="e5e9f89a4e81cd1c64531c80eba2e77e" category="admonition">在ASA r2 系统中，SED 仅支持基于 NVMe 的 SSD。</block>
@@ -2769,4 +2764,9 @@
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。</block>
   <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">仅当您希望完全自行管理更新时，才禁用自动更新。关闭自动更新后，系统将不会通知、下载或安装更新。您负责手动监控、下载、安排和安装所有更新。</block>
   <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
+  <block id="889dd2634c57a80d5ff345be8b87b394" category="list-text"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block>。*</block>
+  <block id="330a40ed2b3f8affc9b2ba9dda95e7d2" category="paragraph">要优化 ASA r2 系统的性能，您可能需要修改存储单元以增加其容量、更新 QoS 策略或更改映射到单元的主机。例如，如果将新的关键应用程序工作负载添加到现有存储单元，则可能需要更改应用于存储单元的服务质量 (QoS) 策略，以支持新应用程序所需的性能级别。</block>
+  <block id="3fda8ce05b50b72371c5f4cb65657861" category="paragraph">默认情况下，存储单元为精简配置。精简配置允许存储单元扩展到分配的大小，但不会提前预留空间。空间根据需要从可用空间中动态分配。这使您可以通过_过度配置_可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您可以创建存储单元，监控空间利用率，并在存储单元占用实际空间时增加存储容量，而不是立即向系统添加 3 TB 的额外存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
+  <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果要创建多个存储单元，则每个单元将以相同的容量创建。将您正在创建的存储单元数量乘以所需的容量，以确保您有足够的可用空间。如果您没有足够的可用空间，并且选择过度配置，请密切监控利用率，以避免空间用尽和数据丢失。</block>
+  <block id="aa716862002e83866a499a0f5aaa467f" category="paragraph">如果在您指定的操作系统上运行的主机没有预先存在的主机组，则 ONTAP 会自动创建新的主机组。</block>
 </blocks>
