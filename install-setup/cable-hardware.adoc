@@ -799,7 +799,7 @@ image:../media/drw_a1k_1shelf_cabling_b_ieops-1704.svg["将控制器 B 端口 e1
 .. 将端口e11a连接到磁盘架1 NSM A端口e0a。
 .. 将端口e11b连接到磁盘架2 NSM B端口e0b。
 .. 将端口E10A连接到磁盘架2 NSM A端口e0a。
-.. 将端口e10b连接到磁盘架1 NSM A端口e0b。
+.. 将端口 e10b 连接到机架 1 NSM B 端口 e0b。
 +
 image:../media/drw_a1k_2shelf_cabling_a_ieops-1705.svg["控制器A的控制器到磁盘架连接"]
 
