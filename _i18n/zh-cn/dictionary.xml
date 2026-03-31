@@ -2078,7 +2078,6 @@
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">支持自动工作负载平衡</block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">工作负载在 HA 对的节点之间自动平衡，以优化性能和资源利用率。</block>
   <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动保护您的数据，并在系统管理器中显示警告消息以提醒您可疑活动。</block>
-  <block id="7cd792910eb45c6b7d750838a44c4fe3" category="doc">在ASA r2 存储系统上利用 AI 实现自主勒索软件防护</block>
   <block id="e8b71c667f5920e249288a672ea7f999" category="paragraph">从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。</block>
   <block id="7331e9472b69421ea7995df5df0b5754" category="inline-link-macro">学习期</block>
   <block id="ad09d4f074e5e7f7524d8960ed675311" category="inline-link-macro">ONTAP One 许可证</block>
@@ -2110,7 +2109,6 @@
   <block id="6071a17c985fe00a9fb93ceb8b43b31c" category="inline-link">修改ONTAP自动快照的选项</block>
   <block id="945b91477a64c6c005e774606fec4bd9" category="paragraph">您可以使用ONTAP命令行界面 (CLI) 修改默认保留期。请参阅<block ref="02f493e3d4b2ac47f6e229a1ce055166" category="inline-link-rx"></block>了解更改默认保留期的步骤。</block>
   <block id="c10d1e8c9c33d289c596032f6f9fdb66" category="summary">如果您正在计划不寻常的工作负载事件，您可以暂时暂停 ARP/AI 分析，以防止对勒索软件攻击的误报检测</block>
-  <block id="307c4460ae352b43e1c3405e18bfda56" category="doc">在ASA r2 存储系统上使用 AI 暂停或恢复自主勒索软件防护</block>
   <block id="6a775ca760bff9fbc6c0ed5905022d26" category="paragraph">从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。如果您正在计划异常工作负载事件，可以暂时暂停 ARP/AI 分析，以防止误报勒索软件攻击。工作负载事件完成后，您可以恢复 ARP/AI 分析。</block>
   <block id="d6a9a7257f4378316af056ede012c0ab" category="section-title">暂停ARP/AI</block>
   <block id="84354dab4dfd74a63f53750e80507db9" category="paragraph">在开始异常工作负载事件之前，您可能需要暂时暂停 ARP/AI 分析，以防止对勒索软件攻击的误报检测。</block>
@@ -2123,7 +2121,6 @@
   <block id="8e1667e545dde536a2a34599f2a208a4" category="list-text">选择*恢复反勒索软件*。</block>
   <block id="18a871e39c4db6e8fdaffd71c7141248" category="paragraph">对潜在勒索软件攻击的分析已恢复，可疑活动将在系统管理器中向您报告。</block>
   <block id="0dd10bd0f2a6a0ae25f679d61fe6376d" category="doc">创建防篡改快照，以防止对ASA r2 存储系统的勒索软件攻击</block>
-  <block id="1ffdbc09128fd9a7a38adc196844275d" category="doc">使用ASA r2 存储系统上的 AI 警报来响应自主勒索软件防护</block>
   <block id="a779502493c8672d764e9893228ff604" category="paragraph">如果人工智能自主勒索软件防护 (ARP/AI) 检测到您的一个或多个ASA r2 系统存储单元存在异常活动，系统管理器仪表板上会生成警告。您应该查看警告，验证活动，并在必要时采取措施阻止任何对您数据的潜在威胁。</block>
   <block id="c0e52aa291208452d8e4daf52f19e352" category="paragraph">如果显示 ARP/AI 警告消息，则在采取措施之前，您应该使用适当的应用程序完整性检查器来验证存储单元上数据的完整性。验证存储单元的数据完整性有助于您确定该活动是否可接受，或者是否是潜在的勒索软件攻击。</block>
   <block id="d72f2cfc4586d8ec238fbb54c4e19dfb" category="cell">如果出现异常活动...</block>
@@ -2729,7 +2726,6 @@
   <block id="e9a88c72c24e4398f874d2f4af5b49e8" category="cell"><block ref="e9a88c72c24e4398f874d2f4af5b49e8" category="inline-link-macro-rx"></block></block>
   <block id="689aa35f9f1eec56b70643199a8682d8" category="cell">当您初始化新的 9.18.1 ASA r2 群集或将群集升级到 9.18.1 时，ARP/AI 将在 12 小时宽限期后自动在所有新创建的存储单元上启用。如果在宽限期内未禁用 ARP/AI，则会在宽限期结束时为新创建的存储单元在整个群集范围内启用。</block>
   <block id="1a96b0b4e7eeb5c869def87fe1b46270" category="summary">如果您的 ASA r2 群集上安装了 Autonomous Ransomware Protection (ARP) 许可证，则默认情况下，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 群集 12 小时后，所有现有和新创建的存储单元都会启用 ARP。</block>
-  <block id="47db8421e482de0cb387c25e02ac95ad" category="doc">在您的 ASA r2 存储系统上禁用默认自主勒索软件保护</block>
   <block id="ada9a568ab6a5d18c006a2f881dad45e" category="paragraph">当您初始化新的 ONTAP 9.18.1 ASA r2 群集或将您的群集升级到 ONTAP 9.18.1 时，ARP/AI 在 12 小时宽限期后默认在所有新存储单元上自动启用。如果您在宽限期内未禁用 ARP/AI，则在宽限期结束时将为新存储单元启用群集范围的 ARP/AI。</block>
   <block id="15a35bbf98ecdf50ebbe830c9150b1fa" category="inline-link-macro">手动启用</block>
   <block id="2c5bf6d23c3b237a161f10e7a30084bf" category="paragraph">在 ONTAP 9.17.1 中创建的存储单元必须<block ref="e30e679666ce4b86d4d0fe351918a7bf" category="inline-link-macro-rx"></block>用于 ARP/AI。</block>
@@ -2761,7 +2757,6 @@
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。</block>
   <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">仅当您希望完全自行管理更新时，才禁用自动更新。关闭自动更新后，系统将不会通知、下载或安装更新。您负责手动监控、下载、安排和安装所有更新。</block>
   <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
-  <block id="889dd2634c57a80d5ff345be8b87b394" category="list-text"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block>。*</block>
   <block id="330a40ed2b3f8affc9b2ba9dda95e7d2" category="paragraph">要优化 ASA r2 系统的性能，您可能需要修改存储单元以增加其容量、更新 QoS 策略或更改映射到单元的主机。例如，如果将新的关键应用程序工作负载添加到现有存储单元，则可能需要更改应用于存储单元的服务质量 (QoS) 策略，以支持新应用程序所需的性能级别。</block>
   <block id="3fda8ce05b50b72371c5f4cb65657861" category="paragraph">默认情况下，存储单元为精简配置。精简配置允许存储单元扩展到分配的大小，但不会提前预留空间。空间根据需要从可用空间中动态分配。这使您可以通过_过度配置_可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您可以创建存储单元，监控空间利用率，并在存储单元占用实际空间时增加存储容量，而不是立即向系统添加 3 TB 的额外存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
   <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果要创建多个存储单元，则每个单元将以相同的容量创建。将您正在创建的存储单元数量乘以所需的容量，以确保您有足够的可用空间。如果您没有足够的可用空间，并且选择过度配置，请密切监控利用率，以避免空间用尽和数据丢失。</block>
@@ -2769,4 +2764,9 @@
   <block id="a8e81b2ccd42d59459e94b66c7e93b33" category="inline-link-macro">使用 Active IQ Digital Advisor 或 Upgrade Health Checker 准备升级</block>
   <block id="3bd021c9fab6ece4503050272dff524d" category="paragraph">ASA r2 系统的 ONTAP 软件升级遵循与其他 ONTAP 系统升级相同的流程。建议您先 <block ref="a44687563e089a36f625493635099b07" category="inline-link-macro-rx"></block>。</block>
   <block id="8e06442a81408e5b3d9d881ee34604d9" category="list-text">将端口 e10b 连接到机架 1 NSM B 端口 e0b。</block>
+  <block id="67cc47e8f050e98e23b1a714f17238ec" category="list-text"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block>。</block>
+  <block id="a21739611cdd87f44b21b69f2d1255c4" category="doc">在您的 ASA r2 存储系统上禁用默认的自治勒索软件保护</block>
+  <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">在您的 ASA r2 存储系统上使用 AI 启用自主勒索软件防护</block>
+  <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">在您的 ASA r2 存储系统上使用 AI 暂停或恢复自主勒索软件防护</block>
+  <block id="bd38f3869f7e640b90d83fffd4208955" category="doc">通过 ASA r2 存储系统上的 AI 警报响应自主勒索软件保护</block>
 </blocks>

@@ -4,7 +4,7 @@ permalink: secure-data/enable-anti-ransomware-protection.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, enable 
 summary: 启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动保护您的数据，并在系统管理器中显示警告消息以提醒您可疑活动。 
 ---
-= 在ASA r2 存储系统上利用 AI 实现自主勒索软件防护
+= 在您的 ASA r2 存储系统上使用 AI 启用自主勒索软件防护
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

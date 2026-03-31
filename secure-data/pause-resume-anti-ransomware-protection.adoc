@@ -4,7 +4,7 @@ permalink: secure-data/pause-resume-anti-ransomware-protection.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, pause, resume, suspend 
 summary: 如果您正在计划不寻常的工作负载事件，您可以暂时暂停 ARP/AI 分析，以防止对勒索软件攻击的误报检测 
 ---
-= 在ASA r2 存储系统上使用 AI 暂停或恢复自主勒索软件防护
+= 在您的 ASA r2 存储系统上使用 AI 暂停或恢复自主勒索软件防护
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

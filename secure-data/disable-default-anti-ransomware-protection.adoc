@@ -4,7 +4,7 @@ permalink: secure-data/disable-default-anti-ransomware-protection.html
 keywords: asa r2, secure data, data security, anti-ransomware, autonomous ransomware protection, arp, arp/ai, disable 
 summary: '如果您的 ASA r2 群集上安装了 Autonomous Ransomware Protection (ARP) 许可证，则默认情况下，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 群集 12 小时后，所有现有和新创建的存储单元都会启用 ARP。' 
 ---
-= 在您的 ASA r2 存储系统上禁用默认自主勒索软件保护
+= 在您的 ASA r2 存储系统上禁用默认的自治勒索软件保护
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
