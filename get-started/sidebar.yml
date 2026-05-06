@@ -17,7 +17,17 @@ entries:
   - title: 安装硬件
     url: "/install-setup/deploy-hardware.html"
   - title: 电缆硬件
-    url: "/install-setup/cable-hardware.html"
+    entries:
+    - title: 布线概述
+      url: "/install-setup/cable-hardware.html"
+    - title: ASA A1K 线缆
+      url: "/install-setup/cable-hardware-a1k.html"
+    - title: 电缆 ASA A70 和 A90
+      url: "/install-setup/cable-hardware-a70-90.html"
+    - title: 电缆 ASA A20、A30 和 A50
+      url: "/install-setup/cable-hardware-a20-30-50.html"
+    - title: ASA C30 缆线
+      url: "/install-setup/cable-hardware-c30.html"
   - title: 打开系统电源
     url: "/install-setup/power-on-hardware.html"
 - title: 设置ASA R2系统
