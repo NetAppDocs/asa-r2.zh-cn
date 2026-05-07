@@ -80,6 +80,14 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 
 
+=== TLS 硬件卸载
+
+您可以将整个集群的传输层安全性 (TLS) 加密和解密卸载到支持的以太网卡。这减少了 CPU 开销，并提高了使用 TLS 的系统的性能。
+
+link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["了解如何配置 TLS 硬件卸载"^].
+
+
+
 == 网络连接
 
 了解更多关于ASA r2 系统支持的常见网络功能。
@@ -105,6 +113,35 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 
 
 
+== 性能
+
+详细了解 ASA r2 系统支持的常见性能功能。
+
+
+
+=== 修改控制自动 QoS 吞吐量上限增加的默认设置
+
+自适应和非自适应 QoS 策略组会自动启用，以便在默认情况下将工作负载的吞吐量上限暂时提高 50%，持续时间为 1 秒，从而响应对更高性能的短期需求。从 ONTAP 9.19.1 开始，您可以修改这些默认设置。在 ONTAP 9.18.1 及更早版本中，这些设置无法更改。
+
+link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["详细了解 QoS 吞吐量上限"^].
+
+
+
+== SAN 配置
+
+存储区域网络 (SAN) 由通过 iSCSI 或 FC 等 SAN 传输协议连接到主机的存储解决方案组成。您可以配置 SAN，以便存储解决方案通过一个或多个交换机连接到主机。如果使用 iSCSI，还可以配置 SAN，以便存储解决方案无需使用交换机即可直接连接到主机。
+
+
+
+=== SAN 直接连接
+
+从 ONTAP 9.19.1 开始，无需 FC 交换机即可在 FC 和 FC-NVMe 主机与 ONTAP 存储之间建立连接。主机可以直接连接到 ASA r2 系统上的 FC 适配器端口。在简单性至关重要的远程站点和混合环境中，直接连接功能尤其有价值。
+
+* link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html#direct-attach-fc-and-fc-nvme-configurations["详细了解 SAN 直接连接"^].
+
+
+
+
 == SAN协议
 
 ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。
@@ -124,6 +161,22 @@ ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。
 
 
 
+
+
+
+== 存储效率
+
+存储效率是通过优化存储资源、最大限度地减少浪费的空间和减少写入数据的物理占用量来衡量存储系统有效利用可用空间的程度。
+
+ONTAP 提供各种存储效率技术，可帮助您优化存储使用并降低成本。
+
+link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.html["详细了解 ONTAP 存储效率技术"].
+
+
+
+=== 全局重复数据删除
+
+从 ONTAP 9.19.1 开始，_全局重复数据删除_ 将 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["现有 ONTAP 重复数据删除空间节省"^] 从存储单元级别扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。
 
 
 

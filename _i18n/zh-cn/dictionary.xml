@@ -1252,7 +1252,6 @@
   <block id="a2d38e07f32f557705115c0e67b1cf0c" category="list-text">选择*双层加密*以启用软件加密。</block>
   <block id="3adddf5fb61118db0851698e94df9d20" category="inline-link-macro">对通过网络发送的所有数据进行加密</block>
   <block id="7d48eac362573df2fed01eb80f7d4ec2" category="paragraph">现在、您已对空闲数据进行加密、如果您使用的是NVMe/TCP协议、则可以<block ref="74cf61e3a0c52691fd5b474676f672e9" category="inline-link-macro-rx"></block>在NVMe/TCP主机和ASA R2系统之间进行加密。</block>
-  <block id="5c2176542e490214bcd9614880d942f0" category="summary">通过配置基于TLS的NVMe/TCP来对NVMe/TCP主机和ONTAP之间通过网络发送的所有数据进行加密、从而增强数据安全性。</block>
   <block id="5bdd1772c315e3d023ef23531e6172d5" category="doc">ASA R2存储系统上的安全NVMe连接</block>
   <block id="4bbb8f0466027ba41f7760a28b31c469" category="paragraph">如果您使用的是NVMe协议、则可以配置带内身份验证以增强数据安全性。带内身份验证允许在NVMe主机和ASA R2系统之间进行安全的双向和单向身份验证。所有NVMe主机均可使用带内身份验证。如果您使用的是NVMe/TCP协议、则可以通过配置传输层安全性(Transport Layer Security、TLS)来对NVMe/TCP主机和ASA R2系统之间通过网络发送的所有数据进行加密、从而进一步增强数据安全性。</block>
   <block id="24e4b19fe20674545837cd1f5514b5cc" category="list-text">选择*hosts*；然后选择*NVMe*。</block>
@@ -1475,9 +1474,7 @@
   <block id="f142a152601a952c440aa742ae54d56c" category="doc">升级ASA R2存储系统上的ONTAP</block>
   <block id="f46c905b973360f57c509a5dac0d6aca" category="paragraph">在ASA R2系统上升级ONTAP软件时、您可以利用新增的和增强的ONTAP功能、帮助您降低成本、加快关键工作负载的处理速度、提高安全性、并扩大企业可用的数据保护范围。</block>
   <block id="46629b819dff531a5a2a49fcda5443dd" category="inline-link-macro">从System Manager自动无中断升级(ANDU)</block>
-  <block id="d351531ad851e21d1ccbc812e54540ff" category="paragraph">准备升级后，建议您使用执行升级<block ref="a93595527d1144b0b27a701c939efa63" category="inline-link-macro-rx"></block>。ANDU可利用ONTAP的高可用性(HA)故障转移技术确保集群在升级期间继续提供数据而不会中断。</block>
   <block id="8b7f4f92636306e034e67a0098393065" category="inline-link-macro">ONTAP软件升级</block>
-  <block id="db24448a282517925d7637e0ab57fb35" category="paragraph">详细了解 <block ref="ee50b0384392ffd34e721693cf1abb90" category="inline-link-macro-rx"></block>。</block>
   <block id="06b783ccc728f89654eb406f121a920e" category="paragraph">如果创建多个单元、则默认情况下、每个单元都使用相同的容量和相同的主机操作系统创建。您可以选择为每个单元分配不同的容量。</block>
   <block id="c714809f14fa9d9c65c38961426d89e3" category="paragraph">为每个存储单元分配不同的容量</block>
   <block id="b079c5d39925229ba3c754aec7200bfe" category="paragraph">选择*添加其他容量*。</block>
@@ -1540,15 +1537,12 @@
   <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">选择*性能*。</block>
   <block id="c20ad4d76fe97759aa27a0c99bff6710" category="cell">12</block>
   <block id="455f024d5e786170a224f947b09bd74a" category="section-title">监控存储可用性分区利用率</block>
-  <block id="9cf3716a035447d7f3920daf3ae979bd" category="paragraph">ASA R2系统中的每个HA对都使用一个通用存储池、称为_storage availability zone_。存储可用性分区可以访问存储系统中的所有可用磁盘、并且对HA对中的两个节点都可见。</block>
   <block id="c54830fa97aef91a8bc830d439dc004a" category="paragraph">如果集群中有4个或更多节点、则可以查看每个HA对的存储可用性分区所使用的空间量。此指标不适用于双节点集群。</block>
   <block id="dd7cd8aba78024bcc6ec1c67f3987760" category="list-text">在System Manager中，选择*Cluster*；然后选择*Overview*。</block>
   <block id="0ce03f9ea97502f3a10721575d8a9696" category="paragraph">此时将显示集群中每个HA对的存储可用性分区利用率摘要。</block>
   <block id="3670021e257ef0702d763c08d8b9c8b3" category="list-text">如果需要更详细的指标、请选择特定的存储可用性。</block>
   <block id="b8e5e4895e260a0a4eeab6a3c66ae9b3" category="paragraph">在*Overview*下，将显示存储可用性区域的容量、已用空间量和数据精简率。</block>
-  <block id="97803d08cef50f43e58f978c9b2e1f08" category="paragraph">在*Storage units*下，将显示存储可用性区域中所有存储单元的列表。</block>
   <block id="c5b460be9264c217ff7aa949f8f26aab" category="inline-link-macro">移动存储单元</block>
-  <block id="7245821daa5af47d8243d8eee3f64b1e" category="paragraph">如果存储可用性分区的空间不足、则应计划到另一个存储可用性分区、以平衡集群中的<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>存储利用率。</block>
   <block id="8010ab2f71c733c1a8013b31b901be79" category="cell">每个集群的节点数</block>
   <block id="c7ae27ad054ff4d389e7c15cc82b0866" category="paragraph">每个集群的最大节点数从2增加到12。</block>
   <block id="f35462670e9b95d1e4a8748ba6872f91" category="admonition">如果您运行的是集群中包含2个以上节点的9.16.1 9.161、则无法还原到ONTAP 9.16.0。</block>
@@ -1709,7 +1703,6 @@
   <block id="b78c98e70e341751d6f58db28ecec461" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> <block ref="29aaf1b4e7e6610ae4790f0740e69e4e" category="inline-link-macro-rx"></block></block>
   <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五个</block>
   <block id="77aa123fc5c68731cdf628d8e9c75afc" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> <block ref="69d31d64dbed246448f394257b05fdb9" category="inline-link-macro-rx"></block></block>
-  <block id="43be05fcb9765d24f8081a2284f82de7" category="summary">如果在ASA R2系统上使用IP协议、则可以配置IP安全性(IPSEC)来增强数据安全性。</block>
   <block id="95f5e5110bbbc9d987c115097008c227" category="doc">ASA R2存储系统上的安全IP连接</block>
   <block id="c10f6cdf89366933afe9e0a05f726423" category="paragraph">如果在ASA R2系统上使用IP协议、则可以配置IP安全性(IPSEC)来增强数据安全性。IPsec是一种互联网标准、可提供传输中数据加密、在IP级别对网络端点之间的流量进行身份验证、并防止对数据进行重放和恶意中间人攻击。</block>
   <block id="602c5938acf67898ca9af2011ec2c721" category="paragraph">对于ASA R2系统、IPsec可用于iSCSI和NVMe/TCP主机。</block>
@@ -1919,12 +1912,9 @@
   <block id="4e815228ca61a1f75181e7efe619c495" category="summary">使用SnapMirror主动同步，保护需要零恢复点目标 (RPO) 和零恢复时间目标 (RTO) 的主机应用程序免受意外中断或站点灾难造成的中断。</block>
   <block id="497c72a2f611a19c23299b5daea37215" category="doc">SnapMirror主动同步设置工作流程</block>
   <block id="c0da5a4756d4ac1721f7418cfa0145da" category="paragraph">ONTAP SnapMirror主动同步数据保护功能即使在整个站点发生故障的情况下也能使业务服务继续运行，并支持应用程序使用辅助副本透明地进行故障转移。使用SnapMirror主动同步功能触发故障转移无需任何手动干预或自定义脚本。</block>
-  <block id="496bd86dd8bb62f9490750bc6a2bd331" category="paragraph">虽然在ASA r2 系统上配置SnapMirror主动同步的系统管理器程序与运行统一ONTAP个性的NetApp FAS、 AFF和ASA系统不同，但SnapMirror主动同步的要求、架构和操作是相同的。</block>
   <block id="e5aa1050a01e875d0fd4839753c22c3a" category="inline-link-macro">了解有关SnapMirror主动同步的更多信息</block>
   <block id="c42fce7fb66798714860f8785e01c4fd" category="paragraph"><block ref="a408e5a82a63466cbd34839f021414e3" category="inline-link-macro-rx"></block> 。</block>
-  <block id="d2d4f7014e3da9faf0b74dfe30ffa3d4" category="paragraph">在ASA r2 系统上， SnapMirror主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点均可访问本地存储进行主动 I/O。</block>
   <block id="fa2f5b44a6ee8f9c7d43efc8bb1daca1" category="inline-link-macro">对称主动/主动配置</block>
-  <block id="523dd06e2c0961b1020a5b70b22d7611" category="paragraph">详细了解<block ref="cd08e89ddecf5772544f56e955b2d721" category="inline-link-macro-rx"></block> 。</block>
   <block id="1075f9a2bdd0eec8a237b62c855adf87" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>准备配置SnapMirror主动同步。</block>
   <block id="a8f00bd7503de5f4a45e28b2e197cc39" category="inline-link-macro">准备配置SnapMirror主动同步</block>
   <block id="b4147f15364f77411931933a225c44d5" category="paragraph">到<block ref="cc0b3a933662ec3d582d20420f8b2a10" category="inline-link-macro-rx"></block>在您的ASA r2 系统上，您应该检查配置先决条件，确认对主机操作系统的支持，并注意可能影响特定配置的对象限制。</block>
@@ -1944,10 +1934,6 @@
   <block id="1546c57263450319fef8d1d8de83e306" category="section-title">从第三方存储系统迁移数据</block>
   <block id="99657bc66973f189d87f6d702b300b6e" category="paragraph">从ONTAP 9.17.1 开始，您可以使用外部 LUN 导入 (FLI) 将数据从第三方存储系统上的 LUN 迁移到ASA r2 系统。使用 FLI 进行数据迁移可以帮助您降低迁移过程中数据丢失和停机的风险。</block>
   <block id="cd7fc10aafbc563ec83b036726716d53" category="paragraph">FLI 支持在线和离线迁移。在在线迁移中，客户端系统保持在线，同时将数据从第三方存储系统复制到ONTAP存储系统。Windows、Linux 和 ESXi 主机操作系统支持在线迁移。在离线迁移中，客户端系统处于离线状态，LUN 数据从第三方存储系统复制到ONTAP存储系统，然后客户端系统重新处于在线状态。</block>
-  <block id="5c85b34ddc611aad4c1c95da5183b039" category="inline-link-macro">FLI 离线迁移</block>
-  <block id="f70b44cd993cd2c931b66a3448afab81" category="list-text">学习如何执行<block ref="035b0b09e519739eed6266400ab97686" category="inline-link-macro-rx"></block> 。</block>
-  <block id="1001999583c199f3eb49c903e2498b5d" category="inline-link-macro">FLI 在线迁移</block>
-  <block id="357051192b540d86651f3bccdefa9666" category="list-text">学习如何执行<block ref="5ed7d3d6c0241f338e5a28a232e76e56" category="inline-link-macro-rx"></block> 。</block>
   <block id="97deade833d7f54a1cb2037da41d63c5" category="summary">由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常见的ONTAP任务和系统管理器功能在ASA r2 系统上的执行方式与在其他ONTAP系统上的执行方式相同。</block>
   <block id="f01fcb252b22a1393a193f28b22135fc" category="doc">ASA r2 系统支持的常见ONTAP功能</block>
   <block id="8b9b16acd91241c2b1259b842284faa4" category="paragraph">有关常见特性和功能的更多信息，请参阅以下ONTAP文档。</block>
@@ -1997,7 +1983,6 @@
   <block id="f231c7e641e6d267354740a6c9850600" category="cell">SnapMirror Active Sync 新增了对 VMware 工作负载的支持，支持 NVMe/TCP 和 NVMe/FC 主机访问，适用于双节点ONTAP集群。VMware工作负载对 NVMe/TCP 的支持取决于 VMware 错误 ID：TR1049746 的解决。</block>
   <block id="2595874d578967634d23bb05c5c7197c" category="inline-link-macro">支持自动工作负载平衡</block>
   <block id="f5f208592c87b0ba3e87b3ad6fad7fa6" category="cell">工作负载在 HA 对的节点之间自动平衡，以优化性能和资源利用率。</block>
-  <block id="cc9afe53172875d5c9c85e52f0ecbf07" category="summary">启用 ARP/AI 来检测潜在的勒索软件威胁，自动采取行动保护您的数据，并在系统管理器中显示警告消息以提醒您可疑活动。</block>
   <block id="e8b71c667f5920e249288a672ea7f999" category="paragraph">从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。ARP/AI 可以快速检测潜在的勒索软件威胁，自动创建 ARP 快照来保护您的数据，并在系统管理器中显示警告消息，提醒您注意可疑活动。</block>
   <block id="7331e9472b69421ea7995df5df0b5754" category="inline-link-macro">学习期</block>
   <block id="ad09d4f074e5e7f7524d8960ed675311" category="inline-link-macro">ONTAP One 许可证</block>
@@ -2028,7 +2013,6 @@
   <block id="2d836c595463e39451f4bc5201b13c16" category="cell">10天</block>
   <block id="6071a17c985fe00a9fb93ceb8b43b31c" category="inline-link">修改ONTAP自动快照的选项</block>
   <block id="945b91477a64c6c005e774606fec4bd9" category="paragraph">您可以使用ONTAP命令行界面 (CLI) 修改默认保留期。请参阅<block ref="02f493e3d4b2ac47f6e229a1ce055166" category="inline-link-rx"></block>了解更改默认保留期的步骤。</block>
-  <block id="c10d1e8c9c33d289c596032f6f9fdb66" category="summary">如果您正在计划不寻常的工作负载事件，您可以暂时暂停 ARP/AI 分析，以防止对勒索软件攻击的误报检测</block>
   <block id="6a775ca760bff9fbc6c0ed5905022d26" category="paragraph">从ONTAP 9.17.1 开始，您可以使用人工智能自主勒索软件防护 (ARP/AI) 来保护ASA r2 系统上的数据。如果您正在计划异常工作负载事件，可以暂时暂停 ARP/AI 分析，以防止误报勒索软件攻击。工作负载事件完成后，您可以恢复 ARP/AI 分析。</block>
   <block id="d6a9a7257f4378316af056ede012c0ab" category="section-title">暂停ARP/AI</block>
   <block id="84354dab4dfd74a63f53750e80507db9" category="paragraph">在开始异常工作负载事件之前，您可能需要暂时暂停 ARP/AI 分析，以防止对勒索软件攻击的误报检测。</block>
@@ -2089,7 +2073,6 @@
   <block id="dea3a75107d7790747be36ffd87dfafd" category="sidebar">配置ONTAP调解器或ONTAP Cloud 调解器</block>
   <block id="0a297cc4d1df6ddee9072cd47dca7791" category="sidebar">NetApp ASA上的FlexPod</block>
   <block id="4ff3b8b9056fdd67969fe5f7de99f262" category="inline-link-macro">了解有关在ASA r2 系统上使用SnapMirror主动同步进行灾难恢复的更多信息</block>
-  <block id="a4d3fa0a90b98ed30452a119486e6ae3" category="paragraph"><block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
   <block id="1e96162d7ffea43bde6c07852ffff8cb" category="inline-link-macro">使用ONTAP for vSphere 的优势</block>
   <block id="c3650233fcb8a7a607d25a5c0f5a5493" category="list-text">详细了解<block ref="1b2505f7e592731db42e95f3d10a015e" category="inline-link-macro-rx"></block> 。</block>
   <block id="05d7c63979cf1697d07b8942ba9871b7" category="inline-link-macro">使用ONTAP 的VMware Live Site Recovery</block>
@@ -2246,7 +2229,6 @@
   <block id="08fb4ffca88bc0f6461c362f968d394f" category="paragraph"><block ref="6fa56bfab318c33e6446a2520c50c09f" prefix="" category="inline-code"></block></block>
   <block id="913e3fb6005d79d1e7e5eb2046a6fa4c" category="inline-link-macro">SnapMirror 中介器删除</block>
   <block id="55394a49231c00367e205c42b064e980" category="list-text"><block ref="55394a49231c00367e205c42b064e980" category="inline-link-macro-rx"></block></block>
-  <block id="7827b7923d6e45ba19022ef0a9878628" category="inline-link-macro">详细了解ONTAP人物</block>
   <block id="2e50e3f8a8554bd854e544e6dc52462d" category="admonition">仅支持与ASA r2 存储系统进行快照复制。您不能将快照从ASA r2 系统复制到ASA、 AFF或FAS系统，也不能从ASA、 AFF或FAS系统复制到ASA r2 系统。</block>
   <block id="8e0a212a3ccb8f506b309ea2b6cbd1f7" category="paragraph">从ONTAP 9.17.1 开始，您可以将异步复制策略应用于具有层次结构关系的一致性组。  ONTAP 9.16.1 中的层次结构关系中的一致性组不支持异步复制。</block>
   <block id="de095ac7880431e9449dcced8cecbd9a" category="inline-link-macro">了解有关分层（父/子）一致性组的更多信息</block>
@@ -2641,7 +2623,6 @@
   <block id="560b852910a0e98466ea0bc41a896549" category="inline-link-macro">支持自动 ARP/AI 启用</block>
   <block id="e9a88c72c24e4398f874d2f4af5b49e8" category="cell"><block ref="e9a88c72c24e4398f874d2f4af5b49e8" category="inline-link-macro-rx"></block></block>
   <block id="689aa35f9f1eec56b70643199a8682d8" category="cell">当您初始化新的 9.18.1 ASA r2 群集或将群集升级到 9.18.1 时，ARP/AI 将在 12 小时宽限期后自动在所有新创建的存储单元上启用。如果在宽限期内未禁用 ARP/AI，则会在宽限期结束时为新创建的存储单元在整个群集范围内启用。</block>
-  <block id="1a96b0b4e7eeb5c869def87fe1b46270" category="summary">如果您的 ASA r2 群集上安装了 Autonomous Ransomware Protection (ARP) 许可证，则默认情况下，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 群集 12 小时后，所有现有和新创建的存储单元都会启用 ARP。</block>
   <block id="ada9a568ab6a5d18c006a2f881dad45e" category="paragraph">当您初始化新的 ONTAP 9.18.1 ASA r2 群集或将您的群集升级到 ONTAP 9.18.1 时，ARP/AI 在 12 小时宽限期后默认在所有新存储单元上自动启用。如果您在宽限期内未禁用 ARP/AI，则在宽限期结束时将为新存储单元启用群集范围的 ARP/AI。</block>
   <block id="15a35bbf98ecdf50ebbe830c9150b1fa" category="inline-link-macro">手动启用</block>
   <block id="2c5bf6d23c3b237a161f10e7a30084bf" category="paragraph">在 ONTAP 9.17.1 中创建的存储单元必须<block ref="e30e679666ce4b86d4d0fe351918a7bf" category="inline-link-macro-rx"></block>用于 ARP/AI。</block>
@@ -2656,9 +2637,7 @@
   <block id="91af5705f16502125e8b2187e64202c0" category="open-title">命令行界面</block>
   <block id="2789285c59c5d3b50b0af44eb0af9d83" category="list-text">检查默认启用状态：</block>
   <block id="51ea13505527485e8ad1964193e9ac5d" category="list-text">禁用现有卷和新卷的默认启用：</block>
-  <block id="8dec9eba7de20cf1b8ccafba1cfae901" category="paragraph">ARP 通过采用反勒索软件分析的机器学习模型来提高网络弹性，该模型可检测 SAN 环境下不断变化的勒索软件形式，准确率高达 98%。ARP 的机器学习模型在模拟勒索软件攻击之前和之后都在大型文件数据集上进行了预训练。这种资源密集型训练是在 ONTAP 外部完成的，由此训练产生的预训练模型包含在 ONTAP 的盒内。此模型不可访问或修改。ARP/AI 在启用后立即激活；没有<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
   <block id="f2927aad75b0aa15b973bf19aae3a066" category="admonition">没有勒索软件检测或防御系统可以完全保证免受勒索软件攻击的安全。虽然攻击可能未被检测到，但如果防病毒软件未能检测到入侵，ARP/AI 将充当重要的额外防御层。</block>
-  <block id="613dcccc80c6c70a2f7f3bbba3e85635" category="list-text">受 SnapMirror 活动同步、SnapMirror 同步或 SnapLock 保护的存储单元不支持 ARP/AI。</block>
   <block id="d818371e54d5db7f0b123dad9f0741fa" category="list-text">从 ONTAP 9.18.1 开始，在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 集群 12 小时后，默认在所有新创建的存储单元上启用 ARP/AI。</block>
   <block id="4ebb5f6bb42f5000c86113152e6fc7b8" category="section-title">在集群中的所有存储单元上启用 ARP/AI</block>
   <block id="4a30706558af49bc475c9076f39c5043" category="paragraph">如果您正在运行 ONTAP 9.17.1，则可以默认在集群中创建的所有存储单元上启用 ARP/AI。</block>
@@ -2678,9 +2657,7 @@
   <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果要创建多个存储单元，则每个单元将以相同的容量创建。将您正在创建的存储单元数量乘以所需的容量，以确保您有足够的可用空间。如果您没有足够的可用空间，并且选择过度配置，请密切监控利用率，以避免空间用尽和数据丢失。</block>
   <block id="aa716862002e83866a499a0f5aaa467f" category="paragraph">如果在您指定的操作系统上运行的主机没有预先存在的主机组，则 ONTAP 会自动创建新的主机组。</block>
   <block id="a8e81b2ccd42d59459e94b66c7e93b33" category="inline-link-macro">使用 Active IQ Digital Advisor 或 Upgrade Health Checker 准备升级</block>
-  <block id="3bd021c9fab6ece4503050272dff524d" category="paragraph">ASA r2 系统的 ONTAP 软件升级遵循与其他 ONTAP 系统升级相同的流程。建议您先 <block ref="a44687563e089a36f625493635099b07" category="inline-link-macro-rx"></block>。</block>
   <block id="8e06442a81408e5b3d9d881ee34604d9" category="list-text">将端口 e10b 连接到机架 1 NSM B 端口 e0b。</block>
-  <block id="67cc47e8f050e98e23b1a714f17238ec" category="list-text"><block ref="2d2c01d97863e3fdde3b4275018cf566" category="inline-link-macro-rx"></block>。</block>
   <block id="a21739611cdd87f44b21b69f2d1255c4" category="doc">在您的 ASA r2 存储系统上禁用默认的自治勒索软件保护</block>
   <block id="8a7cfb8fa6ea38ee5f0146687bddcd42" category="doc">在您的 ASA r2 存储系统上使用 AI 启用自主勒索软件防护</block>
   <block id="a9adededf161bd5d8bb9db9309976ce3" category="doc">在您的 ASA r2 存储系统上使用 AI 暂停或恢复自主勒索软件防护</block>
@@ -2793,4 +2770,101 @@
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="section-title">其他资源</block>
   <block id="e8a159e2ff115b18e83ff77937ef6345" category="paragraph">布线程序显示了常见配置。具体的布线取决于为您的存储系统订购的组件。有关全面配置和插槽优先级的详细信息，请参见 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
   <block id="3b1d6e6330ca5bf54a0c22beaa407de9" category="sidebar">布线概述</block>
+  <block id="2c8eecf979e6fd790e493d164307b594" category="paragraph">ASA r2 系统的 ONTAP 软件升级遵循与其他 ONTAP 系统升级相同的流程。建议您先 <block ref="6ef617cad96624aff48188ee9c2d2af4" category="inline-link-macro-rx"></block>。</block>
+  <block id="64653b9fd94570b308a1c2ed04a37c62" category="paragraph">准备升级后，建议使用 <block ref="e26ea1c18f478c08bac49629d6c7055f" category="inline-link-macro-rx"></block> 执行升级。ANDU 利用 ONTAP 的高可用性 (HA) 故障转移技术，确保集群在升级期间继续提供数据而不会中断。</block>
+  <block id="a9a92968dbd42b1c6a98d69ef29dff86" category="paragraph">详细了解<block ref="dbcdfdb6de3365861229d4de54f3e7c8" category="inline-link-macro-rx"></block>。</block>
+  <block id="0000dac1f1d7d52694ae1c57ec4c4952" category="section-title">在计划升级之前执行自动升级前检查</block>
+  <block id="1e136489f0f4579da4728cecbc41c760" category="paragraph">您不必在升级 ONTAP 软件的过程中执行 ONTAP 自动升级预检查。独立于 ONTAP 自动升级过程执行升级前检查可让您查看对您的集群执行了哪些检查，并为您提供在开始实际升级之前应更正的任何错误或警告的列表。</block>
+  <block id="97b8d819cd6f1c3d1e12d20c69bc9343" category="paragraph">从 ONTAP 9.19.1 开始，错误和警告将分别显示，以帮助您轻松识别升级前必须解决的问题。</block>
+  <block id="7dadbaefb3cf1bd5b8a86802fac0839a" category="inline-link-macro">执行 ONTAP 自动升级前检查</block>
+  <block id="c240788f59668332d5c171cbe489376a" category="paragraph">了解如何<block ref="9c7fdd39bc5019d6cec3e908fec6a772" category="inline-link-macro-rx"></block>。</block>
+  <block id="9917a58904f13efdde588f2978fd93b9" category="inline-link-macro">使用 AI 启用自主勒索软件防护</block>
+  <block id="fb1b02686213ed6e031c1f039708270a" category="admonition">从 ONTAP 9.19.1 RC 开始，具有人工智能的自主勒索软件保护（ARP/AI）支持 ASA r2 系统上的 SnapMirror 主动同步 SAN 关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅主 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。要启用 ARP/AI，请参阅 <block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="b71329b670dac542862012007751fd6f" category="summary">在为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirror 活动同步之前，必须将主机访问模式设置为本地。</block>
+  <block id="e7afd2cc385e151dc252f52489678be6" category="doc">为 ASA r2 系统上的 SnapMirror 主动同步保护准备 AIX 主机</block>
+  <block id="16624daae6b7659680047c4fc428fec2" category="paragraph">从 ONTAP 9.19.1 开始，对称主动/主动配置中的 SnapMirror 主动同步支持 AIX 透明应用程序故障转移。SnapMirror 主动同步数据保护使业务服务即使在完整的站点故障期间也能继续运行，支持应用程序使用辅助副本进行透明故障转移。</block>
+  <block id="ba38f5c107e42f69bfac0d9f7824f8c9" category="inline-link-macro">SnapMirror 主动同步的互操作性</block>
+  <block id="f80d8776833174e556c56272ce794684" category="paragraph">必须将主机访问模式设置为本地，才能为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirror 活动同步。其他主机类型不需要选择访问模式。详细了解 <block ref="987f5b7a840f16d7e10b014311f90ef1" category="inline-link-macro-rx"></block>。</block>
+  <block id="13cf50fcf318293df5a3adeadda4221c" category="paragraph">您必须运行 ONTAP 9.19.1 或更高版本。如果您运行的是 ONTAP 9.18.1 或更早版本，则需要功能策略差异请求 (FPVR) 才能使 AIX 主机支持 SnapMirror 活动同步。</block>
+  <block id="49c7424b52c7ec83e7da5d72f7f13764" category="list-text">将鼠标悬停在要准备进行 SnapMirror 活动同步保护的 AIX 存储单元的名称上。</block>
+  <block id="89b5596dc218f237904b988c0f8904cc" category="inline-image-macro">菜单选择图标</block>
+  <block id="21a7f37e0aaf9ac924df65177afb8228" category="list-text">选择 <block ref="2bf8f430922192bda6865bad87ff2a74" category="inline-image-macro-rx" type="image"></block>，然后选择 *Edit*。</block>
+  <block id="02b80ac4962fa1aa89a11e655a3bd996" category="list-text">在 *Host information* 下，选择 *local* 作为 *Access mode*，然后选择 *Edit*。</block>
+  <block id="6d33f82590752283d027e2c7394ab829" category="paragraph">AIX 主机的存储单元已准备好进行 SnapMirror 活动同步保护。</block>
+  <block id="55aa696f6eeaf20f8cd5f18a42f214dd" category="paragraph">虽然在 ASA r2 系统上配置 SnapMirror 主动同步的 System Manager 程序与运行统一 ONTAP 个性的 NetApp FAS、AFF 和 ASA 系统不同，但 SnapMirror 主动同步的要求、架构和操作是相同的。<block ref="a4d3fa0a90b98ed30452a119486e6ae3" category="inline-link-macro-rx"></block></block>
+  <block id="1783622f273954ab75caf352332b94b9" category="paragraph">在 ASA r2 系统上，SnapMirror 主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点都可以访问本地存储以进行主动 I/O。详细了解 <block ref="cd08e89ddecf5772544f56e955b2d721" category="inline-link-macro-rx"></block>。</block>
+  <block id="98c953c1bb66d85c490522bafc5c85b5" category="list-text">从 ONTAP 9.19.1 RC 开始，具有人工智能的自主勒索软件保护（ARP/AI）支持 ASA r2 系统上的 SnapMirror 主动同步 SAN 关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅主 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。有关 ARP/AI 启用步骤，请参见 <block ref="1ee41ad3123e5db18e6fae76e28afe9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="f6948bd1b416e70ac7297904c89918c2" category="inline-link-macro">准备 AIX 主机</block>
+  <block id="9f3699fb5ae95cc656437f0d40316b3a" category="paragraph">如果您正在运行 ONTAP 9.19.1 或更高版本，并为 AIX 主机启用 SnapMirror 活动同步，则应<block ref="a1eb09700bb6039b09944ad4a8beb294" category="inline-link-macro-rx"></block>。</block>
+  <block id="d844604326e9cd2c315729a7379f2f39" category="paragraph">从 ONTAP 9.19.1 开始，FLI 支持用于后端连接的 iSCSI 协议。</block>
+  <block id="01ec680b4387bb404e72e15247c25cc6" category="list-text">详细了解链接： https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html[ONTAP FLI migrations^]。</block>
+  <block id="2f99f456cfdb820f75a7c3148365f63b" category="section-title">TLS 硬件卸载</block>
+  <block id="0cb676b13f3e5b88d1d96f6dc967fbf0" category="paragraph">您可以将整个集群的传输层安全性 (TLS) 加密和解密卸载到支持的以太网卡。这减少了 CPU 开销，并提高了使用 TLS 的系统的性能。</block>
+  <block id="6fa5dce098144939c83d2d3fe4ca7e8d" category="inline-link-macro">了解如何配置 TLS 硬件卸载</block>
+  <block id="9433af924bd16d2b5d6282d91d613926" category="paragraph"><block ref="669de2e9a90723c75d4b935770e4df97" category="inline-link-macro-rx"></block>.</block>
+  <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">性能</block>
+  <block id="2f7da8b0d24f58aae7a1dc8db2ca277d" category="paragraph">详细了解 ASA r2 系统支持的常见性能功能。</block>
+  <block id="61dd3b29ebbda633eaa5595a4948d71f" category="section-title">修改控制自动 QoS 吞吐量上限增加的默认设置</block>
+  <block id="a05bc26fbb935d2a28e26f1e40856f67" category="paragraph">自适应和非自适应 QoS 策略组会自动启用，以便在默认情况下将工作负载的吞吐量上限暂时提高 50%，持续时间为 1 秒，从而响应对更高性能的短期需求。从 ONTAP 9.19.1 开始，您可以修改这些默认设置。在 ONTAP 9.18.1 及更早版本中，这些设置无法更改。</block>
+  <block id="60315893e2acf5905698d5d0f606fd10" category="inline-link-macro">详细了解 QoS 吞吐量上限</block>
+  <block id="90845cd8ac5d10e2937758f233798b78" category="paragraph"><block ref="d91291c9e48585273f64f9043b3d3422" category="inline-link-macro-rx"></block>.</block>
+  <block id="4f27a34799ad8580f67b93c57e242ad0" category="section-title">SAN 配置</block>
+  <block id="0049b7998bb071bfe030bf33eb2c9de3" category="paragraph">存储区域网络 (SAN) 由通过 iSCSI 或 FC 等 SAN 传输协议连接到主机的存储解决方案组成。您可以配置 SAN，以便存储解决方案通过一个或多个交换机连接到主机。如果使用 iSCSI，还可以配置 SAN，以便存储解决方案无需使用交换机即可直接连接到主机。</block>
+  <block id="ea188495f5bc167e82a7fbff3f977e1f" category="section-title">SAN 直接连接</block>
+  <block id="89dd72f722952148a52848398de2af98" category="paragraph">从 ONTAP 9.19.1 开始，无需 FC 交换机即可在 FC 和 FC-NVMe 主机与 ONTAP 存储之间建立连接。主机可以直接连接到 ASA r2 系统上的 FC 适配器端口。在简单性至关重要的远程站点和混合环境中，直接连接功能尤其有价值。</block>
+  <block id="d6fda1bbe79a70e1ad34ce9857102a6f" category="inline-link-macro">详细了解 SAN 直接连接</block>
+  <block id="6ae2ce2d58a3fa8990ebae194277f9c3" category="list-text"><block ref="ca36c2c6ca138f3af9323afde8970be4" category="inline-link-macro-rx"></block>.</block>
+  <block id="be475f74890bbcee818b4dcaa88fc2ef" category="paragraph">存储效率是通过优化存储资源、最大限度地减少浪费的空间和减少写入数据的物理占用量来衡量存储系统有效利用可用空间的程度。</block>
+  <block id="470668cf61ea3bcd6e1cb686cce301ab" category="paragraph">ONTAP 提供各种存储效率技术，可帮助您优化存储使用并降低成本。</block>
+  <block id="4064dbb2da19e8796b10f1c59bc4f23a" category="inline-link-macro">详细了解 ONTAP 存储效率技术</block>
+  <block id="a8421094cc908d8f315c1ab2f19b8085" category="paragraph"><block ref="fddba30123b8f0cdf7b9e22a9b2eaad2" category="inline-link-macro-rx"></block>.</block>
+  <block id="d2faa14ab70288d07188a62b2f1242e8" category="section-title">全局重复数据删除</block>
+  <block id="3cc42248c8d3e1724108887db39a1fc0" category="inline-link-macro">现有 ONTAP 重复数据删除空间节省</block>
+  <block id="dfa4d4587562c16f4a5925d3b5594a9e" category="paragraph">从 ONTAP 9.19.1 开始，_全局重复数据删除_ 将 <block ref="c7d4c0ceea3d0bc35cdb8645e84b0be9" category="inline-link-macro-rx"></block> 从存储单元级别扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。</block>
+  <block id="65481be362fd14e3b943e8347948143f" category="paragraph">从 ONTAP 9.19.1 开始，如果您要创建计划启用 SnapMirror 活动同步保护的 AIX LUN，请在*主机信息*下选择*本地*作为*访问模式*。这是启用透明应用程序故障转移所必需的。</block>
+  <block id="b8cd8dd355516b19f7a3260bfd645929" category="paragraph">ASA r2 系统中的每个 HA 对都使用称为_存储可用区_的公共存储池。存储可用区可以访问存储系统中的所有可用磁盘，并且对 HA 对中的两个节点均可见。通过监控存储可用区的可用空间，可以根据需要减少使用量或增加容量，从而避免因空间不足而导致工作负载失败。</block>
+  <block id="f1c9e9af80bb533618f5bdefe333747d" category="inline-link-macro">洞察</block>
+  <block id="ebafe46641c676ef6ab5894f79ff62ab" category="paragraph">从 ONTAP 9.19.1 开始，如果 ASA r2 系统 HA 对中的一个存储可用区接近容量，则会在 System Manager *Insights* 中显示警报。详细了解 System Manager <block ref="41fc10ce3fe36daf8df250e4d0c01ea9" category="inline-link-macro-rx"></block>。</block>
+  <block id="1546607861bbb550ca3750055c66328f" category="paragraph">在 *Storage units* 下，将显示存储可用区中所有存储单元的列表。</block>
+  <block id="2e9d0a1cf17808045f957a3e9c93942b" category="paragraph">如果您的存储可用区空间不足，则应计划<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>到另一个存储可用区以平衡整个集群的存储利用率，删除快照以释放空间或向节点添加其他磁盘以增加容量。</block>
+  <block id="f81baecda64413757c058ded626fcc01" category="summary">了解适用于 ASA r2 系统的 ONTAP 9.19.1 中的新功能。</block>
+  <block id="2be5fa0f2f2942f164632e2517148f97" category="doc">适用于 ASA r2 系统的 ONTAP 9.19.1 中的新增功能</block>
+  <block id="3f1aac64a6f9339cbf436a8cebfe6bf1" category="inline-link-macro">AIX 主机支持 SnapMirror 活动同步</block>
+  <block id="a8e9a396c69578ce7333f984da64c336" category="cell"><block ref="a8e9a396c69578ce7333f984da64c336" category="inline-link-macro-rx"></block></block>
+  <block id="555e7d49883fdeee7ee35940a1e0422a" category="cell">对称活动/活动配置中的 SnapMirror 活动同步支持 AIX 的透明应用程序故障转移。</block>
+  <block id="f3c0ac77cfd922d5495f5c32bde93fef" category="inline-link-macro">ONTAP 外部 LUN 导入 (FLI) 对 iSCSI 协议的支持</block>
+  <block id="571961045f6acced447011686935e734" category="cell"><block ref="571961045f6acced447011686935e734" category="inline-link-macro-rx"></block></block>
+  <block id="41e5e49b6c7d76352e103517e3eef2b2" category="cell">ONTAP 外部 LUN 导入 (FLI) 支持用于后端连接的 iSCSI 协议。</block>
+  <block id="911fbb20c80fb962a01d41ff494bdac4" category="inline-link-macro">支持直连式 FC 配置</block>
+  <block id="832bd89ad9f3cb073b0b1c7a24fda2ad" category="cell"><block ref="832bd89ad9f3cb073b0b1c7a24fda2ad" category="inline-link-macro-rx"></block></block>
+  <block id="9d255f8061d2c26397587d57452560a3" category="cell">无需 FC 交换机即可在 FC 和 FC-NVMe 主机与 ONTAP 存储之间建立连接。主机可以直接连接到 ASA r2 系统上的 FC 适配器端口。在简单性至关重要的远程站点和混合环境中，直接连接功能尤其有价值。</block>
+  <block id="1c1e4bbac513ca426ea459850a27cf80" category="inline-link-macro">支持具有 SnapMirror 活动同步关系的 ARP/AI</block>
+  <block id="06c698f9402b1596702afca5eb290c16" category="cell"><block ref="06c698f9402b1596702afca5eb290c16" category="inline-link-macro-rx"></block></block>
+  <block id="ae5b88290cbba1c2143301d124dcbbbf" category="cell">使用人工智能的自主勒索软件防护 (ARP/AI) 支持 ASA r2 系统上 SnapMirror 主动同步关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅主 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。</block>
+  <block id="281fd14262fa7c1793e3c18dfd336f7f" category="inline-link-macro">支持 TLS 硬件卸载</block>
+  <block id="1c03eaa9510cac0323e8851def881c41" category="cell"><block ref="1c03eaa9510cac0323e8851def881c41" category="inline-link-macro-rx"></block></block>
+  <block id="856d2008511fbcc3fde42bc9df07cc74" category="inline-link-macro">支持全局重复数据删除</block>
+  <block id="c2aae43e9678be7b1ccbf9e69e5c7eb2" category="cell"><block ref="c2aae43e9678be7b1ccbf9e69e5c7eb2" category="inline-link-macro-rx"></block></block>
+  <block id="497405d1bfd083677d0d9555d9027d88" category="cell">全局重复数据删除将现有的 ONTAP 重复数据删除空间节省扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，它可以显著提高存储效率并降低总拥有成本。全局重复数据删除默认启用，无需管理配置即可透明运行。</block>
+  <block id="92da55166137739e02f5b936f74380ee" category="section-title">存储资源管理</block>
+  <block id="111932fc1f94afb73674c79d84d3c63f" category="inline-link-macro">System Manager 中支持存储可用性区域容量警报</block>
+  <block id="445c41dab6c25da30423427c5174c083" category="cell"><block ref="445c41dab6c25da30423427c5174c083" category="inline-link-macro-rx"></block></block>
+  <block id="63c3c3a7296a9754070057942295221b" category="cell">如果 ASA r2 系统中的存储可用区接近容量，则会在 System Manager 中显示警报。</block>
+  <block id="06d8255b249000a8dc1ea05905facab1" category="inline-link-macro">支持修改控制自动 QoS 吞吐量上限增加的默认设置</block>
+  <block id="5ebe4d2005a9bf12b4599600d5b37a74" category="cell"><block ref="5ebe4d2005a9bf12b4599600d5b37a74" category="inline-link-macro-rx"></block></block>
+  <block id="526357124bf4a788b83696c381ec921e" category="cell">您可以修改默认设置，以控制 QoS 策略组如何自动增加 QoS 吞吐量上限，以响应对更高性能的短期需求。这些设置在 ONTAP 9.18.1 及更早版本中无法修改。</block>
+  <block id="f683581d3e75f05f9d9215f9b4696cef" category="section-title">升级</block>
+  <block id="446769ecfd2416f049608620cc994ac8" category="inline-link-macro">增强的自动升级前检查报告功能</block>
+  <block id="368f083985829ad76ae5f8d7530fbd0e" category="cell"><block ref="368f083985829ad76ae5f8d7530fbd0e" category="inline-link-macro-rx"></block></block>
+  <block id="2b1cc84feb959647df3e34b19f0fa843" category="cell">执行自动升级前检查时，将分别显示错误和警告，以帮助您轻松识别升级前必须解决的问题。</block>
+  <block id="064aa1a0e3e542c891816ff0102a8eca" category="summary">如果您的 ASA r2 群集上安装了 Autonomous Ransomware Protection 许可证，则在升级到 ONTAP 9.18.1 或初始化新的 ONTAP 9.18.1 ASA r2 群集 12 小时后，默认情况下会在所有现有和新创建的存储单元上启用 ARP。</block>
+  <block id="c21e619b6e99a5ee7d89c9b052f96fb0" category="summary">启用带有 AI 的 ARP，以检测潜在的勒索软件威胁，自动采取措施保护您的数据，并在 System Manager 中显示警告消息，提醒您注意可疑活动。</block>
+  <block id="99705e545197778e8e90edce81239e6b" category="paragraph">ARP 通过采用反勒索软件分析的机器学习模型来提高网络弹性，该模型可检测 SAN 环境中不断变化的勒索软件形式。ARP 的机器学习模型在模拟勒索软件攻击之前和之后都在大型文件数据集上进行了预训练。这种资源密集型训练是在 ONTAP 外部完成的，由此训练产生的预训练模型包含在 ONTAP 的盒内。此模型不可访问或修改。ARP/AI 在启用后立即激活；没有<block ref="3fa1bfd584351c2c430a6346ba4b1ef3" category="inline-link-macro-rx"></block>。</block>
+  <block id="32993ed903bc1884ece0b04175a7a552" category="list-text">从 ONTAP 9.19.1 RC 开始，具有人工智能的自主勒索软件保护（ARP/AI）支持 ASA r2 系统上的 SnapMirror 主动同步 SAN 关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅主 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。</block>
+  <block id="0da4b61d19faba4a01242d2539243538" category="list-text">受 SnapLock 保护的存储单元不支持 ARP/AI。</block>
+  <block id="df2caa7829ca66f49ae2621799defacd" category="summary">如果您在 ASA r2 系统上使用 IP 协议，则可以配置 IP 安全性以增强数据安全性。</block>
+  <block id="51e4b174c948dff20235dc02acc443e7" category="summary">通过配置 NVMe TCP over TLS 来加密在 NVMe TCP 主机和 ONTAP 之间通过网络发送的所有数据，从而增强数据安全性。</block>
+  <block id="4cc34abbf04951a48585b5548e80ee6b" category="summary">如果您正在计划异常工作负载事件，则可以暂时暂停带有 AI 分析的 ARP，以防止勒索软件攻击的误报检测</block>
+  <block id="f89ff085af9a8e3382e45dfd5fc7eead" category="sidebar">准备 AIX 主机</block>
+  <block id="7ceef35284e2093e2f3f2e17a1256628" category="sidebar">ONTAP 9.19.1 中的新增功能</block>
 </blocks>

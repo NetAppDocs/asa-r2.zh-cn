@@ -13,8 +13,18 @@ summary: ASA r2 系统的ONTAP软件升级遵循与其他ONTAP系统升级相同
 [role="lead"]
 在ASA R2系统上升级ONTAP软件时、您可以利用新增的和增强的ONTAP功能、帮助您降低成本、加快关键工作负载的处理速度、提高安全性、并扩大企业可用的数据保护范围。
 
-ASA r2 系统的 ONTAP 软件升级遵循与其他 ONTAP 系统升级相同的流程。建议您先 link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["使用 Active IQ Digital Advisor 或 Upgrade Health Checker 准备升级"]。
+ASA r2 系统的 ONTAP 软件升级遵循与其他 ONTAP 系统升级相同的流程。建议您先 link:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["使用 Active IQ Digital Advisor 或 Upgrade Health Checker 准备升级"^]。
 
-准备升级后，建议您使用执行升级link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["从System Manager自动无中断升级(ANDU)"]。ANDU可利用ONTAP的高可用性(HA)故障转移技术确保集群在升级期间继续提供数据而不会中断。
+准备升级后，建议使用 link:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["从System Manager自动无中断升级(ANDU)"^] 执行升级。ANDU 利用 ONTAP 的高可用性 (HA) 故障转移技术，确保集群在升级期间继续提供数据而不会中断。
 
-详细了解 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP软件升级"]。
+详细了解link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP软件升级"^]。
+
+
+
+== 在计划升级之前执行自动升级前检查
+
+您不必在升级 ONTAP 软件的过程中执行 ONTAP 自动升级预检查。独立于 ONTAP 自动升级过程执行升级前检查可让您查看对您的集群执行了哪些检查，并为您提供在开始实际升级之前应更正的任何错误或警告的列表。
+
+从 ONTAP 9.19.1 开始，错误和警告将分别显示，以帮助您轻松识别升级前必须解决的问题。
+
+了解如何link:https://docs.netapp.com/us-en/ontap/upgrade/automated-pre-checks.html["执行 ONTAP 自动升级前检查"^]。

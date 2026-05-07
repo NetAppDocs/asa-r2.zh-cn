@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new-9191.html 
+keywords: 'what"s new, release notes, 9.19.1, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20' 
+summary: 了解适用于 ASA r2 系统的 ONTAP 9.19.1 中的新功能。 
+---
+= 适用于 ASA r2 系统的 ONTAP 9.19.1 中的新增功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解适用于 ASA r2 系统的 ONTAP 9.19.1 中的新功能。
+
+
+
+== 数据保护
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../data-protection/prepare-aix-snapmirror-active-sync.html["AIX 主机支持 SnapMirror 活动同步"] | 对称活动/活动配置中的 SnapMirror 活动同步支持 AIX 的透明应用程序故障转移。 
+|===
+
+
+== SAN数据迁移
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../install-setup/set-up-data-access.html#migrate-data-from-a-third-party-storage-system["ONTAP 外部 LUN 导入 (FLI) 对 iSCSI 协议的支持"] | ONTAP 外部 LUN 导入 (FLI) 支持用于后端连接的 iSCSI 协议。 
+|===
+
+
+== SAN 配置
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#san-direct-attachment["支持直连式 FC 配置"] | 无需 FC 交换机即可在 FC 和 FC-NVMe 主机与 ONTAP 存储之间建立连接。主机可以直接连接到 ASA r2 系统上的 FC 适配器端口。在简单性至关重要的远程站点和混合环境中，直接连接功能尤其有价值。 
+|===
+
+
+== 安全性
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../secure-data/enable-anti-ransomware-protection.html["支持具有 SnapMirror 活动同步关系的 ARP/AI"] | 使用人工智能的自主勒索软件防护 (ARP/AI) 支持 ASA r2 系统上 SnapMirror 主动同步关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅主 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#tls-hardware-offload["支持 TLS 硬件卸载"] | 您可以将整个集群的传输层安全性 (TLS) 加密和解密卸载到支持的以太网卡。这减少了 CPU 开销，并提高了使用 TLS 的系统的性能。 
+|===
+
+
+== 存储效率
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#global-deduplication["支持全局重复数据删除"] | 全局重复数据删除将现有的 ONTAP 重复数据删除空间节省扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，它可以显著提高存储效率并降低总拥有成本。全局重复数据删除默认启用，无需管理配置即可透明运行。 
+|===
+
+
+== 存储资源管理
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../monitor/monitor-storage.html#monitor-storage-availability-zone-utilization["System Manager 中支持存储可用性区域容量警报"] | 如果 ASA r2 系统中的存储可用区接近容量，则会在 System Manager 中显示警报。 
+
+
+| link:../learn-more/additional-supported-ontap-features.html#modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases["支持修改控制自动 QoS 吞吐量上限增加的默认设置"] | 您可以修改默认设置，以控制 QoS 策略组如何自动增加 QoS 吞吐量上限，以响应对更高性能的短期需求。这些设置在 ONTAP 9.18.1 及更早版本中无法修改。 
+|===
+
+
+== 升级
+
+[cols="2,4"]
+|===
+| 更新 | 说明 
+
+
+| link:../administer/upgrade-ontap.html["增强的自动升级前检查报告功能"] | 执行自动升级前检查时，将分别显示错误和警告，以帮助您轻松识别升级前必须解决的问题。 
+|===

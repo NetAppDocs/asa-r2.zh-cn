@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: data-protection/prepare-aix-snapmirror-active-sync.html 
+keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
+summary: 在为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirror 活动同步之前，必须将主机访问模式设置为本地。 
+---
+= 为 ASA r2 系统上的 SnapMirror 主动同步保护准备 AIX 主机
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从 ONTAP 9.19.1 开始，对称主动/主动配置中的 SnapMirror 主动同步支持 AIX 透明应用程序故障转移。SnapMirror 主动同步数据保护使业务服务即使在完整的站点故障期间也能继续运行，支持应用程序使用辅助副本进行透明故障转移。
+
+必须将主机访问模式设置为本地，才能为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirror 活动同步。其他主机类型不需要选择访问模式。详细了解 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/interoperability-reference.html["SnapMirror 主动同步的互操作性"^]。
+
+.开始之前
+您必须运行 ONTAP 9.19.1 或更高版本。如果您运行的是 ONTAP 9.18.1 或更早版本，则需要功能策略差异请求 (FPVR) 才能使 AIX 主机支持 SnapMirror 活动同步。
+
+.步骤
+. 在System Manager中，选择*Storage*。
+. 将鼠标悬停在要准备进行 SnapMirror 活动同步保护的 AIX 存储单元的名称上。
+. 选择 image:icon_kabob.gif["菜单选择图标"]，然后选择 *Edit*。
+. 在 *Host information* 下，选择 *local* 作为 *Access mode*，然后选择 *Edit*。
+
+
+.下一步是什么？
+AIX 主机的存储单元已准备好进行 SnapMirror 活动同步保护。
