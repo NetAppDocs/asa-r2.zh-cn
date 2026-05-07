@@ -2797,11 +2797,9 @@
   <block id="f6948bd1b416e70ac7297904c89918c2" category="inline-link-macro">准备 AIX 主机</block>
   <block id="9f3699fb5ae95cc656437f0d40316b3a" category="paragraph">如果您正在运行 ONTAP 9.19.1 或更高版本，并为 AIX 主机启用 SnapMirror 活动同步，则应<block ref="a1eb09700bb6039b09944ad4a8beb294" category="inline-link-macro-rx"></block>。</block>
   <block id="d844604326e9cd2c315729a7379f2f39" category="paragraph">从 ONTAP 9.19.1 开始，FLI 支持用于后端连接的 iSCSI 协议。</block>
-  <block id="01ec680b4387bb404e72e15247c25cc6" category="list-text">详细了解链接： https://docs.netapp.com/us-en/ontap-fli/get-started/learn-about-data-migration.html[ONTAP FLI migrations^]。</block>
   <block id="2f99f456cfdb820f75a7c3148365f63b" category="section-title">TLS 硬件卸载</block>
   <block id="0cb676b13f3e5b88d1d96f6dc967fbf0" category="paragraph">您可以将整个集群的传输层安全性 (TLS) 加密和解密卸载到支持的以太网卡。这减少了 CPU 开销，并提高了使用 TLS 的系统的性能。</block>
   <block id="6fa5dce098144939c83d2d3fe4ca7e8d" category="inline-link-macro">了解如何配置 TLS 硬件卸载</block>
-  <block id="9433af924bd16d2b5d6282d91d613926" category="paragraph"><block ref="669de2e9a90723c75d4b935770e4df97" category="inline-link-macro-rx"></block>.</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">性能</block>
   <block id="2f7da8b0d24f58aae7a1dc8db2ca277d" category="paragraph">详细了解 ASA r2 系统支持的常见性能功能。</block>
   <block id="61dd3b29ebbda633eaa5595a4948d71f" category="section-title">修改控制自动 QoS 吞吐量上限增加的默认设置</block>
@@ -2867,4 +2865,7 @@
   <block id="4cc34abbf04951a48585b5548e80ee6b" category="summary">如果您正在计划异常工作负载事件，则可以暂时暂停带有 AI 分析的 ARP，以防止勒索软件攻击的误报检测</block>
   <block id="f89ff085af9a8e3382e45dfd5fc7eead" category="sidebar">准备 AIX 主机</block>
   <block id="7ceef35284e2093e2f3f2e17a1256628" category="sidebar">ONTAP 9.19.1 中的新增功能</block>
+  <block id="f7686fa2365fefd1997978c89bc02784" category="inline-link-macro">ONTAP FLI 迁移</block>
+  <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">详细了解<block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>。</block>
+  <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
 </blocks>

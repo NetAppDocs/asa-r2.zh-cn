@@ -84,7 +84,7 @@ link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authenticat
 
 您可以将整个集群的传输层安全性 (TLS) 加密和解密卸载到支持的以太网卡。这减少了 CPU 开销，并提高了使用 TLS 的系统的性能。
 
-link:https://docs.netapp.com/us-en/ontap/networking/configure_tls_hardware_offload.html["了解如何配置 TLS 硬件卸载"^].
+link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["了解如何配置 TLS 硬件卸载"^].
 
 
 
