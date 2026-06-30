@@ -852,7 +852,6 @@
   <block id="a75bf2b9e1da63b60510e670e13280f5" category="example-title">不支持的&lt;code&gt;&lt;/code&gt;</block>
   <block id="96e3e25ced73cbc3087692d33e698dfc" category="list-text"><block ref="c1391c72a0f399cab63e0f906219eba1" prefix="" category="inline-code"></block></block>
   <block id="db03a3b1b5e9221c407a3226384456b7" category="list-text"><block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix="" category="inline-code"></block></block>
-  <block id="cb493146003b5096fb9dbce0cf86abad" category="list-text"><block ref="f0f37fae9d089110c4fb0245013845fb" prefix="" category="inline-code"></block></block>
   <block id="2134111bb81c1ada4be502decedecb30" category="list-text"><block ref="3c698d76925a2f101122edd72990fc94" prefix="" category="inline-code"></block></block>
   <block id="c3c96ea806ac83498c365d5180661ba3" category="list-text"><block ref="9b82d4f814395730025ab1c7b269e56e" prefix="" category="inline-code"></block></block>
   <block id="4dae76cd6e28c01554edf8f2fb2ff842" category="list-text"><block ref="ec9655721b41e06c690354a032042fc1" prefix="" category="inline-code"></block></block>
@@ -950,7 +949,6 @@
   <block id="4428c7556a1eea23721f907d8d23eb21" category="inline-link-macro">了解如何锁定快照</block>
   <block id="19deecdd8b763ce6f48eadb0070d24cd" category="list-text"><block ref="f5c7881d0f64c83ae31bbc947dffd4c1" category="inline-link-macro-rx"></block>在ASA R2系统上。</block>
   <block id="a45dbe7c067a9974c8fca40e2b212fd6" category="inline-link-macro">了解如何应用双层加密</block>
-  <block id="bcdcf9cfaaa690edc9d618403dd65057" category="list-text"><block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block>ASA R2系统上的数据。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
@@ -1235,7 +1233,6 @@
   <block id="2906636dbf4e4249f5399e9553d745b9" category="paragraph">在对空闲数据进行加密时、如果存储介质被改作他用、退回、放置在不当位置或被盗、则无法读取这些数据。您可以使用ONTAP系统管理器在硬件和软件级别对数据进行加密、以实现双层保护。</block>
   <block id="7b51e981529660667d1414c7a37e2172" category="paragraph">NetApp存储加密(NSE)支持使用自加密驱动器(Self-Encryption Drive、SE)进行硬件加密。在写入数据时、SED会对数据进行加密。每个SED都包含一个唯一的加密密钥。如果没有SED的加密密钥、则无法读取SED上存储的加密数据。要访问SED的加密密钥、必须对尝试从SED读取的节点进行身份验证。通过从密钥管理器获取身份验证密钥、然后将身份验证密钥提供给SED、可以对节点进行身份验证。如果身份验证密钥有效、SED将向节点提供其加密密钥以访问其包含的数据。</block>
   <block id="97453174e9fea59b5b73518b257f2785" category="paragraph">使用ASA R2板载密钥管理器或外部密钥管理器为节点提供身份验证密钥。</block>
-  <block id="2a1bd1bede081db0130e4d43abfae163" category="paragraph">除了NSE之外、您还可以启用软件加密、为数据添加另一层安全保护。</block>
   <block id="c3895fd1cc061addf95194af9659baa6" category="list-text">在System Manager中，选择*Cluster &gt; Settings*。</block>
   <block id="b59449d4094d1449f93a0de73791997c" category="list-text">在*安全性*部分的*加密*下，选择*配置*。</block>
   <block id="9bd21eab9d09006d0846084b0f1b970d" category="list-text">配置密钥管理器。</block>
@@ -2868,4 +2865,11 @@
   <block id="6be3407e36219b0795158b00b3dff0ca" category="list-text">详细了解<block ref="ca933b90c89fa23c09167e20b9cccb24" category="inline-link-macro-rx"></block>。</block>
   <block id="8b046b3216eeb1b646506eacab8f767f" category="paragraph"><block ref="ca9cf0fa026ed1f702f811d5351a5f40" category="inline-link-macro-rx"></block>.</block>
   <block id="44fb59de1e9bca7d7d33dee185838ea7" category="paragraph">除非列为不受支持，否则 ASA r2 系统支持 <block ref="585532baa3876b6b8281302459d86312" category="inline-link-macro-rx"></block> 中的所有其他命令。</block>
+  <block id="a809a3f67f68e189b93c920155d8f362" category="list-text">NetApp 聚合加密（NAE）</block>
+  <block id="2b115325b25b8f67f05803e840eb1b7c" category="paragraph">ASA r2 系统支持使用自加密驱动器 (SED) 的硬件加密和使用 NetApp 卷加密 (NVE) 技术的软件加密。<block ref="285ab21de69619aa33a3697c0850e834" category="inline-link-macro-rx"></block>保护 ASA r2 系统上的数据。</block>
+  <block id="f5c9d4c28f92d0b49036a87f3b949ecc" category="paragraph">除了 NSE 之外，您还可以启用软件加密，为您的数据添加另一层安全保护。ASA r2 系统使用 NetApp 卷加密 (NVE) 技术在软件级别加密数据。NetApp 聚合加密 (NAE) 在 ASA r2 系统上不受支持，因为 ASA r2 系统中的存储层使用存储可用区而不是聚合。</block>
+  <block id="c4b8c29f448328e82ce27062b5fd9c28" category="inline-link-macro">NetApp 卷加密</block>
+  <block id="3b02d77db56f5837a4003247043c2394" category="paragraph">详细了解<block ref="31c33696bbbaa92dffde7abe3995709d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a77592aaf5c220b3ff9f169a775bd853" category="inline-link-macro">ASA r2 系统与其他 ONTAP 系统之间的差异</block>
+  <block id="a3516695dad8c94bdcdc3a67a8d5dd34" category="paragraph">详细了解<block ref="539f35f6411ebaaeab190de38a065f4e" category="inline-link-macro-rx"></block>。</block>
 </blocks>

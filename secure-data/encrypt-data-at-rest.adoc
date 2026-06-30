@@ -21,7 +21,11 @@ NOTE: 在ASA r2 系统中，SED 仅支持基于 NVMe 的 SSD。
 
 使用ASA R2板载密钥管理器或外部密钥管理器为节点提供身份验证密钥。
 
-除了NSE之外、您还可以启用软件加密、为数据添加另一层安全保护。
+除了 NSE 之外，您还可以启用软件加密，为您的数据添加另一层安全保护。ASA r2 系统使用 NetApp 卷加密 (NVE) 技术在软件级别加密数据。NetApp 聚合加密 (NAE) 在 ASA r2 系统上不受支持，因为 ASA r2 系统中的存储层使用存储可用区而不是聚合。
+
+详细了解link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["NetApp 卷加密"^]。
+
+详细了解link:https://docs.netapp.com/us-en/asa-r2/learn-more/hardware-comparison.html["ASA r2 系统与其他 ONTAP 系统之间的差异"]。
 
 .步骤
 . 在System Manager中，选择*Cluster > Settings*。
