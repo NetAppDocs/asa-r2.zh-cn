@@ -17,6 +17,7 @@ link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留
 
 
 
+[[modify-snapshot-reserve-on-storage-units]]
 == 修改存储单元的快照预留
 
 要设置不同的快照保留值，请分别配置每个存储单元。要对所有存储单元使用相同的值，请修改存储 VM 上的快照预留。
@@ -35,6 +36,7 @@ link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留
 
 
 
+[[modify-snapshot-reserve-on-a-storage-vm]]
 == 修改存储虚拟机上的快照预留
 
 要为存储虚拟机中的所有存储单元设置相同的快照保留，请将所需的百分比应用于存储虚拟机。。当快照预留应用于存储虚拟机时，它将应用于存储虚拟机内所有新创建的存储单元。此设置不适用于修改设置之前创建的存储单元。

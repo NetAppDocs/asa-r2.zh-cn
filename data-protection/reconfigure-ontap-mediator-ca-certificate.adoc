@@ -15,6 +15,7 @@ summary: 如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解
 
 
 
+[[step-1-remove-the-mediator-configuration]]
 == 步骤 1：删除中介配置
 
 要重新配置调解器，您必须首先从集群中删除其当前配置。
@@ -30,6 +31,7 @@ summary: 如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解
 
 
 
+[[step-2-remove-the-self-signed-certificate]]
 == 步骤 2：删除自签名证书
 
 移除中介配置后，您应该从集群中删除相关的自签名证书。
@@ -43,6 +45,7 @@ summary: 如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解
 
 
 
+[[step-3-reinstall-the-mediator-with-a-third-party-certificate]]
 == 步骤 3：使用第三方证书重新安装中介
 
 删除关联的自签名证书后，您可以使用第三方证书重新配置中介。

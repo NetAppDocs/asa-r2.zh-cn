@@ -13,7 +13,7 @@ summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松
 [role="lead"]
 以下是该视频的文字记录 `Replicate data to a remote cluster from an ASA r2 storage system`。
 
-link:videos-common-tasks.html#video_transcript_return_replicate_data["返回页面"]
+link:videos-common-tasks.html["返回页面"]
 
 您可以使用ONTAP系统管理器计划存储单元或一致性组的快照并复制到远程位置、从而保护数据。
 

@@ -16,6 +16,7 @@ ASA R2系统上的存储单元包含在Storage Virtual Machine (VM)中。Storage
 
 
 
+[[create-a-storage-vm]]
 == 创建Storage VM
 
 在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)。除非您创建并选择其他Storage VM、否则所有新存储单元都会在默认数据Storage VM中创建。您可能希望创建一个额外的Storage VM、以便为不同的应用程序、部门或客户端隔离存储单元。例如、您可能希望为开发环境创建一个Storage VM、为生产环境创建另一个Storage VM、或者为财务部门创建一个Storage VM、为营销部门创建另一个Storage VM。
@@ -38,6 +39,7 @@ ASA R2系统上的存储单元包含在Storage Virtual Machine (VM)中。Storage
 
 
 
+[[create-ipspaces]]
 == 创建 IP 空间
 
 IP空间是Storage VM所在的一个独立IP地址空间。创建IP空间时、您可以使Storage VM拥有自己的安全存储、管理和路由。此外、还可以使管理上分开的网络域中的客户端使用同一IP地址子网范围内的重叠IP地址。
@@ -59,6 +61,7 @@ IP空间名称不能为"all"、因为"all"是系统保留名称。
 
 
 
+[[create-subnets]]
 == 创建子网
 
 通过子网，您可以在创建LIF (网络接口)时分配要使用的特定IPv4或IPv6地址块。子网允许您为每个LIF指定子网名称、而不是特定的IP地址和网络掩码、从而简化了LIF的创建。
@@ -89,6 +92,7 @@ IP空间名称不能为"all"、因为"all"是系统保留名称。
 
 
 
+[[create-a-lif-network-interface]]
 == 创建LIF (网络接口)
 
 LIF (网络接口)是与物理或逻辑端口关联的IP地址。在要用于访问数据的端口上创建SIFs。Storage VM通过一个或多个生命周期管理器向客户端提供数据。如果组件发生故障、LIF可以进行故障转移或迁移到其他物理端口、从而不会中断网络通信。
@@ -121,6 +125,7 @@ LIF (网络接口)是与物理或逻辑端口关联的IP地址。在要用于访
 
 
 
+[[create-a-custom-iscsi-only-lif-service-policy]]
 === 创建自定义仅 iSCSI LIF 服务策略
 
 如果您想要创建具有自动 LIF 故障转移功能的仅 iSCSI LIF，则必须首先创建自定义仅 iSCSI LIF 服务策略。
@@ -156,6 +161,7 @@ set -privilege admin
 
 
 
+[[create-iscsi-only-lifs-with-automatic-lif-failover]]
 === 创建仅支持 iSCSI 的 LIF，并启用自动 LIF 故障转移
 
 如果存储虚拟机上存在未启用自动 LIF 故障转移的 iSCSI LIF，则您新创建的 LIF 也不会启用自动 LIF 故障转移。如果未启用自动 LIF 故障转移，并且发生故障转移事件，则您的 iSCSI LIF 将不会迁移。
@@ -197,6 +203,7 @@ network interface show -lif iscsi*
 
 
 
+[[modify-a-lif-network-interfaces]]
 == 修改LIF (网络接口)
 
 可以根据需要禁用或重命名这些文件。您还可以更改LIF IP地址和子网掩码。

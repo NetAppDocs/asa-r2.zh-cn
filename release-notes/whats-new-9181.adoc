@@ -18,6 +18,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 
 
 
+[[data-protection]]
 == 数据保护
 
 [cols="2,4"]
@@ -29,6 +30,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 |===
 
 
+[[networking]]
 == 网络连接
 
 [cols="2,4"]
@@ -43,6 +45,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 |===
 
 
+[[san-data-migration]]
 == SAN数据迁移
 
 [cols="2,4"]
@@ -54,6 +57,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 |===
 
 
+[[security]]
 == 安全性
 
 [cols="2,4"]
@@ -65,6 +69,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 |===
 
 
+[[storage-efficiency]]
 == 存储效率
 
 [cols="2,4"]

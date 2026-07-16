@@ -20,6 +20,7 @@ AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支
 
 
 
+[[test-autosupport-connectivity]]
 == 测试AutoSupport连接
 
 设置集群后、您应测试AutoSupport连接、以验证技术支持是否会收到AutoSupport生成的消息。
@@ -35,6 +36,7 @@ AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支
 
 
 
+[[add-autosupport-recipients]]
 == 添加AutoSupport收件人
 
 将内部支持组织的成员添加到接收AutoSupport消息的电子邮件地址列表中。
@@ -55,6 +57,7 @@ AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支
 
 
 
+[[send-autosupport-data]]
 == 发送AutoSupport数据
 
 如果ASA R2系统出现问题、AutoSupport数据可以显著缩短识别和解决问题所需的时间。
@@ -70,6 +73,7 @@ AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支
 
 
 
+[[suppress-support-case-generation]]
 == 禁止生成支持案例
 
 如果要在ASA R2系统上执行升级或维护、您可能需要禁止生成AutoSupport支持案例、直到升级或维护完成为止。
@@ -86,6 +90,7 @@ AutoSupport 是一种主动监控系统运行状况并自动向 NetApp 技术支
 
 
 
+[[resume-support-case-generation]]
 == 恢复支持案例生成
 
 如果您在升级或维护窗口期间禁止生成支持案例、则应在升级或维护完成后立即恢复生成支持案例。

@@ -42,6 +42,7 @@ ASA r2 系统支持使用自加密驱动器 (SED) 的硬件加密和使用 NetAp
 
 
 
+[[support-for-snapmirror-replication]]
 == 支持SnapMirror复制
 
 SnapMirror复制在ASA r2 系统上受支持，但存在以下限制：

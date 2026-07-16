@@ -18,6 +18,7 @@ searchtitle: 使用ONTAP System Manager监控集群性能| ASA R2
 
 
 
+[[monitor-cluster-performance]]
 == 监控集群性能
 
 使用集群性能指标确定是否需要转移工作负载、以便最大程度地减少延迟并最大程度地提高关键应用程序的IOPS和吞吐量。
@@ -33,6 +34,7 @@ searchtitle: 使用ONTAP System Manager监控集群性能| ASA R2
 
 
 
+[[monitor-storage-unit-performance]]
 == 监控存储单元性能
 
 使用存储单元性能指标来确定特定应用程序对延迟、IOPS和吞吐量的影响。

@@ -53,6 +53,7 @@ summary: 使用ONTAP系统管理器可查看系统中发生的错误或警报列
 
 
 
+[[send-email-notifications-for-cluster-events-and-audit-logs]]
 == 发送集群事件和审核日志的电子邮件通知
 
 配置系统、以便在出现集群事件或审核日志条目时向特定电子邮件地址发送通知。

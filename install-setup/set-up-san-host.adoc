@@ -25,6 +25,7 @@ image::multi-fabric-san-configuration.png[两个FC网络结构、用于将多个
 
 
 
+[[zoning-recommendation-for-fc-hosts]]
 == FC主机的分区建议
 
 您应将FC主机配置为使用分区。ASA R2系统与所有其他ONTAP系统遵循相同的FC主机分区建议和准则。

@@ -15,6 +15,7 @@ summary: 连接您的 ASA r2 存储系统以启用群集通信、主机网络访
 
 
 
+[[overview-of-hardware-cabling]]
 == 硬件布线概述
 
 布线因平台型号而异，因为每个 ASA r2 型号都有唯一的插槽位置、端口分配和 I/O 模块配置。选择您的 ASA r2 型号的程序：
@@ -47,6 +48,7 @@ summary: 连接您的 ASA r2 存储系统以启用群集通信、主机网络访
 
 
 
+[[additional-resources]]
 == 其他资源
 
 布线程序显示了常见配置。具体的布线取决于为您的存储系统订购的组件。有关全面配置和插槽优先级的详细信息，请参见 link:https://hwu.netapp.com["NetApp Hardware Universe"^]。

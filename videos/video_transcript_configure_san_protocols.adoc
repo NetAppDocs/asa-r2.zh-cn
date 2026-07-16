@@ -13,7 +13,7 @@ summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松
 [role="lead"]
 以下是该视频的文字记录 `Configure SAN protocols on your ASA r2 storage system`。
 
-link:videos-common-tasks.html#video_transcript_return_configure_san_protocols["返回页面"]
+link:videos-common-tasks.html["返回页面"]
 
 您可以使用ONTAP系统管理器快速轻松地配置SAN协议。在此示例中、我们将为iSCSI网络接口配置IP地址。
 

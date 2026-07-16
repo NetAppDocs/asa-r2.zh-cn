@@ -13,7 +13,7 @@ summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松
 [role="lead"]
 以下是该视频的文字记录 `Provision SAN storage on your ASA r2 storage system`。
 
-link:videos-common-tasks.html#video_transcript_return_provision_san_storage["返回页面"]
+link:videos-common-tasks.html["返回页面"]
 
 您可以使用ONTAP系统管理器快速轻松地为ASA R2存储系统上的主机配置存储单元。
 

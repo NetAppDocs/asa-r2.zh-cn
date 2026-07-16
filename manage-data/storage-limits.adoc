@@ -64,6 +64,7 @@ ASA r2 系统支持以下存储限制：
 |===
 
 
+[[limits-for-snapmirror-asynchronous-relationships]]
 == SnapMirror异步关系的限制
 
 以下限制适用于SnapMirror异步复制关系中的存储单元和一致性组。如需查看最新的ASA r2 存储限制完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
@@ -80,6 +81,7 @@ ASA r2 系统支持以下存储限制：
 |===
 
 
+[[limits-for-snapmirror-active-sync-relationship]]
 == SnapMirror主动同步关系的限制
 
 以下限制适用于SnapMirror主动同步复制关系中的存储单元和一致性组。从ONTAP 9.17.1 开始， SnapMirror主动同步仅在双节点集群上受支持。从ONTAP 9.18.1 开始， SnapMirror主动同步功能在四节点集群上得到支持。

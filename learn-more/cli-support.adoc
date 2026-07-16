@@ -142,6 +142,7 @@ NOTE: 这 `lun move-in-volume`命令被替换为 `lun rename`和 `vserver nvme n
 ====
 
 
+[[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == 使用命令行界面设置ONTAP ASA R2集群
 
 建议您link:../install-setup/initialize-ontap-cluster.html["使用System Manager设置ONTAP ASA R2集群"]。System Manager提供了一个快速简单的引导式工作流、可帮助您启动和运行集群。但是、如果您习惯使用ONTAP命令、则可以选择使用ONTAP命令行界面(CLI)进行集群设置。与使用System Manager设置集群相比、使用命令行界面设置集群没有其他选项或优势。

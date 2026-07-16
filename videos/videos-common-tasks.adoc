@@ -13,16 +13,32 @@ summary: 观看简短视频、了解如何使用ONTAP系统管理器快速轻松
 [role="lead"]
 观看简短视频、了解如何使用ONTAP系统管理器快速轻松地对ASA R2存储系统执行常见任务。
 
-.在ASA R2系统上配置SAN协议
+
+
+[[configure-san-protocols-on-your-asa-r2-system]]
+== 在ASA R2系统上配置SAN协议
+
+您可以使用 ONTAP System Manager 快速轻松地配置您的 SAN 协议。在此示例中，我们将为 iSCSI 网络接口配置 IP 地址。
+
 video::96cf3b2d-1cbd-4fff-a6e7-b1f0014ef793[panopto]
 link:video_transcript_configure_san_protocols.html["视频文字记录"]
 
-[#video_transcript_return_configure_san_protocols]
-.在ASA R2系统上配置SAN存储
+
+
+[[provision-san-storage-on-your-asa-r2-system]]
+== 在ASA R2系统上配置SAN存储
+
+您可以使用 ONTAP System Manager 为 ASA r2 存储系统上的主机快速轻松地配置存储单元。在此示例中，我们将为 VMware 主机创建六个新的存储单元。
+
 video::1d3e1a18-7dbe-44e9-a53d-b1f0014ef7c5[panopto]
 link:video_transcript_provision_san_storage.html["视频文字记录"]
 
-[#video_transcript_return_provision_san_storage]
-.将数据从ASA R2系统复制到远程集群
+
+
+[[replicate-data-to-a-remote-cluster-from-an-asa-r2-storage-system]]
+== 将数据从ASA R2存储系统复制到远程集群
+
+您可以使用 ONTAP System Manager 通过计划存储单元或一致性组的快照并将其复制到远程位置来保护您的数据。在此示例中，我们将为现有存储单元安排快照。
+
 video::4b78312d-1bfa-4df5-afac-b1f0014ef80e[panopto]
 link:video_transcript_replicate_data.html["视频文字记录"]
