@@ -104,8 +104,8 @@ entries:
     url: "/secure-data/migrate-encryption-keys-between-key-managers.html"
   - title: 防范勒索软件攻击
     entries:
-    - title: 创建防篡改快照
-      url: "/secure-data/ransomware-protection.html"
+    - title: 了解 SnapLock
+      url: "/secure-data/snaplock.html"
     - title: 启用 ARP/AI
       url: "/secure-data/enable-anti-ransomware-protection.html"
     - title: 禁用默认 ARP/AI 启用

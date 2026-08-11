@@ -40,7 +40,7 @@ indexpage:
     - title: ASA产品规格
       url: https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf
     - title: NetApp ASA系统的最佳实践
-      url: https://www.netapp.com/pdf.html?item=/media/137426-tr-5009-best-practices-for-netapp-asa.pdf
+      url: https://www.netapp.com/pdf.html?item=/media/138231-tr-5009-best-practices-for-netapp-asa.pdf
     - title: REST API 转换指南
       url: https://www.netapp.com/media/136585-tr-5008-restfulapi-transition-guide-asa-r2.pdf
     - title: NetApp ASA上的 Oracle 数据库性能

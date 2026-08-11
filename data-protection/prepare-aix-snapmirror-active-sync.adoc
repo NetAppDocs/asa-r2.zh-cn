@@ -21,7 +21,7 @@ summary: 在为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirro
 .步骤
 . 在System Manager中，选择*Storage*。
 . 将鼠标悬停在要准备进行 SnapMirror 活动同步保护的 AIX 存储单元的名称上。
-. 选择 image:icon_kabob.gif["菜单选择图标"]，然后选择 *Edit*。
+. 选择image:icon_kabob.gif["菜单选择图标"]，然后选择 *Edit*。
 . 在 *Host information* 下，选择 *local* 作为 *Access mode*，然后选择 *Edit*。
 
 

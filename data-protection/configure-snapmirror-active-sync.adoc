@@ -29,7 +29,7 @@ link:create-snapshots.html#step-1-optionally-create-a-consistency-group["创建�
 .步骤
 . 在System Manager中、选择*保护>一致性组*。
 . 将鼠标悬停在要使用SnapMirror活动同步保护的一致性组的名称上。
-. 选择image:icon_kabob.gif["三个垂直蓝点"]然后选择*保护*。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择 *Protect*。
 . 在*远程保护*下，选择*将数据添加到远程集群*。
 . 选择现有的集群对等体或选择*添加新的集群对等体*。
 . 选择存储虚拟机。

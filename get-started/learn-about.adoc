@@ -12,7 +12,7 @@ searchtitle: 了解 ASA A1K、A90、A70、A50、A30 A20 和 C30 系统
 
 
 [role="lead"]
-NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN客户的需求提供简化的体验。
+NetApp ASA r2 系统提供统一的硬件和软件解决方案，可针对纯 SAN 客户的需求创建简化的体验。在 ASA r2 系统上，ONTAP 软件和 System Manager 经过精简，可提供对基本 SAN 功能的支持，同时移除 SAN 环境中不支持的特性和功能。
 
 以下系统被归类为ASA r2 系统：
 
@@ -25,10 +25,7 @@ NetApp ASA R2系统提供统一的硬件和软件解决方案、可根据仅SAN�
 * ASA C30
 
 
-ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。  iSCSI、FC、NVMe/FC 和 NVMe/TCP 协议支持多路径对称主动-主动架构，以便主机和存储之间的所有路径都处于活动/优化状态。 iSCSI 和 NVMe/TCP 协议支持主机和存储之间的直接连接。对于光纤通道和 NVMe/FC 协议，不支持直接连接。
-
-在ASA R2系统上、ONTAP软件和System Manager经过简化、可提供对基本SAN功能的支持、同时删除SAN环境中不支持的特性和功能。
-
+.存储单元和一致性组
 ASA R2系统介绍了如何使用具有一致性组的存储单元：
 
 * storage unit_可为SAN主机提供用于数据操作的存储空间。存储单元是指SCSI主机的LUN或NVMe主机的NVMe命名空间。
@@ -37,7 +34,15 @@ ASA R2系统介绍了如何使用具有一致性组的存储单元：
 
 ASA r2 系统使用具有一致性组的存储单元来简化存储管理和数据保护。例如，假设您有一个由一致性组中的 10 个存储单元组成的数据库，并且您需要备份整个数据库。您无需单独备份每个存储单元，而是可以通过备份一致性组来保护整个数据库。
 
-为了保护您的数据免受盗窃或勒索软件等恶意攻击，ASA r2 系统支持板载密钥管理器、双层加密、多因素身份验证和多管理员验证。辅助 ASA r2 系统还支持防篡改快照。
+为了帮助保护您的数据免受盗窃或勒索软件等恶意攻击，ASA r2 系统支持板载密钥管理器、双层加密、多因素身份验证和多管理员验证。您还可以将快照复制到辅助位置，并使用 SnapLock for SnapVault 来防止意外或恶意删除目标快照。
+
+.支持的协议、多路径和配置
+ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有协议都支持用于多路径的对称主动-主动架构，以便主机和存储之间的所有路径都处于活动/优化状态。iSCSI 和 NVMe/TCP 协议支持所有受支持的 ONTAP 版本的网络和直接连接配置。FC 和 NVMe/FC 协议支持所有受支持的 ONTAP 版本的网络配置，并且从 ONTAP 9.19.1 开始，还支持直接连接配置。
+
+* 详细了解link:https://docs.netapp.com/us-en/ontap/san-admin/multipath-automatic-lif-failover-support.html["SAN 多路径支持"^]。
+* 详细了解link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI 和 NVMe/TCP 协议的配置"^]。
+* 详细了解link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC 和 NVMe/FC 协议的配置"^]。
+
 
 ASA r2 系统不支持与ASA、 AFF或FAS系统混合集群。
 

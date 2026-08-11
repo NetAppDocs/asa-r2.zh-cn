@@ -1,100 +1,30 @@
 ---
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
-keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20,asa c30 
+keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
 summary: 为了获得最佳性能、配置和支持，您应该了解ASA r2 的存储限制。 
 ---
-= ASA R2存储限制
+= 确定您的 ASA r2 系统存储限制
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-为了获得最佳性能、配置和支持，您应该了解 ASA r2 的存储限制。
+为了获得最佳性能、配置和支持，您应该了解ASA r2 的存储限制。
 
-有关最新ASA R2存储限制的完整列表，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
-
-ASA r2 系统支持以下存储限制：
-
-[cols="3"]
-|===
-|  | 每对HA的最大数量 | 每个集群的最大值 
+限制可能因您的 ASA r2 系统和 ONTAP 版本而异。有关特定系统的最新限制的完整列表，请参阅 link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
 
 
-| 一致性组 | 256 | 256 
+NOTE: ASA r2 系统在 NetApp Hardware Universe 的 *Products* 下列为"ASA"平台。
+
+.步骤
+. 转到 link:https://hwu.netapp.com["NetApp Hardware Universe"^]。
+. 选择*产品*。
+. 在*平台*下，选择 *ASA* 作为您的系统类型。
+. 选择您的特定系统，然后选择您的 ONTAP 版本。
+. 选择*显示结果*。
 
 
-| 企业应用程序 | 100 | 350 
-
-
-| 节点 | 2 | 12 
-
-
-| 复制组 | 50 | 50 
-
-
-| 存储可用区域大小 | 2 PB | 2 PB 
-
-
-| 存储单元 | 10,000 | 30,000 
-
-
-| 存储单元大小 | 128 TB | 128 TB 
-
-
-| 每个一致性组的存储单元 | 256 | 256 
-
-
-| 每个父母一致性组下的子一致性组 | 64 | 64 
-
-
-| 存储虚拟机  a| 
-* 256（ONTAP 9.18.1 及更高版本）
-* 32（ONTAP 9.17.1 及更早版本）
-
- a| 
-* 256（ONTAP 9.18.1 及更高版本）
-* 32（ONTAP 9.17.1 及更早版本）
-
-
-
-
-| 虚拟机 | 800 | 1200 
-|===
-
-
-[[limits-for-snapmirror-asynchronous-relationships]]
-== SnapMirror异步关系的限制
-
-以下限制适用于SnapMirror异步复制关系中的存储单元和一致性组。如需查看最新的ASA r2 存储限制完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
-
-[cols="3"]
-|===
-| 限制最大值 | 每个 HA 对 | 每个集群 
-
-
-| 一致性组 | 250 | 750 
-
-
-| 存储单元 | 4,000 | 6,000 
-|===
-
-
-[[limits-for-snapmirror-active-sync-relationship]]
-== SnapMirror主动同步关系的限制
-
-以下限制适用于SnapMirror主动同步复制关系中的存储单元和一致性组。从ONTAP 9.17.1 开始， SnapMirror主动同步仅在双节点集群上受支持。从ONTAP 9.18.1 开始， SnapMirror主动同步功能在四节点集群上得到支持。
-
-如需查看最新的ASA r2 存储限制完整列表，link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 。
-
-[cols="2"]
-|===
-| 限制最大值 | 每个 HA 对 
-
-
-| 一致性组 | 50 
-
-
-| 存储单元 | 400 
-|===
+.结果
+将显示特定 ASA r2 系统和 ONTAP 版本支持的限制。

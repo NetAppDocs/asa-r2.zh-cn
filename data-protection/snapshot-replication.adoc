@@ -86,53 +86,27 @@ NOTE: 采用异步策略时，数据在写入源之后才会复制到远程站�
 
 快照复制关系会在ASA R2系统和远程位置之间建立连接、以便您可以将一致性组复制到远程集群。复制的一致性组可用于灾难恢复或数据迁移。
 
-为了防止勒索软件攻击、在设置复制关系时、您可以选择锁定目标快照。锁定的快照不会被意外或恶意删除。如果存储单元受到勒索软件攻击的影响、您可以使用锁定的快照来恢复数据。
+要增强防范勒索软件攻击的安全性，请创建 SnapLock for SnapVault 复制关系。
 
 .开始之前
 * link:pre-defined-protection-policies.html["了解复制策略"] 。
 +
 创建复制关系时，必须为复制关系选择适当的复制策略。您可以使用预定义策略或创建自定义策略。
 
-* 如果要锁定目标快照、必须link:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["初始化Snapshot Compliance时钟"]在创建复制关系之前先锁定。
 
 
-创建具有或不具有锁定目标快照的复制关系。
-
-[role="tabbed-block"]
-====
-.已锁定快照
---
-.步骤
-. 在System Manager中、选择*保护>一致性组*。
-. 选择一致性组。
-. 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*Protect*。
-. 在*远程保护*下，选择*将数据添加到远程集群*。
-. 选择*复制策略*。
-+
-您必须选择_vault_复制策略。
-
-. 选择*目的地设置*。
-. 选择*锁定目标快照以防止删除*
-. 输入最长和最短数据保留期限。
-. 要延迟数据传输的开始，请取消选择*立即开始传输*。
-+
-默认情况下、初始数据传输会立即开始。
-
-. (可选)要覆盖默认传输计划，请选择*目标设置*，然后选择*覆盖传输计划*。
-+
-您的传输计划必须至少有30分钟才能获得支持。
-
-. 选择 * 保存 * 。
 
 
---
-.无锁定快照
---
+[[create-a-relationship-to-replicate-snapshots-to-a-remote-cluster]]
+=== 创建将快照复制到远程集群的关系
+
+通过将快照复制到远程群集来保护您的数据。一致性组的复制快照可用于灾难恢复或数据迁移。
+
 .步骤
 . 在System Manager中，选择*保护>复制*。
 . 选择此选项可创建与本地目标或本地源的复制关系。
 +
-[cols="2,2"]
+[cols="1,2"]
 |===
 | 选项 | 步骤 
 
@@ -150,24 +124,59 @@ source_一致 性组是指本地集群上要复制的一致性组。
 | 本地来源  a| 
 .. 选择*local sources *，然后选择image:icon_replicate_blue_bg.png["蓝色背景的矩形和字复制为白色字母"]。
 .. 搜索并选择源一致性组。
-.. 在*复制目标*下、选择要复制到的集群、然后选择Storage VM。
+.. 在*复制目标*下，选择要复制到的集群，然后选择存储 VM。
 
 
 |===
 . 选择复制策略。
-. 要延迟数据传输的开始，请选择*目的地设置*；然后取消选择*立即开始传输*。
+. 要延迟数据传输的开始，请选择*目标设置*，然后取消选择*立即开始传输*。
 +
 默认情况下、初始数据传输会立即开始。
 
-. (可选)要覆盖默认传输计划，请选择*目标设置*，然后选择*覆盖传输计划*。
+. （可选）要覆盖默认传输计划，请选择 *Destination settings*，然后选择 *Override transfer schedule*。
 +
 您的传输计划必须至少有30分钟才能获得支持。
 
 . 选择 * 保存 * 。
 
 
---
-====
+.下一步是什么？
+现在已创建复制策略和关系，初始数据传输将按照复制策略中的定义开始。您可以选择测试复制故障切换，以验证 ASA r2 系统脱机时是否可以成功进行故障切换。
+
+
+
+[[create-a-relationship-to-replicate-snapshots-with-snaplock-for-snapvault]]
+=== 创建关系以使用 SnapLock for SnapVault 复制快照
+
+为了防御勒索软件攻击，在设置复制关系时，您可以通过选择 Vault 复制策略，然后选择锁定目标 Snapshot 来为 SnapVault 启用 SnapLock。受 SnapLock for SnapVault 保护的 Snapshot 无法被意外或恶意删除。
+
+
+NOTE: ASA r2 系统不支持 SnapLock Compliance 模式或 SnapLock Enterprise 模式。创建 SnapLock for SnapVault 复制关系仅允许锁定目标快照。它不启用 SnapLock Compliance 或 Enterprise 模式。
+
+.开始之前
+您必须 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock 合规时钟"]。
+
+.步骤
+. 在 System Manager 中，选择 *Protection > Consistency groups*，然后选择一个一致性组。
+. 选择image:icon_kabob.gif["三个垂直蓝点"]，然后选择 *Protect*。
+. 在*远程保护*下，选择*将数据添加到远程集群*。
+. 选择*复制策略*。
++
+您必须选择_vault_复制策略。
+
+. 选择*目标设置*，然后选择*锁定目标快照以防止删除*。
+. 输入最长和最短数据保留期限。
+. 要延迟数据传输的开始，请取消选择*立即开始传输*。
++
+默认情况下、初始数据传输会立即开始。
+
+. （可选）要覆盖默认传输计划，请选择 *Destination settings*，然后选择 *Override transfer schedule*。
++
+您的传输计划必须至少有30分钟才能获得支持。
+
+. 选择 * 保存 * 。
+
+
 .下一步是什么？
 创建复制策略和关系后、将按照复制策略中的定义开始初始数据传输。您可以选择测试复制故障转移、以验证在ASA R2系统脱机时是否可以成功进行故障转移。
 
