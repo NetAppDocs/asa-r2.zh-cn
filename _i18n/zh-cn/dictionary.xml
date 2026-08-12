@@ -2866,4 +2866,5 @@
   <block id="794d2058bfa0143a6c722eb0d40f6fa2" category="paragraph">ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有协议都支持多路径的对称主动-主动架构，以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI 和 NVMe/TCP 协议支持所有受支持的 ONTAP 版本的网络和直接连接配置。FC 和 NVMe/FC 协议支持所有受支持的 ONTAP 版本的网络配置，并且从 ONTAP 9.19.1 开始，还支持直接连接配置。ASA r2 系统不支持与 ASA、AFF 或 FAS 系统的集群混合。</block>
   <block id="5cdfe0a12dbe0154513cd399f4ebb394" category="cell"><block ref="5cdfe0a12dbe0154513cd399f4ebb394" category="inline-link-macro-rx"></block></block>
   <block id="79e8ff3b299a4fcb9f7a7eaedd4a6306" category="cell">默认自动 LIF 故障转移支持 IP 和 NVMe/TCP LIF。</block>
+  <block id="f4a196522bd29f2dc617b123e426fca8" category="admonition">虚拟机 (VM) 限制未在 Hardware Universe 中列出。根据 ASA r2 系统卷限制，每个 HA 对的建议最大 VM 数为 800，每个集群的建议最大 VM 数为 1200。此限制不适用于驻留在 VMFS 数据存储中的 VM。VMFS 数据存储没有最大 VM 数量限制。</block>
 </blocks>
