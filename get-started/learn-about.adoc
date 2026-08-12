@@ -34,19 +34,18 @@ ASA R2系统介绍了如何使用具有一致性组的存储单元：
 
 ASA r2 系统使用具有一致性组的存储单元来简化存储管理和数据保护。例如，假设您有一个由一致性组中的 10 个存储单元组成的数据库，并且您需要备份整个数据库。您无需单独备份每个存储单元，而是可以通过备份一致性组来保护整个数据库。
 
+.数据保护和安全
 为了帮助保护您的数据免受盗窃或勒索软件等恶意攻击，ASA r2 系统支持板载密钥管理器、双层加密、多因素身份验证和多管理员验证。您还可以将快照复制到辅助位置，并使用 SnapLock for SnapVault 来防止意外或恶意删除目标快照。
 
 .支持的协议、多路径和配置
-ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有协议都支持用于多路径的对称主动-主动架构，以便主机和存储之间的所有路径都处于活动/优化状态。iSCSI 和 NVMe/TCP 协议支持所有受支持的 ONTAP 版本的网络和直接连接配置。FC 和 NVMe/FC 协议支持所有受支持的 ONTAP 版本的网络配置，并且从 ONTAP 9.19.1 开始，还支持直接连接配置。
+ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。所有协议都支持多路径的对称主动-主动架构，以便主机和存储之间的所有路径都处于主动/优化状态。iSCSI 和 NVMe/TCP 协议支持所有受支持的 ONTAP 版本的网络和直接连接配置。FC 和 NVMe/FC 协议支持所有受支持的 ONTAP 版本的网络配置，并且从 ONTAP 9.19.1 开始，还支持直接连接配置。ASA r2 系统不支持与 ASA、AFF 或 FAS 系统的集群混合。
 
 * 详细了解link:https://docs.netapp.com/us-en/ontap/san-admin/multipath-automatic-lif-failover-support.html["SAN 多路径支持"^]。
 * 详细了解link:https://docs.netapp.com/us-en/ontap/san-config/configure-iscsi-san-hosts-ha-pairs-reference.html["iSCSI 和 NVMe/TCP 协议的配置"^]。
 * 详细了解link:https://docs.netapp.com/us-en/ontap/san-config/configure-fc-nvme-hosts-ha-pairs-reference.html["FC 和 NVMe/FC 协议的配置"^]。
 
 
-ASA r2 系统不支持与ASA、 AFF或FAS系统混合集群。
-
-.了解更多信息
+.相关信息
 * 有关ASA R2系统支持和限制的详细信息，请参见link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
 * 详细了解 link:../learn-more/hardware-comparison.html["ASA R2系统与ASA系统的对比"]。
 * 了解有关的更多信息link:https://www.netapp.com/pdf.html?item=/media/85736-ds-4254-asa.pdf["NetApp ASA"^]。

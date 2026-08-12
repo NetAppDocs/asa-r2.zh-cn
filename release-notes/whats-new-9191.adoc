@@ -38,7 +38,7 @@ summary: 了解适用于 ASA r2 系统的 ONTAP 9.19.1 中的新功能。
 | 更新 | 说明 
 
 
-| 增强对自动 SAN LIF 故障转移的支持 | 默认自动 LIF 故障转移支持 iSCSI 和 NVMe/TCP LIF。 
+| link:../administer/manage-client-vm-access.html#create-a-lif-network-interface["增强对自动 SAN LIF 故障转移的支持"] | 默认自动 LIF 故障转移支持 IP 和 NVMe/TCP LIF。 
 |===
 
 
