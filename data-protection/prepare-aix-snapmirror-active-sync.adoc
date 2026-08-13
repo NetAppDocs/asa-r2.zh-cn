@@ -4,7 +4,7 @@ permalink: data-protection/prepare-aix-snapmirror-active-sync.html
 keywords: asa r2, data protection, protect data, configure, snapmirror active sync, ,disaster recovery, symmetric active active, prepare, aix 
 summary: 在为运行 ONTAP 9.19.1 或更高版本的 AIX 主机启用 SnapMirror 活动同步之前，必须将主机访问模式设置为本地。 
 ---
-= 为 ASA r2 系统上的 SnapMirror 主动同步保护准备 AIX 主机
+= 为 ASA r2 系统上的 SnapMirror 主动同步准备 AIX 主机
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

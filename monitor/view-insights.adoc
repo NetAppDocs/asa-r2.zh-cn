@@ -4,7 +4,7 @@ permalink: monitor/view-insights.html
 keywords: view, insights, optimize, cluster, performance, best practices, configuration, security 
 summary: 在ONTAP系统管理器中查看洞察、确定可在ASA R2系统上实施的最佳实践和配置修改、以优化集群安全性和性能。 
 ---
-= 利用ASA R2存储系统洞察优化集群安全性和性能
+= 使用 ASA r2 system Insights 优化集群安全性和性能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

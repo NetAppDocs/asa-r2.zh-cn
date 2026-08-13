@@ -4,7 +4,7 @@ permalink: data-protection/reconfigure-ontap-mediator-ca-certificate.html
 keywords: asa r2, data protection, protect data, configure mediator, reconfigure, reinitialize, ontap mediator, cloud mediator, self-signed, ca, certificates 
 summary: 如果您使用自签名证书配置ONTAP调解器或ONTAP Cloud 调解器，则可以将调解器重新配置为使用第三方证书。出于安全原因，您的组织可能优先考虑或要求使用第三方证书。 
 ---
-= 重新配置ONTAP Mediator 或ONTAP Cloud Mediator 以在ASA r2 系统上使用第三方证书
+= 重新配置 Mediator 以在 ASA r2 系统上使用第三方证书
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

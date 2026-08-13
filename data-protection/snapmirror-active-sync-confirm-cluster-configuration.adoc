@@ -4,7 +4,7 @@ permalink: data-protection/snapmirror-active-sync-confirm-cluster-configuration.
 keywords: asa r2, data protection, business continuity, snapmirror active sync, cluster configuration 
 summary: 在配置SnapMirror主动同步之前，您应该确认您的ASA r2 集群处于受支持的对等关系，并且满足其他配置要求。 
 ---
-= 在配置SnapMirror主动同步之前确认您的ASA r2 集群配置
+= 确认 ASA r2 集群配置以进行 SnapMirror 活动同步
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
