@@ -11,7 +11,7 @@ summary: 使用防篡改快照保护数据安全。防篡改快照无法删除�
 
 
 [role="lead"]
-ONTAP SnapLock 是一种高性能合规性解决方案，适用于使用 WORM 存储以未修改形式保留文件以满足监管和治理目的的组织。您可以在 Compliance 或 Enterprise 模式下运行 SnapLock，这两种模式提供不同级别的 WORM 数据保护。SAN 环境中的主集群不支持 SnapLock Compliance 和 Enterprise 模式，但您可以在二级系统上为 SnapVault 启用 SnapLock，以防止二级快照被意外或恶意删除。
+ONTAP SnapLock 是一种高性能合规性解决方案，适用于使用 WORM 存储以未修改的形式保留文件以用于监管和治理目的的组织。您可以在 Compliance 或 Enterprise 模式下运行 SnapLock，这些模式提供不同级别的 WORM 数据保护。SAN 环境中的主集群不支持 SnapLock Compliance 和 Enterprise 模式，但您可以在辅助系统上为 SnapVault 启用 SnapLock，以保护辅助快照免受意外或恶意删除。
 
 必须初始化 SnapLock Compliance Clock，才能使用 SnapLock for SnapVault 保护辅助系统上的快照。
 

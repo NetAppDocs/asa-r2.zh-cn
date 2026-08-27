@@ -4,14 +4,14 @@ permalink: secure-data/migrate-encryption-keys-between-key-managers.html
 keywords: onboard key manager, external key manager, configure, migrate keys, store keys, authentication keys, encryption keys, asa r2 
 summary: '您可以使用ASA R2系统上的ONTAP板载密钥管理器或外部密钥管理器(在一种情况下)来管理数据加密密钥。' 
 ---
-= 在ASA R2系统上的密钥管理器之间迁移ONTAP数据加密密钥
+= 在 ASA r2 系统上的密钥管理器之间迁移 ONTAP 数据加密密钥
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-您可以使用ASA R2系统上的ONTAP板载密钥管理器或外部密钥管理器(或两者)来管理数据加密密钥。只能在Storage VM级别启用外部密钥管理器。在ONTAP集群级别、您可以启用板载密钥管理器或外部密钥管理器。
+您可以使用 ASA r2 系统上的 ONTAP 板载密钥管理器、外部密钥管理器或在支持的配置中同时使用两者来管理数据加密密钥。外部密钥管理器仅在存储 VM 级别受支持。在 ONTAP 集群级别，您可以使用板载密钥管理器或外部密钥管理器。
 
 [cols="2,2"]
 |===
@@ -53,11 +53,11 @@ summary: '您可以使用ASA R2系统上的ONTAP板载密钥管理器或外部�
 [[migrate-keys-between-key-managers-at-the-ontap-cluster-level]]
 == 在ONTAP集群级别的密钥管理器之间迁移密钥
 
-从9.16.1 9.161开始、您可以使用ONTAP命令行界面(CLI)在集群级别的密钥管理器之间迁移密钥。
+从 ONTAP 9.16.1 开始，您可以使用 ONTAP 命令行界面 (CLI) 在集群级别的密钥管理器之间迁移密钥。
 
 [role="tabbed-block"]
 ====
-.从板载到外部
+.从板载密钥管理器到外部密钥管理器
 --
 .步骤
 . 将权限级别设置为高级：
@@ -93,7 +93,7 @@ set -privilege admin
 
 
 --
-.从外部到板载
+.从外部密钥管理器到板载密钥管理器
 --
 .步骤
 . 将权限级别设置为高级：
@@ -135,7 +135,7 @@ set -privilege admin
 [[migrate-keys-between-key-managers-across-ontap-cluster-and-storage-vm-levels]]
 == 在ONTAP集群和Storage VM级别的密钥管理器之间迁移密钥
 
-您可以使用ONTAP命令行界面(CLI)在集群级别的密钥管理器与Storage VM级别的密钥管理器之间迁移密钥。
+您可以使用 ONTAP 命令行界面 (CLI) 在集群和存储 VM 级别的密钥管理器之间迁移密钥。
 
 .步骤
 . 将权限级别设置为高级：

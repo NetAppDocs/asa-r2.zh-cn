@@ -13,9 +13,9 @@ summary: ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相
 [role="lead"]
 ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相同的过程。
 
-还原ONTAP集群会造成中断。还原期间，您必须将集群处于脱机状态。您不应在没有技术支持协助的情况下还原生产集群。您可以自行还原新的或测试的集群。如果新系统或测试系统的还原失败，或者还原成功完成，但您对生产环境中的集群性能不满意，请联系技术支持寻求帮助。
+还原 ONTAP 集群会造成中断。在还原期间，您必须使集群脱机。在没有技术支持的帮助下，不应还原生产集群。您可以在没有帮助的情况下还原新集群或测试集群。如果新系统或测试系统的还原失败，或者还原成功完成但您对生产环境中的集群性能不满意，则应联系技术支持以获得帮助。
 
-link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["还原ONTAP集群"] 。
+有关完整还原过程，请参见 link:https://docs.netapp.com/us-en/ontap/revert/task_reverting_an_ontap_cluster.html["还原ONTAP集群"]。
 
 
 

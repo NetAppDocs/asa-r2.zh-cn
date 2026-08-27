@@ -4,17 +4,17 @@ permalink: manage-data/delete-storage-units.html
 keywords: delete lun, delete namespace, delete storage unit, asa r2 
 summary: 删除存储单元以减少所需的物理存储量或释放其他主机应用程序所需的空间。 
 ---
-= 删除ASA R2存储系统上的存储单元
+= 删除 ASA r2 系统上的存储单元
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-如果您不再需要维护存储单元中的数据、请删除该存储单元。删除不再需要的存储单元有助于释放其他主机应用程序所需的空间。
+如果您不再需要维护存储单元中包含的数据，请删除该存储单元。删除不再需要的存储单元可以帮助您释放其他主机应用程序所需的空间。
 
 .开始之前
-如果要删除的存储单元位于具有复制关系的一致性组中，则必须link:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["从一致性组中删除存储单元"]删除之前。
+如果要删除的存储单元位于处于复制关系中的一致性组中，则必须先link:../data-protection/manage-consistency-groups-add-remove-storage-units.html#remove-a-storage-unit-from-a-consistency-group["从一致性组中删除存储单元"]，然后再将其删除。
 
 .步骤
 . 在System Manager中，选择*Storage*。

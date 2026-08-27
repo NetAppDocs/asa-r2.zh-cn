@@ -11,7 +11,7 @@ summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常�
 
 
 [role="lead"]
-由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常见的ONTAP任务和系统管理器功能在ASA r2 系统上的执行方式与在其他ONTAP系统上的执行方式相同。
+由于 ASA r2 系统运行的是精简版 ONTAP，因此您执行许多常见 ONTAP 任务和 System Manager 功能的方式与其他 ONTAP 系统相同。
 
 有关常见特性和功能的更多信息，请参阅以下ONTAP文档。
 
@@ -27,7 +27,7 @@ summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常�
 [[clustered-external-key-servers]]
 === 集群外部密钥服务器
 
-您可以配置与存储虚拟机上的集群外部密钥管理服务器的连接。使用集群密钥服务器，您可以在存储虚拟机上指定主密钥服务器和辅助密钥服务器。注册密钥时， ONTAP将首先尝试访问主密钥服务器，然后再依次尝试访问辅助服务器，直到操作成功完成，从而防止密钥重复。
+您可以配置与存储虚拟机上的群集外部密钥管理服务器的连接。使用群集密钥服务器，您可以在存储虚拟机上指定主密钥服务器和辅助密钥服务器。在注册密钥时，ONTAP 首先尝试主密钥服务器，然后顺序尝试辅助服务器，直到操作成功，从而防止重复密钥。
 
 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-key-server-task.html["学习如何配置集群式外部密钥服务器"^]。
 
@@ -107,7 +107,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["
 [[fips-compliance]]
 === FIPS 合规性
 
-ONTAP符合联邦信息处理标准 (FIPS) 140-2 的所有 SSL 连接要求。您可以打开和关闭 SSL FIPS 模式，全局设置 SSL 协议，并关闭ONTAP中的任何弱密码，例如 RC4。
+ONTAP 符合所有 SSL 连接的联邦信息处理标准 (FIPS) 140-2。您可以打开和关闭 SSL FIPS 模式，全局设置 SSL 协议，并关闭 ONTAP 中的任何弱密码（例如 RC4）。
 
 从ONTAP 9.18.1 开始，SSL 支持后量子计算加密算法。这些算法可针对未来潜在的量子计算攻击提供额外保护，并且在 SSL FIPS 模式禁用时可用。
 
@@ -135,7 +135,7 @@ link:https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_cr
 [[modify-default-settings-that-control-automatic-qos-throughput-ceiling-increases]]
 === 修改控制自动 QoS 吞吐量上限增加的默认设置
 
-自适应和非自适应 QoS 策略组会自动启用，以便在默认情况下将工作负载的吞吐量上限暂时提高 50%，持续时间为 1 秒，从而响应对更高性能的短期需求。从 ONTAP 9.19.1 开始，您可以修改这些默认设置。在 ONTAP 9.18.1 及更早版本中，这些设置无法更改。
+默认情况下，自适应和非自适应 QoS 策略组暂时将工作负载的吞吐量上限提高 50%，持续 1 秒钟，以响应对更高性能的短期需求。从 ONTAP 9.19.1 开始，您可以修改这些设置。在 ONTAP 9.18.1 及更早版本中，您无法更改这些设置。
 
 link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["详细了解 QoS 吞吐量上限"^].
 
@@ -204,13 +204,13 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 [[global-deduplication]]
 === 全局重复数据删除
 
-从 ONTAP 9.19.1 开始，_全局重复数据删除_ 将 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["现有 ONTAP 重复数据删除空间节省"^] 从存储单元级别扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。
+从 ONTAP 9.19.1 开始，_全局重复数据删除_将link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["现有 ONTAP 重复数据删除空间节省"^]存储单元级别的功能扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。
 
 
 
 [[system-manager]]
 == System Manager
 
-您可以在系统管理器中搜索各种操作、对象和信息主题。您还可以搜索表格数据中的特定条目。
+您可以在 System Manager 中搜索各种操作、对象和信息主题。您还可以搜索表格数据中的特定条目。
 
 link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["学习如何在系统管理器中搜索、筛选和排序信息"^]。

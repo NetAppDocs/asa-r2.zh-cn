@@ -25,5 +25,5 @@ SnapMirror主动同步功能通过在辅助站点创建数据副本，并支持�
 . 选择image:icon_kabob.gif["三个垂直蓝点"] ；然后选择*故障转移*。
 
 
-.下一步行动
+.下一步是什么？
 使用 `snapmirror failover show` ONTAP命令行界面 (CLI) 中的命令来监控故障转移的状态。

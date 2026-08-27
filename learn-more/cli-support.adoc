@@ -11,13 +11,13 @@ summary: ASA r2 系统（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20
 
 
 [role="lead"]
-ASA r2 系统中的存储层使用存储可用区，而不是聚合。存储可用区是单个 HA 对可用的公共存储池。HA对中的两个节点都可以访问其共享存储可用区中的所有可用磁盘。创建存储单元（LUN 或 NVMe 命名空间）时， ONTAP会自动在相应的存储可用区中创建一个卷来容纳该存储单元。
+ASA r2 系统使用存储可用区而不是聚合，因此不支持某些 ONTAP CLI 命令和参数。如果您更倾向于使用 CLI 而非 System Manager，也可以使用 CLI 设置集群。
 
 由于这种简化的存储管理方法，  `storage aggregate` ASA r2 系统不支持 `lun` ，  `storage`和 `volume`命令和参数也受到限制。
 
 除非列为不受支持，否则 ASA r2 系统支持 link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP命令参考"] 中的所有其他命令。
 
-R2上的ASA不支持以下命令和命令集：
+ASA r2 不支持以下命令和命令集：
 
 .不支持的</code><code>命令
 [%collapsible]
@@ -145,9 +145,9 @@ NOTE: 这 `lun move-in-volume`命令被替换为 `lun rename`和 `vserver nvme n
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == 使用命令行界面设置ONTAP ASA R2集群
 
-建议您link:../install-setup/initialize-ontap-cluster.html["使用System Manager设置ONTAP ASA R2集群"]。System Manager提供了一个快速简单的引导式工作流、可帮助您启动和运行集群。但是、如果您习惯使用ONTAP命令、则可以选择使用ONTAP命令行界面(CLI)进行集群设置。与使用System Manager设置集群相比、使用命令行界面设置集群没有其他选项或优势。
+建议您link:../install-setup/initialize-ontap-cluster.html["使用System Manager设置ONTAP ASA R2集群"]。System Manager 提供快速简便的指导工作流程，使您的集群正常运行。但是，如果您习惯使用 ONTAP 命令，则可以选择使用 ONTAP 命令行界面 (CLI) 进行集群设置。与 System Manager 相比，使用 CLI 设置集群不提供任何其他选项或优势。
 
-在集群设置期间、系统会创建默认数据Storage Virtual Machine (VM)、创建初始存储单元、并自动发现数据LUN。您也可以选择启用域名系统(DNS)来解析主机名、将集群设置为使用网络时间协议(NTS)进行时间同步、以及启用空闲数据加密。
+在集群设置过程中，ONTAP 会创建您的默认数据存储虚拟机，创建初始存储单元，并自动发现您的数据 LIF。或者，您可以启用域名系统 (DNS) 来解析主机名，将集群设置为使用网络时间协议 (NTP) 进行时间同步，并启用静态数据加密。
 
 .开始之前
 收集以下信息：

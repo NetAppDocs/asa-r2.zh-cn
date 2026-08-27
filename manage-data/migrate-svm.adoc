@@ -11,7 +11,7 @@ summary: 如果某个存储可用性分区的空间不足、您可以将存储�
 
 
 [role="lead"]
-从 ONTAP 9.18.1 开始，您可以无中断地将存储虚拟机 (VM) 从任何标准 ASA 集群迁移到任何 ASA r2 集群。从标准 ASA 集群迁移到 ASA r2 集群，您可以在纯 SAN 环境中采用 ASA r2 系统的简化精简架构。
+从 ONTAP 9.18.1 开始，您可以无中断地将存储虚拟机 (VM) 从任何标准 ASA 集群迁移到任何 ASA r2 集群，以采用 ASA r2 系统面向纯 SAN 环境的简化、精简架构。
 
 
 NOTE: 您无法将存储虚拟机从 ASA MetroCluster 迁移到 ASA r2 集群。ASA r2 系统不支持 MetroCluster 配置。
@@ -77,7 +77,7 @@ vserver nvme namespace show -vserver <storage_VM>
 +
 [source, cli]
 ----
-lun show -verser <storage_VM> -class protocol-endpoint,vvol
+lun show -vserver <storage_VM> -class protocol-endpoint,vvol
 ----
 +
 如果存在任何vVols ，则应将其复制到另一个存储 VM，然后从要迁移的存储 VM 中删除。参见 `lun copy`和 `lun delete`命令link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP命令参考"^]了解更多信息。
@@ -86,7 +86,7 @@ lun show -verser <storage_VM> -class protocol-endpoint,vvol
 +
 [source, cli]
 ----
-lun show -verser <storage_VM>
+lun show -vserver <storage_VM>
 ----
 +
 如果一个卷包含多个 LUN，请使用 `volume create`和 `lun move`创建 1:1 卷与 LUN 比例的命令。查看link:https://docs.netapp.com/us-en/ontap/concepts/manual-pages.html["ONTAP命令参考"^]了解更多信息。
@@ -182,7 +182,7 @@ ASA和ASA r2 集群已建立对等连接，存储 VM 数据可以安全传输。
 vserver migrate start -vserver <storage_VM> -source-cluster <asa_cluster> -check-only true
 ----
 +
-如果您需要修复任何问题以准备ASA集群进行迁移，则会显示该问题和纠正措施。修复问题后，重复预检查直至成功完成。
+如果需要解决任何问题以准备 ASA 集群进行迁移，则会显示该问题和纠正措施。解决此问题并重复预检查，直到成功完成。
 
 
 

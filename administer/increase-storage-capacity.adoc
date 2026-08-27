@@ -57,7 +57,7 @@ Be sure to close the cam handle slowly so that it aligns correctly with the face
 
 . 验证驱动器的活动 LED （绿色）是否亮起。
 +
-** 如果指示灯稳定亮起、则表示驱动器已通电。
+** 如果 LED 指示灯稳定亮起，则说明驱动器已通电。
 ** 如果LED闪烁、则表示驱动器已通电、并且正在执行I/O。如果正在更新驱动器固件、LED也会闪烁。
 +
 在没有最新固件版本的新驱动器上，驱动器固件会自动更新（无中断）。

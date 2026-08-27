@@ -26,7 +26,7 @@ summary: 了解ONTAP 9.18.1 中适用于ASA r2 系统的新功能。
 | 更新 | 说明 
 
 
-| link:../data-protection/snapmirror-active-sync.html["增强对SnapMirror主动同步配置的支持"] | SnapMirror主动同步的支持从双节点集群增加到四节点集群。 
+| link:../data-protection/snapmirror-active-sync.html["增强对SnapMirror主动同步配置的支持"] | 对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。 
 |===
 
 

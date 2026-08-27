@@ -36,21 +36,21 @@ ASA r2 系统与其他ONTAP系统的集群对等先决条件相同。link:https:
 .步骤
 . 在本地集群上、在System Manager中选择*集群>设置*。
 . 在*Cluster Peeres*旁边的*Intercluster Settings*下image:icon_kabob.gif["三个垂直蓝点"]，选择，然后选择*Add a cluster peer*。
-. 选择*Lach remote cluster-*；此操作将生成一个密码短语，您将使用此密码短语向远程集群进行身份验证。
+. 选择 *Launch remote cluster*；这将生成用于向远程集群进行身份验证的密码。
 . 生成远程集群的密码短语后、将其粘贴到本地集群上的*密码短语*下。
 . 选择image:icon_add.gif["蓝色加号、后跟蓝色字母的单词add"]；然后输入集群间网络接口IP地址。
 . 选择*启动集群对等*。
 
 
 .下一步是什么？
-您已为本地ASA R2集群与远程集群建立对等关系。现在、您可以创建复制关系。
+您已将本地 ASA r2 集群与远程集群建立对等关系。您现在可以创建复制关系。
 
 
 
 [[step-2-optionally-create-a-custom-replication-policy]]
 == 步骤 2：（可选）创建自定义复制策略
 
-复制策略定义何时将在ASA r2 集群上执行的更新复制到远程站点。 ONTAP包含各种预定义的数据保护策略，您可以将其用于复制关系。如果预定义策略不能满足您的需求，您可以创建自定义复制策略。
+复制策略定义了在 ASA r2 集群上执行的更新何时复制到远程站点。ONTAP 包括可用于复制关系的各种预定义数据保护策略。如果预定义的策略不满足您的需求，您可以创建自定义复制策略。
 
 了解link:pre-defined-protection-policies.html["预定义的ONTAP数据保护策略"]。
 

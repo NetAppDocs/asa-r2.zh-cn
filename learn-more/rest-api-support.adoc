@@ -21,7 +21,7 @@ ASA R2 REST API基于通过统一ONTAP特性提供的REST API、并根据ASA R2�
 [[types-of-api-changes]]
 == API更改类型
 
-ASA R2系统REST API与FAS、AFF和ASA系统提供的统一ONTAP REST API之间存在多种类型的差异。了解更改类型有助于更好地利用联机API参考文档。
+ASA r2 REST API 与适用于 FAS、AFF 和 ASA 系统的统一 ONTAP REST API 之间存在几个区别。了解这些更改将有助于您更有效地使用在线 API 参考文档。
 
 .统一ONTAP不支持新的ASA R2端点
 ASA R2 REST API中添加了多个端点、这些端点在统一ONTAP中不可用。
@@ -34,7 +34,7 @@ ASA R2 REST API中添加了多个端点、这些端点在统一ONTAP中不可用
 与统一ONTAP相比、ASA R2提供的多个端点对可使用的HTTP方法有一些限制。例如、 `/api/protocols/nvme/services`在ASA R2系统中使用端点时、不允许POST和DELETE。
 
 .端点和HTTP方法的属性更改
-某些ASA R2系统端点和方法组合不支持统一ONTAP特性中可用的所有已定义属性。例如，当对端点使用修补程序时 `/api/storage/volumes/{uuid}`，ASA R2不支持以下几个属性：
+某些 ASA r2 端点和方法组合不支持为统一 ONTAP 特性定义的所有属性。例如，将 PATCH 与端点 `/api/storage/volumes/{uuid}`结合使用时，ASA r2 不支持以下几个属性，包括：
 
 * `autosize.maximum`
 * `autosize.minimum`
@@ -49,7 +49,7 @@ ASA R2处理某些REST API请求的方式有几处变更。例如、端点的删
 [[enhanced-security-with-oauth-2-0]]
 == 通过OAuth2.0增强安全性
 
-OAuth2.0是行业标准授权框架。它用于根据已签名的访问令牌限制和控制对受保护资源的访问。您可以使用System Manager配置OAuth2.0以保护ASA R2系统资源。
+OAuth 2.0 是行业标准授权框架。它用于根据已签名的访问令牌限制和控制对受保护资源的访问。您可以使用 System Manager 配置 OAuth 2.0 以保护 ASA r2 系统资源。
 
 使用System Manager设置OAuth2.0后、可以控制REST API客户端的访问。您需要先从授权服务器获取访问令牌。然后、REST客户端使用HTTP授权请求标头将令牌作为承载令牌传递到ASA R2集群。有关详细信息、请参见 https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["使用OAuth2.0进行身份验证和授权"^] 。
 

@@ -12,7 +12,7 @@ searchtitle: ASA r2 和其他 ONTAP 系统之间的差异
 
 
 [role="lead"]
-ASA r2 系统为基于全闪存解决方案的纯 SAN 环境提供硬件和软件解决方案。r2 系统与其他ONTAP系统（ ASA 、 AFF和FAS）在ONTAP特性、存储层和支持协议的实现方面有所不同。
+ASA r2 系统是在全闪存系统上构建的仅限 SAN 环境的硬件和软件解决方案。它们与其他 ONTAP 系统（ASA、AFF 和 FAS）在 ONTAP 特性、存储层和支持的协议方面有所不同。
 
 以下系统被归类为ASA r2 系统：
 
@@ -30,7 +30,7 @@ ASA r2 系统为基于全闪存解决方案的纯 SAN 环境提供硬件和软�
 [[personality-differences]]
 == 性格差异
 
-在ASA R2系统上、ONTAP软件经过简化、可为基本SAN功能提供支持、同时限制非SAN相关特性和功能的可见性和可用性。例如、在ASA R2系统上运行的System Manager不会显示为NAS客户端创建主目录的选项。此简化版本的ONTAP标识为_ ASA R2特性_。在ASA系统上运行的ONTAP标识为_ ASA ONTAP特性_。在AFF和FAS ONTAP系统上运行的ONTAP标识为_UNITALITY ONTAP _。ONTAP命令参考(手册页)、REST API规范和EMS消息(如果适用)中引用了ONTAP个性化设置之间的差异。
+在 ASA r2 系统上，ONTAP 软件经过精简，可为基本 SAN 功能提供支持，同时限制非 SAN 相关特性和功能的可见性和可用性。例如，在 ASA r2 系统上运行的 System Manager 不显示为 NAS 客户端创建主目录的选项。此精简版 ONTAP 被标识为 _ASA r2 personality_。在 ASA 系统上运行的 ONTAP 被标识为 _ASA ONTAP personality_。在 AFF 和 FAS ONTAP 系统上运行的 ONTAP 被标识为 _unified ONTAP personality_。ONTAP personality 之间的差异在 ONTAP 命令参考（手册页）、REST API 规范和 EMS 消息（如适用）中有所说明。
 
 您可以从System Manager或ONTAP命令行界面验证ONTAP存储的特性。
 
@@ -50,7 +50,7 @@ ONTAP存储系统的特性无法更改。
 ASA r2 系统使用简化的存储层，该存储层与FAS、 AFF和ASA系统使用的存储层不同。
 
 .FAS、 AFF和ASA系统
-FAS、 AFF和ASA系统的存储层使用聚合作为基本存储单元。聚合拥有存储系统中可用的一组特定磁盘。聚合将其拥有的磁盘上的空间分配给 LUN 和命名空间的卷。使用这些系统， ONTAP用户可以创建和修改聚合、卷、LUN 和命名空间。
+FAS、AFF 和 ASA 系统的存储层使用聚合作为存储的基本单元。聚合拥有存储系统中可用的特定磁盘集。聚合会将其拥有的磁盘上的空间分配给 LUN 和命名空间的卷。使用这些系统，ONTAP 用户可以创建和修改聚合、卷、LUN 和命名空间。
 
 .ASA r2系统
 ASA r2 系统中的存储层使用存储可用区，而非聚合。存储可用区是单个 HA 对的两个节点均可访问的公共存储池。HA对中的两个节点均可访问其共享存储可用区中的所有可用磁盘。例如，在双节点ASA r2 系统ONTAP集群中，有一个存储可用区，集群中的两个节点均可访问。在四节点ASA r2 系统ONTAP集群中，有两个存储可用区。集群中的每个 HA 对都可以访问其中一个存储可用区。
@@ -93,7 +93,7 @@ ASA r2 系统与FAS、 AFF和ASA系统有以下不同之处：
 下面介绍了ASA R2系统与ONTAP、AFF和ASA系统之间与FAS命令行界面(CLI)和REST API相关的主要区别。
 
 .使用协议服务创建默认存储虚拟机
-新集群会自动包含一个默认数据存储虚拟机 (VM)，并启用 SAN 协议。  IP 数据 LIF 支持 iSCSI 和 NVMe/TCP 协议，并使用 `default-data-blocks`默认服务策略。
+新群集自动包含启用了 SAN 协议的默认数据存储虚拟机。IP 数据 LIF 支持 iSCSI 和 NVMe/TCP 协议，默认情况下使用 `default-data-blocks`服务策略。
 
 .自动创建卷
 创建存储单元(LUN或命名空间)会自动从存储可用性区域创建卷。这样便可简化并使用通用命名空间。删除存储单元会自动删除关联的卷。

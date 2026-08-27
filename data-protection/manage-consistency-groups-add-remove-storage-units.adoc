@@ -37,7 +37,7 @@ summary: 通过修改一致性组中的存储单元数量来增加或减少一�
 link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留信息"]。
 
 .开始之前
-如果您正在运行ONTAP 9.16.1，并且要扩展的一致性组处于SnapMirror主动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]然后才可以添加存储单元。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以扩展一致性组。在ONTAP 9.17.1 及更高版本中，不需要在扩展一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+如果您正在运行 ONTAP 9.16.1，并且要扩展的一致性组处于 SnapMirror 活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]才能添加存储单元。如果运行的是 ONTAP 9.16.1，并且一致性组处于异步复制关系中，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]才能扩展一致性组。在 ONTAP 9.17.1 及更高版本中，扩展一致性组之前无需删除 SnapMirror 活动同步关系或中断异步关系。
 
 [role="tabbed-block"]
 ====
@@ -66,8 +66,8 @@ link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留
 . 选择*展开*。
 
 
-.下一步行动
-创建新存储单元后，您应link:../manage-data/provision-san-storage.html#add-host-initiators["添加主机启动程序"]执行和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["将新创建的存储单元映射到主机"]。添加主机启动程序后、主机便有资格访问存储单元并执行数据操作。通过将存储单元映射到主机、存储单元可以开始向其映射到的主机提供数据。
+.下一步是什么？
+创建新存储单元后，您应该link:../manage-data/provision-san-storage.html#add-host-initiators["添加主机启动程序"]和link:../manage-data/provision-san-storage.html#map-the-storage-unit-to-a-host["将新创建的存储单元映射到主机"]。添加主机启动器使主机有资格访问存储单元并执行数据操作。将存储单元映射到主机后，存储单元即可开始向映射到的主机提供数据。
 
 --
 ====
@@ -90,5 +90,5 @@ link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留
 .结果
 存储单元不再是一致性组的成员。
 
-.下一步行动
+.下一步是什么？
 如果您需要继续保护存储单元的数据、请将该存储单元添加到另一个一致性组。

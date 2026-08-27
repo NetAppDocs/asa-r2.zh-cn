@@ -11,7 +11,7 @@ summary: 虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某�
 
 
 [role="lead"]
-虽然ASA R2系统为SAN解决方案提供了广泛的支持、但某些ONTAP软件功能不受支持。
+ASA r2 系统支持广泛的 SAN 功能，但不支持某些 ONTAP 软件功能。
 
 .ASA R2系统不支持以下功能：
 * FabricPool
@@ -27,7 +27,7 @@ SnapLock Compliance 和 Enterprise 模式在 SAN 环境中的主集群上不受�
 * SnapMirror复制在ASA r2 系统上受支持，但存在以下限制：
 +
 ** 不支持SnapMirror同步复制。
-** SnapMirror异步复制仅支持在两个ASA r2系统之间进行。SnapMirror异步复制不支持在ASA r2 系统与ASA、 AFF或FAS系统或云之间进行。
+** SnapMirror 异步复制仅在两个 ASA r2 系统之间受支持。SnapMirror 异步复制不支持在 ASA r2 系统与 ASA、AFF 或 FAS 系统或云之间使用。
 +
 详细了解link:../data-protection/pre-defined-protection-policies.html["ASA r2 系统支持SnapMirror复制策略"]。
 

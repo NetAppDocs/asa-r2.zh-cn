@@ -15,7 +15,7 @@ summary: 通过配置 NVMe TCP over TLS 来加密在 NVMe TCP 主机和 ONTAP �
 
 .步骤
 . 选择*hosts*；然后选择*NVMe*。
-. 选择。image:icon_add_blue_bg.png["蓝色方形、加号后接以白色字母表示的\"添加\"字样"]
+. 选择 image:icon_add_blue_bg.png["蓝色方形、加号后接以白色字母表示的\"添加\"字样"]。
 . 输入主机名、然后选择主机操作系统。
 . 输入主机说明、然后选择要连接到主机的Storage VM。
 . 选择image:icon_dropdown_arrow.gif["蓝色向下箭头"]主机名旁边的。

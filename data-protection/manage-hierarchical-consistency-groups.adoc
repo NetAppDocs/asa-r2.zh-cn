@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: 使用一致性组同时对多个存储单元执行各种操作，而不是对每个单元单独执行操作。在层次结构中，一个或多个一致性组被配置为父一致性组下的子组。 
+summary: 使用一致性组同时对多个存储单元执行各种操作，而不是对每个单元单独执行操作。在层次结构中，一个或多个一致性组被配置为父一致性组下的子级。 
 ---
 = 管理ASA r2 系统上的分层一致性组
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 使用一致性组同时对多个存储单元执行各种操作，而�
 
 
 [role="lead"]
-从ONTAP 9.16.1 开始，您可以使用系统管理器在ASA r2 系统上创建分层一致性组。在层次结构中，一个或多个一致性组被配置为父一致性组下的子组。您可以将单独的快照策略应用于每个子一致性组，并通过复制父组将所有子一致性组的快照作为单个单元复制到远程集群。这简化了复杂数据结构的数据保护和管理。
+从 ONTAP 9.16.1 开始，您可以使用 System Manager 在 ASA r2 系统上创建分层一致性组。在分层结构中，一个或多个一致性组被配置为父一致性组下的子级。您可以将单独的快照策略应用于每个子一致性组，并通过复制父项将所有子一致性组的快照作为一个单元复制到远程集群。这简化了复杂数据结构的数据保护和管理。
 
 
 
@@ -32,7 +32,7 @@ summary: 使用一致性组同时对多个存储单元执行各种操作，而�
 
 
 .下一步是什么？
-您可以在父一致性组下创建其他子一致性组。您还可以link:../secure-data/encrypt-data-at-rest.html["设置快照复制"]将父一致性组和子一致性组复制到地理位置较远的位置，以进行备份和灾难恢复。
+您可以在父一致性组下创建其他子一致性组。您还可以link:snapshot-replication.html["设置快照复制"]将父一致性组和子一致性组复制到地理位置远程的位置，以进行备份和灾难恢复。
 
 
 
@@ -102,7 +102,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["添
 
 --
 ====
-.下一步行动
+.下一步是什么？
 创建子一致性组后，您可以link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["应用单个Snapshot保护策略"]到每个子一致性组。您还可以link:snapshot-replication.html["设置复制策略"]在父一致性组和子一致性组上将一致性组复制到远程位置。
 
 
@@ -118,7 +118,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["添
 .步骤
 . 在System Manager中、选择*保护>一致性组*。
 . 选择父一致性组。
-. 选择要断开的子一致性组。
+. 将鼠标悬停在要分离的子一致性组上。
 . 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*从父项断开*。
 . 为要断开的一致性组输入新名称或接受默认名称；然后选择一致性组应用程序类型。
 . 选择*Detach*。

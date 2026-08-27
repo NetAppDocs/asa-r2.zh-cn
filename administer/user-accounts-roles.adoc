@@ -11,14 +11,14 @@ summary: 使用System Manager为用户帐户配置Active Directory域控制器�
 
 
 [role="lead"]
-使用System Manager为用户帐户配置Active Directory域控制器访问、LDAP和SAML身份验证。创建用户帐户角色以定义分配给这些角色的用户可以在集群上执行的特定功能。
+使用 System Manager 为用户帐户配置 Active Directory 域控制器访问、LDAP 和 SAML 身份验证。创建用户帐户角色以定义分配给角色的用户可以在集群上执行的特定功能。
 
 
 
 [[configure-active-directory-domain-controller-access]]
-== 配置Active Directory域控制器访问
+== 配置 Active Directory 域控制器访问
 
-配置对集群或Storage VM的Active Directory (AD)域控制器访问权限、以便启用AD帐户访问。
+配置 Active Directory (AD) 域控制器对集群或存储 VM 的访问，以便可以启用 AD 帐户访问。
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
@@ -64,7 +64,7 @@ summary: 使用System Manager为用户帐户配置Active Directory域控制器�
 
 .步骤
 . 在System Manager中、选择*集群>设置*。
-. 在*安全性*下的*SAML身份验证*旁边，选择image:icon_gear_white_bg.png["机械齿轮的蓝色轮廓"]。
+. 在 *安全* 下，在 *SAML 身份验证* 旁边，选择 image:icon_gear_white_bg.png["机械齿轮的蓝色轮廓"]。
 . 选择*启用SAML身份验证*。
 . 输入IdP URL和主机系统IP地址；然后选择*保存*。
 +
@@ -115,7 +115,7 @@ IdP 系统将显示身份验证屏幕。
 . 在*USERS*下，选择image:icon_add_blue_bg.png["蓝色矩形、包含一个加号、后跟白色字母中的单词add"]。
 . 输入用户名；然后选择要分配给用户的角色。
 . 选择用户登录方法和身份验证方法。
-. 要启用MFA，请选择image:icon_add.gif["加号、后跟蓝色字母的单词add"]，然后选择二级登录方法和身份验证方法
+. 要启用 MFA，请选择image:icon_add.gif["加号、后跟蓝色字母的单词add"]；然后选择辅助登录方法和身份验证方法。
 . 输入用户的密码。
 . 选择 * 保存 * 。
 

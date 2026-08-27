@@ -12,7 +12,7 @@ searchtitle: 安装和设置 ASA A1K、A90、A70、A50、A30、A20 和 C30 存�
 
 
 [role="lead"]
-要启动并运行ASA R2系统、需要安装硬件组件、设置集群、设置主机对存储系统的数据访问以及配置存储。
+要启动并运行 ASA r2 系统，请安装硬件组件、设置集群、设置从 SAN 客户端到存储系统的数据访问，并配置存储。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"]安装和设置硬件
 [role="quick-margin-para"]
