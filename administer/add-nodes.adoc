@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: administer/add-nodes.html 
-keywords: rename, node, renaming, asa r2 
-summary: 您可能需要重命名节点、以符合组织的命名约定或出于其他管理原因。 
+keywords: add, node, adding, asa r2, expand cluster 
+summary: ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点连接好电缆并通电后，需要将它们加入集群。 
 ---
 = 将ASA R2节点添加到ONTAP集群
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 您可能需要重命名节点、以符合组织的命名约定或出�
 
 
 [role="lead"]
-从ONTAP 9.16.1 开始， ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点布线并打开电源后，您需要将它们加入到集群中。
+ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点连接好电缆并通电后，需要将它们加入集群。
 
 .开始之前
 收集以下信息：

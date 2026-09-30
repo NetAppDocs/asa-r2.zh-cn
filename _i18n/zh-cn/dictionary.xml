@@ -123,12 +123,9 @@
   <block id="f3833c816c6fe5b26b4e4266ccfed699" category="paragraph">已修改您的LIF。</block>
   <block id="092a2a219a66f53ad918ecfca02a40cb" category="summary">使用ONTAP系统管理器在ASA R2系统上执行基本存储网络管理。</block>
   <block id="7727ebf2fbdb4d8c5b88383f3872253c" category="doc">管理ASA R2存储系统上的集群网络</block>
-  <block id="dce69090c45af3d113621dac45bca7fb" category="paragraph">您可以使用ONTAP系统管理器在ASA R2系统上执行基本存储网络管理。例如、您可以添加广播域或将端口重新分配给其他广播域。</block>
   <block id="142e63ab347e5afebe1ee3eddeb82dc4" category="section-title">添加广播域</block>
   <block id="18021c31fe204f4bcb54336f24bb7958" category="paragraph">使用广播域对属于同一第2层网络的网络端口进行分组、以简化集群网络的管理。然后、Storage Virtual Machine (VM)可以使用组中的端口传输数据或管理流量。</block>
   <block id="4d00d5474a9eac58d3c8b5a5efd05a9a" category="paragraph">"默认"广播域和"集群"广播域是在集群设置期间创建的。"Default"广播域包含位于"Default" IP空间中的端口。这些端口主要用于提供数据。集群管理和节点管理端口也位于此广播域中。"集群"广播域包含位于"集群"IP空间中的端口。这些端口用于集群通信，并包括集群中所有节点的所有集群端口。</block>
-  <block id="98436b7b9537997727c62df8cd1c5b4b" category="paragraph">您可以在集群初始化后创建其他广播域。创建广播域时、系统会自动创建包含相同端口的故障转移组。</block>
-  <block id="67484e42ec7ef0f9c6081b26a7966a3f" category="paragraph">添加到广播域的端口的最大传输单元(MTU)将更新为在广播域中设置的MTU值。</block>
   <block id="5be487237484d4edf568d618438fb533" category="list-text">在System Manager中，选择*网络&gt;概述*。</block>
   <block id="6169050a4730f8d024d60e5e811d6085" category="list-text">在*Broadcast*域下，选择<block ref="120e8ce30fa09c1e015e32b4fdada4d3" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="01b73cca64689dc46d9d7ff592613e09" category="list-text">输入广播域的名称或接受默认名称。</block>
@@ -1931,7 +1928,6 @@
   <block id="4a9d271be00cfe80ccf9f2ae1e86c4ff" category="sidebar">了解 vSphere 环境的持续可用性解决方案</block>
   <block id="07deeffbd26ae347c81cfaf3e2169044" category="sidebar">NetApp ASA系统的最佳实践</block>
   <block id="65393a1b15c3a63904bb446f4a99001a" category="sidebar">REST API 转换指南</block>
-  <block id="eaeb215b56b171344d62780dd997477e" category="paragraph">从ONTAP 9.16.1 开始， ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点布线并打开电源后，您需要将它们加入到集群中。</block>
   <block id="b8838348a8da924f377a5d293230f4f4" category="summary">ASA r2 系统的ONTAP软件恢复遵循与其他ONTAP系统的恢复相同的过程。还原ONTAP集群会造成中断。</block>
   <block id="b4a4e19f8caa5675ed75c7e4c2f95379" category="inline-link-macro">删除SnapMirror主动同步关系</block>
   <block id="79bc5a42c0ce5e77f02d040d055dfae3" category="summary">ASA r2 系统的ONTAP软件升级遵循与其他ONTAP系统升级相同的流程。当您在ASA r2 系统上升级ONTAP软件时，您可以利用新的和增强的ONTAP功能。</block>
@@ -2859,4 +2855,77 @@
   <block id="e7e7921d40004de3413b2feb5d015c04" category="paragraph">如果您知道存储单元活动出现浪涌，无论是一次性浪涌还是具有新常态特征的浪涌，您都应将其报告为安全。手动将这些浪涌报告为安全有助于提高 ARP 威胁评估的准确性。了解如何 <block ref="8dee558f5c9b6bedf916b9781132862f" category="inline-link-macro-rx"></block>。</block>
   <block id="200e37440690270fcdf5d35f1f9f63c6" category="paragraph">ONTAP SnapLock 是一种高性能合规性解决方案，适用于使用 WORM 存储以未修改的形式保留文件以用于监管和治理目的的组织。您可以在 Compliance 或 Enterprise 模式下运行 SnapLock，这些模式提供不同级别的 WORM 数据保护。SAN 环境中的主集群不支持 SnapLock Compliance 和 Enterprise 模式，但您可以在辅助系统上为 SnapVault 启用 SnapLock，以保护辅助快照免受意外或恶意删除。</block>
   <block id="44ed1558e28022693124a32e31d67183" category="paragraph">在本地和目标集群上初始化 SnapLock 合规时钟后，您就可以 <block ref="716f8ed67937d4ffe779f9f204ed103b" category="inline-link-macro-rx"></block>。</block>
+  <block id="e237bf865e87bbdfd26ab56b61fc4b9e" category="summary">ASA r2 存储系统每个集群最多支持 12 个节点。在 HA 对的新节点连接好电缆并通电后，需要将它们加入集群。</block>
+  <block id="cc7c52d2eca1519912be5504b86923e5" category="paragraph">ONTAP System Manager 使您能够在 ASA r2 系统上执行基本的存储网络管理，例如添加广播域或在广播域之间重新分配端口，从而根据基础架构需求组织网络流量。</block>
+  <block id="ba9a7a46c6bc7f943d070bcccd364153" category="paragraph">您可以在初始化集群后创建其他广播域。创建广播域时，系统会自动创建包含相同端口的故障转移组。</block>
+  <block id="8b32050d3c96b6bd0a885f98eb1416ea" category="paragraph">添加到广播域的端口的最大传输单元（MTU）将更新为广播域中设置的 MTU 值。</block>
+  <block id="81cbd40cd8660cff0ad2a901db8d929f" category="section-title">删除 VLAN</block>
+  <block id="e6a55391d40a820f0fb96c2886a44b1b" category="paragraph">在从插槽中删除 NIC 之前或从集群中删除节点之前，您可能需要删除 VLAN。删除 VLAN 时，它会自动从所有使用它的故障转移规则和组中删除。</block>
+  <block id="dc4d5090d51115b6ed8141aa254c3b32" category="paragraph">确保没有与 VLAN 关联的 LIF。</block>
+  <block id="dd5e47c75e64cbe3996c8133e894e247" category="paragraph">从端口删除最后一个 VLAN 可能会导致网络与端口的连接暂时断开。</block>
+  <block id="ac7d09a665b758116e45c0e4113cc186" category="paragraph">您可以使用 System Manager 或 CLI 删除 VLAN。</block>
+  <block id="cea11a3fe22277f7f45d6feb4b7f56bf" category="list-text">在 System Manager 中，选择 *Network &gt; Ethernet port &gt; VLAN*。</block>
+  <block id="1aae6a12505549a87c2e3ea5f5464f0f" category="list-text">选择要删除的 VLAN。</block>
+  <block id="feb83dac816796145feb86b7475c73f5" category="list-text">查看您的 VLAN：</block>
+  <block id="0f39a6bacc3fe5756c2bc83081df6c3a" category="list-text">删除 VLAN：</block>
+  <block id="ac309ab0be86396fc6a66899780ddf5b" category="list-text">确认 VLAN 已删除：</block>
+  <block id="8bd15b309bcdb0c15b1b0e6adeb166d0" category="doc">从 ONTAP 集群中删除 ASA r2 节点</block>
+  <block id="f46b886aa665a8d7c7a7a4c7aa9c6346" category="paragraph">出于维护、替换或停用的目的，可能需要从集群中删除节点。节点必须一次删除一个。如果删除节点，则还必须删除其 HA 伙伴。</block>
+  <block id="e0236ccc281e8e954020151e28594361" category="section-title">步骤 1：准备从 ASA r2 集群中删除节点</block>
+  <block id="71b734249d4ab321665fcafc817c1579" category="paragraph">从 ASA r2 集群中删除节点之前，应验证集群是否正常。然后，您应从节点迁移或删除存储单元、VLAN 和 LIF，并禁用存储故障转移。</block>
+  <block id="1715d07a24988d9207de94794a6f01cc" category="list-text">验证集群是否正常：</block>
+  <block id="6bc362dbf494c61ea117fe3c71ca48a5" category="inline-link-macro">移动</block>
+  <block id="099af53f601532dbd31e0ea99ffdeb64" category="inline-link-macro">删除</block>
+  <block id="cd6171fad4b783d0411b357a70e025b9" category="list-text"><block ref="103126b24482021bd492866bc35410e7" category="inline-link-macro-rx"></block> 或 <block ref="397d82cf73bd33098ee8615a2f9e95f3" category="inline-link-macro-rx"></block> 节点中的所有存储单元。</block>
+  <block id="09a776ad2b6e83e1b754e6f7ebfafba3" category="inline-link-macro">从选择性 LUN 映射 (Selective LUN Map, SLM) 报告节点列表中删除节点及其 HA 配对节点</block>
+  <block id="ae6f4389297774f1a5988f7c44c7db66" category="list-text">如果要删除的节点上有 SCSI 存储单元 (LUN)，<block ref="2df19a9598282fc5088ade88859e3e79" category="inline-link-macro-rx"></block>。</block>
+  <block id="e84ba10869a172504b256da9f24370e6" category="paragraph">如果不从 SLM 报告节点列表中删除该节点及其 HA 伙伴，则即使 LUN 已移动到另一个节点，也可能会失去对该节点上原有 LUN 的访问。</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="inline-link-macro">删除</block>
+  <block id="f183fde1c1f409b21fc8463052ca49e5" category="inline-link-macro">迁移</block>
+  <block id="39b0e3c1790c5d7e62d9065fac6449c0" category="list-text"><block ref="a406326f89a3bbce30953ad7824da1f0" category="inline-link-macro-rx"></block> 或 <block ref="7991084d788264d2f8515724f03312a6" category="inline-link-macro-rx"></block> 该节点的所有网络接口（LIF）。</block>
+  <block id="a1d06a7b7bc7900c0dc19460251f84e1" category="list-text">应将数据 LIF 移至其他节点或将其删除。</block>
+  <block id="eea3b175d0f6393f8f1dbd8d7bdc392e" category="paragraph">iSCSI LIF 迁移仅限于主节点或 HA 合作伙伴上的端口，因此必须将其删除。</block>
+  <block id="2155c348c0a765e1cbd1204177de8f6b" category="list-text">应删除集群间 LIF。</block>
+  <block id="a9702b3847949399c05d5c3540819764" category="paragraph">删除集群间 LIF 时，会显示一条可忽略的警告。</block>
+  <block id="284480082b3f00fd5851296324820748" category="list-text">集群管理 LIF 应移至其他节点。</block>
+  <block id="c2031112d335614e483a8e73e8f0e80e" category="inline-link-macro">删除所有 VLAN</block>
+  <block id="40f77f5330ce09a02647bfff9d2b11a1" category="list-text"><block ref="13cea30368888692a0a04edaddc87489" category="inline-link-macro-rx"></block> 在节点上。</block>
+  <block id="7da250e00cfaee667a1544bb30473c35" category="list-text">禁用此节点的存储故障转移：</block>
+  <block id="df17f0e15b00039cb79f8c73233345dc" category="paragraph">从集群中删除 HA 对中的第一个节点，然后删除其 HA 配对节点。</block>
+  <block id="400f2bdb4ba287bc175bb483c502645d" category="section-title">步骤 2：从 ASA r2 集群中删除节点</block>
+  <block id="47560f69aa17b178f049071f943efdc3" category="paragraph">只有在完成准备删除节点所需的步骤后，才能从 ASA r2 集群中删除该节点。从集群中删除节点后，必须删除其 HA 伙伴。</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">发出 AutoSupport 消息</block>
+  <block id="c742d6b26a30fa446c7ef8b5dab2c732" category="paragraph">建议您 <block ref="82761e960f0e30a8f5a0b51f2de27c3a" category="inline-link-macro-rx"></block> 以通知 NetApp 技术支持您正在从集群中删除节点。</block>
+  <block id="add39e8e05dc6feabb5680336ff42056" category="admonition">正在进行自动 ONTAP 升级时，请勿从集群中删除节点或重命名节点。</block>
+  <block id="8b7e38ab7ab942e33ee9b58f43906ab5" category="list-text">如果从四节点集群中删除两个节点，则会在其余两个节点上自动启用集群 HA。</block>
+  <block id="ba20c2b3b00275ac5d310648e6ff4a27" category="list-text">在从集群中删除节点之前，必须使用户无法访问来自连接到该节点的所有磁盘的所有系统和用户数据。</block>
+  <block id="2e926e0f22616c9494cae63cff92b8f5" category="list-text">如果从群集中错误地删除了节点，请联系 NetApp 支持人员以获得有关恢复选项的帮助。</block>
+  <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">将权限级别更改为 advanced：</block>
+  <block id="1e6d712b266f8755c066ccc30bde9fdc" category="list-text">识别集群中包含 epsilon 的节点：</block>
+  <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">在以下示例中，"node0" 当前持有 epsilon：</block>
+  <block id="b32cb3a5af2992203383db7140663697" category="list-text">如果要移除的节点持有 epsilon，请将 epsilon 移至保留节点。</block>
+  <block id="a688ab20f94fae358a349cab6d019da3" category="list-text">从节点中删除 epsilon：</block>
+  <block id="c7a7b8bd7c37d4318c7e769f4286f17b" category="list-text">将 epsilon 移动到其他节点：</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">识别当前主节点：</block>
+  <block id="7a76ce80b9cd6059ed18dca9be6af204" category="paragraph">主节点是包含 mgmt、vldb、vifmgr、bcomd 和 crs 等进程的节点。</block>
+  <block id="a4fdc400f1c7bb92f441328b2a58ab2c" category="list-text">如果您要删除的节点是当前主节点，请启用集群中的另一个节点以被选为主节点。</block>
+  <block id="1f915321f7e8155e5ee88f538eca12b5" category="list-text">使当前主节点不符合参与集群的资格：</block>
+  <block id="b774483fd19fa8acb4407780df5d4d87" category="paragraph">当主节点变得不合格时，剩余节点之一将由集群仲裁选举为新的主节点。如果要在 HA 对中的第一个节点上执行此步骤，请仅将该节点标记为不合格。在对合作伙伴重复这些步骤之前，请勿更改其 HA 合作伙伴的状态。</block>
+  <block id="0d4121decd846754730f2b08483bac20" category="paragraph">如果合作伙伴节点被选为新的主节点并持有 epsilon，则必须在将合作伙伴标记为不合格之前将 epsilon 移动到其他节点。</block>
+  <block id="bbbdda94513cf5e245680f89dc7113d5" category="list-text">使上一个主节点有资格再次参与集群：</block>
+  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">登录到未从群集中删除的节点上的远程节点管理 LIF 或群集管理 LIF。</block>
+  <block id="cd61023a75b13d7ddd81a51dd5fd5bad" category="list-text">使用节点名称或节点 IP 地址从集群中删除该节点：</block>
+  <block id="c660a1ebe622089157d033f8e00d3b45" category="paragraph">如果您有混合版本的集群，并且要删除最后一个较低版本的节点，请使用这些命令的 -skip-last-low-version-node-check 参数。</block>
+  <block id="6d2290891d47080550b5fed55fbf344f" category="list-text">使用节点名称删除节点：</block>
+  <block id="2935c03696a9fc643ed379f7af4ea5bf" category="list-text">使用节点 IP 地址删除节点：</block>
+  <block id="8a1cd083e3f95f4585c2102d6c2b05bf" category="paragraph">如果存在必须在删除节点之前解决的条件，则会生成失败消息。如果发生这种情况，请解决相关条件并重新运行 <block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">从集群中成功删除后，节点会自动重新启动。</block>
+  <block id="01d5d2ace7126b43c6c161bd5ee9a875" category="paragraph">重复上述步骤，从集群中删除故障转移合作伙伴。</block>
+  <block id="b592ef8b0e17ac31ab55e93e7c1d10e1" category="inline-link-macro">cluster remove-node</block>
+  <block id="07e709e4a23132b1e1dd12b1fd7fee71" category="paragraph">详细了解此 <block ref="700df13594259d61712a860f23f94890" category="inline-link-macro-rx"></block> 命令。</block>
+  <block id="6d554e0c9ffc1fe9e00235aea8dd5770" category="section-title">步骤 3：（可选）清除节点配置并初始化所有磁盘</block>
+  <block id="9cba5ce5176add967894dfbbc6536a52" category="paragraph">如果要重新调整已从 ASA r2 集群中删除的节点的用途，则必须先擦除节点配置并初始化所有磁盘，然后才能重新加入集群。</block>
+  <block id="895863970f247b187f4fcbba3ee248c3" category="list-text">在启动过程中，出现提示时，按 *Ctrl-C* 显示启动菜单。</block>
+  <block id="7d12381790ebb192cc4ad1b88892635d" category="list-text">选择引导菜单选项 *(4) Clean configuration and initialize all disks* 或选项 *(9) Configure Advanced Drive Partitioning* 以清除节点的配置并初始化所有磁盘。</block>
+  <block id="93fa60c43fe67fdb72ad8e06d21cbed0" category="sidebar">删除节点</block>
 </blocks>

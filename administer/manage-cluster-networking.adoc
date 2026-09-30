@@ -11,7 +11,7 @@ summary: 使用ONTAP系统管理器在ASA R2系统上执行基本存储网络管
 
 
 [role="lead"]
-您可以使用ONTAP系统管理器在ASA R2系统上执行基本存储网络管理。例如、您可以添加广播域或将端口重新分配给其他广播域。
+ONTAP System Manager 使您能够在 ASA r2 系统上执行基本的存储网络管理，例如添加广播域或在广播域之间重新分配端口，从而根据基础架构需求组织网络流量。
 
 
 
@@ -22,10 +22,10 @@ summary: 使用ONTAP系统管理器在ASA R2系统上执行基本存储网络管
 
 "默认"广播域和"集群"广播域是在集群设置期间创建的。"Default"广播域包含位于"Default" IP空间中的端口。这些端口主要用于提供数据。集群管理和节点管理端口也位于此广播域中。"集群"广播域包含位于"集群"IP空间中的端口。这些端口用于集群通信，并包括集群中所有节点的所有集群端口。
 
-您可以在集群初始化后创建其他广播域。创建广播域时、系统会自动创建包含相同端口的故障转移组。
+您可以在初始化集群后创建其他广播域。创建广播域时，系统会自动创建包含相同端口的故障转移组。
 
 .关于此任务
-添加到广播域的端口的最大传输单元(MTU)将更新为在广播域中设置的MTU值。
+添加到广播域的端口的最大传输单元（MTU）将更新为广播域中设置的 MTU 值。
 
 .步骤
 . 在System Manager中，选择*网络>概述*。
@@ -95,3 +95,54 @@ VLAN由组合成广播域的交换机端口组成。通过VLAN、您可以提高
 
 .结果
 您已创建VLAN以提高安全性、隔离问题并限制IP网络基础架构中的可用路径。
+
+
+
+[[delete-a-vlan]]
+== 删除 VLAN
+
+在从插槽中删除 NIC 之前或从集群中删除节点之前，您可能需要删除 VLAN。删除 VLAN 时，它会自动从所有使用它的故障转移规则和组中删除。
+
+.开始之前
+确保没有与 VLAN 关联的 LIF。
+
+.关于此任务
+从端口删除最后一个 VLAN 可能会导致网络与端口的连接暂时断开。
+
+.步骤
+您可以使用 System Manager 或 CLI 删除 VLAN。
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+. 在 System Manager 中，选择 *Network > Ethernet port > VLAN*。
+. 选择要删除的 VLAN。
+. 选择 * 删除 * 。
+
+
+--
+.命令行界面
+--
+. 查看您的 VLAN：
++
+[source, cli]
+----
+network port vlan show
+----
+. 删除 VLAN：
++
+[source, cli]
+----
+network port vlan delete -node <node> -vlan-name <vlan-name>
+----
+. 确认 VLAN 已删除：
++
+[source, cli]
+----
+network port vlan show
+----
+
+
+--
+====

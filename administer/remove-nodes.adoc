@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: remove, node, removing, asa r2 
+summary: 您可能需要重命名节点、以符合组织的命名约定或出于其他管理原因。 
+---
+= 从 ONTAP 集群中删除 ASA r2 节点
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+出于维护、替换或停用的目的，可能需要从集群中删除节点。节点必须一次删除一个。如果删除节点，则还必须删除其 HA 伙伴。
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-asa-r2-cluster]]
+== 步骤 1：准备从 ASA r2 集群中删除节点
+
+从 ASA r2 集群中删除节点之前，应验证集群是否正常。然后，您应从节点迁移或删除存储单元、VLAN 和 LIF，并禁用存储故障转移。
+
+.步骤
+. 验证集群是否正常：
++
+[source, cli]
+----
+cluster show
+----
+. link:../manage-data/move-storage-units.html["移动"] 或 link:../manage-data/delete-storage-units.html["删除"] 节点中的所有存储单元。
+. 如果要删除的节点上有 SCSI 存储单元 (LUN)，link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["从选择性 LUN 映射 (Selective LUN Map, SLM) 报告节点列表中删除节点及其 HA 配对节点"^]。
++
+如果不从 SLM 报告节点列表中删除该节点及其 HA 伙伴，则即使 LUN 已移动到另一个节点，也可能会失去对该节点上原有 LUN 的访问。
+
+. link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["删除"^] 或 link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["迁移"^] 该节点的所有网络接口（LIF）。
++
+** 应将数据 LIF 移至其他节点或将其删除。
++
+iSCSI LIF 迁移仅限于主节点或 HA 合作伙伴上的端口，因此必须将其删除。
+
+** 应删除集群间 LIF。
++
+删除集群间 LIF 时，会显示一条可忽略的警告。
+
+** 集群管理 LIF 应移至其他节点。
+
+
+. link:../administer/manage-cluster-networking.html#delete-a-vlan["删除所有 VLAN"] 在节点上。
+. 禁用此节点的存储故障转移：
++
+[source, cli]
+----
+storage failover modify -enabled false -node <nodename>
+----
+
+
+.下一步是什么？
+从集群中删除 HA 对中的第一个节点，然后删除其 HA 配对节点。
+
+
+
+[[step-2-remove-a-node-from-an-asa-r2-cluster]]
+== 步骤 2：从 ASA r2 集群中删除节点
+
+只有在完成准备删除节点所需的步骤后，才能从 ASA r2 集群中删除该节点。从集群中删除节点后，必须删除其 HA 伙伴。
+
+.开始之前
+建议您 link:../get-help/manage-autosupport.html#send-autosupport-data["发出 AutoSupport 消息"] 以通知 NetApp 技术支持您正在从集群中删除节点。
+
+
+NOTE: 正在进行自动 ONTAP 升级时，请勿从集群中删除节点或重命名节点。
+
+.关于此任务
+* 如果从四节点集群中删除两个节点，则会在其余两个节点上自动启用集群 HA。
+* 在从集群中删除节点之前，必须使用户无法访问来自连接到该节点的所有磁盘的所有系统和用户数据。
+* 如果从群集中错误地删除了节点，请联系 NetApp 支持人员以获得有关恢复选项的帮助。
+
+
+.步骤
+. 将权限级别更改为 advanced：
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 识别集群中包含 epsilon 的节点：
++
+[source, cli]
+----
+cluster show
+----
++
+在以下示例中，"node0" 当前持有 epsilon：
+
++
+[listing]
+----
+cluster::*> cluster show
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. 如果要移除的节点持有 epsilon，请将 epsilon 移至保留节点。
++
+.. 从节点中删除 epsilon：
++
+[source, cli]
+----
+cluster modify -node <name_of_node_to_be_removed> -epsilon false
+----
+.. 将 epsilon 移动到其他节点：
++
+[source, cli]
+----
+cluster modify -node <node_name> -epsilon true
+----
+
+
+. 识别当前主节点：
++
+[source, cli]
+----
+cluster ring show
+----
++
+主节点是包含 mgmt、vldb、vifmgr、bcomd 和 crs 等进程的节点。
+
+. 如果您要删除的节点是当前主节点，请启用集群中的另一个节点以被选为主节点。
++
+.. 使当前主节点不符合参与集群的资格：
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility false
+----
++
+当主节点变得不合格时，剩余节点之一将由集群仲裁选举为新的主节点。如果要在 HA 对中的第一个节点上执行此步骤，请仅将该节点标记为不合格。在对合作伙伴重复这些步骤之前，请勿更改其 HA 合作伙伴的状态。
+
++
+如果合作伙伴节点被选为新的主节点并持有 epsilon，则必须在将合作伙伴标记为不合格之前将 epsilon 移动到其他节点。
+
+.. 使上一个主节点有资格再次参与集群：
++
+[source, cli]
+----
+cluster modify -node <node_name> -eligibility true
+----
+
+
+. 登录到未从群集中删除的节点上的远程节点管理 LIF 或群集管理 LIF。
+. 使用节点名称或节点 IP 地址从集群中删除该节点：
++
+如果您有混合版本的集群，并且要删除最后一个较低版本的节点，请使用这些命令的 -skip-last-low-version-node-check 参数。
+
++
+** 使用节点名称删除节点：
++
+[source, cli]
+----
+cluster remove-node -node <node_name>
+----
+** 使用节点 IP 地址删除节点：
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <node_ip>
+----
++
+如果存在必须在删除节点之前解决的条件，则会生成失败消息。如果发生这种情况，请解决相关条件并重新运行  `cluster remove-node` 命令。
+
++
+从集群中成功删除后，节点会自动重新启动。
+
+
+
+
+
+.下一步是什么？
+重复上述步骤，从集群中删除故障转移合作伙伴。
+
+.相关信息
+详细了解此 link:https://docs.netapp.com/us-en/ontap-cli/cluster-remove-node.html["cluster remove-node"] 命令。
+
+
+
+[[step-3-optionally-erase-the-node-configuration-and-initialize-all-disks]]
+== 步骤 3：（可选）清除节点配置并初始化所有磁盘
+
+如果要重新调整已从 ASA r2 集群中删除的节点的用途，则必须先擦除节点配置并初始化所有磁盘，然后才能重新加入集群。
+
+.步骤
+. 在启动过程中，出现提示时，按 *Ctrl-C* 显示启动菜单。
+. 选择引导菜单选项 *(4) Clean configuration and initialize all disks* 或选项 *(9) Configure Advanced Drive Partitioning* 以清除节点的配置并初始化所有磁盘。
+
