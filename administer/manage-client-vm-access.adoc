@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/manage-client-vm-access.html 
 keywords: asa r2, client access, host access, virtual machines, storage virtual machines, create, ipspaces, subnets, lifs, network interface, iscsi lif failover, 
-summary: 创建LIF以访问ASA R2上存储单元中的数据。使用子网简化LIF创建、并使用IP空间提供安全管理和路由。 
+summary: 创建 LIF 以访问 ASA r2 上存储单元中的数据。使用子网简化 LIF 创建，使用 IPspaces 提供安全管理和路由。 
 searchtitle: 使用ONTAP系统管理器| ASA R2管理客户端对存储的访问 
 ---
 = 管理客户端对ASA R2存储系统上Storage VM的访问
@@ -64,7 +64,7 @@ IP空间名称不能为"all"、因为"all"是系统保留名称。
 [[create-subnets]]
 == 创建子网
 
-通过子网，您可以在创建LIF (网络接口)时分配要使用的特定IPv4或IPv6地址块。子网允许您为每个LIF指定子网名称、而不是特定的IP地址和网络掩码、从而简化了LIF的创建。
+子网允许您分配 IPv4 或 IPv6 地址的特定块，以便在创建 LIF（网络接口）时使用。子网允许您为每个 LIF 指定子网名称而不是特定的 IP 地址和网络掩码，从而简化了 LIF 的创建。
 
 .开始之前
 * 您必须是集群管理员才能执行此任务。
@@ -95,10 +95,10 @@ IP空间名称不能为"all"、因为"all"是系统保留名称。
 [[create-a-lif-network-interface]]
 == 创建LIF (网络接口)
 
-LIF（网络接口）是与物理或逻辑端口关联的 IP 地址。在要用于访问数据的端口上创建 LIF。存储虚拟机通过一个或多个 LIF 向客户端提供数据。在 ASA r2 系统上，可以创建 IP、FC 和 NVMe/FC LIF。默认情况下，IP 数据 LIF 可以同时为 iSCSI 和 NVMe/TCP 流量提供服务。必须为 FC 和 NVMe/FC 流量创建单独的数据 LIF。
+LIF（网络接口）是与物理或逻辑端口关联的 IP 地址。在要用于访问数据的端口上创建 LIF。Storage VM 通过一个或多个 LIF 向客户端提供数据。在 ASA r2 系统上，您可以创建 IP、FC 和 NVMe/FC LIF。默认情况下，IP 数据 LIF 可以同时为 iSCSI 和 NVMe/TCP 流量提供服务。您必须为 FC 和 NVMe/FC 流量创建单独的数据 LIF。
 
 .ASA r2 系统上的 LIF 故障转移
-如果发生组件故障，LIF 可以故障转移或迁移到不同的物理端口，从而不中断网络通信。从 ONTAP 9.19.1 开始，默认情况下，IP LIF 支持自动 LIF 故障转移。启用自动 LIF 故障转移后，如果发生存储故障转移，LIF 将自动从其主节点或端口迁移到其 HA 合作伙伴节点或端口，然后在故障转移完成后返回。或者，如果端口变得不健康，LIF 将自动迁移到其当前主节点中的健康端口，然后在端口再次健康后返回其原始端口。
+如果发生组件故障，LIF 可以故障转移或迁移到不同的物理端口，从而不中断网络通信。从 ONTAP 9.19.1 开始，默认情况下，IP LIF 支持自动 LIF 故障转移。启用自动 LIF 故障转移后，如果发生存储故障转移，LIF 将自动从其主节点或端口迁移到其 HA 伙伴节点或端口，然后在故障转移完成后返回。或者，如果端口变得不健康，LIF 将自动迁移到其当前主节点中的健康端口，然后在端口再次健康后返回到其原始端口。
 
 在 ONTAP 9.18.1 及更早版本中，对于同时具有 iSCSI 和 NVMe/TCP 流量的 IP LIF，不支持 LIF 自动故障转移。创建仅 iSCSI LIF 时，默认情况下会启用 LIF 自动故障转移，除非存储 VM 已包含未启用 LIF 自动故障转移的 iSCSI LIF。如果存储 VM 上的 iSCSI LIF 未启用 LIF 自动故障转移，则新创建的 LIF 也不会启用。在这种情况下，您必须先删除现有的 iSCSI LIF，然后重新创建它们并启用 LIF 自动故障转移。了解如何 link:https://docs.netapp.com/us-en/ontap/san-admin/delete-lif-san-environment-task.html["删除 SAN 环境中的 LIF"^]。
 
@@ -184,7 +184,7 @@ set -privilege admin
 network interface create -vserver <storage_VM_name> -lif <iscsi_lif_name> -service-policy <service_policy_name> -home-node <home_node> -home-port <port_name> -address <ip_address> -netmask <netmask> -failover-policy sfo-partner-only -status-admin up
 ----
 +
-** 建议您在每个节点上创建两个 iSCSI LIF，一个用于结构 A，另一个用于结构 B。这为您的 iSCSI 流量提供了冗余和负载平衡。在以下示例中，总共创建了四个 iSCSI LIF，每个节点上两个，每个结构一个。
+** 在每个节点上创建两个 iSCSI LIF，一个用于结构 A，另一个用于结构 B。这为您的 iSCSI 流量提供了冗余和负载平衡。在以下示例中，总共创建了四个 iSCSI LIF，每个节点两个，每个结构一个。
 +
 [listing]
 ----
@@ -216,7 +216,7 @@ network interface show -lif iscsi*
 可以根据需要禁用或重命名这些文件。您还可以更改LIF IP地址和子网掩码。
 
 .关于此任务
-ONTAP利用网络时间协议 (NTP) 来同步整个集群的时间。更改 LIF IP 地址后，您可能需要更新 NTP 配置以防止同步失败。欲了解更多信息，请参阅知识库文章link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["LIF IP 更改后 NTP 同步失败"]。
+ONTAP 使用网络时间协议（NTP）在整个集群中同步时间。更改 LIF IP 地址后，您可能需要更新 NTP 配置以防止同步失败。有关详细信息，请参阅知识库文章 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-Issues/CONTAP-500629["LIF IP 更改后 NTP 同步失败"]。
 
 .步骤
 . 选择*网络>概述*；然后选择*网络接口*。

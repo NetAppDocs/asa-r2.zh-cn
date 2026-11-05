@@ -1,0 +1,27 @@
+= 
+:allow-uri-read: 
+
+
+.步骤
+. 从目标集群开始 storage VM 迁移：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+要禁用自动切换，请使用  `-auto-cutover false` 参数。要禁用源存储虚拟机的自动删除，请使用  `-auto-source-cleanup false` 参数。
+
+. 监控迁移状态
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+如果在自动切换开始前需要暂停或取消迁移，请使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必须先暂停迁移，然后才能取消迁移。切换开始后，您将无法取消迁移。
+
++
+如果启用了自动切换，则迁移完成后，*状态*将显示为*迁移完成*。如果禁用了自动切换，*状态*将显示为*准备进行源清理*。
+
+

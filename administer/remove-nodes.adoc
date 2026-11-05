@@ -30,7 +30,7 @@ cluster show
 . link:../manage-data/move-storage-units.html["移动"] 或 link:../manage-data/delete-storage-units.html["删除"] 节点中的所有存储单元。
 . 如果要删除的节点上有 SCSI 存储单元 (LUN)，link:https://docs.netapp.com/us-en/ontap/san-admin/modify-slm-reporting-nodes-task.html["从选择性 LUN 映射 (Selective LUN Map, SLM) 报告节点列表中删除节点及其 HA 配对节点"^]。
 +
-如果不从 SLM 报告节点列表中删除该节点及其 HA 伙伴，则即使 LUN 已移动到另一个节点，也可能会失去对该节点上原有 LUN 的访问。
+如果不从 SLM 报告节点列表中删除该节点及其 HA 配对节点，则即使 LUN 已移至其他节点，对先前位于该节点上的 LUN 的访问也可能会丢失。
 
 . link:https://docs.netapp.com/us-en/ontap/networking/delete_a_lif.html["删除"^] 或 link:https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["迁移"^] 该节点的所有网络接口（LIF）。
 +
@@ -40,7 +40,7 @@ iSCSI LIF 迁移仅限于主节点或 HA 合作伙伴上的端口，因此必须
 
 ** 应删除集群间 LIF。
 +
-删除集群间 LIF 时，会显示一条可忽略的警告。
+删除群集间 LIF 时，您可以忽略显示的警告。
 
 ** 集群管理 LIF 应移至其他节点。
 
@@ -150,7 +150,7 @@ cluster modify -node <node_name> -eligibility true
 ----
 
 
-. 登录到未从群集中删除的节点上的远程节点管理 LIF 或群集管理 LIF。
+. 登录到未从集群中删除的节点上的远程节点管理 LIF 或集群管理 LIF。
 . 使用节点名称或节点 IP 地址从集群中删除该节点：
 +
 如果您有混合版本的集群，并且要删除最后一个较低版本的节点，请使用这些命令的 -skip-last-low-version-node-check 参数。
@@ -169,7 +169,7 @@ cluster remove-node -node <node_name>
 cluster remove-node -cluster_ip <node_ip>
 ----
 +
-如果存在必须在删除节点之前解决的条件，则会生成失败消息。如果发生这种情况，请解决相关条件并重新运行  `cluster remove-node` 命令。
+如果存在删除节点前必须解决的条件，ONTAP 会生成失败消息。如果发生这种情况，请解决这些问题并重新运行  `cluster remove-node` 命令。
 
 +
 从集群中成功删除后，节点会自动重新启动。

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-reserve-modify.html 
 keywords: asa r2, snapshot reserve, percentage 
-summary: 快照预留空间是指存储单元中专门为快照保留的空间量。当快照预留空间设置为自动删除快照时，如果快照使用的空间超过快照预留空间，则较旧的快照将自动删除。 
+summary: 修改存储单元或存储 VM 上的 Snapshot 预留，并启用自动快照删除，以防止快照占用用于用户数据的空间。 
 ---
 = 修改ASA r2 存储系统上的快照保留
 :allow-uri-read: 
@@ -39,11 +39,11 @@ link:snapshot-reserve.html["了解更多关于ASA r2 存储系统的快照保留
 [[modify-snapshot-reserve-on-a-storage-vm]]
 == 修改存储虚拟机上的快照预留
 
-要为存储虚拟机中的所有存储单元设置相同的快照保留，请将所需的百分比应用于存储虚拟机。。当快照预留应用于存储虚拟机时，它将应用于存储虚拟机内所有新创建的存储单元。此设置不适用于修改设置之前创建的存储单元。
+要为 storage VM 中的所有存储单元设置相同的 Snapshot 预留，请将所需的百分比应用于 storage VM。当 Snapshot 预留应用于 storage VM 时，它将应用于 storage VM 内所有新创建的存储单元。它不适用于在修改设置之前创建的存储单元。
 
 .步骤
 . 在系统管理器中，选择“集群 > 存储虚拟机”；然后选择“设置”。
-. 在“策略”下，“快照”旁边，选择image:icon_kabob.gif["三个竖点"]然后选择*设置/编辑快照保留默认值*。
+. 在 *Policies* 下，在 *Snapshots* 旁边选择 image:icon_kabob.gif["三个竖点"]；然后选择 *Set/edit snapshot reserve default*。
 . 在“快照预留 %”下，输入要分配给快照的存储单元空间百分比的数值。
 . 确认已选中“自动删除旧快照”。
 . 选择 * 保存 * 。

@@ -1,0 +1,325 @@
+---
+sidebar: sidebar 
+permalink: manage-data/migrate-svm-from-asa-r2.html 
+keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
+summary: 从 ONTAP 9.20.1 开始，您可以无中断地将存储虚拟机（VM）从 2 节点 ASA r2 集群迁移到 2 节点 ASA 或 2 节点 AFF 集群。 
+---
+= 将存储虚拟机从 ASA r2 集群迁移到 ASA 或 AFF 集群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+从 ONTAP 9.20.1 开始，您可以无中断地将存储虚拟机（VM）从 2 节点 ASA r2 集群迁移到 2 节点 ASA 或 2 节点 AFF 集群。您可能需要迁移存储 VM 以整合 SAN 和 NAS 工作负载，采用 ASA r2 系统不可用的 ONTAP 功能，或者作为环境硬件更新的一部分。在迁移期间，将保留 LUN 和命名空间的现有主机映射和存储单元配置，从而减少运营工作量和风险。
+
+.开始之前
+* 您必须是集群管理员。
+* 两个集群中的所有节点都必须运行 ONTAP 9.20.1 或更高版本。
+
+
+.关于此任务
+* 您只能将 ASA r2 存储虚拟机从 2 节点 ASA r2 集群迁移到 2 节点 AFF 集群。
++
+** 不能将 ASA r2 存储虚拟机迁移到 FAS 集群或具有 2 个以上节点的 ASA 或 AFF 集群。
+** 您不能从具有 2 个以上节点的 ASA r2 集群迁移 ASA r2 存储虚拟机。
+
+
+* 从 ASA r2 集群到 AFF 集群的数据迁移是不可逆的。
++
+您可以在切换之前中止迁移，但在切换启动后，您无法中断或还原迁移。迁移完成后，您无法将数据从 AFF 集群迁移到 ASA r2 集群。
+
++
+您可以link:migrate-svm.html["将 SVM 从 ASA 迁移到 ASA r2 集群"]。
+
+* 一次只能迁移一个存储 VM。
+* 存储虚拟机最多可包含 400 个存储单元。
+* storage VM 不能包含 SnapMirror 目标存储单元。
+
+
+
+
+[[step-1-create-a-cluster-peer-relationship]]
+== 第1步：创建集群对等关系
+
+在从 ASA r2 集群迁移存储 VM 之前，您需要创建对等关系。对等关系定义了网络连接，使 ONTAP 集群和存储 VM 能够安全地交换数据。
+
+.关于此任务
+在以下过程中，ASA 或 AFF 集群是_目标_集群，ASA r2 集群是_源_集群。
+
+.开始之前
+您必须使用以下方法之一在被对等连接的集群中的每个节点上创建集群间 LIF。
+
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-share-data-ports-task.html["在共享数据端口上配置集群间 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-dedicated-ports-task.html["在专用数据端口上配置集群间 LIF"^]
+* link:https://docs.netapp.com/us-en/ontap/peering/configure-intercluster-lifs-use-ports-own-networks-task.html["在自定义 IP 空间中配置集群间 LIF"^]
+
+
+.步骤
+. 在目标集群上，与源集群创建对等关系并生成密码：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <source_cluster_LIF_IPs> -generate-passphrase
+----
++
+以下示例在集群 1 和集群 2 之间创建集群对等关系，并创建系统生成的密码短语：
+
++
+[listing]
+----
+cluster1::> cluster peer create -peer-addrs 10.98.191.193 -generate-passphrase
+Passphrase: UCa+6lRVICXeL/gq1WrK7ShR
+            Peer Cluster Name: cluster2
+            Initial Allowed Vserver Peers: -
+            Expiration Time: 6/7/2017 09:16:10 +5:30
+            Intercluster LIF IP: 10.140.106.185
+Warning: make a note of the passphrase - it cannot be displayed again.
+
+----
+. 复制生成的密码短语。
+. 在源集群上，创建与目标集群的对等关系：
++
+[source, cli]
+----
+cluster peer create -peer-addrs <destination_cluster_LIF_IPs>
+----
+. 输入在目标集群上生成的密码短语。
+. 验证集群对等关系是否已创建：
++
+[source, cli]
+----
+cluster peer show
+----
++
+以下示例显示了成功建立对等连接集群的预期输出。
+
++
+[listing]
+----
+cluster1::> cluster peer show
+
+Peer Cluster Name   Cluster Serial Number   Availability   Authentication
+-----------------   ---------------------   -------------- --------------
+cluster2             1-80-123456             Available      ok
+----
+
+
+.结果
+集群已建立对等关系。Storage VM 数据可以安全传输。
+
+.下一步是什么？
+您已准备好为迁移准备 ASA r2 存储虚拟机。
+
+
+
+[[step-2-prepare-the-asa-r2-storage-vm-for-migration]]
+== 步骤 2：准备 ASA r2 存储 VM 进行迁移
+
+在从 ASA r2 集群迁移存储虚拟机（VM）之前，您需要删除复制和 SnapMirror 活动同步关系并执行各种检查。
+
+.步骤
+. link:../data-protection/snapmirror-active-sync-break-relationship.html["删除任何现有的复制关系"]。
+. link:../data-protection/snapmirror-active-sync-delete-relationship.html["删除任何现有的 SnapMirrror 活动同步关系"]。
+. 检查是否已启用 IPsec：
++
+[source, cli]
+----
+security ipsec config show
+----
++
+.. 如果启用了 IPsec，请将其禁用：
++
+[source, cli]
+----
+security ipsec config modify -is-enabled -false
+----
++
+详细了解此 link:https://docs.netapp.com/us-en/ontap-cli/security-ipsec-config-show.html["security ipsec config show"^] 命令。
+
+.. 检查 iPv6 和虚拟 IP（VIP）LIF：
++
+[source, cli]
+----
+network interface show -vserver <storage_vm_name> -fields address-family, is-vip
+----
++
+对于 iPv6 LIF， `-address-family`为 `ipv6`。对于 VIP LIF，此 `-is-vip`参数为 `true`。
+
+.. 如果存在任何 iPv6 或 VIP LIF，请将其删除：
++
+[source, cli]
+----
+network interface delete -vserver <storage_vm_name> - lif <lif_name>
+----
+.. 验证存储虚拟机上没有剩余的 iPv6 或 VIP LIF：
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name>
+----
++
+详细了解 link:https://docs.netapp.com/us-en/ontap-cli/network-interface-show.html["network interface show"^] 和 link:https://docs.netapp.com/us-en/ontap-cli/network-interface-delete.html["network interface delete"^] 命令。
+
+
+
+. 请检查是否配置了任何接口组：
++
+[source, cli]
+----
+network port ifgrp show
+----
++
+.. 如果配置了接口组，请检查存储虚拟机上的任何 LIF 是否已绑定到接口组：
++
+[source, cli]
+----
+network interface show -vserver <storage_VM_name> -fields home,node, home-port, curr-node, curr-port
+----
+.. 如果 storage VM 上的 LIF 绑定到接口组，则将 LIF 迁移到不同的物理端口：
++
+[source, cli]
+----
+network interface migrate -vserver <storage_VM_name> -lif <LIF> -des-node <destination_node> -dest-port <destination_port>
+----
++
+详细了解此 link:https://docs.netapp.com/us-en/ontap-cli/network-port-ifgrp-show.html["network port ifgrp show"^] 命令。
+
+
+
+
+
+.下一步是什么？
+您现在已准备好执行迁移预检查。
+
+
+
+[[step-3-execute-the-migration-pre-check]]
+== 步骤 3：执行迁移预检查
+
+在从 ASA r2 集群迁移存储虚拟机之前，必须运行迁移预检查并修复所有必需的问题。在预检查成功通过之前，您无法执行迁移。
+
+.步骤
+. 在目标集群中，执行迁移预检查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+如果需要解决任何问题以准备迁移，则会显示问题和纠正措施。解决此问题并重复预检查，直到成功完成。
+
+
+
+.下一步是什么？
+您已准备好从 ASA r2 集群迁移存储虚拟机。
+
+
+
+[[step-4-migrate-a-storage-vm-from-an-asa-r2-cluster]]
+== 步骤 4：从 ASA r2 集群迁移存储虚拟机
+
+在 ASA r2 和 ASA 或 AFF 集群之间创建了必要的集群对等关系，并完成了准备这两个集群的步骤后，即可开始存储 VM 迁移。
+
+执行存储虚拟机迁移时，最佳做法是在 ASA r2 集群和 AFF 集群上均保留 30% 的 CPU 裕量，以便能够执行迁移 CPU 工作负载。
+
+.关于此任务
+* 存储虚拟机迁移后，客户端 I/O 无缝过渡到目标集群，不会中断，并且 ASA r2 集群上的存储虚拟机会自动删除。默认情况下，自动切换和自动存储虚拟机删除处于启用状态。您可以选择禁用一个或两个选项并手动执行。
+* ASA 集群是将从中迁移存储虚拟机的_源_集群，而 ASA r2 集群是将向其迁移存储虚拟机的_目标_集群。
+
+
+.步骤
+. 从目标集群开始 storage VM 迁移：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM_name> -source-cluster <source_cluster>
+----
++
+要禁用自动切换，请使用  `-auto-cutover false` 参数。要禁用源存储虚拟机的自动删除，请使用  `-auto-source-cleanup false` 参数。
+
+. 监控迁移状态
++
+[source, cli]
+----
+vserver migrate show -vserver <storage_VM_name>
+----
++
+如果在自动切换开始前需要暂停或取消迁移，请使用以下方法： `vserver migrate pause`以及 `vserver migrate abort`命令。必须先暂停迁移，然后才能取消迁移。切换开始后，您将无法取消迁移。
+
++
+如果启用了自动切换，则迁移完成后，*状态*将显示为*迁移完成*。如果禁用了自动切换，*状态*将显示为*准备进行源清理*。
+
+
+
+.结果
+此 Storage VM 将从 ASA r2 集群迁移到目标集群。
+
+.下一步是什么？
+如果禁用了自动切换和自动删除存储虚拟机，请执行迁移后切换和清理，以手动将 ASA r2 客户端切换到目标集群，并从 ASA r2 集群中删除存储虚拟机。
+
+
+
+[[step-5-post-migration-cutover-and-cleanup]]
+== 第 5 步：迁移后切换和清理
+
+在集群间存储虚拟机迁移过程中，客户端 I/O 会过渡到目标集群，并且源集群上的存储虚拟机会被自动删除。如果您选择在迁移期间禁用源存储虚拟机的自动切换和删除，则需要在迁移状态达到 *准备进行源清理* 后手动执行这些步骤。
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== 在 Storage VM 迁移后手动切换客户端
+
+如果在存储虚拟机的群集间迁移期间禁用自动客户端切换，则在迁移关系准备好切换后，手动执行切换，以便目标存储虚拟机可以向客户端提供数据。
+
+.关于此任务
+从目标集群执行此任务。
+
+.步骤
+. 手动执行客户端切换：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 确认切换操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.结果
+数据正在从目标集群上的 Storage VM 提供给您的客户端。
+
+.下一步是什么？
+现在可以从源集群中删除存储 VM。
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== 迁移后手动删除 storage VM
+
+如果在集群间存储 VM 迁移期间禁用自动源清理，则在迁移完成后，从源集群中删除存储 VM 以释放存储空间。
+
+.开始之前
+您的客户端应提供来自目标集群的数据。
+
+.步骤
+. 在源集群中，验证源存储 VM 的状态是否为*准备进行源清理*：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 删除源 storage VM：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.结果
+已删除源集群上的 Storage VM。

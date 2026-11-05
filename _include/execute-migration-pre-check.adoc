@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+.步骤
+. 在目标集群中，执行迁移预检查：
++
+[source, cli]
+----
+vserver migrate start -vserver <storage_VM> -source-cluster <sourcecluster> -check-only true
+----
++
+如果需要解决任何问题以准备迁移，则会显示问题和纠正措施。解决此问题并重复预检查，直到成功完成。
+
+

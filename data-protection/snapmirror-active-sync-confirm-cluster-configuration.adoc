@@ -17,7 +17,7 @@ SnapMirror主动同步依赖于对等集群，以便在发生故障转移时保�
 . 确认集群之间存在集群对等关系。
 +
 
-NOTE: SnapMirror主动同步需要使用默认 IP 空间来建立集群对等关系。不支持自定义 IP 空间。
+NOTE: SnapMirror 活动同步需要使用默认 IPspace 来建立集群对等关系。不支持自定义 IPspace。
 
 +
 link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["创建集群对等关系"] 。

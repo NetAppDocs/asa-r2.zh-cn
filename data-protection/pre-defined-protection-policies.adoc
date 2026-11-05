@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/pre-defined-protection-policies.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication, policy, pre-defined, default, custom, policies 
-summary: 复制策略定义何时将在ASA r2 集群上执行的更新复制到远程站点。  ONTAP包含各种预定义的数据保护策略，您可以将其用于复制关系。 
+summary: 选择预定义的数据保护策略，将 ASA r2 集群数据复制到远程站点，包括异步策略和 SnapMirror 活动同步策略。 
 ---
 = 了解 ASA r2 系统的预定义数据保护策略
 :allow-uri-read: 
@@ -15,10 +15,18 @@ summary: 复制策略定义何时将在ASA r2 集群上执行的更新复制到�
 
 如果预定义的策略不能满足您的需求，您可以link:snapshot-replication.html#step-2-optionally-create-a-custom-replication-policy["创建自定义复制策略"]。
 
+从 ONTAP 9.20.1 开始，您可以使用受支持的异步数据保护策略在现有 FC 结构上配置后端 SnapMirror 异步复制。以下预定义的保护策略支持后端 FC 复制：
 
-NOTE: ASA r2 系统不支持同步复制。
+* 异步
+* MirrorAllSnapshots
+* MirrorAndVault
+* XDPDefault
+
 
 ASA r2 系统支持以下预定义的保护策略。
+
+
+NOTE: ASA r2 系统不支持同步复制。
 
 [cols="3,4,1"]
 |===

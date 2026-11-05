@@ -1,0 +1,64 @@
+= 在 Storage VM 迁移后手动切换客户端
+:allow-uri-read: 
+
+
+在集群间存储虚拟机迁移过程中，客户端 I/O 会过渡到目标集群，并且源集群上的存储虚拟机会被自动删除。如果您选择在迁移期间禁用源存储虚拟机的自动切换和删除，则需要在迁移状态达到 *准备进行源清理* 后手动执行这些步骤。
+
+
+
+[[manually-cut-over-clients-after-a-storage-vm-migration]]
+=== 在 Storage VM 迁移后手动切换客户端
+
+如果在存储虚拟机的群集间迁移期间禁用自动客户端切换，则在迁移关系准备好切换后，手动执行切换，以便目标存储虚拟机可以向客户端提供数据。
+
+.关于此任务
+从目标集群执行此任务。
+
+.步骤
+. 手动执行客户端切换：
++
+[source, cli]
+----
+vserver migrate cutover -vserver <storage_VM_name>
+----
+. 确认切换操作已完成：
++
+[source, cli]
+----
+vserver migrate show
+----
+
+
+.结果
+数据正在从目标集群上的 Storage VM 提供给您的客户端。
+
+.下一步是什么？
+现在可以从源集群中删除存储 VM。
+
+
+
+[[manually-remove-a-storage-vm-after-migration]]
+=== 迁移后手动删除 storage VM
+
+如果在集群间存储 VM 迁移期间禁用自动源清理，则在迁移完成后，从源集群中删除存储 VM 以释放存储空间。
+
+.开始之前
+您的客户端应提供来自目标集群的数据。
+
+.步骤
+. 在源集群中，验证源存储 VM 的状态是否为*准备进行源清理*：
++
+[source, cli]
+----
+vserver migrate show
+----
+. 删除源 storage VM：
++
+[source, cli]
+----
+vserver migrate source-cleanup -vserver <storage_VM_name>
+----
+
+
+.结果
+已删除源集群上的 Storage VM。

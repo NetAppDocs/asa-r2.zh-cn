@@ -11,12 +11,12 @@ summary: 了解如何配置SnapMirror主动同步，通过创建辅助数据副�
 
 
 [role="lead"]
-配置SnapMirror主动同步以在辅助站点创建数据副本，并使主机应用程序能够在发生灾难时自动、透明地进行故障转移。
+配置 SnapMirror 活动同步以在辅助站点创建数据副本，并使主机应用程序能够在发生灾难时自动透明地进行故障切换。
 
 在ASA r2 系统上， SnapMirror主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点均可访问本地存储进行主动 I/O。
 
 .关于此任务
-如果您使用 iSCSI 或 FC 协议并使用适用于 VMware Sphere 的ONTAP工具，则可以选择link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["使用ONTAP Tools for VM ware 配置SnapMirror主动同步"^] 。
+如果您使用 iSCSI 或 FC 协议并使用 ONTAP tools for VMware vSphere，则可以选择 link:https://docs.netapp.com/us-en/netapp-solutions/vmware/vmware-vmsc-with-smas.html["使用 ONTAP tools for VMware vSphere 配置 SnapMirror 活动同步"^]。
 
 
 NOTE: 从 ONTAP 9.19.1 开始，具有人工智能的自主勒索软件保护（ARP/AI）支持 ASA r2 系统上 SnapMirror 活动同步 SAN 关系中的主读写存储单元。ARP/AI 在活动的主存储单元上运行，创建仅限主存储单元的 ARP 快照，并为这些存储单元提供基于机器学习的勒索软件检测。要启用 ARP/AI，请参见link:../secure-data/enable-anti-ransomware-protection.html["使用 AI 启用自主勒索软件防护"]。
@@ -34,7 +34,7 @@ link:create-snapshots.html#step-1-optionally-create-a-consistency-group["创建�
 . 选择现有的集群对等体或选择*添加新的集群对等体*。
 . 选择存储虚拟机。
 . 对于复制策略，选择*AutomatedFailOverDuplex*。
-. 如果您正在创建非统一对称主动/主动配置，请选择*目标设置*；然后在开始此过程之前输入您创建的新目标一致性组的名称。
+. 如果要创建非均匀的对称活动/活动配置，请选择*目标设置*，然后输入在开始此过程之前创建的新目标一致性组的名称。
 . 选择 * 保存 * 。
 
 

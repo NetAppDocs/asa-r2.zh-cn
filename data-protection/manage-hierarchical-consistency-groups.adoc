@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-hierarchical-consistency-groups.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: 使用一致性组同时对多个存储单元执行各种操作，而不是对每个单元单独执行操作。在层次结构中，一个或多个一致性组被配置为父一致性组下的子级。 
+summary: 提升、降级、创建和分离分层一致性组，以管理 ASA r2 系统上多个存储单元的快照和复制。 
 ---
 = 管理ASA r2 系统上的分层一致性组
 :allow-uri-read: 
@@ -42,13 +42,13 @@ summary: 使用一致性组同时对多个存储单元执行各种操作，而�
 将父一致性组降级为单个一致性组时，关联子一致性组的存储单元将添加到父一致性组。子一致性组被删除，父一致性组则作为单个一致性组进行管理。
 
 .开始之前
-如果您正在运行ONTAP 9.16.1，并且要降级的一致性组处于SnapMirror主动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]一致性组才可以被降级。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以降级一致性组。在ONTAP 9.17.1 及更高版本中，不需要在扩展一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+如果您运行的是 ONTAP 9.16.1，并且要降级的一致性组处于 SnapMirror 活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]，然后才能降级该一致性组。如果您运行的是 ONTAP 9.16.1，并且一致性组处于异步复制关系中，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]，然后才能降级该一致性组。在 ONTAP 9.17.1 及更高版本中，降级一致性组之前不需要删除 SnapMirror 活动同步关系或中断异步关系。
 
 .步骤
 . 在System Manager中、选择*保护>一致性组*。
 . 将鼠标悬停在要删除的父一致性组上。
 . 选择image:icon_kabob.gif["三个垂直蓝点"]；然后选择*降级到单个一致性组*。
-. 选择*Demote*
+. 选择*降级*。
 
 
 .下一步是什么？
@@ -113,7 +113,7 @@ link:policies-schedules.html#apply-a-snapshot-policy-to-a-consistency-group["添
 当您将子一致性组从父一致性组分离时，子一致性组将从父一致性组中删除，并作为单个一致性组进行管理。应用于父级的复制策略不再应用于分离的子一致性组。
 
 .开始之前
-如果您正在运行ONTAP 9.16.1，并且要分离的一致性组处于SnapMirror活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]才能分离一致性组。如果您正在运行ONTAP 9.16.1 并且一致性组处于异步复制关系，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]然后才可以分离一致性组。在ONTAP 9.17.1 及更高版本中，不需要在扩展一致性组之前删除SnapMirror活动同步关系或中断异步关系。
+如果您正在运行 ONTAP 9.16.1，并且要分离的一致性组处于 SnapMirror 活动同步关系中，则必须link:snapmirror-active-sync-delete-relationship.html["删除SnapMirror活动同步关系"]，然后才能分离一致性组。如果您正在运行 ONTAP 9.16.1，并且一致性组处于异步复制关系中，则必须link:snapmirror-active-sync-break-relationship.html["断绝关系"]，然后才能分离一致性组。在 ONTAP 9.17.1 及更高版本中，不需要在分离一致性组之前删除 SnapMirror 活动同步关系或中断异步关系。
 
 .步骤
 . 在System Manager中、选择*保护>一致性组*。

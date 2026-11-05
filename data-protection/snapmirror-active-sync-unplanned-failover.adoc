@@ -2,22 +2,22 @@
 sidebar: sidebar 
 permalink: data-protection/snapmirror-active-sync-unplanned-failover.html 
 keywords: asa r2, reestablish, snapmirror active sync, unplanned failover, disaster recovery 
-summary: 了解如何在ASA r2 集群发生计划外故障转移后重新建立SnapMirror主动同步关系。 
+summary: 在 ASA r2 集群发生计划外故障转移后，重新建立 SnapMirror 活动同步关系。 
 ---
-= 在 ASA r2 上计划外故障转移后重新建立 SnapMirror 活动同步
+= 在 ASA r2 上进行计划外故障转移后重新建立 SnapMirror 活动同步
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-在 ASA r2 系统上，SnapMirror 主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点都可以访问本地存储以进行主动 I/O。如果源集群发生故障或被隔离，调解器会触发自动计划外故障转移 (AUFO)，并为目标集群的所有 I/O 提供服务，直到源集群恢复为止。
+重新建立 SnapMirror 活动同步关系，以便在计划外故障转移后恢复原始源集群上的操作。在 ASA r2 系统上，SnapMirror 活动同步支持对称双活配置。在对称双活配置中，两个站点都可以访问本地存储以进行活动 I/O。如果源集群发生故障或被隔离，ONTAP 调解器会触发自动计划外故障转移（AUFO），并从目标集群提供所有 I/O 服务，直到源集群恢复为止。
 
 如果您遇到 SnapMirror 活动同步关系的 AUFO，则应重新建立关系并在原始源集群恢复联机后恢复操作。
 
 .开始之前
 * SnapMirror活动同步关系必须同步。
-* 当正在进行非中断操作（例如存储单元移动）时，您无法启动计划内故障转移。
+* 正在执行无中断操作（如存储单元移动）时，无法启动计划的故障转移。
 * ONTAP调解器必须已配置、已连接且处于法定人数。
 * 要恢复丢失的 I/O 路径或更新主机上的 I/O 路径状态，需要在主存储集群恢复运行后对主机执行存储/适配器重新扫描。
 

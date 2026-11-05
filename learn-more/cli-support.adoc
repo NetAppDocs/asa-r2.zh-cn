@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/cli-support.html 
 keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, comand line interface 
-summary: ASA r2 系统（ASA A1K、ASA 90、ASA 70、ASA A50、ASA A30、ASA A20、ASA C30）不支持某些 ONTAP 命令。 
+summary: 请查看 ASA r2 系统不支持的 ONTAP CLI 命令和参数，并使用 CLI 设置 ASA r2 集群。 
 ---
 = ONTAP命令行界面支持ASA R2存储系统
 :allow-uri-read: 
@@ -75,7 +75,7 @@ NOTE: 这 `lun move-in-volume`命令被替换为 `lun rename`和 `vserver nvme n
 * `volume expand`
 * `volume modify`
 +
-这 `volume modify`与以下参数一起使用时命令不可用：
+ `volume modify` 命令与以下参数一起使用时不可用：
 
 +
 ** `-anti-ransomware-state`
@@ -145,7 +145,7 @@ NOTE: 这 `lun move-in-volume`命令被替换为 `lun rename`和 `vserver nvme n
 [[set-up-an-ontap-asa-r2-cluster-using-the-cli]]
 == 使用命令行界面设置ONTAP ASA R2集群
 
-建议您link:../install-setup/initialize-ontap-cluster.html["使用System Manager设置ONTAP ASA R2集群"]。System Manager 提供快速简便的指导工作流程，使您的集群正常运行。但是，如果您习惯使用 ONTAP 命令，则可以选择使用 ONTAP 命令行界面 (CLI) 进行集群设置。与 System Manager 相比，使用 CLI 设置集群不提供任何其他选项或优势。
+使用 link:../install-setup/initialize-ontap-cluster.html["System Manager 以设置您的 ONTAP ASA r2 集群"]。System Manager 提供了一个快速且简单的指导工作流程，以启动和运行集群。但是，如果您习惯于使用 ONTAP 命令，则可以选择使用 ONTAP 命令行界面（CLI）进行集群设置。与 System Manager 相比，使用 CLI 设置集群不提供任何其他选项或优势。
 
 在集群设置过程中，ONTAP 会创建您的默认数据存储虚拟机，创建初始存储单元，并自动发现您的数据 LIF。或者，您可以启用域名系统 (DNS) 来解析主机名，将集群设置为使用网络时间协议 (NTP) 进行时间同步，并启用静态数据加密。
 
@@ -186,7 +186,7 @@ cluster setup
 . 为节点管理接口端口、IP地址、网络掩码和默认网关输入值。
 . 按*Enter*继续使用命令行界面进行设置；然后输入*cree*创建新集群。
 . 接受系统默认值或输入您自己的值。
-. 在第一个节点上完成设置后、登录到集群。
+. 在第一个节点上的设置完成后，登录集群。
 . 验证集群是否处于活动状态、以及第一个节点是否运行正常：
 +
 [source, cli]

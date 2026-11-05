@@ -11,7 +11,7 @@ summary: 在不同集群上的存储虚拟机之间创建对等关系，以便�
 
 
 [role="lead"]
-对等关系定义了允许集群和存储虚拟机 (VM) 安全地交换数据的网络连接。在不同集群上的存储虚拟机之间创建对等关系，以便使用SnapMirror实现数据保护和灾难恢复。
+对等关系定义了网络连接，使集群和存储虚拟机（VM）能够安全地交换数据。在不同集群上的存储 VM 之间创建对等关系，以便使用 SnapMirror 实现数据保护和灾难恢复。
 
 link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["了解有关同伴关系的更多信息"^] 。
 
@@ -20,7 +20,7 @@ link:https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["�
 
 .步骤
 . 在系统管理器中，选择*保护>概览*。
-. 在*存储 VM 对等体*下选择*添加存储 VM 对等体*。
+. 在 *Storage VM peers* 下，选择 *Add a storage VM peer*。
 . 选择本地集群上的存储虚拟机；然后选择远程集群上的存储虚拟机。
 . 选择*添加存储虚拟机对等体*。
 

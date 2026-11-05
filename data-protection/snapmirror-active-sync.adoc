@@ -11,9 +11,9 @@ summary: '使用SnapMirror主动同步，保护需要零恢复点目标 (RPO) �
 
 
 [role="lead"]
-ONTAP SnapMirror主动同步数据保护功能即使在整个站点发生故障的情况下也能使业务服务继续运行，并支持应用程序使用辅助副本透明地进行故障转移。使用SnapMirror主动同步功能触发故障转移无需任何手动干预或自定义脚本。
+ONTAP SnapMirror 主动同步数据保护使业务服务即使在整个站点发生故障时也能继续运行，支持应用程序使用二级副本透明地进行故障转移。使用 SnapMirror 主动同步触发故障转移时，您无需手动干预或编写自定义脚本。
 
-虽然在 ASA r2 系统上配置 SnapMirror 主动同步的 System Manager 程序与运行统一 ONTAP 个性的 NetApp FAS、AFF 和 ASA 系统不同，但 SnapMirror 主动同步的要求、架构和操作是相同的。link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["了解有关在ASA r2 系统上使用SnapMirror主动同步进行灾难恢复的更多信息"^]
+虽然在 ASA r2 系统上配置 SnapMirror 主动同步的 System Manager 步骤与运行统一 ONTAP 特性的 NetApp FAS、AFF 和 ASA 系统不同，但 SnapMirror 主动同步的要求、架构和操作是相同的。 link:https://www.netapp.com/pdf.html?item=/media/138366-sb-3457-san-disaster-recovery-netapp-asa.pdf["了解有关在ASA r2 系统上使用SnapMirror主动同步进行灾难恢复的更多信息"^]
 
 在 ASA r2 系统上，SnapMirror 主动同步支持对称主动/主动配置。在对称主动/主动配置中，两个站点都可以访问本地存储以进行主动 I/O。详细了解 link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/architecture-concept.html#symmetric-activeactive["对称主动/主动配置"^]。
 
@@ -41,7 +41,7 @@ SnapLock Enterprise 和 Compliance 模式不支持在 ASA r2 系统上使用 Sna
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"]使用自签名证书配置ONTAP Mediator 或ONTAP Cloud Mediator。
 [role="quick-margin-para"]
-你必须link:configure-ontap-mediator.html["配置ONTAP中介或ONTAP云中介"]然后才可以开始使用它与SnapMirror主动同步进行集群监控。
+您必须先link:configure-ontap-mediator.html["配置 ONTAP Mediator 或 ONTAP Cloud Mediator"]，然后才能开始将其与 SnapMirror 活动同步一起用于集群监控。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五个"]配置SnapMirror主动同步。
 [role="quick-margin-para"]

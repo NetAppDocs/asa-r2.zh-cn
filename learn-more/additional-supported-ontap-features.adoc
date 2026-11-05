@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/additional-supported-ontap-features.html 
 keywords: asa r2, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, cli, command line interface, clustered external key servers, external key management, encryption at rest, administrator access management, client authentication, oauth 2.0, saml authentication, fips compliance, link aggregation groups, iscsi, fibre channel, fc, nvme, nvme unmap, hole punch, deallocation, system manager 
-summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常见的ONTAP任务和系统管理器功能在ASA r2 系统上的执行方式与在其他ONTAP系统上的执行方式相同。 
+summary: 了解哪些常见的 ONTAP 功能（包括加密、身份验证、网络、SAN 协议和存储效率）在 ASA r2 系统上的工作方式相同。 
 ---
 = ASA r2 系统支持的常见ONTAP功能
 :allow-uri-read: 
@@ -14,6 +14,15 @@ summary: 由于ASA r2 系统运行的是ONTAP的精简版本，因此许多常�
 由于 ASA r2 系统运行的是精简版 ONTAP，因此您执行许多常见 ONTAP 任务和 System Manager 功能的方式与其他 ONTAP 系统相同。
 
 有关常见特性和功能的更多信息，请参阅以下ONTAP文档。
+
+
+
+[[autosupport]]
+== AutoSupport
+
+从 ONTAP 9.20.1 开始，如果 AutoSupport 配置为 SMTP 协议而不是 HTTPs 协议，如果 AutoSupport 已禁用但仍配置了客户和合作伙伴电子邮件收件人，以及如果 AutoSupport 传输因 DNS 问题而失败，System Manager 将显示 AutoSupport 警报。
+
+link:https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html["详细了解 AutoSupport"^]。
 
 
 
@@ -38,6 +47,8 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 
 您可以使用一个或多个 KMIP 服务器来保护集群用于访问加密数据的密钥。
 
+从 ONTAP 9.20.1 开始，当您在数据存储虚拟机上启用外部密钥管理器时，ONTAP 会自动将该存储虚拟机的卷加密密钥从管理范围密钥管理器迁移到新的数据存储虚拟机密钥管理器。这简化了向外部密钥管理的过渡，并消除了在标准工作流中执行单独手动迁移步骤的需要。
+
 * link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-hw-task.html["启用外部密钥管理"^]。
 * link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/enable-external-key-management-96-later-nve-task.html["启用外部密钥管理 (NVE)"^] 。
 
@@ -54,10 +65,9 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 [[administrator-access-management]]
 === 管理员访问管理
 
-分配给管理员的角色决定了管理员可以执行哪些功能。系统管理器为集群管理员和存储虚拟机管理员提供了预定义角色。您可以在创建管理员帐户时分配角色，也可以稍后分配其他角色。
+分配给管理员的角色决定了管理员可以执行的功能。System Manager 为集群管理员和存储 VM 管理员提供预定义角色。您可以在创建管理员帐户时分配角色，也可以稍后分配其他角色。
 
-* link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["学习如何使用系统管理器管理管理员访问权限"^]。
-
+link:https://docs.netapp.com/us-en/ontap/task_security_administrator_access.html["学习如何使用系统管理器管理管理员访问权限"^]。
 
 
 
@@ -67,6 +77,23 @@ link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-cluster-ke
 ONTAP使用标准方法来保护客户端和管理员对存储的访问，并防止病毒感染。先进技术可用于静态数据加密和 WORM 存储。  ONTAP通过与可信来源验证客户端计算机和用户的身份来验证其身份。  ONTAP通过将用户的凭据与文件或目录上配置的权限进行比较，来授权用户访问文件或目录。
 
 link:https://docs.netapp.com/us-en/ontap/concepts/client-access-storage-concept.html["了解客户端身份验证和授权"^] 。
+
+
+
+[[fc-sp-3-authentication-and-encryption]]
+=== FC-SP-3 身份验证和加密
+
+从 ONTAP 9.20.1 开始，ONTAP 支持在采用 ASA r2 系统的 Broadcom 安全 HBA 上进行光纤通道安全协议 3（FC-SP-3）身份验证和加密。FC-SP-3 支持实现硬件级端到端加密和设备身份验证，以保护在 FC 和 NVMe/FC SAN 主机与 ONTAP 存储系统之间传输的数据，同时符合 T11 光纤通道安全标准。
+
+* link:https://docs.netapp.com/us-en/ontap/san-admin/fc-sp-3-security-support.html["了解 FC-SP-3 身份验证和加密"^]。
+
+
+
+
+[[multi-admin-verification-mav]]
+=== 多管理员验证（MAV）
+
+从 ONTAP 9.20.1 开始，除了单个管理员之外，MAV 审批组还可以包括身份提供程序（IdP）、Active Directory（AD）和 LDAP（nsswitch）组作为审批者。支持的组类型包括 Entra ID、ADFS、AD 域组和 LDAP 组。在 IdP、AD 或 LDAP 目录中添加或删除用户不需要对 MAV 配置进行任何更改。link:https://docs.netapp.com/us-en/ontap/multi-admin-verify/index.html["详细了解 MAV"^]。
 
 
 
@@ -84,7 +111,18 @@ link:https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["�
 
 您可以为 Web 服务配置和启用安全断言标记语言 (SAML) 身份验证。  SAML 通过外部身份提供商 (IdP) 而不是目录服务提供商（例如 Active Directory 和 LDAP）来验证用户身份。
 
-link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["学习配置 SAML 身份验证"^] 。
+link:https://docs.netapp.com/us-en/ontap/system-admin/configure-saml-authentication-task.html["了解如何配置 SAML 身份验证"^]。
+
+
+
+[[snmp]]
+=== SNMP
+
+从 ONTAP 9.20.1 开始，ONTAP 支持 SNMPv3 用户的 SHA-512 身份验证。此增强功能允许您将更强大的 SNMPv3 身份验证用于外部 SNMP 客户端和交换机监控，包括需要 SHA-512 身份验证的交换机。
+
+* link:https://docs.netapp.com/us-en/ontap/networking/configure_snmpv3_users_in_a_cluster.html["了解如何配置 SNMPv3 用户"^]。
+* link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cshm/config-snmpv3.html["了解如何在交换机上配置 SNMPv3"^]。
+
 
 
 
@@ -178,7 +216,7 @@ ASA r2 系统支持所有 SAN 协议（iSCSI、FC、NVMe/FC、NVMe/TCP）。
 +
 ** link:https://docs.netapp.com/us-en/ontap/san-admin/nvme-copy-offload.html["学习如何配置 NVMe 复制卸载"^]。
 +
-从ONTAP 9.18.1 开始，支持 NVMe 复制卸载。 NVMe 复制卸载功能使 NVMe 主机能够将复制操作从其 CPU 卸载到ONTAP存储控制器的 CPU。主机可以将数据从一个 NVMe 命名空间复制到另一个 NVMe 命名空间，同时将其 CPU 资源保留给应用程序工作负载。
+从 ONTAP 9.18.1 开始，ONTAP 支持 NVMe 复制卸载。NVMe 复制卸载使 NVMe 主机能够将复制操作从其 CPU 卸载到 ONTAP 存储控制器的 CPU。主机可以将数据从一个 NVMe 命名空间复制到另一个命名空间，同时为应用程序工作负载保留其 CPU 资源。
 
 ** link:https://docs.netapp.com/us-en/ontap/san-admin/enable-space-allocation.html["了解更多关于 NVMe 空间分配（取消映射）的信息"^]。
 +
@@ -201,10 +239,19 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 
 
 
+[[data-reduction-rate-drr]]
+=== 数据缩减率（DRR）
+
+从 ONTAP 9.20.1 开始，存储效率数据缩减率（DRR）通过仅包含可缩减数据，提供了对 ONTAP 存储效率空间节省的更精确评估。在 ONTAP 9.19.1 及更早版本中，DRR 包括可缩减和不可缩减数据。
+
+link:https://docs.netapp.com/us-en/ontap/concepts/capacity-measurements.html["详细了解 ONTAP 如何报告已用存储"^]。
+
+
+
 [[global-deduplication]]
 === 全局重复数据删除
 
-从 ONTAP 9.19.1 开始，_全局重复数据删除_将link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["现有 ONTAP 重复数据删除空间节省"^]存储单元级别的功能扩展到整个存储可用区 (SAZ)。通过消除 SAZ 中所有存储单元中的重复数据块，可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。
+从 ONTAP 9.19.1 开始，_全局重复数据删除_将存储单元级别的 link:https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["现有 ONTAP 重复数据删除空间节省"^] 扩展到整个存储可用区（SAZ）。通过消除 SAZ 中所有存储单元中的重复数据块，您可以显著提高存储效率并降低总拥有成本。全局重复数据删除不需要功能许可证，默认情况下处于启用状态，与现有存储效率技术无缝集成，以最小的性能影响透明运行，无需管理配置。
 
 
 
@@ -214,3 +261,12 @@ link:https://docs.netapp.com/us-en/ontap/concepts/storage-efficiency-overview.ht
 您可以在 System Manager 中搜索各种操作、对象和信息主题。您还可以搜索表格数据中的特定条目。
 
 link:https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["学习如何在系统管理器中搜索、筛选和排序信息"^]。
+
+
+
+[[user-password-expiration-alerts]]
+=== 用户密码过期提醒
+
+从 ONTAP 9.20.1 开始，如果与用户帐户关联的角色配置了密码过期警报，则用户在登录后会立即在 System Manager 中收到页面顶部横幅警报，该警报从密码过期前 14 天开始显示。每次用户登录时都会更新警报，以显示距离密码过期的剩余天数。您可以在添加或编辑管理员角色时配置过期警报。
+
+link:https://docs.netapp.com/us-en/ontap/authentication/configure-password-expiry-alerts.html["了解如何在 System Manager 中配置密码过期警报"^]。

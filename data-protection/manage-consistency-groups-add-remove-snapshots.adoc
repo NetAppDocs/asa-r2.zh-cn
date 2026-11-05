@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/manage-consistency-groups-add-remove-snapshots.html 
 keywords: consistency groups, snapshots, data protection, protect data, add, remove, delete, storage units, lun, namespace, increase capacity 
-summary: 创建一致性组的快照以保护一致性组一部分的存储单元中的数据。如果不再需要保护一致性组中的任何存储单元中的数据，则可以删除快照保护。 
+summary: 向一致性组添加快照保护以保护其存储单元中的数据，或者在不再需要时删除快照保护。 
 ---
 = 使用快照保护ASA r2 系统上的一致性组
 :allow-uri-read: 
@@ -20,7 +20,7 @@ summary: 创建一致性组的快照以保护一致性组一部分的存储单�
 [[add-snapshot-data-protection-to-a-consistency-group]]
 == 向一致性组添加Snapshot数据保护
 
-向一致性组添加快照数据保护时、系统会根据预定义的计划定期创建一致性组的本地快照。
+当您将快照数据保护添加到一致性组时，ONTAP 会根据预定义的计划定期为一致性组创建本地快照。
 
 您可以对link:restore-data.html["还原数据"]丢失或损坏的使用快照。
 
@@ -54,7 +54,7 @@ summary: 创建一致性组的快照以保护一致性组一部分的存储单�
 
 .. 选择策略计划。
 .. 在*最大快照数*下、输入要保留一致性组的最大快照数。
-.. (可选)在* SnapMirror label*下输入SnapMirror标签。
+.. （可选）在 *SnapMirror 标签* 下输入一个 SnapMirror 标签。
 .. 选择 * 保存 * 。
 
 

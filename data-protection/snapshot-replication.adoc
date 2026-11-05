@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: data-protection/snapshot-replication.html 
 keywords: snapshot replication, asa r2, protect data, data protection, replication, replicate data, remote cluster, destination cluster, source cluster, replication relationship, asynchronous replication, synchronous replication 
-summary: 使用ONTAP系统管理器将数据复制到远程位置、以便进行备份和灾难恢复。设置需要创建复制策略和关系。 
+summary: 使用 ONTAP System Manager 将数据复制到远程位置以进行备份和灾难恢复。创建复制策略和关系以设置快照复制。 
 searchtitle: 使用ONTAP System Manager| ASA R2将快照复制到远程集群 
 ---
 = 将快照从ASA R2存储系统复制到远程集群
@@ -17,7 +17,7 @@ searchtitle: 使用ONTAP System Manager| ASA R2将快照复制到远程集群
 
 NOTE: 仅支持与ASA r2 存储系统进行快照复制。您不能将快照从ASA r2 系统复制到ASA、 AFF或FAS系统，也不能从ASA、 AFF或FAS系统复制到ASA r2 系统。
 
-要设置Snapshot复制、您需要在ASA R2系统和远程位置之间建立复制关系。复制关系由复制策略管理。在集群设置期间会创建一个用于复制所有快照的默认策略。您可以使用默认策略、也可以选择创建新策略。
+要设置快照复制，请在您的 ASA r2 系统和远程位置之间建立复制关系。复制关系受复制策略管理。在集群设置期间，将创建一个用于复制所有快照的默认策略。您可以使用默认策略或创建新策略。
 
 从ONTAP 9.17.1 开始，您可以将异步复制策略应用于具有层次结构关系的一致性组。  ONTAP 9.16.1 中的层次结构关系中的一致性组不支持异步复制。
 
@@ -88,12 +88,12 @@ NOTE: 采用异步策略时，数据在写入源之后才会复制到远程站�
 
 要增强防范勒索软件攻击的安全性，请创建 SnapLock for SnapVault 复制关系。
 
+.关于此任务
+* 创建复制关系时，必须为复制关系选择适当的复制策略。您可以使用预定义策略或创建自定义策略。
+
+
 .开始之前
-* link:pre-defined-protection-policies.html["了解复制策略"] 。
-+
-创建复制关系时，必须为复制关系选择适当的复制策略。您可以使用预定义策略或创建自定义策略。
-
-
+从 ONTAP 9.20.1 开始，您可以在现有 FC 结构上配置后端 SnapMirror 异步复制。为此，必须为 FC 复制配置 ONTAP 系统后端，并且 FC 结构和集群间 IP 网络都必须正常运行。复制数据可以通过 FC 结构传输，但集群通信和复制管理功能需要集群间 IP 网络。link:https://docs.netapp.com/us-en/ontap/data-protection/configure-backend-fc-replication.html["了解如何为 FC 复制配置 ONTAP 系统后端"^]。
 
 
 
@@ -101,6 +101,13 @@ NOTE: 采用异步策略时，数据在写入源之后才会复制到远程站�
 === 创建将快照复制到远程集群的关系
 
 通过将快照复制到远程群集来保护您的数据。一致性组的复制快照可用于灾难恢复或数据迁移。
+
+.关于此任务
+在 ONTAP 9.20.1 及更高版本中：
+
+* 要使用后端 FC 复制创建 SnapMirror 关系，必须使用受支持的预定义异步数据保护策略，并选择 FC 传输协议。默认情况下，后端复制使用 IP 协议。link:pre-defined-protection-policies.html["了解哪些预定义的复制策略支持后端 FC 复制"]。
+* 要在创建复制关系后更改所选传输协议，您必须link:snapmirror-active-sync-break-relationship.html["中断"]该关系，然后使用所需的传输协议重新创建该关系。
+
 
 .步骤
 . 在System Manager中，选择*保护>复制*。
@@ -129,6 +136,7 @@ source_一致 性组是指本地集群上要复制的一致性组。
 
 |===
 . 选择复制策略。
+. 在 ONTAP 9.20.1 及更高版本中，为复制关系选择传输协议。
 . 要延迟数据传输的开始，请选择*目标设置*，然后取消选择*立即开始传输*。
 +
 默认情况下、初始数据传输会立即开始。
@@ -154,7 +162,8 @@ source_一致 性组是指本地集群上要复制的一致性组。
 NOTE: ASA r2 系统不支持 SnapLock Compliance 模式或 SnapLock Enterprise 模式。创建 SnapLock for SnapVault 复制关系仅允许锁定目标快照。它不启用 SnapLock Compliance 或 Enterprise 模式。
 
 .开始之前
-您必须 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock 合规时钟"]。
+* 您必须 link:../secure-data/snaplock.html#initialize-the-snaplock-compliance-clock["初始化 SnapLock 合规时钟"]。
+
 
 .步骤
 . 在 System Manager 中，选择 *Protection > Consistency groups*，然后选择一个一致性组。
@@ -162,7 +171,11 @@ NOTE: ASA r2 系统不支持 SnapLock Compliance 模式或 SnapLock Enterprise �
 . 在*远程保护*下，选择*将数据添加到远程集群*。
 . 选择*复制策略*。
 +
-您必须选择_vault_复制策略。
+您必须选择 _vault_ 复制策略。在 ONTAP 9.20.1 及更高版本中，您必须选择 _MirrorAndVault_ 策略来配置后端 FC 复制。
+
+. 在 ONTAP 9.20.1 及更高版本中，选择传输协议。
++
+要在创建复制关系后更改所选传输协议，您必须link:snapmirror-active-sync-break-relationship.html["中断"]该关系，然后使用所需的传输协议重新创建该关系。
 
 . 选择*目标设置*，然后选择*锁定目标快照以防止删除*。
 . 输入最长和最短数据保留期限。
@@ -179,6 +192,9 @@ NOTE: ASA r2 系统不支持 SnapLock Compliance 模式或 SnapLock Enterprise �
 
 .下一步是什么？
 创建复制关系后，初始数据传输将按照复制策略中的定义开始。您可以选择测试复制故障切换，以验证 ASA r2 系统脱机时是否可以成功进行故障切换。
+
+.相关信息
+link:pre-defined-protection-policies.html["了解预定义的保护策略"]。
 
 
 

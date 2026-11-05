@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn-more/hardware-comparison.html 
 keywords: compare asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30, hardware comparison, asa r2 
-summary: ASA系统提供针对纯SAN解决方案优化的硬件支持。ASA R2系统可优化硬件和软件。 
+summary: 将 ASA r2 系统与 ASA、AFF 和 FAS 系统进行比较，包括 ONTAP 个性、存储层和支持的协议。 
 searchtitle: ASA r2 和其他 ONTAP 系统之间的差异 
 ---
 = ASA r2 和其他 ONTAP 系统之间的差异
@@ -30,7 +30,7 @@ ASA r2 系统是在全闪存系统上构建的仅限 SAN 环境的硬件和软�
 [[personality-differences]]
 == 性格差异
 
-在 ASA r2 系统上，ONTAP 软件经过精简，可为基本 SAN 功能提供支持，同时限制非 SAN 相关特性和功能的可见性和可用性。例如，在 ASA r2 系统上运行的 System Manager 不显示为 NAS 客户端创建主目录的选项。此精简版 ONTAP 被标识为 _ASA r2 personality_。在 ASA 系统上运行的 ONTAP 被标识为 _ASA ONTAP personality_。在 AFF 和 FAS ONTAP 系统上运行的 ONTAP 被标识为 _unified ONTAP personality_。ONTAP personality 之间的差异在 ONTAP 命令参考（手册页）、REST API 规范和 EMS 消息（如适用）中有所说明。
+在 ASA r2 系统上，ONTAP 软件经过精简，可为基本 SAN 功能提供支持，同时限制非 SAN 相关特性和功能的可见性和可用性。例如，在 ASA r2 系统上运行的 System Manager 不显示为 NAS 客户端创建主目录的选项。此精简版 ONTAP 被识别为 _ASA r2 personality_。在 ASA 系统上运行的 ONTAP 被识别为 _ASA ONTAP personality_。在 AFF 和 FAS 系统上运行的 ONTAP 被识别为 _unified ONTAP personality_。ONTAP 命令参考（手册页）、REST API 规范和 EMS 消息（如适用）中引用了 ONTAP personality 之间的差异。
 
 您可以从System Manager或ONTAP命令行界面验证ONTAP存储的特性。
 
@@ -53,7 +53,7 @@ ASA r2 系统使用简化的存储层，该存储层与FAS、 AFF和ASA系统使
 FAS、AFF 和 ASA 系统的存储层使用聚合作为存储的基本单元。聚合拥有存储系统中可用的特定磁盘集。聚合会将其拥有的磁盘上的空间分配给 LUN 和命名空间的卷。使用这些系统，ONTAP 用户可以创建和修改聚合、卷、LUN 和命名空间。
 
 .ASA r2系统
-ASA r2 系统中的存储层使用存储可用区，而非聚合。存储可用区是单个 HA 对的两个节点均可访问的公共存储池。HA对中的两个节点均可访问其共享存储可用区中的所有可用磁盘。例如，在双节点ASA r2 系统ONTAP集群中，有一个存储可用区，集群中的两个节点均可访问。在四节点ASA r2 系统ONTAP集群中，有两个存储可用区。集群中的每个 HA 对都可以访问其中一个存储可用区。
+ASA r2 系统中的存储层使用存储可用区，而不是聚合。存储可用区是单个 HA 对的两个节点可用的公共存储池。HA 对中的两个节点都可以访问其共享存储可用区中的所有可用磁盘。例如，双节点 ASA r2 集群具有两个节点都可以访问的一个存储可用区。四节点 ASA r2 集群具有两个存储可用区。集群中的每个 HA 对都可以访问其中一个存储可用区。
 
 当创建一个存储单元（基于 LUN 或 NVMe 命名空间）时，ONTAP 会自动在相应的存储可用性区域中创建一个卷以容纳该存储单元。新创建的卷会自动放置在存储可用性区域内，以实现最佳性能和均衡的容量利用率。容量利用率会根据您的 ONTAP 版本在存储可用性区域内实现均衡。link:../administer/space-balancing.html["了解ASA r2 集群中的容量均衡"^].
 
