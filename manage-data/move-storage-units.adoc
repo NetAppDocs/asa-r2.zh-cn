@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/move-storage-units.html 
 keywords: move lun, lun move, move namespace, move storage unit, asa r2 
-summary: 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。 
+summary: 将存储单元移动到另一个存储可用区域，以便在区域空间不足时平衡整个群集的存储利用率。 
 ---
 = 移动ASA R2存储系统上的存储单元
 :allow-uri-read: 
@@ -13,7 +13,7 @@ summary: 如果某个存储可用性分区的空间不足、您可以将存储�
 [role="lead"]
 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。
 
-您可以在存储单元联机并提供数据时移动此存储单元。移动操作不会造成系统中断。
+您可以在一个存储单元在线并提供数据时移动该存储单元。移动操作是无中断的。
 
 .开始之前
 * 必须运行9.16.1 9.161或更高版本。

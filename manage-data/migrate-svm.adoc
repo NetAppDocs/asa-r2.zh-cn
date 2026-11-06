@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/migrate-svm.html 
 keywords: move svm, migrate svm, asa, asa r2, storage vm, storage virtual machine 
-summary: 如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。 
+summary: 无中断地将存储虚拟机从 ASA 集群迁移到 ASA r2 集群，包括验证存储虚拟机、建立集群对等关系、运行预检查和迁移。 
 ---
 = 将存储虚拟机从ASA集群迁移到ASA r2 集群
 :allow-uri-read: 
@@ -16,7 +16,7 @@ summary: 如果某个存储可用性分区的空间不足、您可以将存储�
 
 NOTE: 您无法将存储虚拟机从 ASA MetroCluster 迁移到 ASA r2 集群。ASA r2 系统不支持 MetroCluster 配置。
 
-ASA r2 系统支持 QuickAssist 技术（QAT）。ASA 系统不支持 QAT。从 ONTAP 9.20.1 开始，ONTAP 降低了存储虚拟机（VM）从 ASA（非 QAT）系统迁移到 ASA r2（QAT）系统后可能出现的高读取延迟和 CPU 使用率。
+ASA r2 系统支持 QuickAssist 技术（QAT）。ASA 系统不支持 QAT。从 ONTAP 9.20.1 开始，ONTAP 降低了在将存储 VM 从 ASA（非 QAT）系统迁移到 ASA r2（QAT）系统后可能出现的高读取延迟和 CPU 使用率。
 
 ASA和ASA r2 存储系统之间支持存储虚拟机迁移，具体方式如下：
 
@@ -249,7 +249,7 @@ vserver migrate show -vserver <storage_VM_name>
 
 
 .结果
-存储虚拟机从ASA集群迁移到ASA r2 集群。存储虚拟机的名称和 UUID、数据 LIF 名称、IP 地址以及对象名称（例如卷名称）保持不变。存储虚拟机中已迁移对象的 UUID 已更新。
+storage VM 从 ASA 集群迁移到 ASA r2 集群。storage VM 的名称和 UUID、数据 LIF 名称、IP 地址和对象名称（如卷名）保持不变。storage VM 中已迁移对象的 UUID 已更新。
 
 .下一步是什么？
 如果禁用了自动切换和自动删除存储 VM，请执行迁移后切换和清理，以手动将 ASA 客户端切换到目标集群，并从 ASA 集群中删除存储 VM。

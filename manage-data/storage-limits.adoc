@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-data/storage-limits.html 
 keywords: storage limits, cluster limits, maximum lun size, maximum, nodes per cluster, storage unit size, supported protocols, asa r2, asa a1k, asa a90, asa a70, asa a50, asa a30, asa a20, asa c30 
-summary: 为了获得最佳性能、配置和支持，您应该了解ASA r2 的存储限制。 
+summary: 在 NetApp Hardware Universe 中查找针对您的系统和 ONTAP 版本的 ASA r2 存储限制，以确保最佳性能、配置和支持。 
 ---
 = 确定您的 ASA r2 系统存储限制
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: 为了获得最佳性能、配置和支持，您应该了解ASA r2 的�
 
 
 [role="lead"]
-为了获得最佳性能、配置和支持，您应了解 ASA r2 存储限制。
+了解 ASA r2 系统的存储限制有助于您对其进行配置，以获得最佳性能和支持。您可以在 NetApp Hardware Universe 中查找您的系统和 ONTAP 版本的限制。
 
-限制可能因您的 ASA r2 系统和 ONTAP 版本而异。有关特定系统的最新限制的完整列表，请参阅 link:https://hwu.netapp.com/["NetApp Hardware Universe"^]。
+限制可能因您的 ASA r2 系统和 ONTAP 版本而异。请参阅 link:https://hwu.netapp.com/["NetApp Hardware Universe"^] 获取特定系统的最新限制的完整列表。
 
 
-NOTE: 虚拟机 (VM) 限制未在 Hardware Universe 中列出。根据 ASA r2 系统卷限制，每个 HA 对的建议最大 VM 数为 800，每个集群的建议最大 VM 数为 1,200。此限制不适用于驻留在 VMFS 数据存储中的 VM。VMFS 数据存储没有最大 VM 数量限制。
+NOTE: Hardware Universe 中未列出虚拟机 (VM) 限制。根据 ASA r2 系统卷限制，每个 HA 对的建议最大 VM 数为 800，每个集群为 1,200。此限制不适用于驻留在 VMFS 数据存储中的 VM。VMFS 数据存储没有最大 VM 数量限制。
 
 .关于此任务
 ASA r2 系统在 NetApp Hardware Universe 的 *Products* 下列为"ASA"平台。

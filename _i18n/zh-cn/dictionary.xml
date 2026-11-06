@@ -876,7 +876,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
   <block id="b46e4e89d5c6947e865dbb8abc5ed28c" category="summary">了解如何在ASA R2系统上执行维护过程。</block>
   <block id="c65b7989475d7b4b884961e0e5c53286" category="doc">维护ASA R2存储系统</block>
-  <block id="637cdb5787a38a4d0da33ae01aa8fe4c" category="summary">克隆ASA R2上的存储单元和一致性组以创建数据副本、以便在生产环境之外用于各种用途。</block>
   <block id="5efa28b67f38b8acf6f260494435aeb9" category="searchtitle">使用ONTAP System Manager克隆数据| ASA R2</block>
   <block id="b672b3c3c67f9dc97cb7aa4016ffd8de" category="doc">克隆ASA R2存储系统上的数据</block>
   <block id="db111a2cf0c0f9671b7966268e827844" category="section-title">克隆存储单元</block>
@@ -900,7 +899,6 @@
   <block id="c6f88571dc48a22a0d0521f201835ddb" category="section-title">克隆一致性组</block>
   <block id="38723f66597a4a2025ffa53ade4f4036" category="paragraph">克隆一致性组时、您需要创建一个新的一致性组、该一致性组的结构、存储单元和数据与克隆的一致性组完全相同。使用一致性组克隆执行应用程序测试或迁移数据。例如、假设您需要将生产工作负载从一致性组中迁移出来。您可以克隆一致性组、为生产工作负载创建一份副本、以便在迁移完成之前作为备份进行维护。</block>
   <block id="25002de97f63843d00fbff0f4029e142" category="paragraph">克隆是从要克隆的一致性组的快照创建的。用于克隆的快照是在默认情况下启动克隆过程的时间点创建的。您可以修改默认行为以使用已有快照。</block>
-  <block id="f1f14c924a1d8d35f761cab684cabb5c" category="paragraph">存储单元映射会在克隆过程中进行复制。克隆过程不会复制Snapshot策略。</block>
   <block id="ea0dd6672a507c3e5ba664d40b22a74f" category="paragraph">您可以从ASA R2系统本地存储的一致性组或已复制到远程位置的一致性组创建克隆。</block>
   <block id="6c752a6f945b5533d67cb3d9fd5e42a5" category="open-title">使用本地快照克隆</block>
   <block id="a4b52c7ad12fbc7cc4074627fb90e4f5" category="list-text">将鼠标悬停在要克隆的一致性组上。</block>
@@ -924,7 +922,6 @@
   <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">选择 * 删除 * 。</block>
   <block id="a5331a83866cbfbb201d271b31461b12" category="inline-link-macro">增加大小</block>
   <block id="4af5b851dfcd374944ce285278985595" category="paragraph">您可以将从已删除的存储单元释放的空间用于<block ref="f623a169728c03b0e232ffad71f851b4" category="inline-link-macro-rx"></block>需要额外容量的存储单元。</block>
-  <block id="d144ceb11715b5ffc74a8293d3aa8303" category="summary">通过编辑存储单元以增加容量、更新服务质量(QoS)策略或更改主机映射来响应存储系统性能和数据的变化。</block>
   <block id="ceff03bfa1a8dafc5e617407d14564d3" category="doc">修改ASA R2存储系统上的存储单元</block>
   <block id="261c95ed5d454ef55df25657c605d472" category="paragraph-title">增加容量</block>
   <block id="e2bcdafb5edd46c07debdaff4977f47e" category="paragraph-title">修改主机映射</block>
@@ -1028,7 +1025,6 @@
   <block id="524c0325bc0c4cec973cfa614f67ae72" category="list-text">对于FC和FC/NVMe、按WWPN对FC交换机进行分区。</block>
   <block id="eab491a83c6a98ad8bb6d9536baf3f09" category="paragraph">每个启动程序使用一个分区，并在每个分区中包含所有目标端口。</block>
   <block id="2cd3b5d294419c9fff1fdbc28271d35b" category="list-text">发现新存储单元。</block>
-  <block id="23244f25ac2815846af6dc09a2aee622" category="list-text">初始化存储单元并创建文件系统。</block>
   <block id="59ef3fb6dbb76f4db63e803f61442ac8" category="list-text">确认主机可以读取和写入存储单元上的数据。</block>
   <block id="cbb4ea3ae0ace3dd5cedae78f9d2a805" category="paragraph">您已完成配置过程并准备好开始提供数据。现在、您可以<block ref="13282ab1c43cc291d62099de29c76969" category="inline-link-macro-rx"></block>保护ASA R2系统上的数据。</block>
   <block id="94751ffa48a4135b11ac22ac2dae643e" category="inline-link-macro">ONTAP SAN主机文档</block>
@@ -1084,12 +1080,10 @@
   <block id="bf0ee5d7820e7b49538636a2323b1e13" category="paragraph">选择*审核日志*。</block>
   <block id="e6510e3179fb147d1aa28f84d375849d" category="section-title">发送集群事件和审核日志的电子邮件通知</block>
   <block id="2689017fd391b9ef2b710efecac7fe98" category="paragraph">配置系统、以便在出现集群事件或审核日志条目时向特定电子邮件地址发送通知。</block>
-  <block id="c9fa13c02cfead820376fc662f426b76" category="list-text">在“*通知管理*”旁边选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="b132288363444449f65274826d81b20a" category="list-text">要配置事件目标，请选择*查看事件目标*；然后选择*事件目标*。要配置审核日志目标，请选择*查看审核目标*；然后选择*审核日志目标*。</block>
   <block id="5a44cd233bac39affdb8362ac562d2b5" category="inline-image-macro">带有加号的蓝色矩形、后跟白色字母的单词add</block>
   <block id="a965541f47c7a323b09d8822116bc9d5" category="list-text">选择。 <block ref="df7c335acb6f116ad3c95dc4cf3e7ccb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="94a2e0e8ab485816cc10fd24499c15d8" category="list-text">输入目的地信息，然后选择*Add*。</block>
-  <block id="902f69f8add54032a3780db669e4e052" category="summary">在ONTAP系统管理器中查看洞察、确定可在ASA R2系统上实施的最佳实践和配置修改、以优化集群安全性和性能。</block>
   <block id="9d86f65ca6623815e9bd6f0547909992" category="paragraph">查看ONTAP系统管理器中的_洞察力_、确定可在ASA R2系统上实施的最佳实践和配置修改、以优化集群安全性和性能。</block>
   <block id="48cfda35c766b770b4272442f0e97eec" category="inline-image-macro">System Manager洞察页面的屏幕截图</block>
   <block id="179a9fb3c3da42fe1bb169f945a03c28" category="paragraph"><block ref="179a9fb3c3da42fe1bb169f945a03c28" category="inline-image-macro-rx" type="image"></block></block>
@@ -1256,7 +1250,6 @@
   <block id="3ae7feb5d9cb2335f10922aa1130319d" category="paragraph">存储单元始终在ASA R2存储系统上进行精简配置。不支持厚配置。</block>
   <block id="c43d68b5b8370d3423bfb0b13dfe0abe" category="inline-link">ASA R2维护文档</block>
   <block id="f2abf1f4083409f0d65b59ffbcd13341" category="paragraph"><block ref="6805eee0c680715323289cabd48eb628" category="inline-link-rx"></block>请访问、了解如何对ASA R2系统组件执行维护过程。</block>
-  <block id="77ae7cb145355765cca98cef84bef3eb" category="paragraph">例如、假设某个关键应用程序遇到高延迟和低吞吐量问题。查看过去五个工作日的集群性能时、您会发现每天同一时间的性能下降。当非关键进程开始在后台运行时、您可以使用此信息确定关键应用程序是否正在争用集群资源。然后、您可以修改QoS策略、以限制非关键工作负载对系统资源的影响、并确保关键工作负载满足最低吞吐量目标。</block>
   <block id="514854c9f2116902eea3ece0f40e8154" category="paragraph-title">对数据压缩进行的更改</block>
   <block id="097c1368589d519db55e5ac8f141a847" category="paragraph">ASA R2系统不会应用对温度敏感的存储效率。在ASA R2系统上、数据压缩不基于_hot_(经常访问)数据或_col_(不经常访问)数据。数据压缩开始时无需等待数据变冷。</block>
   <block id="253b40ae359ba25b56231803430c4873" category="section-title">ONTAP</block>
@@ -1374,7 +1367,6 @@
   <block id="b75f8c35975d217c69d40f46c56bb8c5" category="paragraph">此时、克隆将与源一致性组解除关联、并为此克隆分配磁盘空间。</block>
   <block id="9ebaaa53fbc9e58c2b9ee7ad84f3ada8" category="doc">移动ASA R2存储系统上的存储单元</block>
   <block id="aa2588a0578a9bf3830dd720f8969abf" category="paragraph">如果某个存储可用性分区的空间不足、您可以将存储单元移动到另一个存储可用性分区、以平衡集群中的存储利用率。</block>
-  <block id="d4ec5e86ec36bfd751dc7ae22931f6a3" category="paragraph">您可以在存储单元联机并提供数据时移动此存储单元。移动操作不会造成系统中断。</block>
   <block id="3df7f1089e4d9e422795c1f9b7ebd7cb" category="list-text">必须运行9.16.1 9.161或更高版本。</block>
   <block id="89f5399d31e98d41d9ed3262351036ba" category="list-text">集群必须包含四个或更多节点。</block>
   <block id="75c802412c81363d98f12df3afdd41ee" category="list-text">在System Manager中，选择*Storage*；然后选择要移动的存储单元。</block>
@@ -1385,10 +1377,8 @@
   <block id="337c483d117ff7e78ed214b1799b666f" category="list-text">在*存储和优化*下的*性能服务级别*旁边，选择<block ref="b3b2ed9f542d1ec15ba7a198ec58e0b4" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="06a4e0373e144570a83a3fcfaa55ff46" category="list-text">选择*性能*。</block>
   <block id="455f024d5e786170a224f947b09bd74a" category="section-title">监控存储可用性分区利用率</block>
-  <block id="c54830fa97aef91a8bc830d439dc004a" category="paragraph">如果集群中有4个或更多节点、则可以查看每个HA对的存储可用性分区所使用的空间量。此指标不适用于双节点集群。</block>
   <block id="dd7cd8aba78024bcc6ec1c67f3987760" category="list-text">在System Manager中，选择*Cluster*；然后选择*Overview*。</block>
   <block id="0ce03f9ea97502f3a10721575d8a9696" category="paragraph">此时将显示集群中每个HA对的存储可用性分区利用率摘要。</block>
-  <block id="3670021e257ef0702d763c08d8b9c8b3" category="list-text">如果需要更详细的指标、请选择特定的存储可用性。</block>
   <block id="c5b460be9264c217ff7aa949f8f26aab" category="inline-link-macro">移动存储单元</block>
   <block id="8010ab2f71c733c1a8013b31b901be79" category="cell">每个集群的节点数</block>
   <block id="c7ae27ad054ff4d389e7c15cc82b0866" category="paragraph">每个集群的最大节点数从2增加到12。</block>
@@ -1756,7 +1746,6 @@
   <block id="f189f78814a58774d68462e16ca54b39" category="summary">删除主机组以删除主机对ASA r2 系统上存储单元的访问权限。</block>
   <block id="921d23dfe97001c8278a227abc14d419" category="doc">删除ASA r2 系统上的主机组</block>
   <block id="dd2d7d7ec030a25ffce529dfdbc5974c" category="paragraph">在ASA r2 系统上，主机组是用于授予主机访问存储单元的机制。主机组是指 SCSI 主机的 igroup 或 NVMe 主机的 NVMe 子系统。主机只能看到映射到其所属主机组的存储单元。如果您不再希望组中的主机访问映射到该组的存储单元，则可能需要删除主机组。</block>
-  <block id="4244dd9a547fabfd651293dc1c4d1dd2" category="list-text">在“*主机映射*”下选择要删除的主机组。</block>
   <block id="481a421e621f56b493d24163b8b6e61f" category="list-text">选择*映射存储*。</block>
   <block id="6fc817dfbe9e8303d43dd345dfc8d0a6" category="list-text">选择*更多*；然后选择*删除*。</block>
   <block id="d8c055944ceedab265fa23bd4dac431a" category="paragraph">主机组已删除。该组中的主机不再具有对映射到该主机组的存储单元的访问权限。</block>
@@ -2174,13 +2163,11 @@
   <block id="7ccdca44124c885599f8dfc3d91ecf71" category="list-text">卷迁移、重新托管、克隆、创建、转换或分析</block>
   <block id="3fb135bc6b75f65e260ed2a579aa59c9" category="list-text">监控迁移状态</block>
   <block id="9bdd71e813734cd91bd9de1eb31f66ca" category="admonition">如果在自动切换开始前需要暂停或取消迁移，请使用以下方法：<block ref="9d6db8b5ee359d175a01a18c98e81144" prefix=" " category="inline-code"></block>以及<block ref="de83f1d008d2f2a17132d73774af6a5a" prefix=" " category="inline-code"></block>命令。必须先暂停迁移，然后才能取消迁移。切换开始后，您将无法取消迁移。</block>
-  <block id="903547f07fd29a1a471a450bf6698e9a" category="paragraph">存储虚拟机从ASA集群迁移到ASA r2 集群。存储虚拟机的名称和 UUID、数据 LIF 名称、IP 地址以及对象名称（例如卷名称）保持不变。存储虚拟机中已迁移对象的 UUID 已更新。</block>
   <block id="7501352b37c8930919c10e645c388272" category="inline-link-macro">了解更多关于ASA r2 系统快照保留的信息</block>
   <block id="7fdd4a506c158d387464fd16f4e65f8e" category="paragraph"><block ref="614a34b4f7a807cea02dd4507adb351a" category="inline-link-macro-rx"></block>。</block>
   <block id="819b58028cbb8d32e35c5a6d2a9ed247" category="list-text">设置服务质量限制、服务质量保证或两者都设置。</block>
   <block id="5ae2b91104e852585ddf073635450cf8" category="paragraph">修改默认快照保留设置并启用自动快照删除功能。</block>
   <block id="715a6e64eed03295b4e2bc3df4da2dc6" category="list-text">在“快照预留 %”下，输入要分配给快照的存储单元空间百分比的数值。</block>
-  <block id="162edb1432d7c690ed0b5b42fa399a29" category="summary">为了获得最佳性能、配置和支持，您应该了解ASA r2 的存储限制。</block>
   <block id="0b0cbd8d0f0d2f28f4334c6a8f47bd98" category="list-text">确认切换操作已完成：</block>
   <block id="88b492110e1066f5d49d63281dd0882b" category="cell">每个集群的存储虚拟机</block>
   <block id="693b04a116e2728c124dc2e59e7f14c6" category="cell">每个 HA 对支持的最大存储虚拟机 (VM) 数量从 32 增加到 256。</block>
@@ -2293,8 +2280,6 @@
   <block id="74c34cd79314b0b0543df58dce891912" category="cell">对 SnapMirror 活动同步的支持从双节点集群增加到四节点集群。</block>
   <block id="b930776d8572e5f3c1d7294d9809974c" category="paragraph">仅当您希望完全自行管理更新时，才禁用自动更新。关闭自动更新后，系统将不会通知、下载或安装更新。您负责手动监控、下载、安排和安装所有更新。</block>
   <block id="26f7abc505f53b85cb219303544259d3" category="paragraph"><block ref="d57b4f0ac425b878d2f45da8c8c89d8d" category="inline-link-macro-rx"></block>。</block>
-  <block id="3fda8ce05b50b72371c5f4cb65657861" category="paragraph">默认情况下，存储单元为精简配置。精简配置允许存储单元扩展到分配的大小，但不会提前预留空间。空间根据需要从可用空间中动态分配。这使您可以通过_过度配置_可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您可以创建存储单元，监控空间利用率，并在存储单元占用实际空间时增加存储容量，而不是立即向系统添加 3 TB 的额外存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
-  <block id="d6e1856d58417da15c8f45bb5225a284" category="admonition">如果要创建多个存储单元，则每个单元将以相同的容量创建。将您正在创建的存储单元数量乘以所需的容量，以确保您有足够的可用空间。如果您没有足够的可用空间，并且选择过度配置，请密切监控利用率，以避免空间用尽和数据丢失。</block>
   <block id="aa716862002e83866a499a0f5aaa467f" category="paragraph">如果在您指定的操作系统上运行的主机没有预先存在的主机组，则 ONTAP 会自动创建新的主机组。</block>
   <block id="a8e81b2ccd42d59459e94b66c7e93b33" category="inline-link-macro">使用 Active IQ Digital Advisor 或 Upgrade Health Checker 准备升级</block>
   <block id="8e06442a81408e5b3d9d881ee34604d9" category="list-text">将端口 e10b 连接到机架 1 NSM B 端口 e0b。</block>
@@ -2445,7 +2430,6 @@
   <block id="d2faa14ab70288d07188a62b2f1242e8" category="section-title">全局重复数据删除</block>
   <block id="3cc42248c8d3e1724108887db39a1fc0" category="inline-link-macro">现有 ONTAP 重复数据删除空间节省</block>
   <block id="65481be362fd14e3b943e8347948143f" category="paragraph">从 ONTAP 9.19.1 开始，如果您要创建计划启用 SnapMirror 活动同步保护的 AIX LUN，请在*主机信息*下选择*本地*作为*访问模式*。这是启用透明应用程序故障转移所必需的。</block>
-  <block id="b8cd8dd355516b19f7a3260bfd645929" category="paragraph">ASA r2 系统中的每个 HA 对都使用称为_存储可用区_的公共存储池。存储可用区可以访问存储系统中的所有可用磁盘，并且对 HA 对中的两个节点均可见。通过监控存储可用区的可用空间，可以根据需要减少使用量或增加容量，从而避免因空间不足而导致工作负载失败。</block>
   <block id="f1c9e9af80bb533618f5bdefe333747d" category="inline-link-macro">洞察</block>
   <block id="ebafe46641c676ef6ab5894f79ff62ab" category="paragraph">从 ONTAP 9.19.1 开始，如果 ASA r2 系统 HA 对中的一个存储可用区接近容量，则会在 System Manager *Insights* 中显示警报。详细了解 System Manager <block ref="41fc10ce3fe36daf8df250e4d0c01ea9" category="inline-link-macro-rx"></block>。</block>
   <block id="1546607861bbb550ca3750055c66328f" category="paragraph">在 *Storage units* 下，将显示存储可用区中所有存储单元的列表。</block>
@@ -2549,7 +2533,6 @@
   <block id="c9de3246d61399dca0b1426ae4785aae" category="list-text">重新输入密码进行确认，然后选择*Continue*。</block>
   <block id="acdc6b4f6edd40f37bce01247a32ff86" category="list-text">SnapLock</block>
   <block id="884db16daad09820adcdd9f12c2233d6" category="doc">确定您的 ASA r2 系统存储限制</block>
-  <block id="0983f226fe7663bd6c4c28ac46840c50" category="paragraph">限制可能因您的 ASA r2 系统和 ONTAP 版本而异。有关特定系统的最新限制的完整列表，请参阅 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block>。</block>
   <block id="eedddce7629b34be6de6734237a6001d" category="admonition">ASA r2 系统在 NetApp Hardware Universe 的 *Products* 下列为"ASA"平台。</block>
   <block id="ee2a8ad10ddae704cf49a89278c0d539" category="list-text">转到 <block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block>。</block>
   <block id="f6c082e1c2313aca303adada02fafd4b" category="list-text">选择*产品*。</block>
@@ -2673,17 +2656,13 @@
   <block id="d69e3ae5fb7f4d74bb4862c599c903e5" category="paragraph">要优化 ASA r2 系统的性能，可能需要修改存储单元以增加其容量、更新 QoS 策略或更改映射到单元的主机。例如，如果将新的关键应用程序工作负载添加到现有存储单元，则可能需要更改应用于存储单元的服务质量 (QoS) 策略，以支持新应用程序所需的性能级别。</block>
   <block id="b129f6c71702a299debbdda5a2727959" category="paragraph">在存储单元达到满容量之前增加其大小，以防止存储单元用完可写空间时可能发生的数据访问中断。存储单元的容量最多可增加到 128 TB，这是 ONTAP 允许的最大大小。</block>
   <block id="7913f9abc185fbbc272a0be428372b28" category="paragraph">将主机 NQN 格式化为 &lt;nqn.yyyy-mm&gt; 后跟完全限定的域名。年份应等于或晚于 1970 年。总最大长度应为 223。有效 NVMe 启动器的示例为 nqn.2014-08.com.example:string。</block>
-  <block id="6176133530e282d4e6f776ba74fa250b" category="paragraph">为了获得最佳性能、配置和支持，您应了解 ASA r2 存储限制。</block>
-  <block id="de36ba2a4f0d50d11747dca4c55d81fa" category="admonition">虚拟机 (VM) 限制未在 Hardware Universe 中列出。根据 ASA r2 系统卷限制，每个 HA 对的建议最大 VM 数为 800，每个集群的建议最大 VM 数为 1,200。此限制不适用于驻留在 VMFS 数据存储中的 VM。VMFS 数据存储没有最大 VM 数量限制。</block>
   <block id="2fe1b5011f3d1147125182e35103fd82" category="paragraph">使用 ONTAP System Manager 监控群集和特定存储单元的整体性能，包括延迟、IOPS 和吞吐量，时间跨度从一小时到一年不等。</block>
   <block id="b2fb8f2c49b571f5a64388a1522dfc93" category="paragraph">使用存储单元性能指标来确定特定应用程序对延迟、IOPS 和吞吐量的影响。</block>
   <block id="a2877460acc67e1b9e083a8639777af3" category="paragraph">使用存储单元性能指标分析是否需要修改分配给存储单元的 QoS 策略，以降低延迟并最大化 IOPS 和吞吐量。</block>
   <block id="c40495734764055727dee1933eca4f55" category="paragraph">如果您的集群空间不足或容量不足以满足未来需求，<block ref="652f39ff07f6641e851e14e8190a6b59" category="inline-link-macro-rx"></block>您的 ASA r2 系统以增加存储容量。</block>
   <block id="0f0d107f9f413c757492bd17bcc810f9" category="paragraph">在*概述*下，将显示存储可用区的容量、已用空间量和数据缩减率。</block>
-  <block id="52bae3cbcb139f829d1f0457547db64f" category="paragraph">如果存储可用区空间不足，请<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>到另一个存储可用区以平衡整个集群的存储利用率，删除快照以释放空间，或向节点添加其他磁盘以增加容量。</block>
   <block id="f4dcbcddf0a58f7acae80ac1057f79ec" category="paragraph">使用 ONTAP System Manager 可查看错误或警报、建议的纠正措施、系统审核日志以及活动、已完成或失败作业的列表。</block>
   <block id="d1cafb6cca02cdaf156c39ab85cf4667" category="paragraph">您添加的电子邮件地址将接收集群事件和审计日志的指定电子邮件通知。</block>
-  <block id="5b4df8e4e6bcba25812f523a8ff0d48d" category="paragraph">例如，假设您的集群配置了网络时间协议 (NTP) 服务器。但是，您并不知道您拥有的 NTP 服务器数量低于最佳集群时间管理所需的建议数量。为了帮助您防止集群时间不准确时可能发生的问题，Insights 会通知您配置的 NTP 服务器太少，并提供了解该问题的更多信息、修复问题或将其关闭的选项。</block>
   <block id="07ef9331c22296c0d701c86a18931fee" category="cell">ASA r2 系统支持在不删除 SnapMirror 活动同步关系或中断异步关系的情况下，对处于 SnapMirror 活动同步或异步复制关系中的一致性组进行几何更改。当主一致性组发生几何更改时，此更改将复制到辅助一致性组。</block>
   <block id="30ec47d1704b1f4d4160a0d2b38c446e" category="cell">默认自动 LIF 故障转移支持 IP 和 NVMe/TCP LIF。</block>
   <block id="4e37072a2c8f1f2686c25a56cc7fe5a0" category="doc">在 ASA r2 存储系统上禁用默认自主勒索软件保护</block>
@@ -2960,18 +2939,11 @@
   <block id="b466cebb5e6b58c0cc097913d4ed2357" category="paragraph">在 ASA r2 系统上，ONTAP 软件经过精简，可为基本 SAN 功能提供支持，同时限制非 SAN 相关特性和功能的可见性和可用性。例如，在 ASA r2 系统上运行的 System Manager 不显示为 NAS 客户端创建主目录的选项。此精简版 ONTAP 被识别为 _ASA r2 personality_。在 ASA 系统上运行的 ONTAP 被识别为 _ASA ONTAP personality_。在 AFF 和 FAS 系统上运行的 ONTAP 被识别为 _unified ONTAP personality_。ONTAP 命令参考（手册页）、REST API 规范和 EMS 消息（如适用）中引用了 ONTAP personality 之间的差异。</block>
   <block id="729560e0c7351a8fcd9434463875bc69" category="paragraph">ASA r2 系统中的存储层使用存储可用区，而不是聚合。存储可用区是单个 HA 对的两个节点可用的公共存储池。HA 对中的两个节点都可以访问其共享存储可用区中的所有可用磁盘。例如，双节点 ASA r2 集群具有两个节点都可以访问的一个存储可用区。四节点 ASA r2 集群具有两个存储可用区。集群中的每个 HA 对都可以访问其中一个存储可用区。</block>
   <block id="fdbc7801a0cbb1d68ddf207bb70e4113" category="paragraph">SAN 环境中的主集群不支持 SnapLock Compliance 和企业模式。辅助集群支持 SnapLock for SnapVault。</block>
-  <block id="83a14a73a6cf0a127b671166e9205a2c" category="summary">从 ONTAP 9.20.1 开始，您可以无中断地将存储虚拟机（VM）从 2 节点 ASA r2 集群迁移到 2 节点 ASA 或 2 节点 AFF 集群。</block>
-  <block id="e7f0b884aa27db897e76427519599139" category="doc">将存储虚拟机从 ASA r2 集群迁移到 ASA 或 AFF 集群</block>
-  <block id="13d45fbabe7c6e486bb66a743e158c43" category="paragraph">从 ONTAP 9.20.1 开始，您可以无中断地将存储虚拟机（VM）从 2 节点 ASA r2 集群迁移到 2 节点 ASA 或 2 节点 AFF 集群。您可能需要迁移存储 VM 以整合 SAN 和 NAS 工作负载，采用 ASA r2 系统不可用的 ONTAP 功能，或者作为环境硬件更新的一部分。在迁移期间，将保留 LUN 和命名空间的现有主机映射和存储单元配置，从而减少运营工作量和风险。</block>
   <block id="b77db7f524ccde6f40472118970bf6e7" category="list-text">您必须是集群管理员。</block>
   <block id="2b65cca8612ad674e315e27b7847569b" category="list-text">两个集群中的所有节点都必须运行 ONTAP 9.20.1 或更高版本。</block>
   <block id="7231412f0681eac811f50cdf01ffc9d9" category="list-text">您只能将 ASA r2 存储虚拟机从 2 节点 ASA r2 集群迁移到 2 节点 AFF 集群。</block>
-  <block id="e5cc71ce47ac43d19244af2e26bcf54c" category="list-text">不能将 ASA r2 存储虚拟机迁移到 FAS 集群或具有 2 个以上节点的 ASA 或 AFF 集群。</block>
-  <block id="6468ff4aa21a7c593bd3ba7817e11eab" category="list-text">您不能从具有 2 个以上节点的 ASA r2 集群迁移 ASA r2 存储虚拟机。</block>
   <block id="4a18cc7c726e0c916adb571cec617041" category="list-text">从 ASA r2 集群到 AFF 集群的数据迁移是不可逆的。</block>
   <block id="12ce8a4c292d3f6fdd25970235188e9a" category="paragraph">您可以在切换之前中止迁移，但在切换启动后，您无法中断或还原迁移。迁移完成后，您无法将数据从 AFF 集群迁移到 ASA r2 集群。</block>
-  <block id="6a1473017b55673ce16a5386999a2027" category="inline-link-macro">将 SVM 从 ASA 迁移到 ASA r2 集群</block>
-  <block id="10836fefd7050494b7d5c3c964c69d24" category="paragraph">您可以<block ref="db83eb2165241eb695f260b4a3b4dbc3" category="inline-link-macro-rx"></block>。</block>
   <block id="265ec665971ca2a5c563db99192288c6" category="list-text">一次只能迁移一个存储 VM。</block>
   <block id="03a9b2e64a5e412ccdf6cc35aa677759" category="list-text">存储虚拟机最多可包含 400 个存储单元。</block>
   <block id="70966bbff75b197463acdab52d4fdb48" category="list-text">storage VM 不能包含 SnapMirror 目标存储单元。</block>
@@ -2983,16 +2955,10 @@
   <block id="2d1f591587cc6fd08656b30ff30d1e7a" category="paragraph">在从 ASA r2 集群迁移存储虚拟机（VM）之前，您需要删除复制和 SnapMirror 活动同步关系并执行各种检查。</block>
   <block id="0121300b2b3d5b9b10ba6b717b735a46" category="inline-link-macro">删除任何现有的复制关系</block>
   <block id="e3a3f96ffd8af6599b0bbf765d427f05" category="list-text"><block ref="edea30fdfa2a16756d76f4fb2dee8417" category="inline-link-macro-rx"></block>。</block>
-  <block id="11a2db8b2f04a6763ae3e3bb96857212" category="inline-link-macro">删除任何现有的 SnapMirrror 活动同步关系</block>
-  <block id="bad1a1663f4f680a1ed5938a733d4ff3" category="list-text"><block ref="f7456fe5b68d5cce8e31fbdbcdb64e6f" category="inline-link-macro-rx"></block>。</block>
   <block id="004b8a5a18de4078a445c9d8c58c87e2" category="list-text">检查是否已启用 IPsec：</block>
   <block id="2600f8b084357006acd99f22dea50a2f" category="list-text">如果启用了 IPsec，请将其禁用：</block>
   <block id="7e6e83b244ee73c77c0173da76d16bcb" category="inline-link-macro">security ipsec config show</block>
   <block id="42c7b2c358bdd057559eaca60d270d7c" category="paragraph">详细了解此 <block ref="ce3ee4a9ee54c22cd835c93365daa95f" category="inline-link-macro-rx"></block> 命令。</block>
-  <block id="4cf93e5944cfb760139cd32673fb7eac" category="list-text">检查 iPv6 和虚拟 IP（VIP）LIF：</block>
-  <block id="a55fb3c6bafa43d8d7dfe05263a82b30" category="paragraph">对于 iPv6 LIF，<block ref="394e3d9fbb9bb3df0aaebae8396adef4" prefix=" " category="inline-code"></block>为<block ref="cc314cbc6ae71c0724390eb450bb969d" prefix=" " category="inline-code"></block>。对于 VIP LIF，此<block ref="7f6b18c24ec308458e40fcc327dcc608" prefix=" " category="inline-code"></block>参数为<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
-  <block id="904e87c7e08700e7b4309774a637d246" category="list-text">如果存在任何 iPv6 或 VIP LIF，请将其删除：</block>
-  <block id="193ff8f06cb412bf91a40343323206f4" category="list-text">验证存储虚拟机上没有剩余的 iPv6 或 VIP LIF：</block>
   <block id="16fdd92def5a71313d6535c74ef67b81" category="inline-link-macro">network interface show</block>
   <block id="942a07c6842a4cc09fa4eee193feccd8" category="inline-link-macro">network interface delete</block>
   <block id="4fe5faaecc3ff070689dfe30bc22c067" category="paragraph">详细了解 <block ref="48a3e41289fffd1f6744873558111271" category="inline-link-macro-rx"></block> 和 <block ref="6a7fee4618cacc48c1e2885b8b0551dc" category="inline-link-macro-rx"></block> 命令。</block>
@@ -3007,13 +2973,11 @@
   <block id="938c2eb10f4bd2fc86b4f5c7cb9f7582" category="paragraph">您已准备好从 ASA r2 集群迁移存储虚拟机。</block>
   <block id="cd286f2d9c05e7c4ac6d770082b3acf6" category="section-title">步骤 4：从 ASA r2 集群迁移存储虚拟机</block>
   <block id="773c6198a7498253a214dde5a48bbeb8" category="paragraph">在 ASA r2 和 ASA 或 AFF 集群之间创建了必要的集群对等关系，并完成了准备这两个集群的步骤后，即可开始存储 VM 迁移。</block>
-  <block id="e6cdb2e8fd56069e3f8b1ba41a084c16" category="paragraph">执行存储虚拟机迁移时，最佳做法是在 ASA r2 集群和 AFF 集群上均保留 30% 的 CPU 裕量，以便能够执行迁移 CPU 工作负载。</block>
   <block id="d51f8c48eb34589de8201aa4a4e1bb32" category="list-text">存储虚拟机迁移后，客户端 I/O 无缝过渡到目标集群，不会中断，并且 ASA r2 集群上的存储虚拟机会自动删除。默认情况下，自动切换和自动存储虚拟机删除处于启用状态。您可以选择禁用一个或两个选项并手动执行。</block>
   <block id="5acdde98e011a39e7d095f08e45f6aa6" category="list-text">ASA 集群是将从中迁移存储虚拟机的_源_集群，而 ASA r2 集群是将向其迁移存储虚拟机的_目标_集群。</block>
   <block id="8615bdfe7ecbf2b89ae674e2e472ec74" category="paragraph">此 Storage VM 将从 ASA r2 集群迁移到目标集群。</block>
   <block id="0c6ebd7a88269ada1575b4886c06142b" category="paragraph">如果禁用了自动切换和自动删除存储虚拟机，请执行迁移后切换和清理，以手动将 ASA r2 客户端切换到目标集群，并从 ASA r2 集群中删除存储虚拟机。</block>
   <block id="315b489bb525e107008775639b339a39" category="section-title">第 5 步：迁移后切换和清理</block>
-  <block id="15ebd4861ee96044bf76eeb910e398e2" category="paragraph">ASA r2 系统支持 QuickAssist 技术（QAT）。ASA 系统不支持 QAT。从 ONTAP 9.20.1 开始，ONTAP 降低了存储虚拟机（VM）从 ASA（非 QAT）系统迁移到 ASA r2（QAT）系统后可能出现的高读取延迟和 CPU 使用率。</block>
   <block id="8f9f944f8100faf2d65bd2172fa3f72c" category="paragraph">只能从 ASA 集群将存储虚拟机迁移到 ASA r2 集群。不支持从任何其他类型的 ONTAP 系统迁移到 ASA r2 系统。</block>
   <block id="cc513af47ff0e5225fcee3b9bf7f0bc6" category="paragraph">您已准备好执行迁移预检查。</block>
   <block id="adade9adc77b057f9acabd21a9e1a777" category="paragraph">在将存储虚拟机从 ASA 集群迁移到 ASA r2 集群之前，您必须运行迁移预检查并修复任何需要解决的问题。在预检查成功通过之前，您无法执行迁移。</block>
@@ -3095,4 +3059,42 @@
   <block id="6b89f18892d0106d14be6445620238ef" category="sidebar">将 ASA r2 storage VM 迁移到 ASA 或 AFF 集群</block>
   <block id="c379a2fd725ef344a839da0df913acc6" category="sidebar">配置 ARP/AI 快照响应策略</block>
   <block id="a723b6a368d39c8d49c195613b8f0358" category="sidebar">ONTAP 9.20.1 中的新增功能</block>
+  <block id="ef346144d88caf958e28b3a5d9eb00e8" category="summary">在 ASA r2 系统上克隆存储单元和一致性组，以创建数据副本供在生产环境之外使用。</block>
+  <block id="5d2d7ab61a60e5b6415f59bc4b22bdd5" category="paragraph">在克隆过程中会复制存储单元映射。在克隆过程中不会复制快照策略。</block>
+  <block id="423873c0d1b7a568c4b00136b172b85d" category="list-text">在*主机映射*下，选择要删除的主机组。</block>
+  <block id="3638519385e49bcdf99b78c94a937f64" category="summary">从 ONTAP 9.20.1 开始，无中断地将存储 VM 从双节点 ASA r2 集群迁移到双节点 ASA 或 AFF 集群。</block>
+  <block id="d1a5d3a225d4d5911692482f5196f44e" category="doc">将存储虚拟机从 ASA r2 集群迁移到 ASA 或 AFF 集群</block>
+  <block id="2ee88fe9e1c2b6fc625cc3c39fc48efc" category="paragraph">从 ONTAP 9.20.1 开始，您可以无中断地将存储虚拟机（VM）从 2 节点 ASA r2 集群迁移到 2 节点 ASA 或 2 节点 AFF 集群。您可能需要迁移存储虚拟机来整合 SAN 和 NAS 工作负载，采用 ASA r2 系统不可用的 ONTAP 功能，或更新硬件。在迁移期间，LUN 和命名空间的现有主机映射和存储单元配置将得到保留，从而减少了操作工作量和风险。</block>
+  <block id="9b4f9518833819acd6ebdad6bb1e8616" category="list-text">您无法将 ASA r2 存储虚拟机迁移到 FAS 群集，或迁移到具有两个以上节点的 ASA 或 AFF 群集。</block>
+  <block id="a39a73c643ca356634227ea2dcc0efa5" category="list-text">您无法从具有两个以上节点的 ASA r2 集群中迁移 ASA r2 存储虚拟机。</block>
+  <block id="d021ef0aa79731eb76413a3181c74c9f" category="inline-link-macro">将 Storage VM 从 ASA 迁移到 ASA r2 集群</block>
+  <block id="bf674601248227c121c30d0d97db00c7" category="paragraph">您可以<block ref="774e26835d5f07911cf84f12f5c157a5" category="inline-link-macro-rx"></block>。</block>
+  <block id="87a95040ac3521ccc67ccce48449f02b" category="inline-link-macro">删除任何现有的 SnapMirror 活动同步关系</block>
+  <block id="3eb5eda8aa268c2b59c11514812e63e1" category="list-text"><block ref="874d656e7921324b56ac2356e36ca7c2" category="inline-link-macro-rx"></block>。</block>
+  <block id="8c4d3dd8dcb8d6e3aeaf07fb0723638f" category="list-text">检查 IPv6 和虚拟 IP（VIP）LIF：</block>
+  <block id="f0b6f3344681008c88c8242efbe55ba5" category="paragraph">对于 IPv6 LIF，<block ref="394e3d9fbb9bb3df0aaebae8396adef4" prefix=" " category="inline-code"></block>为<block ref="cc314cbc6ae71c0724390eb450bb969d" prefix=" " category="inline-code"></block>。对于 VIP LIF，此<block ref="7f6b18c24ec308458e40fcc327dcc608" prefix=" " category="inline-code"></block>参数为<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="151cf1f5254560e0d14ed173b6a84e18" category="list-text">如果存在任何 IPv6 或 VIP LIF，请将其删除：</block>
+  <block id="ebfd9c69ce40c602a37ef240a193a210" category="list-text">验证存储虚拟机上没有剩余的 IPv6 或 VIP LIF：</block>
+  <block id="7db36acc13aaf5b17b50ade7f7282e88" category="paragraph">作为最佳实践，在 ASA r2 群集和 AFF 群集上都留出 30% 的 CPU 余量，以便迁移工作负载可以运行。</block>
+  <block id="773b11694c5b9018f5d04f30985246e8" category="summary">无中断地将存储虚拟机从 ASA 集群迁移到 ASA r2 集群，包括验证存储虚拟机、建立集群对等关系、运行预检查和迁移。</block>
+  <block id="0240870d521aa79c570f1a777d2b0fb8" category="paragraph">ASA r2 系统支持 QuickAssist 技术（QAT）。ASA 系统不支持 QAT。从 ONTAP 9.20.1 开始，ONTAP 降低了在将存储 VM 从 ASA（非 QAT）系统迁移到 ASA r2（QAT）系统后可能出现的高读取延迟和 CPU 使用率。</block>
+  <block id="cd1ca716baa42f9db009df10912fcabe" category="paragraph">storage VM 从 ASA 集群迁移到 ASA r2 集群。storage VM 的名称和 UUID、数据 LIF 名称、IP 地址和对象名称（如卷名）保持不变。storage VM 中已迁移对象的 UUID 已更新。</block>
+  <block id="83d1b4d7cc649b350c2a8cb448eef3b9" category="summary">根据系统性能和数据的变化，修改存储单元以增加容量、更新服务质量（QoS）策略或更改主机映射。</block>
+  <block id="56395422aa30b29b9ec43f70a61892dd" category="summary">将存储单元移动到另一个存储可用区域，以便在区域空间不足时平衡整个群集的存储利用率。</block>
+  <block id="0e56d03b84f6f5aa1035a6f7c6fe3df0" category="paragraph">您可以在一个存储单元在线并提供数据时移动该存储单元。移动操作是无中断的。</block>
+  <block id="4cfc7a39d6ee37d53013fea3d689e58f" category="paragraph">默认情况下，存储单元为精简配置。精简配置允许存储单元扩展到分配的大小，但不会提前预留空间。空间会根据需要从可用空间中动态分配。这使您可以通过_过度配置_可用空间来实现更高的存储效率。例如，假设您有 1 TB 的可用空间，并且您需要创建四个 1 TB 的存储单元。您无需立即向系统添加 3 TB 的额外存储容量，而是可以创建存储单元，监控空间利用率，并在存储单元消耗实际空间时增加存储容量。详细了解<block ref="37a5a7f95b66d852ea39cef83793bc4b" category="inline-link-macro-rx"></block>。</block>
+  <block id="4ee055b0d8fab48e25f268aec35ff688" category="admonition">如果要创建多个存储单元，则每个单元将以相同的容量创建。将您正在创建的存储单元数量乘以所需的容量，以确保您有足够的可用空间。如果您没有足够的可用空间，并且选择过度配置，请密切监控利用率，以避免空间不足和丢失数据。</block>
+  <block id="12ecdea4b3bc3bf648480912e33dae56" category="list-text">初始化存储单元并创建文件系统。</block>
+  <block id="11b404ba0f8851b95bec69b2f6a0fda5" category="summary">在 NetApp Hardware Universe 中查找针对您的系统和 ONTAP 版本的 ASA r2 存储限制，以确保最佳性能、配置和支持。</block>
+  <block id="f3182b24b1c3dc5f14c0d53ab7279250" category="paragraph">了解 ASA r2 系统的存储限制有助于您对其进行配置，以获得最佳性能和支持。您可以在 NetApp Hardware Universe 中查找您的系统和 ONTAP 版本的限制。</block>
+  <block id="b9e3307989e56e505e613995f052bcd7" category="paragraph">限制可能因您的 ASA r2 系统和 ONTAP 版本而异。请参阅 <block ref="41f66f34b3a905f864500c9319fdff8f" category="inline-link-macro-rx"></block> 获取特定系统的最新限制的完整列表。</block>
+  <block id="eebb294bf55a72221b256fab52e2d40c" category="admonition">Hardware Universe 中未列出虚拟机 (VM) 限制。根据 ASA r2 系统卷限制，每个 HA 对的建议最大 VM 数为 800，每个集群为 1,200。此限制不适用于驻留在 VMFS 数据存储中的 VM。VMFS 数据存储没有最大 VM 数量限制。</block>
+  <block id="eaeec8d28d77e8e44e654772dcf36121" category="paragraph">例如，假设某个关键应用程序出现高延迟和低吞吐量。当您查看过去五个工作日的集群性能时，您会注意到每天在同一时间性能都会下降。您可以利用此信息确定，当非关键进程开始在后台运行时，该关键应用程序正在争用集群资源。然后，您可以修改 QoS 策略，以限制非关键工作负载对系统资源的影响，并确保关键工作负载满足最低吞吐量目标。</block>
+  <block id="d77a69487659c816b3158a14a58d6103" category="paragraph">ASA r2 系统中的每个 HA 对都使用称为_存储可用区_的公共存储池。存储可用区可以访问存储系统中的所有可用磁盘，并且对 HA 对中的两个节点均可见。通过监控存储可用区的可用空间，可以根据需要减少使用量或增加容量，从而避免因空间不足而导致工作负载失败。</block>
+  <block id="694bc49ae7309f71b2ffedd90e4612ca" category="paragraph">如果群集中有四个或更多节点，则可以查看每个 HA 对的存储可用区使用的空间量。此指标不适用于双节点群集。</block>
+  <block id="a05d66940316948ae4be9f4d4b85eb16" category="list-text">如果需要更详细的指标，请选择特定的存储可用性区域。</block>
+  <block id="bcb923573562796443d416bf5da68ef4" category="paragraph">如果您的存储可用区空间不足，请<block ref="a3223fe003597dcfd7b6d75426783c5a" category="inline-link-macro-rx"></block>到另一个存储可用区以平衡整个集群的存储利用率，删除快照以释放空间，或向节点添加磁盘以增加容量。</block>
+  <block id="ef4470460f5d88e17c0c94d5f9d8493b" category="list-text">在*通知管理*旁边，选择<block ref="c2bfb9c080f7666b2b95fa7dd1fddf25" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="318cf7ff1964c80597d1391c806b23e3" category="summary">在 System Manager 中查看 Insights，以确定最佳实践和配置更改，从而优化 ASA r2 集群上的安全性和性能。</block>
+  <block id="aa453ed61c12ec6261aa328d4bc46afd" category="paragraph">例如，假设您为群集配置的网络时间协议 (NTP) 服务器数量少于建议数量。为了帮助您防止不准确的群集时间可能导致的问题，Insights 会通知您配置的 NTP 服务器太少，并提供了了解详细信息、解决问题或将其忽略的选项。</block>
 </blocks>
